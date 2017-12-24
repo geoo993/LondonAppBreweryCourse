@@ -25,9 +25,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I Am Rich" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71d-xe-crT">
-                                <rect key="frame" x="107.5" y="120" width="160" height="50"/>
+                                <rect key="frame" x="108.5" y="120" width="158.5" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="824-7G-iu1"/>
                                     <constraint firstAttribute="height" constant="50" id="EdN-9B-132"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>

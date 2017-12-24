@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Thin</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="I_am_Poor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I Am Poor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMr-6M-KFU">
+                                <rect key="frame" x="-0.5" y="70" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="gQw-31-ODs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coal" translatesAutoresizingMaskIntoConstraints="NO" id="yDw-Lb-xUh">
+                                <rect key="frame" x="56" y="188.5" width="262.5" height="262.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yDw-Lb-xUh" secondAttribute="height" multiplier="1:1" id="r35-fZ-lpI"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Really Really Poor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hX6-l5-bet">
+                                <rect key="frame" x="-0.5" y="120" width="375" height="29.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help Me!!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENH-nQ-f7C">
+                                <rect key="frame" x="0.0" y="154.5" width="375" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="Honey Dew"/>
+                        <constraints>
+                            <constraint firstItem="yDw-Lb-xUh" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="3hd-wd-J6B"/>
+                            <constraint firstItem="iMr-6M-KFU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="49K-8Y-iPL"/>
+                            <constraint firstItem="hX6-l5-bet" firstAttribute="top" secondItem="iMr-6M-KFU" secondAttribute="bottom" id="4Rz-r9-5kz"/>
+                            <constraint firstItem="ENH-nQ-f7C" firstAttribute="top" secondItem="hX6-l5-bet" secondAttribute="bottom" constant="5" id="8g9-4i-qMp"/>
+                            <constraint firstItem="ENH-nQ-f7C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CUt-ZO-1UT"/>
+                            <constraint firstItem="yDw-Lb-xUh" firstAttribute="top" secondItem="ENH-nQ-f7C" secondAttribute="bottom" constant="10" id="FR4-qn-XaF"/>
+                            <constraint firstItem="iMr-6M-KFU" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Zwg-Kb-Ngb"/>
+                            <constraint firstItem="yDw-Lb-xUh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aqs-1t-06d"/>
+                            <constraint firstItem="hX6-l5-bet" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hI3-mb-m7u"/>
+                            <constraint firstItem="ENH-nQ-f7C" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="koY-lh-ajL"/>
+                            <constraint firstItem="hX6-l5-bet" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="qer-aa-YfW"/>
+                            <constraint firstItem="iMr-6M-KFU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ziX-RD-hue"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="coal" width="226" height="192"/>
+        <namedColor name="Honey Dew">
+            <color red="0.94117647058823528" green="1" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

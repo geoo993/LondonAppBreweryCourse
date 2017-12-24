@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:I am Poor/I am Poor.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ChristmasTree/ChristmasTree.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:AppCore/AppCore.xcodeproj">
    </FileRef>
    <FileRef
