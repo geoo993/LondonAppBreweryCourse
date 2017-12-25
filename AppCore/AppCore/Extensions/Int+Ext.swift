@@ -17,7 +17,7 @@ public extension Int {
         return Number.withSeparator.string(from: NSNumber(value: hashValue)) ?? ""
     }
     
-    public static func randomi(min: Int, max: Int) -> Int {
+    public static func random(min: Int, max: Int) -> Int {
         guard min < max else {return min}
         return Int(arc4random_uniform(UInt32(1 + max - min))) + min
     }
