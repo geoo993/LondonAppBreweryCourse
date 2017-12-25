@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  I Am Rich
 //
-//  Created by GEORGE QUENTIN on 22/12/2017.
+//  Created by GEORGE QUENTIN on 25/12/2017.
 //  Copyright © 2017 Geo Games. All rights reserved.
 //
 

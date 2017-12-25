@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Dicee/Dicee.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:I Am Rich/I Am Rich.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:I am Poor/I am Poor.xcodeproj">
    </FileRef>
    <FileRef
@@ -9,8 +15,5 @@
    </FileRef>
    <FileRef
       location = "group:AppCore/AppCore.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:I Am Rich/I Am Rich.xcodeproj">
    </FileRef>
 </Workspace>
