@@ -69,7 +69,7 @@
 		C7B9FEB81FF151CE00D15B45 /* JourneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B9FE8F1FF151CD00D15B45 /* JourneyView.swift */; };
 		C7B9FEBA1FF151CE00D15B45 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B9FE911FF151CD00D15B45 /* PieChartView.swift */; };
 		C7DAF1241FF11C6E000D93C7 /* AppCore.h in Headers */ = {isa = PBXBuildFile; fileRef = C7DAF1221FF11C6E000D93C7 /* AppCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C7DAF1281FF11C79000D93C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7F266DC1FED5C0A0001D56C /* Assets.xcassets */; };
+		C7FAC3421FF1CFEE00D5DCE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7F266DC1FED5C0A0001D56C /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -138,6 +138,7 @@
 		C7DAF1221FF11C6E000D93C7 /* AppCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppCore.h; sourceTree = "<group>"; };
 		C7DAF1231FF11C6E000D93C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7F266DC1FED5C0A0001D56C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C7FAC3431FF1D59D00D5DCE0 /* Variables Constants and Data types.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = "Variables Constants and Data types.playground"; path = "AppCore/Variables Constants and Data types.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +258,7 @@
 		C7F266C91FED5C0A0001D56C = {
 			isa = PBXGroup;
 			children = (
+				C7FAC3431FF1D59D00D5DCE0 /* Variables Constants and Data types.playground */,
 				C7DAF1211FF11C6E000D93C7 /* AppCore */,
 				C7F266D31FED5C0A0001D56C /* Products */,
 			);
@@ -341,7 +343,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7DAF1281FF11C79000D93C7 /* Assets.xcassets in Resources */,
+				C7FAC3421FF1CFEE00D5DCE0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
