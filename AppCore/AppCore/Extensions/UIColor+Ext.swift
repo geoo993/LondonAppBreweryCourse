@@ -130,6 +130,10 @@ public extension UIColor {
         self.init(red: red, green: green, blue: blue, alpha: alpha)
     }
     
+    public static func rgb(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
+        return UIColor(red: red/255, green: green/255, blue: blue/255, alpha: 1.0)
+    }   
+    
     public static var pink : UIColor { return UIColor(hex: 0xFFC0CB) }
     public static var lightPink : UIColor { return  UIColor(hex: 0xFFB6C1) }
     public static var hotPink : UIColor { return  UIColor(hex: 0xFF69B4)}
@@ -276,40 +280,62 @@ public extension UIColor {
     public static var slateGray : UIColor { return  UIColor(hex: 0x708090)}
     public static var darkSlateGray : UIColor { return  UIColor(hex: 0x2F4F4F)}
     public static var searchBarColor : UIColor {
-        return UIColor.init(red: 197/255, green: 187/255, blue: 187/255, alpha: 1.0)
+        return UIColor.rgb(red: 197, green: 187, blue: 187)
     }
     
-    public static func rgb(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
-        return UIColor(red: red/255, green: green/255, blue: blue/255, alpha: 1)
-    }   
-    
-    public static func topMenuRedColor() -> UIColor {
-        return UIColor.rgb(red: 230, green: 32, blue: 31)
-    }   
-    
-    public static func nonSelectedColor() -> UIColor {
-        return UIColor.rgb(red: 91, green: 14, blue: 13)
-    }   
-    
-    public static func systemsBlueColor () -> UIColor
-    {
-        return UIColor.init(red: 0.0, green: 0.4784, blue: 1.0, alpha: 1.0) 
+    public static var youtubeRed : UIColor {
+        return UIColor.rgb(red: 252, green: 13, blue: 28)
     }
-    public static func bbciplayerDark() -> UIColor
-    {
-        return UIColor.init(red: 24/255, green: 27/255, blue: 34/255, alpha: 1.0)
+    
+    public static var pinterestRed : UIColor {
+        return UIColor.rgb(red: 187, green: 15, blue: 34)
     }
-    public static func bbciplayerWhiteGray() -> UIColor
-    {
+    
+    public static var facebookBlue : UIColor {
+        return UIColor.rgb(red: 64, green: 90, blue: 150)
+    }
+    
+    public static var veryPink : UIColor {
+        return UIColor.rgb(red: 220, green: 19, blue: 123)
+    }
+    
+    public static var amazonOrange : UIColor {
+        return UIColor.rgb(red: 250, green: 153, blue: 47)
+    }
+    
+    public static var yahooPurple : UIColor {
+        return UIColor.rgb(red: 71, green: 21, blue: 172)
+    }
+    
+    public static var vimeoBlue : UIColor {
+        return UIColor.rgb(red: 29, green: 174, blue: 236)
+    }
+    
+    public static var linkedinBlue : UIColor {
+        return UIColor.rgb(red: 17, green: 120, blue: 179)
+    }
+    
+    public static var twitterBlue : UIColor {
+        return UIColor.rgb(red: 42, green: 163, blue: 239)
+    }
+    
+    public static var bbciplayerDark : UIColor {
+        return UIColor.rgb(red: 24, green: 27, blue: 34)
+    }
+    
+    public static var bbciplayerWhiteGray : UIColor {
         return UIColor.init(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
     }
     
-    public static func bbciplayerPink() -> UIColor
-    {
-        return UIColor.init(red: 1.0, green: 70/255, blue: 150/255, alpha: 1.0)
+    public static var bbciplayerPink : UIColor {
+        return UIColor.init(red: 1.0, green: 70/255, blue: 150/255, alpha: 1.0) 
     }
     
-    public func getTextColor () -> UIColor {
+    public static var systemsBlueColor : UIColor {
+        return UIColor.init(red: 0.0, green: 0.4784, blue: 1.0, alpha: 1.0) 
+    }
+    
+    public var recommendedTextColor : UIColor {
         var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
         _ = self.getRed(&r, green: &g, blue: &b, alpha: &a)
         return (r<0.8 && g<0.8 && b<0.8) ? UIColor.white : UIColor.black
@@ -322,27 +348,27 @@ public extension UIColor {
                        alpha: 1.0)
     }
     
-    public  var redValue: CGFloat{
+    public  var redValue: CGFloat {
         return cgColor.components! [0]
     }
     
-    public  var greenValue: CGFloat{
+    public  var greenValue: CGFloat {
         return cgColor.components! [1]
     }
     
-    public var blueValue: CGFloat{
+    public var blueValue: CGFloat {
         return cgColor.components! [2]
     }
     
-    public var alphaValue: CGFloat{
+    public var alphaValue: CGFloat {
         return cgColor.components! [3]
     }
     
-    public func getRBGValues() -> (r:CGFloat, g:CGFloat,b:CGFloat, a:CGFloat){
+    public var rgbValues : (r:CGFloat, g:CGFloat,b:CGFloat, a:CGFloat){
         return (r:redValue, g:greenValue, b: blueValue, a:alphaValue)
     }
     
-    public func getComponents() -> ColorComponents {
+    public var components : ColorComponents {
         if (self.cgColor.numberOfComponents == 2) {
             let cc = self.cgColor.components;
             return ColorComponents(r:cc![0], g:cc![0], b:cc![0], a:cc![1])
@@ -368,8 +394,8 @@ public extension UIColor {
         var f = max(0, fraction)
         f = min(1, fraction)
         
-        let c1 = start.getComponents()
-        let c2 = end.getComponents()
+        let c1 = start.components
+        let c2 = end.components
         
         let r: CGFloat = CGFloat(c1.r + (c2.r - c1.r) * f)
         let g: CGFloat = CGFloat(c1.g + (c2.g - c1.g) * f)
@@ -402,25 +428,25 @@ public extension UIColor {
      
      - Returns: A new string with `String` with the color's hexidecimal value.
      */
-    public func hexDescription(_ includeAlpha: Bool = false) -> String {
+    private func hexDescription( _ withAlpha: Bool = false) -> String {
         guard self.cgColor.numberOfComponents == 4 else {
             return "Color not RGB."
         }
         let a = self.cgColor.components!.map { Int($0 * CGFloat(255)) }
         let color = String.init(format: "%02x%02x%02x", a[0], a[1], a[2])
-        if includeAlpha {
+        if withAlpha {
             let alpha = String.init(format: "%02x", a[3])
             return "\(color)\(alpha)"
         }
         return color
     }
     
-    public func fullhexDescription(_ includeAlpha: Bool = false) -> String {
-        return "#" + self.hexDescription(includeAlpha)
+    public func hexDescription(withHash : Bool, includingAlpha: Bool = false) -> String {
+        let hexDescription = self.hexDescription(includingAlpha)
+        return withHash ? "#" + hexDescription : hexDescription
     }
     
-    
-    public func toHexString() -> String {
+    public var toHexString : String {
         var r:CGFloat = 0
         var g:CGFloat = 0
         var b:CGFloat = 0
@@ -435,7 +461,6 @@ public extension UIColor {
             Int(b * 0xff)
         )
     }
-    
     
     fileprivate enum UIColorMasks: CUnsignedInt {
         case redMask    = 0xff000000
@@ -501,8 +526,7 @@ public extension UIColor {
         return cssToHexDictionairy.firstKeyForValue(forValue: hexString.uppercased()) ?? "1"
     }
     
-    static func getAllColorNamesFromLibrary () -> [String]
-    {
+    static var colorNamesFromCSSLibrary : [String] {
         return UIColor.cssToHexDictionairy.map{ $0.key }.sorted()
     }
     

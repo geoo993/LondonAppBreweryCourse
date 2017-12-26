@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Magic 8 Ball/Magic 8 Ball.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Dicee/Dicee.xcodeproj">
    </FileRef>
    <FileRef
