@@ -265,22 +265,22 @@ public extension UIView {
     }
 
     public func addBorder(mask: CAShapeLayer, 
-                          borderColor: UIColor, 
+                          borderColor: UIColor?, 
                           borderWidth: CGFloat) {
         let borderLayer = CAShapeLayer()
         borderLayer.path = mask.path
         borderLayer.fillColor = UIColor.clear.cgColor
-        borderLayer.strokeColor = borderColor.cgColor
+        borderLayer.strokeColor = borderColor?.cgColor
         borderLayer.lineWidth = borderWidth
         borderLayer.frame = bounds
         layer.addSublayer(borderLayer)
     }
     
-    public func addBorder(borderColor: UIColor = .black, 
+    public func addBorder(borderColor: UIColor? = .black, 
                           borderWidth: CGFloat = 1.0, 
                           cornerRadius: CGFloat = 10.0) {
         
-        layer.borderColor = borderColor.cgColor
+        layer.borderColor = borderColor?.cgColor
         layer.borderWidth = borderWidth
         layer.cornerRadius = cornerRadius
         clipsToBounds = true
@@ -367,7 +367,6 @@ public extension UIView {
         })
         
     }
-    
     
     ///tempView = UIView()
     ///originalView.copyViewElements(to: tempView)
