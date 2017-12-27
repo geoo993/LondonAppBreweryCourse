@@ -5,7 +5,6 @@ public extension FloatingPoint {
     public var radiansToDegrees: Self { return self * 180 / .pi }
 }
 
-
 public extension Float {
     var degreesToRadians : CGFloat {
         return CGFloat(self) * CGFloat(Double.pi) / 180.0
@@ -64,7 +63,6 @@ public extension CGFloat {
         }
     }
     
-
     public func round(to places:Int) -> CGFloat {
         let divisor = pow(10.0, CGFloat(places))
         return Darwin.round(self * divisor) / divisor
@@ -75,38 +73,34 @@ public extension CGFloat {
     }
     
     public static func random(min: CGFloat, max: CGFloat) -> CGFloat {
-        
         let rand = CGFloat(arc4random()) / CGFloat(UINT32_MAX)
         let minimum = min < max ? min : max 
         return  rand * Swift.abs(CGFloat( min - max)) + minimum
     }
     
-    public static func distanceBetweenF(p1 : CGPoint, p2 : CGPoint) -> CGFloat {
+    public static func distanceBetween(p1 : CGPoint, p2 : CGPoint) -> CGFloat {
         let dx : CGFloat = p1.x - p2.x
         let dy : CGFloat = p1.y - p2.y
         return sqrt(dx * dx + dy * dy)
     }
     
-    public static func clampF(value: CGFloat, minimum:CGFloat, maximum:CGFloat) -> CGFloat {
-        
+    public static func clamp(value: CGFloat, minimum:CGFloat, maximum:CGFloat) -> CGFloat {
         if value < minimum { return minimum }
         if value > maximum { return maximum }
         return value
     }
     
-    public func percentageWithF(maxValue:CGFloat, minValue: CGFloat) -> CGFloat 
-    {
+    public func percentageBetween(maxValue: CGFloat, minValue: CGFloat) -> CGFloat {
         let difference: CGFloat = (minValue < 0) ? maxValue : maxValue - minValue;
         return (CGFloat(100) * ((self - minValue) / difference));
     }
     
-    public func getPercentangeValueF(_ percent : CGFloat, _ minValue : CGFloat) -> CGFloat{
+    public func percentangeFromMaxValue(withPercentage percent : CGFloat, minValue : CGFloat) -> CGFloat {
         let max = (self > minValue) ? self : minValue
         let min = (self > minValue) ? minValue : self
         
         return ( ((max - min) * percent) / CGFloat(100) ) + min
     }
-    
 }
 
 

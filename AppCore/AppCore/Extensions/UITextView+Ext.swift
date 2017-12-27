@@ -5,7 +5,7 @@ import Foundation
 import UIKit
 
 public extension UITextView {
-//    @available(iOS, deprecated, message: "Replace call with `range(from textRange: UITextRange) -> Range<Int>`")
+
     public func textRangeToIntRange(range textRange: UITextRange) -> CountableRange<Int> {
         return self.range(from: textRange)
     }
@@ -52,8 +52,6 @@ public extension UITextView {
         return startIndex..<endIndex
     }
     
-//    // TODO: Use CoreText to compute the glyph rects (which will account for line spacing!)
-//    @available(iOS, deprecated, message: "Replace call with `rect(for: Range<Int>) -> CGRect?`")
     public func rectForRange(range: Range<Int>) -> CGRect? {
         return self.rect(for: range)
     }

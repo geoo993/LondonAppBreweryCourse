@@ -6,32 +6,6 @@ func * (lhs: Character, rhs: Int) -> String {
     return String(repeating: String(lhs), count: rhs)
 }
 
-public extension Dictionary where Value: Any {
-    
-    public func isEqual(to otherDict: [Key: Any], 
-                        allPossibleValueTypesAreKnown: Bool = false) -> Bool? {
-        guard allPossibleValueTypesAreKnown else { return nil }
-        guard self.count == otherDict.count else { return false }
-        for (k1,v1) in self {
-            guard let v2 = otherDict[k1] else { return false }
-            switch (v1, v2) {
-            case (let v1 as Double, let v2 as Double) : if !(v1.isEqual(to: v2)) { return false }
-            case (let v1 as Int, let v2 as Int) : if !(v1==v2) { return false }
-            case (let v1 as String, let v2 as String): if !(v1==v2) { return false }
-            // ... 
-            case (_ as Double, let v2): if !(v2 is Double) { return false }
-            case (_, _ as Double): return false
-            case (_ as Int, let v2): if !(v2 is Int) { return false }
-            case (_, _ as Int): return false
-            case (_ as String, let v2): if !(v2 is String) { return false }
-            case (_, _ as String): return false
-            default: return nil
-            }
-        }
-        return true
-    }
-}
-
 public extension String {
     
     public func tokenizeToWord() -> [String] {
@@ -90,14 +64,12 @@ public extension String {
     }
     
     func toWords() -> [String] {
-        
         let range = self.range(of: self)!
         var words = [String]()
         
         self.enumerateSubstrings(in: range, options: .byWords) { (substring, _, _, _) -> Void in
             words.append(substring!)
         }
-        
         return words
     }
     
@@ -152,10 +124,11 @@ public extension String {
         return self.index(startIndex, offsetBy: from)
     }
 
-    public func getCharacterAt(pos: Int) -> Character {
-        return self[self.index(self.startIndex, offsetBy: pos)]
+    public func character(atIndex index: Int) -> Character {
+        return self[self.index(self.startIndex, offsetBy: index)]
     }
-    public static func getRandomCharacter() -> Character {
+    
+    public static func randomCharacter() -> Character {
         let characters = "ABCDEFGHIJKLKMNOPQRSTUVWXYZ"
         let len = UInt32(characters.count)
         let randomPosition = Int(arc4random_uniform(len))

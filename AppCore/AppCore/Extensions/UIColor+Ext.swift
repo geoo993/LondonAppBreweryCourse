@@ -34,7 +34,6 @@ public extension UIColor {
         self.init(red:UIColorMasks.redValue(c), green:UIColorMasks.greenValue(c), blue:UIColorMasks.blueValue(c), alpha:UIColorMasks.alphaValue(c))
     }
     
-    
     public convenience init(colorArray array: NSArray) {
         let r = array[0] as! CGFloat
         let g = array[1] as! CGFloat

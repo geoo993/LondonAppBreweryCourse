@@ -261,7 +261,7 @@ public class TopDrawerView: UIView {
         // stiffness is from 0 to 1
         
         let distance = (panMovement + drawerHeight + handleViewInset / 2)
-        let springStiffness = distance.percentageWithF(maxValue: maximumStretch, minValue: drawerHeight) / 100
+        let springStiffness = distance.percentageBetween(maxValue: maximumStretch, minValue: drawerHeight) / 100
         let newPanMovement = panMovement * (1 - springStiffness)
         
         switch panGestureRecognizer.state {
