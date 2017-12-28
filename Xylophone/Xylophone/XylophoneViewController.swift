@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  XylophoneViewController.swift
 //  Xylophone
 //
 //  Created by GEORGE QUENTIN on 27/12/2017.
@@ -55,7 +55,7 @@ public enum SoundError : Error {
     case audioProblem
 }
 
-public class ViewController: UIViewController, AVAudioPlayerDelegate {
+public class XylophoneViewController: UIViewController, AVAudioPlayerDelegate {
     
     var audioPlayer : AVAudioPlayer!
     @IBOutlet weak var cNote : UIButton!

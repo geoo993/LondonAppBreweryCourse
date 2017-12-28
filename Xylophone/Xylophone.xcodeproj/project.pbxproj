@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C718D01A1FF561DA00817B68 /* AppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C718D0191FF561DA00817B68 /* AppCore.framework */; };
+		C718D01B1FF561DA00817B68 /* AppCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C718D0191FF561DA00817B68 /* AppCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C7D00E711FF3F8C400370B6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D00E701FF3F8C400370B6C /* AppDelegate.swift */; };
-		C7D00E731FF3F8C400370B6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D00E721FF3F8C400370B6C /* ViewController.swift */; };
+		C7D00E731FF3F8C400370B6C /* XylophoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D00E721FF3F8C400370B6C /* XylophoneViewController.swift */; };
 		C7D00E761FF3F8C400370B6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7D00E741FF3F8C400370B6C /* Main.storyboard */; };
 		C7D00E781FF3F8C400370B6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7D00E771FF3F8C400370B6C /* Assets.xcassets */; };
 		C7D00E7B1FF3F8C400370B6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7D00E791FF3F8C400370B6C /* LaunchScreen.storyboard */; };
@@ -22,10 +24,25 @@
 		C7D00E921FF412D300370B6C /* note8.wav in Resources */ = {isa = PBXBuildFile; fileRef = C7D00E911FF412D300370B6C /* note8.wav */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C718D01C1FF561DB00817B68 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C718D01B1FF561DA00817B68 /* AppCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		C718D0191FF561DA00817B68 /* AppCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7D00E6D1FF3F8C400370B6C /* Xylophone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xylophone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7D00E701FF3F8C400370B6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C7D00E721FF3F8C400370B6C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C7D00E721FF3F8C400370B6C /* XylophoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XylophoneViewController.swift; sourceTree = "<group>"; };
 		C7D00E751FF3F8C400370B6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C7D00E771FF3F8C400370B6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7D00E7A1FF3F8C400370B6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -45,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C718D01A1FF561DA00817B68 /* AppCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +72,7 @@
 		C7D00E641FF3F8C400370B6C = {
 			isa = PBXGroup;
 			children = (
+				C718D0191FF561DA00817B68 /* AppCore.framework */,
 				C7D00E6F1FF3F8C400370B6C /* Xylophone */,
 				C7D00E6E1FF3F8C400370B6C /* Products */,
 			);
@@ -72,7 +91,7 @@
 			children = (
 				C7D00E821FF402BF00370B6C /* Audio */,
 				C7D00E701FF3F8C400370B6C /* AppDelegate.swift */,
-				C7D00E721FF3F8C400370B6C /* ViewController.swift */,
+				C7D00E721FF3F8C400370B6C /* XylophoneViewController.swift */,
 				C7D00E741FF3F8C400370B6C /* Main.storyboard */,
 				C7D00E771FF3F8C400370B6C /* Assets.xcassets */,
 				C7D00E791FF3F8C400370B6C /* LaunchScreen.storyboard */,
@@ -106,6 +125,7 @@
 				C7D00E691FF3F8C400370B6C /* Sources */,
 				C7D00E6A1FF3F8C400370B6C /* Frameworks */,
 				C7D00E6B1FF3F8C400370B6C /* Resources */,
+				C718D01C1FF561DB00817B68 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -176,7 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7D00E731FF3F8C400370B6C /* ViewController.swift in Sources */,
+				C7D00E731FF3F8C400370B6C /* XylophoneViewController.swift in Sources */,
 				C7D00E711FF3F8C400370B6C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
