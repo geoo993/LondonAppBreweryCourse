@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Destiny/Destiny.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Quizzler/Quizzler.xcodeproj">
    </FileRef>
    <FileRef
