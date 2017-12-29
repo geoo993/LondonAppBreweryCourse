@@ -8,50 +8,126 @@
 
 import UIKit
 
-public class DestinyViewController: UIViewController {
+public enum StoryState {
+    case 
+    part1(String, String, String), 
+    part2(String, String, String), 
+    part3(String, String, String),
+    part4(String),
+    part5(String),
+    part6(String)
+}
 
-    // Our strings
-    let story1 = "Your car has blown a tire on a winding road in the middle of nowhere with no cell phone reception. You decide to hitchhike. A rusty pickup truck rumbles to a stop next to you. A man with a wide brimmed hat with soulless eyes opens the passenger door for you and asks: \"Need a ride, boy?\"."
-    let answer1a = "I\'ll hop in. Thanks for the help!"
-    let answer1b = "Better ask him if he\'s a murderer first."
+public enum Events {
+    case start, p1a, p1b, p2a, p2b, p3a, p3b
+}
+
+public class DestinyViewController: UIViewController {
     
+    let destinystory = DestinyStory()
+    var event : Events = .start {
+        didSet {
+            
+            switch event {
+            case .start:
+                story = .part1(destinystory.story1.story, 
+                               destinystory.story1.answerA, 
+                               destinystory.story1.answerB)
+            case .p1a:
+                story = .part3(destinystory.story3.story, 
+                               destinystory.story3.answerA, 
+                               destinystory.story3.answerB)
+            case .p1b:
+                story = .part2(destinystory.story2.story, 
+                               destinystory.story2.answerA, 
+                               destinystory.story2.answerB)
+            case .p2a:
+                story = .part3(destinystory.story3.story, 
+                               destinystory.story3.answerA, 
+                               destinystory.story3.answerB)
+            case .p2b:
+                story = .part4(destinystory.story4.story)
+            case .p3a:
+                story = .part6(destinystory.story6.story)
+            case .p3b:
+                story = .part5(destinystory.story5.story)
+            }
+        }
+    }
     
-    let story2 = "He nods slowly, unphased by the question."
-    let answer2a = "At least he\'s honest. I\'ll climb in."
-    let answer2b = "Wait, I know how to change a tire."
-    
-    let story3 = "As you begin to drive, the stranger starts talking about his relationship with his mother. He gets angrier and angrier by the minute. He asks you to open the glovebox. Inside you find a bloody knife, two severed fingers, and a cassette tape of Elton John. He reaches for the glove box."
-    let answer3a = "I love Elton John! Hand him the cassette tape."
-    let answer3b = "It\'s him or me! You take the knife and stab him."
-    
-    let story4 = "What? Such a cop out! Did you know traffic accidents are the second leading cause of accidental death for most adult age groups?"
-    let story5 = "As you smash through the guardrail and careen towards the jagged rocks below you reflect on the dubious wisdom of stabbing someone while they are driving a car you are in."
-    let story6 = "You bond with the murderer while crooning verses of \"Can you feel the love tonight\". He drops you off at the next town. Before you go he asks you if you know any good places to dump bodies. You reply: \"Try the pier.\""
-    
-    // TODO Step 5: Initialise instance variables here
+    var story : StoryState? {
+        didSet {
+            guard let destiny = story else { return }
+            switch destiny {
+            case .part1(let story, let answer1a, let answer1b):
+                updateButtonsUI(text: story,
+                                answerA: answer1a, 
+                                answerB: answer1b)
+            case .part2(let story, let answer2a, let answer2b):
+                updateButtonsUI(text: story,
+                                answerA: answer2a, 
+                                answerB: answer2b)
+            case .part3(let story, let answer3a, let answer3b):
+                updateButtonsUI(text: story,
+                                answerA: answer3a, 
+                                answerB: answer3b)
+            case .part4(let story):
+                updateButtonsUI(text: story,
+                                answerA: nil, 
+                                answerB: nil)
+            case .part5(let story):
+                updateButtonsUI(text: story,
+                                answerA: nil, 
+                                answerB: nil)
+            case .part6(let story):
+                updateButtonsUI(text: story,
+                                answerA: nil, 
+                                answerB: nil)
+            }
+        }
+    }
     
     // UI Elements linked to the storyboard
-    @IBOutlet weak var topButton: UIButton!         // Has TAG = 1
-    @IBOutlet weak var bottomButton: UIButton!      // Has TAG = 2
+    @IBOutlet weak var skyButton: UIButton!         // Has TAG = 1
+    @IBOutlet weak var seaButton: UIButton!         // Has TAG = 2
+    @IBOutlet weak var restartButton: UIButton! 
     @IBOutlet weak var storyTextView: UILabel!
     
     // User presses one of the buttons
     @IBAction func buttonPressed(_ sender: UIButton) {
-        
-        // TODO Step 4: Write an IF-Statement to update the views
-        
-        // TODO Step 6: Modify the IF-Statement to complete the story
-        
+        let answerSelected = (sender.tag == 1)
+        guard let destiny = story else { return }
+        switch destiny {
+        case .part1:
+            event = answerSelected ? .p1a : .p1b
+        case .part2:
+            event = answerSelected ? .p2a : .p2b
+        case .part3:
+            event = answerSelected ? .p3a : .p3b
+        case .part4:
+            event = .start
+        case .part5:
+            event = .start
+        case .part6:
+            event = .start
+        }
     }
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        // TODO Step 3: Set the text for the storyTextView, topButton, bottomButton, and to T1_Story, T1_Ans1, and T1_Ans2
-        
+        self.event = .start
     }
     
+    func updateButtonsUI (text: String, answerA : String?, answerB : String?) {
+        
+        self.storyTextView.text = text
+        self.skyButton.setTitle(answerA, for: .normal)
+        self.seaButton.setTitle(answerB, for: .normal)
+        
+        self.skyButton.isHidden = (answerA == nil)
+        self.seaButton.isHidden = (answerB == nil)
+        self.restartButton.isHidden = !(answerA == nil && answerB == nil)
+    }
 
     
 }

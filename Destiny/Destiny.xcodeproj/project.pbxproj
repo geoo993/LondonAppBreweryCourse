@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C720A2151FF59E34004C1847 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = C720A2141FF59E34004C1847 /* Story.swift */; };
+		C720A2171FF59EFA004C1847 /* DestinyStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C720A2161FF59EFA004C1847 /* DestinyStory.swift */; };
 		C7A990FA1FF59147009E8D8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A990F91FF59147009E8D8D /* AppDelegate.swift */; };
 		C7A990FC1FF59147009E8D8D /* DestinyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A990FB1FF59147009E8D8D /* DestinyViewController.swift */; };
 		C7A990FF1FF59147009E8D8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7A990FD1FF59147009E8D8D /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C720A2141FF59E34004C1847 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		C720A2161FF59EFA004C1847 /* DestinyStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinyStory.swift; sourceTree = "<group>"; };
 		C7A990F61FF59147009E8D8D /* Destiny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Destiny.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7A990F91FF59147009E8D8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7A990FB1FF59147009E8D8D /* DestinyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinyViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +69,8 @@
 		C7A9910B1FF59157009E8D8D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C720A2141FF59E34004C1847 /* Story.swift */,
+				C720A2161FF59EFA004C1847 /* DestinyStory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -170,6 +176,8 @@
 			files = (
 				C7A990FC1FF59147009E8D8D /* DestinyViewController.swift in Sources */,
 				C7A990FA1FF59147009E8D8D /* AppDelegate.swift in Sources */,
+				C720A2171FF59EFA004C1847 /* DestinyStory.swift in Sources */,
+				C720A2151FF59E34004C1847 /* Story.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
