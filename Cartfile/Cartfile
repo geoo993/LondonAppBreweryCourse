@@ -1,0 +1,11 @@
+github "Alamofire/Alamofire" ~> 4.5
+github "SVProgressHUD/SVProgressHUD"
+github "SwiftyJSON/SwiftyJSON"
+github "realm/realm-cocoa" ~> 3.0.2
+github "ReactiveX/RxSwift" ~> 4.0
+github "RxSwiftCommunity/RxGesture"
+github "RxSwiftCommunity/RxSegue"
+github "RxSwiftCommunity/RxSwiftExt"
+github "DaveWoodCom/XCGLogger" ~> 6.0.2
+
+

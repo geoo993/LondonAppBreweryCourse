@@ -43,6 +43,7 @@
 		C785AB4D1FF13B7F002360A6 /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C785AB4C1FF13B7F002360A6 /* UIFont+Ext.swift */; };
 		C785AB4F1FF13F2F002360A6 /* NSRange+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C785AB4E1FF13F2F002360A6 /* NSRange+Ext.swift */; };
 		C785AB511FF13F71002360A6 /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C785AB501FF13F71002360A6 /* Array+Ext.swift */; };
+		C7B4BE781FF80ED100D54698 /* UIStackView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B4BE771FF80ED100D54698 /* UIStackView+Ext.swift */; };
 		C7B9FE921FF151CD00D15B45 /* BezierCubicCurveAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B9FE691FF151CD00D15B45 /* BezierCubicCurveAlgorithm.swift */; };
 		C7B9FE931FF151CD00D15B45 /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B9FE6A1FF151CD00D15B45 /* CircularImageView.swift */; };
 		C7B9FE961FF151CD00D15B45 /* DotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B9FE6D1FF151CD00D15B45 /* DotView.swift */; };
@@ -112,6 +113,7 @@
 		C785AB4C1FF13B7F002360A6 /* UIFont+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
 		C785AB4E1FF13F2F002360A6 /* NSRange+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSRange+Ext.swift"; sourceTree = "<group>"; };
 		C785AB501FF13F71002360A6 /* Array+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
+		C7B4BE771FF80ED100D54698 /* UIStackView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Ext.swift"; sourceTree = "<group>"; };
 		C7B9FE691FF151CD00D15B45 /* BezierCubicCurveAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierCubicCurveAlgorithm.swift; sourceTree = "<group>"; };
 		C7B9FE6A1FF151CD00D15B45 /* CircularImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
 		C7B9FE6D1FF151CD00D15B45 /* DotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotView.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				C785AB0C1FF126E4002360A6 /* UIResponder+Ext.swift */,
 				C785AB0D1FF126E4002360A6 /* UISearchBar+Ext.swift */,
 				C785AB151FF126E4002360A6 /* UIScrollView+Ext.swift */,
+				C7B4BE771FF80ED100D54698 /* UIStackView+Ext.swift */,
 				C785AB0E1FF126E4002360A6 /* UITableView+Ext.swift */,
 				C785AB031FF126E4002360A6 /* UITableViewCell+Ext.swift */,
 				C785AB071FF126E4002360A6 /* UITextView+Ext.swift */,
@@ -407,6 +410,7 @@
 				C785AB301FF126E4002360A6 /* UITextField+Ext.swift in Sources */,
 				C7B9FE961FF151CD00D15B45 /* DotView.swift in Sources */,
 				C785AB3E1FF126E4002360A6 /* UIColor+Ext.swift in Sources */,
+				C7B4BE781FF80ED100D54698 /* UIStackView+Ext.swift in Sources */,
 				C785AB371FF126E4002360A6 /* CAEmitterCell+Ext.swift in Sources */,
 				C785AB2B1FF126E4002360A6 /* UIImage+GIF.swift in Sources */,
 				C785AB401FF126E4002360A6 /* ImageProcessor.swift in Sources */,

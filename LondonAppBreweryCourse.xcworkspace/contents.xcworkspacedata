@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "group:Cartfile"
+      name = "Cartfile">
+      <Group
+         location = "container:"
+         name = "Dependencies">
+         <FileRef
+            location = "group:Cartfile/Carthage/Checkouts/SwiftyJSON/SwiftyJSON.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:Cartfile/Carthage/Checkouts/SVProgressHUD/SVProgressHUD.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:Cartfile/Carthage/Checkouts/Alamofire/Alamofire.xcodeproj">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:Cartfile.resolved">
+      </FileRef>
+      <FileRef
+         location = "group:Cartfile">
+      </FileRef>
+      <FileRef
+         location = "group:carthage-build.sh">
+      </FileRef>
+      <FileRef
+         location = "group:carthage-update.sh">
+      </FileRef>
+      <FileRef
+         location = "group:carthage-checkout.sh">
+      </FileRef>
+      <FileRef
+         location = "group:carthage-bootstrap.sh">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:Clima/Clima.xcodeproj">
    </FileRef>
