@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Clima/Clima.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Auto Layout Calculator/Auto Layout Calculator.xcodeproj">
    </FileRef>
    <FileRef
