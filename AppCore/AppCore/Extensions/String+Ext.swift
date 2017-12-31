@@ -278,16 +278,17 @@ public extension String {
         return ranges
     }
     
-    // FIXME: Remove this as it is not complete and misleading.
     // Correctly implement a shrink to fit on NSAttributedString
-    public func getFontSize(inFrame: CGRect, desiredFontSize : Int, reduceBy: CGFloat) -> CGFloat {
+    public func getFontSize(fromFont: UIFont, inFrame: CGRect, desiredFontSize: Int, reduceBy: CGFloat) -> UIFont {
         let text = self
         var tempHeight : CGFloat = 0.0
+        let labelSizeWidth = inFrame.size.width
+        let labelSizeHeight = inFrame.size.height
+        
         for i in 0..<desiredFontSize {
-
-            let font = UIFont.systemFont(ofSize: CGFloat(i))
-            let labelSizeWidth = inFrame.size.width
-            let labelSizeHeight = inFrame.size.height
+            
+            let fontSize = CGFloat(desiredFontSize - i )
+            let font = fromFont.withSize(fontSize)
             let textAttributedFont = [NSAttributedStringKey.font: font]
             let textNSString : NSString = (text as NSString)
             let size = textNSString.boundingRect(
@@ -295,16 +296,12 @@ public extension String {
                 options: NSStringDrawingOptions.usesLineFragmentOrigin,
                 attributes: textAttributedFont, context: nil).size
 
-            let sizeHeight = size.height
-            if (sizeHeight > labelSizeHeight) {
-                tempHeight = CGFloat(i)
+            if (size.height < labelSizeHeight) {
+                tempHeight = fontSize
                 break
-            } else {
-                tempHeight = CGFloat(desiredFontSize)
             }
         }
-
-        return tempHeight - reduceBy
+        return fromFont.withSize( tempHeight - reduceBy )
     }
     
     public func replaceHypthensWithNonBreakingHyphens() -> String {
