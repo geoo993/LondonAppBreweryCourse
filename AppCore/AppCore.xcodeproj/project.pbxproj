@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C70A35AC1FFC770F00857F88 /* UIDevice+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70A35AA1FFC770E00857F88 /* UIDevice+Ext.swift */; };
+		C70A35AD1FFC770F00857F88 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70A35AB1FFC770E00857F88 /* DeviceType.swift */; };
 		C785AB241FF126E4002360A6 /* Generic+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C785AAFE1FF126E4002360A6 /* Generic+Ext.swift */; };
 		C785AB251FF126E4002360A6 /* UIBezierPath+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C785AAFF1FF126E4002360A6 /* UIBezierPath+Ext.swift */; };
 		C785AB261FF126E4002360A6 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C785AB001FF126E4002360A6 /* UIImageView+Ext.swift */; };
@@ -74,6 +76,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C70A35AA1FFC770E00857F88 /* UIDevice+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Ext.swift"; sourceTree = "<group>"; };
+		C70A35AB1FFC770E00857F88 /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
 		C741F2331FF29BAA002B42D3 /* Variables Constants and Data types.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Variables Constants and Data types.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C741F2341FF29C02002B42D3 /* Comments, printing and the console.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Comments, printing and the console.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C741F2351FF2DF86002B42D3 /* Colors.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Colors.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -160,6 +164,8 @@
 		C785AAFD1FF126E4002360A6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C70A35AB1FFC770E00857F88 /* DeviceType.swift */,
+				C70A35AA1FFC770E00857F88 /* UIDevice+Ext.swift */,
 				C785AB501FF13F71002360A6 /* Array+Ext.swift */,
 				C7B9FE691FF151CD00D15B45 /* BezierCubicCurveAlgorithm.swift */,
 				C785AB111FF126E4002360A6 /* CAEmitterCell+Ext.swift */,
@@ -376,6 +382,7 @@
 				C785AB391FF126E4002360A6 /* UINavigationController+Ext.swift in Sources */,
 				C785AB281FF126E4002360A6 /* CGRect+Ext.swift in Sources */,
 				C785AB461FF126E4002360A6 /* UIViewController+Ext.swift in Sources */,
+				C70A35AC1FFC770F00857F88 /* UIDevice+Ext.swift in Sources */,
 				C785AB341FF126E4002360A6 /* UITableView+Ext.swift in Sources */,
 				C7B9FEAA1FF151CE00D15B45 /* LayoutableView.swift in Sources */,
 				C785AB291FF126E4002360A6 /* UITableViewCell+Ext.swift in Sources */,
@@ -399,6 +406,7 @@
 				C7B9FEB81FF151CE00D15B45 /* JourneyView.swift in Sources */,
 				C7B9FE971FF151CD00D15B45 /* TopDrawerView.swift in Sources */,
 				C7B9FEAD1FF151CE00D15B45 /* LayoutableImageView.swift in Sources */,
+				C70A35AD1FFC770F00857F88 /* DeviceType.swift in Sources */,
 				C785AB331FF126E4002360A6 /* UISearchBar+Ext.swift in Sources */,
 				C785AB321FF126E4002360A6 /* UIResponder+Ext.swift in Sources */,
 				C785AB271FF126E4002360A6 /* Dictionary+Ext.swift in Sources */,
