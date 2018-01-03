@@ -14,6 +14,9 @@
          location = "container:"
          name = "Dependencies">
          <FileRef
+            location = "group:Cartfile/Carthage/Checkouts/Chameleon/Chameleon.xcodeproj">
+         </FileRef>
+         <FileRef
             location = "group:Cartfile/Carthage/Checkouts/RxSwift/Rx.xcodeproj">
          </FileRef>
          <FileRef
@@ -32,9 +35,6 @@
             location = "group:Cartfile/Carthage/Checkouts/Alamofire/Alamofire.xcodeproj">
          </FileRef>
       </Group>
-      <FileRef
-         location = "group:Cartfile.resolved">
-      </FileRef>
       <FileRef
          location = "group:Cartfile">
       </FileRef>
