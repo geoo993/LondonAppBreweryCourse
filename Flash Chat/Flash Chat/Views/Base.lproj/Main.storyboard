@@ -32,6 +32,9 @@
                                     <color key="titleColor" red="1" green="0.99997437000274658" blue="0.99999129772186279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="xYK-ej-9R9" kind="push" identifier="goToLogin" id="k6L-3P-HBo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uWY-w2-6La">
                                 <rect key="frame" x="0.0" y="577" width="375" height="45"/>
@@ -100,6 +103,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="qQg-wA-Esh" id="SkR-tD-DgL"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SYb-Xx-USU">
                                         <rect key="frame" x="16" y="127" width="343" height="30"/>
@@ -107,7 +113,10 @@
                                             <constraint firstAttribute="height" constant="30" id="t4i-pt-0WT"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="qQg-wA-Esh" id="sXS-6h-hef"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67C-Ey-AV3">
                                         <rect key="frame" x="16" y="165" width="343" height="30"/>
@@ -183,7 +192,10 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zuQ-XP-4Q7">
                                         <rect key="frame" x="16" y="126" width="343" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="xYK-ej-9R9" id="Dud-ca-yVz"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OD6-NY-DlK">
                                         <rect key="frame" x="16" y="164" width="343" height="30"/>
@@ -200,6 +212,9 @@
                                         <rect key="frame" x="16" y="88" width="343" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="xYK-ej-9R9" id="wc8-hW-Nfv"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -261,6 +276,9 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="289.5" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="send"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="1OT-7R-IBv"/>
+                                                </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JiI-fB-I1v">
                                                 <rect key="frame" x="294.5" y="0.0" width="64.5" height="30"/>
@@ -273,6 +291,7 @@
                                             </button>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="i9R-Qq-alY"/>
                                             <constraint firstItem="JiI-fB-I1v" firstAttribute="width" secondItem="rkc-Tf-lNL" secondAttribute="width" multiplier="0.18" id="yeU-eC-OlX"/>
                                         </constraints>
                                     </stackView>
@@ -281,8 +300,8 @@
                                 <constraints>
                                     <constraint firstItem="rkc-Tf-lNL" firstAttribute="top" secondItem="WpY-IA-acB" secondAttribute="top" constant="10" id="COg-mH-4w2"/>
                                     <constraint firstItem="rkc-Tf-lNL" firstAttribute="leading" secondItem="WpY-IA-acB" secondAttribute="leading" constant="8" id="GvF-cZ-wXu"/>
+                                    <constraint firstItem="rkc-Tf-lNL" firstAttribute="centerX" secondItem="WpY-IA-acB" secondAttribute="centerX" id="I5C-3W-nnx"/>
                                     <constraint firstAttribute="height" constant="50" id="dyw-Nc-T3G"/>
-                                    <constraint firstAttribute="bottom" secondItem="rkc-Tf-lNL" secondAttribute="bottom" constant="10" id="h0P-YA-DIj"/>
                                     <constraint firstAttribute="trailing" secondItem="rkc-Tf-lNL" secondAttribute="trailing" constant="8" id="xT4-sD-SFg"/>
                                 </constraints>
                             </view>
@@ -299,6 +318,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="LT7-NP-uVU"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="p1U-5f-izj"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -357,6 +380,6 @@
         <image name="background1" width="1800" height="1192"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rRW-Qd-PQi"/>
+        <segue reference="mOy-cb-hAN"/>
     </inferredMetricsTieBreakers>
 </document>

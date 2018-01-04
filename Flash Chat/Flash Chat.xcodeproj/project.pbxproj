@@ -31,6 +31,12 @@
 		C765CB661FFD1167009C0DDA /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C765CB5E1FFD1167009C0DDA /* LogInViewController.swift */; };
 		C765CB671FFD1167009C0DDA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C765CB5F1FFD1167009C0DDA /* WelcomeViewController.swift */; };
 		C78F42B21FFD1B7D00466256 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C78F42B11FFD1B7D00466256 /* GoogleService-Info.plist */; };
+		C7A363551FFD8E95006EDB4F /* AppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A363541FFD8E95006EDB4F /* AppCore.framework */; };
+		C7A363561FFD8E95006EDB4F /* AppCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C7A363541FFD8E95006EDB4F /* AppCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C7A363581FFDB354006EDB4F /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A363571FFDB354006EDB4F /* SVProgressHUD.framework */; };
+		C7A363591FFDB354006EDB4F /* SVProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C7A363571FFDB354006EDB4F /* SVProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C7A3635B1FFDB6C3006EDB4F /* Chameleon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A3635A1FFDB6C3006EDB4F /* Chameleon.framework */; };
+		C7A3635C1FFDB6C3006EDB4F /* Chameleon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C7A3635A1FFDB6C3006EDB4F /* Chameleon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C7E8775A1FFD59520099205C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7E877591FFD59520099205C /* Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +47,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				C7A363591FFDB354006EDB4F /* SVProgressHUD.framework in Embed Frameworks */,
+				C7A363561FFD8E95006EDB4F /* AppCore.framework in Embed Frameworks */,
+				C7A3635C1FFDB6C3006EDB4F /* Chameleon.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,6 +86,9 @@
 		C765CB5E1FFD1167009C0DDA /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		C765CB5F1FFD1167009C0DDA /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		C78F42B11FFD1B7D00466256 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C7A363541FFD8E95006EDB4F /* AppCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7A363571FFDB354006EDB4F /* SVProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SVProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7A3635A1FFDB6C3006EDB4F /* Chameleon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Chameleon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E877591FFD59520099205C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,10 +104,13 @@
 				C745C6DC1FFD54C900DFEA84 /* nanopb.framework in Frameworks */,
 				C745C6DB1FFD54C900DFEA84 /* GoogleToolboxForMac.framework in Frameworks */,
 				C745C6D91FFD54C900DFEA84 /* FirebaseCore.framework in Frameworks */,
+				C7A3635B1FFDB6C3006EDB4F /* Chameleon.framework in Frameworks */,
+				C7A363581FFDB354006EDB4F /* SVProgressHUD.framework in Frameworks */,
 				C745C6AF1FFD54C900DFEA84 /* FirebaseDatabase.framework in Frameworks */,
 				C745C6AE1FFD54C900DFEA84 /* leveldb-library.framework in Frameworks */,
 				C745C6DD1FFD54C900DFEA84 /* FirebaseNanoPB.framework in Frameworks */,
 				C745C6DF1FFD54C900DFEA84 /* FirebaseCoreDiagnostics.framework in Frameworks */,
+				C7A363551FFD8E95006EDB4F /* AppCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,10 +165,12 @@
 		C765CB3A1FFD10D4009C0DDA = {
 			isa = PBXGroup;
 			children = (
+				C7A3635A1FFDB6C3006EDB4F /* Chameleon.framework */,
+				C7A363571FFDB354006EDB4F /* SVProgressHUD.framework */,
+				C7A363541FFD8E95006EDB4F /* AppCore.framework */,
 				C745C5E81FFD4C8800DFEA84 /* Firebase */,
 				C765CB451FFD10D4009C0DDA /* Flash Chat */,
 				C765CB441FFD10D4009C0DDA /* Products */,
-				C78F42BB1FFD2A4300466256 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -199,8 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				C765CB461FFD10D4009C0DDA /* AppDelegate.swift */,
-				C765CB5A1FFD1167009C0DDA /* RegisterViewController.swift */,
 				C765CB5F1FFD1167009C0DDA /* WelcomeViewController.swift */,
+				C765CB5A1FFD1167009C0DDA /* RegisterViewController.swift */,
 				C765CB5E1FFD1167009C0DDA /* LogInViewController.swift */,
 				C765CB591FFD1167009C0DDA /* ChatViewController.swift */,
 			);
@@ -225,13 +242,6 @@
 				C765CB521FFD10D4009C0DDA /* Info.plist */,
 			);
 			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		C78F42BB1FFD2A4300466256 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -463,15 +473,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TTRX47ZAU4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Firebase/Analytics",
-					"$(PROJECT_DIR)/Pods/FirebaseCore/Frameworks",
-					"$(PROJECT_DIR)/Pods/FirebaseAuth/Frameworks",
-					"$(PROJECT_DIR)/Pods/FirebaseInstanceID/Frameworks",
-					"$(PROJECT_DIR)/Pods/FirebaseAnalytics/Frameworks",
 					"$(PROJECT_DIR)/Firebase/Storage",
 					"$(PROJECT_DIR)/Firebase/Database",
 					"$(PROJECT_DIR)/Firebase/DynamicLinks",
@@ -487,12 +494,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Flash Chat/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"$(OTHER_LDFLAGS)",
-					"-ObjC",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.geo-games.Flash-Chat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Flash Chat/Supporting Files/Firebase-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -504,15 +509,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TTRX47ZAU4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Firebase/Analytics",
-					"$(PROJECT_DIR)/Pods/FirebaseCore/Frameworks",
-					"$(PROJECT_DIR)/Pods/FirebaseAuth/Frameworks",
-					"$(PROJECT_DIR)/Pods/FirebaseInstanceID/Frameworks",
-					"$(PROJECT_DIR)/Pods/FirebaseAnalytics/Frameworks",
 					"$(PROJECT_DIR)/Firebase/Storage",
 					"$(PROJECT_DIR)/Firebase/Database",
 					"$(PROJECT_DIR)/Firebase/DynamicLinks",
@@ -528,12 +530,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Flash Chat/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"$(OTHER_LDFLAGS)",
-					"-ObjC",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.geo-games.Flash-Chat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Flash Chat/Supporting Files/Firebase-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
