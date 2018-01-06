@@ -9,24 +9,7 @@ public struct ColorComponents {
 }
 
 public extension UIColor {
-    
-    /**
-     Creates an immuatble UIColor instance specified by a hex string, CSS color name, or nil.
-     
-     - parameter hexString: A case insensitive String? representing a hex or CSS value e.g.
-     
-     - **"abc"**
-     - **"abc7"**
-     - **"#abc7"**
-     - **"00FFFF"**
-     - **"#00FFFF"**
-     - **"00FFFF77"**
-     - **"Orange", "Azure", "Tomato"** Modern browsers support 140 color names (<http://www.w3schools.com/cssref/css_colornames.asp>)
-     - **"Clear"** [UIColor clearColor]
-     - **"Transparent"** [UIColor clearColor]
-     - **nil** [UIColor clearColor]
-     - **empty string** [UIColor clearColor]
-     */
+ 
     public convenience init(hex: String?) {
         let normalizedHexString: String = UIColor.normalize(hex)
         var c: CUnsignedInt = 0
@@ -63,7 +46,6 @@ public extension UIColor {
                 }
             }
         }
-        
         return nil
     }
     
@@ -108,8 +90,6 @@ public extension UIColor {
         } else {
             print("invalid rgb string, missing '#' as prefix", terminator: "")
         }
-        
-        
         self.init(red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha: CGFloat(alpha))
     }
     
@@ -133,206 +113,169 @@ public extension UIColor {
         return UIColor(red: red/255, green: green/255, blue: blue/255, alpha: 1.0)
     }   
     
-    public static var pink : UIColor { return UIColor(hex: 0xFFC0CB) }
-    public static var lightPink : UIColor { return  UIColor(hex: 0xFFB6C1) }
-    public static var hotPink : UIColor { return  UIColor(hex: 0xFF69B4)}
-    public static var deepPink : UIColor { return  UIColor(hex: 0xFF1493)}
-    public static var darkPink : UIColor { return  UIColor(hex: 0xE91E63)}
-    public static var paleVioletRed : UIColor { return  UIColor(hex: 0xDB7093)}
-    public static var mediumVioletRed : UIColor { return UIColor(hex: 0xC71585)}
-    public static var lightSalmon : UIColor { return  UIColor(hex: 0xFFA07A)}
-    public static var salmon : UIColor { return  UIColor(hex: 0xFA8072)}
-    public static var darkSalmon : UIColor { return  UIColor(hex: 0xE9967A)}
-    public static var lightCoral : UIColor { return  UIColor(hex: 0xF08080)}
-    public static var indianRed : UIColor { return  UIColor(hex: 0xCD5C5C)}
-    public static var crimson : UIColor { return  UIColor(hex: 0xDC143C)}
-    public static var fireBrick : UIColor { return  UIColor(hex: 0xB22222)}
-    public static var darkRed : UIColor { return  UIColor(hex: 0x8B0000)}
-    //public static var red : UIColor { return  UIColor(hex: 0xFF0000)}
-    public static var orangeRed : UIColor { return  UIColor(hex: 0xFF4500)}
-    public static var deepOrange : UIColor { return  UIColor(hex: 0xFF5722)}
-    public static var tomato : UIColor { return  UIColor(hex: 0xFF6347)}
-    public static var coral : UIColor { return  UIColor(hex: 0xFF7F50)}
-    public static var darkOrange : UIColor { return  UIColor(hex: 0xFF8C00)}
-    //public static var orange : UIColor { return  UIColor(hex: 0xFFA500)}
+    
+    public static var aliceBlue : UIColor { return  UIColor(hex: 0xF0F8FF)}
     public static var amber : UIColor { return  UIColor(hex: 0xFFC107)}
-    public static var darkYellow : UIColor { return  UIColor(hex: 0xFFEB3B)}
-    //public static var yellow : UIColor { return  UIColor(hex: 0xFFFF00)}
-    public static var lightYellow : UIColor { return  UIColor(hex: 0xFFFFE0)}
-    public static var lemonChiffon : UIColor { return  UIColor(hex: 0xFFFACD)}
-    public static var lightGoldenrodYellow : UIColor { return  UIColor(hex: 0xFAFAD2)}
-    public static var papayaWhip : UIColor { return UIColor(hex: 0xFFEFD5)}
-    public static var moccasin : UIColor { return  UIColor(hex: 0xFFE4B5)}
-    public static var peachPuff : UIColor { return  UIColor(hex: 0xFFDAB9)}
-    public static var paleGoldenrod : UIColor { return  UIColor(hex: 0xEEE8AA)}
-    public static var khaki : UIColor { return  UIColor(hex: 0xF0E68C)}
-    public static var darkKhaki : UIColor { return  UIColor(hex: 0xBDB76B)}
-    public static var gold : UIColor { return  UIColor(hex: 0xFFD700)}
-    public static var cornsilk : UIColor { return  UIColor(hex: 0xFFF8DC)}
-    public static var blanchedAlmond : UIColor { return  UIColor(hex: 0xFFEBCD)}
-    public static var bisque : UIColor { return  UIColor(hex: 0xFFE4C4)}
-    public static var navajoWhite : UIColor { return  UIColor(hex: 0xFFDEAD)}
-    public static var wheat : UIColor { return  UIColor(hex: 0xF5DEB3)}
-    public static var burlyWood : UIColor { return  UIColor(hex: 0xDEB887)}
-    public static var tan : UIColor { return  UIColor(hex: 0xD2B48C)}
-    public static var rosyBrown : UIColor { return  UIColor(hex: 0xBC8F8F)}
-    public static var sandyBrown : UIColor { return  UIColor(hex: 0xF4A460)}
-    public static var goldenrod : UIColor { return  UIColor(hex: 0xDAA520)}
-    public static var darkGoldenrod : UIColor { return  UIColor(hex: 0xB8860B)}
-    public static var peru : UIColor { return  UIColor(hex: 0xCD853F)}
-    public static var chocolate : UIColor { return  UIColor(hex: 0xD2691E)}
-    public static var saddleBrown : UIColor { return UIColor(hex: 0x8B4513)}
-    public static var sienna : UIColor { return UIColor(hex: 0xA0522D)}
-    //public static var brown : UIColor { return  UIColor(hex: 0xA52A2A)}
-    public static var maroon : UIColor { return  UIColor(hex: 0x800000)}
-    public static var darkOliveGreen : UIColor { return  UIColor(hex: 0x556B2F)}
-    public static var olive : UIColor { return  UIColor(hex: 0x808000)}
-    public static var oliveDrab : UIColor { return  UIColor(hex: 0x6B8E23)}
-    public static var yellowGreen : UIColor { return  UIColor(hex: 0x9ACD32)}
-    public static var limeGreen : UIColor { return  UIColor(hex: 0x32CD32)}
-    public static var lime : UIColor { return  UIColor(hex: 0x00FF00)}
-    public static var lawnGreen: UIColor { return UIColor(hex: 0x7CFC00)}
-    public static var chartreuse : UIColor { return  UIColor(hex: 0x7FFF00)}
-    public static var greenYellow : UIColor { return  UIColor(hex: 0xADFF2F)}
-    public static var springGreen : UIColor { return  UIColor(hex: 0x00FF7F)}
-    public static var mediumSpringGreen : UIColor { return  UIColor(hex: 0x00FA9A)}
-    public static var lightGreen : UIColor { return  UIColor(hex: 0x90EE90)}
-    public static var paleGreen : UIColor { return  UIColor(hex: 0x98FB98)}
-    public static var darkSeaGreen : UIColor { return  UIColor(hex: 0x8FBC8F)}
-    public static var mediumSeaGreen : UIColor { return  UIColor(hex: 0x3CB371)}
-    public static var seaGreen : UIColor { return  UIColor(hex: 0x2E8B57)}
-    public static var forestGreen : UIColor { return  UIColor(hex: 0x228B22)}
-    //public static var green : UIColor { return  UIColor(hex: 0x008000)}
-    public static var darkGreen : UIColor { return  UIColor(hex: 0x006400)}
-    public static var mediumAquamarine : UIColor { return  UIColor(hex: 0x66CDAA)}
+    public static var antiqueWhite : UIColor { return  UIColor(hex: 0xFAEBD7)}
     public static var aqua : UIColor { return  UIColor(hex: 0x00FFFF)}
-    //public static var cyan : UIColor { return  UIColor(hex: 0x00FFFF)}
-    public static var lightCyan : UIColor { return  UIColor(hex: 0xE0FFFF)}
-    public static var paleTurquoise : UIColor { return  UIColor(hex: 0xAFEEEE)}
     public static var aquamarine : UIColor { return  UIColor(hex: 0x7FFFD4)}
-    public static var turquoise : UIColor { return  UIColor(hex: 0x40E0D0)}
-    public static var mediumTurquoise : UIColor { return  UIColor(hex: 0x48D1CC)}
-    public static var darkTurquoise : UIColor { return  UIColor(hex: 0x00CED1)}
-    public static var lightSeaGreen : UIColor { return  UIColor(hex: 0x20B2AA)}
-    public static var cadetBlue : UIColor { return  UIColor(hex: 0x5F9EA0)}
-    public static var darkCyan : UIColor { return  UIColor(hex: 0x008B8B)}
-    public static var teal : UIColor { return  UIColor(hex: 0x008080)}
-    public static var lightSteelBlue : UIColor { return  UIColor(hex: 0xB0C4DE)}
-    public static var powderBlue : UIColor { return  UIColor(hex: 0xB0E0E6)}
-    public static var lightBlue : UIColor { return  UIColor(hex: 0xADD8E6)}
-    public static var skyBlue : UIColor { return  UIColor(hex: 0x87CEEB)}
-    public static var lightSkyBlue: UIColor { return UIColor(hex: 0x87CEFA)}
-    public static var deepSkyBlue : UIColor { return  UIColor(hex: 0x00BFFF)}
-    public static var dodgerBlue : UIColor { return  UIColor(hex: 0x1E90FF)}
-    public static var cornflowerBlue : UIColor { return  UIColor(hex: 0x6495ED)}
-    public static var steelBlue : UIColor { return  UIColor(hex: 0x4682B4)}
-    public static var royalBlue : UIColor { return  UIColor(hex: 0x4169E1)}
-    //public static var blue : UIColor { return  UIColor(hex: 0x0000FF)}
-    public static var mediumBlue : UIColor { return  UIColor(hex: 0x0000CD)}
-    public static var darkBlue: UIColor { return  UIColor(hex: 0x00008B)}
-    public static var navy : UIColor { return UIColor(hex: 0x000080)}
-    public static var midnightBlue : UIColor { return  UIColor(hex: 0x191970)}
-    public static var lavender : UIColor { return  UIColor(hex: 0xE6E6FA)}
-    public static var thistle : UIColor { return  UIColor(hex: 0xD8BFD8)}
-    public static var plum : UIColor { return UIColor(hex: 0xDDA0DD)}
-    public static var violet : UIColor { return UIColor(hex: 0xEE82EE)}
-    public static var orchid : UIColor { return  UIColor(hex: 0xDA70D6)}
-    public static var fuchsia : UIColor { return  UIColor(hex: 0xFF00FF)}
-    //public static var magenta : UIColor { return UIColor(hex: 0xFF00FF)}
-    public static var mediumOrchid : UIColor { return  UIColor(hex: 0xBA55D3)}
-    public static var mediumPurple : UIColor { return  UIColor(hex: 0x9370DB)}
+    public static var azure : UIColor { return  UIColor(hex: 0xF0FFFF)}
+    public static var bisque : UIColor { return  UIColor(hex: 0xFFE4C4)}
+    public static var blanchedAlmond : UIColor { return  UIColor(hex: 0xFFEBCD)}
+    public static var beige : UIColor { return  UIColor(hex: 0xF5F5DC)}
+    public static var blueGrey : UIColor { return  UIColor(hex: 0x607D8B)}
     public static var blueViolet : UIColor { return  UIColor(hex: 0x8A2BE2)}
+    public static var burlyWood : UIColor { return  UIColor(hex: 0xDEB887)}
+    public static var cadetBlue : UIColor { return  UIColor(hex: 0x5F9EA0)}
+    public static var coral : UIColor { return  UIColor(hex: 0xFF7F50)}
+    public static var cornsilk : UIColor { return  UIColor(hex: 0xFFF8DC)}
+    public static var cornflowerBlue : UIColor { return  UIColor(hex: 0x6495ED)}
+    public static var chartreuse : UIColor { return  UIColor(hex: 0x7FFF00)}
+    public static var chocolate : UIColor { return  UIColor(hex: 0xD2691E)}
+    public static var crimson : UIColor { return  UIColor(hex: 0xDC143C)}
+    public static var darkSlateBlue : UIColor { return  UIColor(hex: 0x483D8B)}
+    public static var darkSlateGray : UIColor { return  UIColor(hex: 0x2F4F4F)}
+    public static var darkYellow : UIColor { return  UIColor(hex: 0xFFEB3B)}
+    public static var darkPink : UIColor { return  UIColor(hex: 0xE91E63)}
+    public static var darkSalmon : UIColor { return  UIColor(hex: 0xE9967A)}
+    public static var darkRed : UIColor { return  UIColor(hex: 0x8B0000)}
+    public static var darkKhaki : UIColor { return  UIColor(hex: 0xBDB76B)}
+    public static var deepPink : UIColor { return  UIColor(hex: 0xFF1493)}
+    public static var deepOrange : UIColor { return  UIColor(hex: 0xFF5722)}
+    public static var darkOrange : UIColor { return  UIColor(hex: 0xFF8C00)}
+    public static var darkOliveGreen : UIColor { return  UIColor(hex: 0x556B2F)}
+    public static var darkGoldenrod : UIColor { return  UIColor(hex: 0xB8860B)}
+    public static var darkSeaGreen : UIColor { return  UIColor(hex: 0x8FBC8F)}
+    public static var darkGreen : UIColor { return  UIColor(hex: 0x006400)}
+    public static var darkTurquoise : UIColor { return  UIColor(hex: 0x00CED1)}
+    public static var darkCyan : UIColor { return  UIColor(hex: 0x008B8B)}
+    public static var darkBlue: UIColor { return  UIColor(hex: 0x00008B)}
     public static var darkViolet : UIColor { return  UIColor(hex: 0x9400D3)}
     public static var darkOrchid : UIColor { return  UIColor(hex: 0x9932CC)}
     public static var darkMagenta : UIColor { return  UIColor(hex: 0x8B008B)}
-    //public static var purple : UIColor { return  UIColor(hex: 0x800080)}
-    public static var indigo : UIColor { return  UIColor(hex: 0x4B0082)}
-    public static var darkSlateBlue : UIColor { return  UIColor(hex: 0x483D8B)}
-    public static var rebeccaPurple : UIColor { return  UIColor(hex: 0x663399)}
-    public static var slateBlue : UIColor { return  UIColor(hex: 0x6A5ACD)}
-    public static var mediumSlateBlue: UIColor { return UIColor(hex: 0x7B68EE)}
-    //public static var white : UIColor { return  UIColor(hex: 0xFFFFFF)}
-    public static var snow : UIColor { return  UIColor(hex: 0xFFFAFA)}
-    public static var honeydew : UIColor { return  UIColor(hex: 0xF0FFF0)}
-    public static var mintCream : UIColor { return  UIColor(hex: 0xF5FFFA)}
-    public static var azure : UIColor { return  UIColor(hex: 0xF0FFFF)}
-    public static var aliceBlue : UIColor { return  UIColor(hex: 0xF0F8FF)}
-    public static var ghostWhite : UIColor { return  UIColor(hex: 0xF8F8FF)}
-    public static var whiteSmoke : UIColor { return  UIColor(hex: 0xF5F5F5)}
-    public static var seashell : UIColor { return  UIColor(hex: 0xFFF5EE)}
-    public static var beige : UIColor { return  UIColor(hex: 0xF5F5DC)}
-    public static var oldLace: UIColor { return UIColor(hex: 0xFDF5E6)}
-    public static var floralWhite : UIColor { return UIColor(hex: 0xFFFAF0)}
-    public static var ivory : UIColor { return  UIColor(hex: 0xFFFFF0)}
-    public static var antiqueWhite : UIColor { return  UIColor(hex: 0xFAEBD7)}
-    public static var linen : UIColor { return  UIColor(hex: 0xFAF0E6)}
-    public static var lavenderBlush : UIColor { return  UIColor(hex: 0xFFF0F5)}
-    public static var mistyRose : UIColor { return  UIColor(hex: 0xFFE4E1)}
-    public static var gainsboro : UIColor { return  UIColor(hex: 0xDCDCDC)}
-    public static var lightGrey : UIColor { return  UIColor(hex: 0xD3D3D3)}
-    public static var silver : UIColor { return  UIColor(hex: 0xC0C0C0)}
+    public static var deepSkyBlue : UIColor { return  UIColor(hex: 0x00BFFF)}
     public static var dimGray : UIColor { return  UIColor(hex: 0xA9A9A9)}
+    public static var dodgerBlue : UIColor { return  UIColor(hex: 0x1E90FF)}
+    public static var forestGreen : UIColor { return  UIColor(hex: 0x228B22)}
+    public static var fireBrick : UIColor { return  UIColor(hex: 0xB22222)}
+    public static var floralWhite : UIColor { return UIColor(hex: 0xFFFAF0)}
+    public static var fuchsia : UIColor { return  UIColor(hex: 0xFF00FF)}
+    public static var gainsboro : UIColor { return  UIColor(hex: 0xDCDCDC)}
+    public static var greenYellow : UIColor { return  UIColor(hex: 0xADFF2F)}
+    public static var gold : UIColor { return  UIColor(hex: 0xFFD700)}
+    public static var goldenrod : UIColor { return  UIColor(hex: 0xDAA520)}
+    public static var ghostWhite : UIColor { return  UIColor(hex: 0xF8F8FF)}
+    public static var honeydew : UIColor { return  UIColor(hex: 0xF0FFF0)}
+    public static var hotPink : UIColor { return  UIColor(hex: 0xFF69B4)}
+    public static var indianRed : UIColor { return  UIColor(hex: 0xCD5C5C)}
+    public static var indigo : UIColor { return  UIColor(hex: 0x4B0082)}
+    public static var ivory : UIColor { return  UIColor(hex: 0xFFFFF0)}
+    public static var khaki : UIColor { return  UIColor(hex: 0xF0E68C)}
+    public static var lavender : UIColor { return  UIColor(hex: 0xE6E6FA)}
+    public static var lawnGreen: UIColor { return UIColor(hex: 0x7CFC00)}
+    public static var lavenderBlush : UIColor { return  UIColor(hex: 0xFFF0F5)}
+    public static var lemonChiffon : UIColor { return  UIColor(hex: 0xFFFACD)}
+    public static var lightGrey : UIColor { return  UIColor(hex: 0xD3D3D3)}
+    public static var lightSlateGray : UIColor { return  UIColor(hex: 0x778899)}
+    public static var lightCyan : UIColor { return  UIColor(hex: 0xE0FFFF)}
+    public static var lightSeaGreen : UIColor { return  UIColor(hex: 0x20B2AA)}
+    public static var lightSteelBlue : UIColor { return  UIColor(hex: 0xB0C4DE)}
+    public static var lightBlue : UIColor { return  UIColor(hex: 0xADD8E6)}
+    public static var lightSkyBlue: UIColor { return UIColor(hex: 0x87CEFA)}
+    public static var lightGreen : UIColor { return  UIColor(hex: 0x90EE90)}
+    public static var lightPink : UIColor { return  UIColor(hex: 0xFFB6C1) }
+    public static var lightSalmon : UIColor { return  UIColor(hex: 0xFFA07A)}
+    public static var lightCoral : UIColor { return  UIColor(hex: 0xF08080)}
+    public static var lightYellow : UIColor { return  UIColor(hex: 0xFFFFE0)}
+    public static var lightGoldenrodYellow : UIColor { return  UIColor(hex: 0xFAFAD2)}
+    public static var limeGreen : UIColor { return  UIColor(hex: 0x32CD32)}
+    public static var lime : UIColor { return  UIColor(hex: 0x00FF00)}
+    public static var linen : UIColor { return  UIColor(hex: 0xFAF0E6)}
+    public static var maroon : UIColor { return  UIColor(hex: 0x800000)}
+    public static var mediumVioletRed : UIColor { return UIColor(hex: 0xC71585)}
+    public static var mediumSpringGreen : UIColor { return  UIColor(hex: 0x00FA9A)}
+    public static var mediumSeaGreen : UIColor { return  UIColor(hex: 0x3CB371)}
+    public static var mediumAquamarine : UIColor { return  UIColor(hex: 0x66CDAA)}
+    public static var mediumTurquoise : UIColor { return  UIColor(hex: 0x48D1CC)}
+    public static var mediumBlue : UIColor { return  UIColor(hex: 0x0000CD)}
+    public static var mediumOrchid : UIColor { return  UIColor(hex: 0xBA55D3)}
+    public static var mediumPurple : UIColor { return  UIColor(hex: 0x9370DB)}
+    public static var mediumSlateBlue: UIColor { return UIColor(hex: 0x7B68EE)}
+    public static var midnightBlue : UIColor { return  UIColor(hex: 0x191970)}
+    public static var mintCream : UIColor { return  UIColor(hex: 0xF5FFFA)}
+    public static var mistyRose : UIColor { return  UIColor(hex: 0xFFE4E1)}
+    public static var moccasin : UIColor { return  UIColor(hex: 0xFFE4B5)}
+    public static var navy : UIColor { return UIColor(hex: 0x000080)}
+    public static var navajoWhite : UIColor { return  UIColor(hex: 0xFFDEAD)}
+    public static var paleVioletRed : UIColor { return  UIColor(hex: 0xDB7093)}
+    public static var paleGoldenrod : UIColor { return  UIColor(hex: 0xEEE8AA)}
+    public static var papayaWhip : UIColor { return UIColor(hex: 0xFFEFD5)}
+    public static var paleGreen : UIColor { return  UIColor(hex: 0x98FB98)}
+    public static var paleTurquoise : UIColor { return  UIColor(hex: 0xAFEEEE)}
+    public static var peachPuff : UIColor { return  UIColor(hex: 0xFFDAB9)}
+    public static var peru : UIColor { return  UIColor(hex: 0xCD853F)}
+    public static var pink : UIColor { return UIColor(hex: 0xFFC0CB) }
+    public static var plum : UIColor { return UIColor(hex: 0xDDA0DD)}
+    public static var powderBlue : UIColor { return  UIColor(hex: 0xB0E0E6)}
+    public static var oldLace: UIColor { return UIColor(hex: 0xFDF5E6)}
+    public static var olive : UIColor { return  UIColor(hex: 0x808000)}
+    public static var oliveDrab : UIColor { return  UIColor(hex: 0x6B8E23)}
+    public static var orangeRed : UIColor { return  UIColor(hex: 0xFF4500)}
+    public static var orchid : UIColor { return  UIColor(hex: 0xDA70D6)}
+    public static var rebeccaPurple : UIColor { return  UIColor(hex: 0x663399)}
+    public static var rosyBrown : UIColor { return  UIColor(hex: 0xBC8F8F)}
+    public static var royalBlue : UIColor { return  UIColor(hex: 0x4169E1)}
+    public static var salmon : UIColor { return  UIColor(hex: 0xFA8072)}
+    public static var sandyBrown : UIColor { return  UIColor(hex: 0xF4A460)}
+    public static var saddleBrown : UIColor { return UIColor(hex: 0x8B4513)}
+    public static var seaGreen : UIColor { return  UIColor(hex: 0x2E8B57)}
+    public static var seashell : UIColor { return  UIColor(hex: 0xFFF5EE)}
+    public static var silver : UIColor { return  UIColor(hex: 0xC0C0C0)}
+    public static var sienna : UIColor { return UIColor(hex: 0xA0522D)}
+    public static var slateBlue : UIColor { return  UIColor(hex: 0x6A5ACD)}
+    public static var slateGray : UIColor { return  UIColor(hex: 0x708090)}
+    public static var springGreen : UIColor { return  UIColor(hex: 0x00FF7F)}
+    public static var snow : UIColor { return  UIColor(hex: 0xFFFAFA)}
+    public static var steelBlue : UIColor { return  UIColor(hex: 0x4682B4)}
+    public static var skyBlue : UIColor { return  UIColor(hex: 0x87CEEB)}
+    public static var tan : UIColor { return  UIColor(hex: 0xD2B48C)}
+    public static var teal : UIColor { return  UIColor(hex: 0x008080)}
+    public static var thistle : UIColor { return  UIColor(hex: 0xD8BFD8)}
+    public static var tomato : UIColor { return  UIColor(hex: 0xFF6347)}
+    public static var turquoise : UIColor { return  UIColor(hex: 0x40E0D0)}
+    public static var violet : UIColor { return UIColor(hex: 0xEE82EE)}
+    public static var wheat : UIColor { return  UIColor(hex: 0xF5DEB3)}
+    public static var whiteSmoke : UIColor { return  UIColor(hex: 0xF5F5F5)}
+    public static var yellowGreen : UIColor { return  UIColor(hex: 0x9ACD32)}
+    
+    //public static var red : UIColor { return  UIColor(hex: 0xFF0000)}
+    //public static var orange : UIColor { return  UIColor(hex: 0xFFA500)}
+    //public static var yellow : UIColor { return  UIColor(hex: 0xFFFF00)}
+    //public static var brown : UIColor { return  UIColor(hex: 0xA52A2A)}
+    //public static var green : UIColor { return  UIColor(hex: 0x008000)}
+    //public static var blue : UIColor { return  UIColor(hex: 0x0000FF)}
+    //public static var cyan : UIColor { return  UIColor(hex: 0x00FFFF)}
+    //public static var magenta : UIColor { return UIColor(hex: 0xFF00FF)}
+    //public static var white : UIColor { return  UIColor(hex: 0xFFFFFF)}
+    //public static var purple : UIColor { return  UIColor(hex: 0x800080)}
     //public static var gray : UIColor { return  UIColor(hex: 0x808080)}
     //public static var darkGray : UIColor { return  UIColor(hex: 0x696969)}
-    public static var blueGrey : UIColor { return  UIColor(hex: 0x607D8B)}
-    public static var lightSlateGray : UIColor { return  UIColor(hex: 0x778899)}
-    public static var slateGray : UIColor { return  UIColor(hex: 0x708090)}
-    public static var darkSlateGray : UIColor { return  UIColor(hex: 0x2F4F4F)}
-    public static var searchBarColor : UIColor {
-        return UIColor.rgb(red: 197, green: 187, blue: 187)
-    }
     
-    public static var youtubeRed : UIColor {
-        return UIColor.rgb(red: 252, green: 13, blue: 28)
-    }
     
-    public static var pinterestRed : UIColor {
-        return UIColor.rgb(red: 187, green: 15, blue: 34)
-    }
-    
-    public static var facebookBlue : UIColor {
-        return UIColor.rgb(red: 64, green: 90, blue: 150)
-    }
-    
-    public static var veryPink : UIColor {
-        return UIColor.rgb(red: 220, green: 19, blue: 123)
-    }
-    
-    public static var amazonOrange : UIColor {
-        return UIColor.rgb(red: 250, green: 153, blue: 47)
-    }
-    
-    public static var yahooPurple : UIColor {
-        return UIColor.rgb(red: 71, green: 21, blue: 172)
-    }
-    
-    public static var vimeoBlue : UIColor {
-        return UIColor.rgb(red: 29, green: 174, blue: 236)
-    }
-    
-    public static var linkedinBlue : UIColor {
-        return UIColor.rgb(red: 17, green: 120, blue: 179)
-    }
-    
-    public static var twitterBlue : UIColor {
-        return UIColor.rgb(red: 42, green: 163, blue: 239)
-    }
-    
-    public static var bbciplayerDark : UIColor {
-        return UIColor.rgb(red: 24, green: 27, blue: 34)
-    }
-    
-    public static var bbciplayerWhiteGray : UIColor {
-        return UIColor.init(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
-    }
-    
-    public static var bbciplayerPink : UIColor {
-        return UIColor.init(red: 1.0, green: 70/255, blue: 150/255, alpha: 1.0) 
-    }
-    
-    public static var systemsBlueColor : UIColor {
-        return UIColor.init(red: 0.0, green: 0.4784, blue: 1.0, alpha: 1.0) 
-    }
+    public static var amazonOrange : UIColor { return .rgb(red: 250, green: 153, blue: 47) }
+    public static var bbciplayerDark : UIColor { return .rgb(red: 24, green: 27, blue: 34) }
+    public static var bbciplayerWhiteGray : UIColor { return .init(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0) }
+    public static var bbciplayerPink : UIColor { return .init(red: 254, green: 70, blue: 150) }
+    public static var facebookBlue : UIColor { return .rgb(red: 64, green: 90, blue: 150) }
+    public static var linkedinBlue : UIColor { return .rgb(red: 17, green: 120, blue: 179) }
+    public static var pinterestRed : UIColor { return .rgb(red: 187, green: 15, blue: 34) }
+    public static var searchBarColor : UIColor { return .rgb(red: 197, green: 187, blue: 187) }
+    public static var systemsBlueColor : UIColor { return .init(red: 0.0, green: 0.4784, blue: 1.0, alpha: 1.0) }
+    public static var twitterBlue : UIColor { return .rgb(red: 42, green: 163, blue: 239) }
+    public static var veryPink : UIColor { return .rgb(red: 220, green: 19, blue: 123) }
+    public static var vimeoBlue : UIColor { return .rgb(red: 29, green: 174, blue: 236) }
+    public static var yahooPurple : UIColor { return .rgb(red: 71, green: 21, blue: 172) }
+    public static var youtubeRed : UIColor { return .rgb(red: 252, green: 13, blue: 28) }
     
     public var recommendedTextColor : UIColor {
         var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
