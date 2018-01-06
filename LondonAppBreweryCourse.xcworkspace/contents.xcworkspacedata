@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:MusicHitList/MusicHitList.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Flash Chat/Flash Chat.xcodeproj">
    </FileRef>
    <FileRef
