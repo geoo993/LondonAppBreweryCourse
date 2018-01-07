@@ -12,6 +12,8 @@ public class TodoeyTableViewController: UITableViewController {
 
     let cellIdentifier = "todoItemCell"
     var itemsArray = ["Sir", "Miss", "Doctor"]
+    let itemsArrayKey = "ToDoListArray"
+    let defaults = UserDefaults.standard
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         var textfield = UITextField()
@@ -39,6 +41,7 @@ public class TodoeyTableViewController: UITableViewController {
     
     func addItemInTodoList( with item : String){
         itemsArray.append(item)
+        defaults.set(itemsArray, forKey: itemsArrayKey)
         tableView.reloadData()
     }
     
@@ -47,6 +50,13 @@ public class TodoeyTableViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let items = (defaults.array(forKey: itemsArrayKey) as? [String]) {
+            itemsArray = items
+        }
+    }
 }
 
 extension TodoeyTableViewController {
