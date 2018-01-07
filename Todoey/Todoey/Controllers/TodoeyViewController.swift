@@ -11,9 +11,12 @@ import UIKit
 public class TodoeyTableViewController: UITableViewController {
 
     let cellIdentifier = "todoItemCell"
-    var itemsArray = ["Sir", "Miss", "Doctor"]
+    var itemsArray = [TodoItem]()
     let itemsArrayKey = "ToDoListArray"
-    let defaults = UserDefaults.standard
+    let dataFilePath : URL? = FileManager
+        .default
+        .urls(for: .documentDirectory, in: .userDomainMask)
+        .first?.appendingPathComponent("TodoItems.plist")
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         var textfield = UITextField()
@@ -36,26 +39,46 @@ public class TodoeyTableViewController: UITableViewController {
         }
         alertController.addAction(action1)
         alertController.addAction(action2)
-        self.present(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)
     }
     
+    //MARK: - Model manipulation
     func addItemInTodoList( with item : String){
-        itemsArray.append(item)
-        defaults.set(itemsArray, forKey: itemsArrayKey)
-        tableView.reloadData()
+        let todoItem = TodoItem(title: item, done: false)
+        itemsArray.append(todoItem)
+        saveItemInTodoList(with: todoItem)
+    }
+    
+    func saveItemInTodoList(with item : TodoItem) {
+        guard let dataUrl = dataFilePath else { return }
+        let encoder = PropertyListEncoder()
+        do {
+            let data = try encoder.encode(itemsArray)
+            try data.write(to: dataUrl)
+            tableView.reloadData()
+        }catch {
+            print("Encoding Error: Could not create todo list property list", error)
+        }
+    }
+    
+    func loadTodoListItems() {
+        if let dataUrl = dataFilePath, let data = try? Data(contentsOf: dataUrl) {
+            do {
+                let encoder = PropertyListDecoder()
+                itemsArray = try encoder.decode([TodoItem].self, from: data)
+            } catch {
+                print("Error decoding item array, \(error)")
+            }
+        }
     }
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        if let items = (defaults.array(forKey: itemsArrayKey) as? [String]) {
-            itemsArray = items
-        }
+        loadTodoListItems()
     }
 }
 
@@ -68,20 +91,21 @@ extension TodoeyTableViewController {
     }
     override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        cell.textLabel?.text = itemsArray[indexPath.row]
+        let item = itemsArray[indexPath.row]
+        cell.textLabel?.text = item.title
+        cell.accessoryType = item.done ? .checkmark : .none
+        
         return cell
     }
     
     //MARK: - TableView Delegate Methods
     
     public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .none
-        }else {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-        }
-        
+        let item = itemsArray[indexPath.row]
+        itemsArray[indexPath.row].done = !item.done
+        saveItemInTodoList(with: item)
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    
 }
