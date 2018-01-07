@@ -54,14 +54,38 @@
 		C7D64AA5200196AB001F3191 /* Todoey */ = {
 			isa = PBXGroup;
 			children = (
-				C7D64AA6200196AB001F3191 /* AppDelegate.swift */,
-				C7D64AA8200196AB001F3191 /* TodoeyViewController.swift */,
-				C7D64AAA200196AB001F3191 /* Main.storyboard */,
-				C7D64AAD200196AB001F3191 /* Assets.xcassets */,
-				C7D64AAF200196AB001F3191 /* LaunchScreen.storyboard */,
+				C7D64ABA20023F20001F3191 /* Controllers */,
+				C7D64AB920023F1A001F3191 /* Views */,
+				C7D64AB820023F10001F3191 /* Models */,
 				C7D64AB2200196AB001F3191 /* Info.plist */,
 			);
 			path = Todoey;
+			sourceTree = "<group>";
+		};
+		C7D64AB820023F10001F3191 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C7D64AB920023F1A001F3191 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C7D64AAA200196AB001F3191 /* Main.storyboard */,
+				C7D64AAD200196AB001F3191 /* Assets.xcassets */,
+				C7D64AAF200196AB001F3191 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C7D64ABA20023F20001F3191 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C7D64AA6200196AB001F3191 /* AppDelegate.swift */,
+				C7D64AA8200196AB001F3191 /* TodoeyViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

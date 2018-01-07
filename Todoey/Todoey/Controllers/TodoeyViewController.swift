@@ -11,7 +11,36 @@ import UIKit
 public class TodoeyTableViewController: UITableViewController {
 
     let cellIdentifier = "todoItemCell"
-    let itemsArray = ["Sir", "Miss", "Doctor"]
+    var itemsArray = ["Sir", "Miss", "Doctor"]
+    
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        var textfield = UITextField()
+        
+        // Create the alert controller
+        let alertController = UIAlertController(title: "Add new ToDoey Item", 
+                                                message: "", 
+                                                preferredStyle: .alert)
+        // Create the actions
+        let action1 = UIAlertAction(title: "Add Item", style: .default) { [unowned self] action in
+            guard let text = textfield.text else { return }
+            self.addItemInTodoList(with: text)
+        }
+        let action2 = UIAlertAction(title: "Cancel", style: .cancel) { action in
+            print("cancel")
+        }
+        alertController.addTextField { alertTextfield in
+            alertTextfield.placeholder = "Create new item"
+            textfield = alertTextfield
+        }
+        alertController.addAction(action1)
+        alertController.addAction(action2)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func addItemInTodoList( with item : String){
+        itemsArray.append(item)
+        tableView.reloadData()
+    }
     
     override public func viewDidLoad() {
         super.viewDidLoad()
