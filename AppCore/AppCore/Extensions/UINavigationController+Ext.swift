@@ -1,8 +1,49 @@
 
 import Foundation
 
+//@IBDesignable 
 public extension UINavigationController {
+    /*
+    @IBInspectable var barTintColor: UIColor? {
+        set {
+            navigationBar.barTintColor = newValue
+        }
+        get {
+            guard  let color = navigationBar.barTintColor else { return nil }
+            return color
+        }
+    }
     
+    @IBInspectable var tintColor: UIColor? {
+        set {
+            navigationBar.tintColor = newValue
+        }
+        get {
+            guard  let color = navigationBar.tintColor else { return nil }
+            return color
+        }
+    }
+    
+    @IBInspectable var titleColor: UIColor? {
+        set {
+            guard let color = newValue else { return }
+            navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: color]
+        }
+        get {
+            return navigationBar.titleTextAttributes?[NSAttributedStringKey.foregroundColor] as? UIColor
+        }
+    }
+    
+    @IBInspectable var largeTitleColor: UIColor? {
+        set {
+            guard let color = newValue else { return }
+            navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: color]
+        }
+        get {
+            return navigationBar.largeTitleTextAttributes?[NSAttributedStringKey.foregroundColor] as? UIColor
+        }
+    }
+    */
     public var rootViewControllerInNavigationStack : UIViewController? {
         return viewControllers.first 
     }

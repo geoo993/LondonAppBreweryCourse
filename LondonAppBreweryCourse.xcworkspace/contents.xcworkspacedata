@@ -20,6 +20,9 @@
          location = "container:"
          name = "Dependencies">
          <FileRef
+            location = "group:Cartfile/Carthage/Checkouts/SwipeCellKit/SwipeCellKit.xcodeproj">
+         </FileRef>
+         <FileRef
             location = "group:Cartfile/Carthage/Checkouts/realm-cocoa/Realm.xcodeproj">
          </FileRef>
          <FileRef

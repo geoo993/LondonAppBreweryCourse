@@ -28,3 +28,6 @@
 [submodule "Carthage/Checkouts/Chameleon"]
 	path = Cartfile/Carthage/Checkouts/Chameleon
 	url = https://github.com/ViccAlexander/Chameleon.git
+[submodule "Carthage/Checkouts/SwipeCellKit"]
+	path = Cartfile/Carthage/Checkouts/SwipeCellKit
+	url = https://github.com/SwipeCellKit/SwipeCellKit.git

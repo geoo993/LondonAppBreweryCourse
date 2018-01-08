@@ -8,22 +8,17 @@
 
 import UIKit
 import RealmSwift
+import  Chameleon
 
-public class TodoeyViewController: UITableViewController {
-    
-    var realm : Realm {
-        return AppDelegate.realm
-    }
-    
-    let cellIdentifier = "todoItemCell"
-    
+public class TodoeyViewController: SwipeTableViewController {
+   
     var selectedCategory : Category? {
         didSet {
             fetchTodoItems()
         }
     }
     var todoItems : Results<TodoItem>?
-    
+    @IBOutlet weak var todoItemSearchbar : UISearchBar!
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         var textfield = UITextField()
         
@@ -50,6 +45,26 @@ public class TodoeyViewController: UITableViewController {
     
     @IBAction func editButtonPressed(_ sender: UIBarButtonItem) {
         self.isEditing = !self.isEditing
+    }
+    
+    //MARK: - update swipe model
+    override func updateCellDeleteAction(at indexPath: IndexPath ) {
+        super.updateCellDeleteAction(at: indexPath)
+        if let item = todoItems?[indexPath.row] {
+            delete(todoItem: item, reload: false)
+        }
+    }
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let navController = navigationController,
+            let searchBar = todoItemSearchbar, 
+            let colorHex = selectedCategory?.color {
+           
+            updateNavBar(withHexColor: colorHex)
+            searchBar.barTintColor = navController.navigationBar.barTintColor
+        }
     }
 
 }
@@ -93,12 +108,14 @@ extension TodoeyViewController {
         }
     }
     
-    // MARK: - Destroy TodoItem in Realm DataBase
-    func destroy(todoItem item: TodoItem) {
+    // MARK: - Delete TodoItem in Realm DataBase
+    func delete(todoItem item: TodoItem, reload : Bool = true ) {
         do {
             try realm.write {
                 realm.delete(item)
-                tableView.reloadData()
+                if reload {
+                    tableView.reloadData()
+                }
             }
         } catch {
             print("Error deleting todo item in Realm \(error)")
@@ -142,8 +159,15 @@ extension TodoeyViewController {
     }
     
     override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        if let item = todoItems?[indexPath.row] {
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        if let item = todoItems?[indexPath.row] { 
+            if let colorName = selectedCategory?.color,
+            
+               let numberOfTodoItems = todoItems?.count {
+                cell.backgroundColor =  UIColor(hexString: colorName).darken(byPercentage: 
+                    (CGFloat(indexPath.row) / CGFloat(numberOfTodoItems)) )
+                cell.textLabel?.textColor = ContrastColorOf(cell.backgroundColor ?? .white, returnFlat: true)
+            }
             cell.textLabel?.text = item.title
             cell.accessoryType = item.done ? .checkmark : .none
         }else {
@@ -160,7 +184,7 @@ extension TodoeyViewController {
     override public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             if let item = todoItems?[indexPath.row] {
-                destroy(todoItem: item)
+                delete(todoItem: item)
             }
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view

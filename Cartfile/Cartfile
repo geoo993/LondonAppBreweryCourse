@@ -8,3 +8,4 @@ github "RxSwiftCommunity/RxSegue"
 github "RxSwiftCommunity/RxSwiftExt"
 github "DaveWoodCom/XCGLogger" ~> 6.0.2
 github "ViccAlexander/Chameleon"
+github "SwipeCellKit/SwipeCellKit"

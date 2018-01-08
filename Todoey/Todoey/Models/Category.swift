@@ -11,9 +11,11 @@ import RealmSwift
 
 public class Category : Object {
     @objc dynamic var name : String = ""
+    @objc dynamic var color : String = ""
     let items = List<TodoItem>()
-    public convenience init(name: String) {
+    public convenience init(name: String, color: String) {
         self.init()
         self.name = name
+        self.color = color
     }
 }

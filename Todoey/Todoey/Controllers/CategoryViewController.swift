@@ -8,14 +8,11 @@
 
 import UIKit
 import RealmSwift
+import Chameleon
 
-public class CategoryViewController: UITableViewController {
+public class CategoryViewController: SwipeTableViewController {
 
-    var realm : Realm {
-        return AppDelegate.realm
-    }
-    
-    let cellIdentifier = "categoryCell"
+    let originalColor = UIColor.randomFlat()
     let segueIdentifier = "gotoItems"
     var categories : Results<Category>?
     
@@ -28,8 +25,8 @@ public class CategoryViewController: UITableViewController {
                                                 preferredStyle: .alert)
         // Create the actions
         let action1 = UIAlertAction(title: "Add", style: .default) { [unowned self] action in
-            guard let text = textfield.text else { return }
-            self.add(categoryItem: text)
+            guard let text = textfield.text, let randomColor = UIColor.randomFlat().hexValue() else { return }
+            self.add(categoryItem: text, color: randomColor)
         }
         let action2 = UIAlertAction(title: "Cancel", style: .cancel) { action in
             print("cancel")
@@ -45,8 +42,20 @@ public class CategoryViewController: UITableViewController {
     
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-     
+  
+        if let colorHex = originalColor?.hexValue() {
+            updateNavBar(withHexColor: colorHex)
+        }
+        
         fetchCategoryItems()
+    }
+    
+    //MARK: - update swipe model
+    override func updateCellDeleteAction(at indexPath: IndexPath ) {
+        super.updateCellDeleteAction(at: indexPath)
+        if let category = self.categories?[indexPath.row] {
+            self.delete(categoryItem: category, reload: false)
+        }
     }
 }
 
@@ -55,8 +64,8 @@ public class CategoryViewController: UITableViewController {
 extension CategoryViewController {
     
     // MARK: - Create a new category item in Realm DataBase
-    func add(categoryItem category : String){
-        let categoryItem = Category(name: category)
+    func add(categoryItem category : String, color : String){
+        let categoryItem = Category(name: category, color: color)
         do {
             try realm.write {
                 realm.add(categoryItem)
@@ -73,12 +82,14 @@ extension CategoryViewController {
         tableView.reloadData()
     }
     
-    // MARK: - Destroy category item in Realm DataBase
-    func destroy(categoryItem category: Category) {
+    // MARK: - Delete category item in Realm DataBase
+    func delete(categoryItem category: Category, reload : Bool = true ) {
         do {
             try realm.write {
                 realm.delete(category)
-                tableView.reloadData()
+                if reload {
+                    tableView.reloadData()
+                }
             }
         } catch {
             print("Error deleting todo item in Realm \(error)")
@@ -99,7 +110,7 @@ extension CategoryViewController {
 }
 
 extension CategoryViewController {
-    
+  
     //MARK: - TableView DataSource Methods
     
     override public func numberOfSections(in tableView: UITableView) -> Int {
@@ -111,24 +122,14 @@ extension CategoryViewController {
     }
     
     override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        cell.textLabel?.text = categories?[indexPath.row].name ?? "No category added yet"
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        let category = categories?[indexPath.row]
+        cell.textLabel?.text = category?.name ?? "No category added yet"
+        cell.backgroundColor = UIColor(hexString: category?.color ?? "1D9BF6")
+        cell.textLabel?.textColor = ContrastColorOf(cell.backgroundColor ?? .white, returnFlat: true)
         return cell
     }
-    
-    override public func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    override public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            
-            if let category = categories?[indexPath.row] {
-                destroy(categoryItem: category)
-            }
-        } 
-    }
- 
+
     //MARK: - TableView Delegate Methods
     
     public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
