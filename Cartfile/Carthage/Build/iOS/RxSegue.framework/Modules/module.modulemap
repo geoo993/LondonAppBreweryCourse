@@ -1,0 +1,11 @@
+framework module RxSegue {
+  umbrella header "RxSegue.h"
+
+  export *
+  module * { export * }
+}
+
+module RxSegue.Swift {
+    header "RxSegue-Swift.h"
+    requires objc
+}

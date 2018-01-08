@@ -7,14 +7,14 @@
 //
 
 import UIKit
-import CoreData
+import RealmSwift
 
 public class TodoeyViewController: UITableViewController {
     
-    let context = 
-        (UIApplication.shared.delegate as! AppDelegate)
-        .persistentContainer
-        .viewContext
+    var realm : Realm {
+        return AppDelegate.realm
+    }
+    
     let cellIdentifier = "todoItemCell"
     
     var selectedCategory : Category? {
@@ -22,7 +22,7 @@ public class TodoeyViewController: UITableViewController {
             fetchTodoItems()
         }
     }
-    var itemsArray = [TodoItem]()
+    var todoItems : Results<TodoItem>?
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         var textfield = UITextField()
@@ -58,85 +58,72 @@ public class TodoeyViewController: UITableViewController {
 //MARK: - CoreData SQL DataBase implemetation
 extension TodoeyViewController {
     
-    // MARK: - Create new TodoItem in SQL DataBase
+    // MARK: - Add TodoItem in Realm DataBase
     func add( todoItem item : String){
-        let todoItem = TodoItem(context: context)
-        todoItem.title = item
-        todoItem.done = false
-        todoItem.parentCategory = selectedCategory
-        itemsArray.append(todoItem)
-        saveTodoItems()
+        if let currentCategory = selectedCategory {
+            do {
+                try realm.write {
+                    let todoItem = TodoItem(title: item, done: false)
+                    currentCategory.items.append(todoItem)
+                }
+                tableView.reloadData()
+            }catch {
+                print("Error saving context", error)
+            }
+        }
     }
     
-    // MARK: - Save TodoItem changes in SQL DataBase
-    func saveTodoItems() {
-        do {
-            try context.save()
+    // MARK: - Read from TodoItem Realm DataBase
+    func fetchTodoItems() {
+        if let currentCategory = selectedCategory {
+            todoItems = currentCategory.items.sorted(byKeyPath: "title", ascending: true)
             tableView.reloadData()
-        }catch {
-            print("Error saving context", error)
         }
     }
     
-    // MARK: - Read from TodoItem SQL DataBase
-    func fetchTodoItems(with request : NSFetchRequest<TodoItem> = TodoItem.fetchRequest(), predicate : NSPredicate? = nil) {
-        guard let selectedCategoryName = selectedCategory?.name else { return }
-        let categoryPredicate = NSPredicate(format: "parentCategory.name MATCHES %@", selectedCategoryName)
-        if let additionalPredicate = predicate {
-            request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [additionalPredicate, categoryPredicate])
-        } else {
-            request.predicate = categoryPredicate
-        }
-        
-        do {
-            itemsArray = try context.fetch(request)
-        } catch let error as NSError {
-            print("Could not fetch data from context. \(error), \(error.userInfo)")
-        }
-        tableView.reloadData()
-    }
-    
-    // MARK: - Update TodoItem in SQL DataBase
+    // MARK: - Update TodoItem in Realm DataBase
     func update(todoItem item: TodoItem) {
-        item.setValue(!item.done, forKey: "done")
-        saveTodoItems()
-    }
-    
-    // MARK: - Destroy TodoItem in SQL DataBase
-    func destroy(todoItem item: TodoItem) {
-        guard let index = itemsArray.index(of: item) else { return }
-        itemsArray.remove(at: index)
-        context.delete(item)
-        saveTodoItems()
-    }
-    
-    func move(todoItem item: TodoItem, toIndex: Int) {
-        let itemToMove = item
-        //let itemAtToIndex = itemsArray[toIndex]
-        //        
-        //        item.setValue(itemAtToIndex.title, forKey: "title")
-        //        item.setValue(itemAtToIndex.done, forKey: "done")
-        //        
-        //        itemAtToIndex.setValue(itemToMove.title, forKey: "title")
-        //        itemAtToIndex.setValue(itemToMove.done, forKey: "done")
-        
-        
-        guard let index = itemsArray.index(of: item) else { return }
-        itemsArray.remove(at: index)
-        itemsArray.insert(itemToMove, at: toIndex)
-        
-        saveTodoItems()
-    }
-    
-    // MARK: - Delete all TodoItem in SQL DataBase
-    func deleteAllTodoItems() {
-        let deleteFetch : NSFetchRequest<NSFetchRequestResult> = TodoItem.fetchRequest()
-        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
         do {
-            try context.execute(deleteRequest)
-            try context.save()
+            try realm.write {
+                item.done = !item.done
+                tableView.reloadData()
+            }
         } catch {
-            print ("There was an error deleting all records in data model")
+            print("Error updating todo item in Realm \(error)")
+        }
+    }
+    
+    // MARK: - Destroy TodoItem in Realm DataBase
+    func destroy(todoItem item: TodoItem) {
+        do {
+            try realm.write {
+                realm.delete(item)
+                tableView.reloadData()
+            }
+        } catch {
+            print("Error deleting todo item in Realm \(error)")
+        }
+    }
+    
+    // MARK: - Move a TodoItem in Realm DataBase
+    func move(todoItem item: TodoItem, toIndex: Int) {
+        //let itemToMove = item
+       
+        //guard let index = todoItems?.index(of: item) else { return }
+        //todoItems.remove(at: index)
+        //todoItems.insert(itemToMove, at: toIndex)
+        //tableView.reloadData()
+
+    }
+    
+    // MARK: - Delete all TodoItem in Realm DataBase
+    func deleteAllTodoItems() {
+        do {
+            try realm.write {
+                realm.deleteAll()
+            }
+        } catch {
+            print("Error deleting all todo items in Realm \(error)")
         }
     }
     
@@ -151,14 +138,17 @@ extension TodoeyViewController {
     }
     
     override public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return itemsArray.count
+        return todoItems?.count ?? 1
     }
     
     override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        let item = itemsArray[indexPath.row]
-        cell.textLabel?.text = item.title
-        cell.accessoryType = item.done ? .checkmark : .none
+        if let item = todoItems?[indexPath.row] {
+            cell.textLabel?.text = item.title
+            cell.accessoryType = item.done ? .checkmark : .none
+        }else {
+            cell.textLabel?.text = "No items added"
+        }
         
         return cell
     }
@@ -169,53 +159,55 @@ extension TodoeyViewController {
     
     override public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            let item = itemsArray[indexPath.row]
-            destroy(todoItem: item)
-            //tableView.deleteRows(at: [indexPath], with: .fade)
+            if let item = todoItems?[indexPath.row] {
+                destroy(todoItem: item)
+            }
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
     
+    /*
     override public func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        return true
+        return false
     }
     
     override public func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-        let item = itemsArray[fromIndexPath.row]
-        move(todoItem: item, toIndex: to.row)
+        //if let item = todoItems?[fromIndexPath.row] {
+        //    move(todoItem: item, toIndex: to.row)
+        //}
     }
+    */
     
     //MARK: - TableView Delegate Methods
     
     public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let item = itemsArray[indexPath.row]
-        update(todoItem: item)
-        tableView.deselectRow(at: indexPath, animated: true)
+        if let item = todoItems?[indexPath.row] {
+            update(todoItem: item)
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
     }
-
 }
 
 // MARK: SearchBar Delegate mathods
 extension TodoeyViewController: UISearchBarDelegate {
     
     public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let text = searchBar.text, text.count > 0 else { 
+        if let text = searchBar.text, text.count > 0 { 
+            
+            // look for items that contains this (searchbar.text) result
+            // for more on predicates http://nshipster.com/nspredicate/
+            let predicate = NSPredicate(format: "title CONTAINS[cd] %@", text)
+            let tempTodoItems = todoItems?
+                .filter(predicate)
+                //.sorted(byKeyPath: "title", ascending: true)
+                .sorted(byKeyPath: "date", ascending: true)
+            todoItems = tempTodoItems
+            tableView.reloadData()
+        } else {
             fetchTodoItems()
-            dismissKeyboard(with: searchBar)
-            return 
         }
-        let fetchRequest : NSFetchRequest<TodoItem> = TodoItem.fetchRequest()
         
-        // look for items that contains this (searchbar.text) result
-        // for more on predicates http://nshipster.com/nspredicate/
-        let predicate = NSPredicate(format: "title CONTAINS[cd] %@", text)
-        
-        let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        
-        fetchTodoItems(with: fetchRequest, predicate: predicate)
         dismissKeyboard(with: searchBar)
     }
     

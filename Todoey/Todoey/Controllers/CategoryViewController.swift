@@ -7,18 +7,17 @@
 //
 
 import UIKit
-import CoreData
+import RealmSwift
 
 public class CategoryViewController: UITableViewController {
 
-    let context = 
-        (UIApplication.shared.delegate as! AppDelegate)
-            .persistentContainer
-            .viewContext
+    var realm : Realm {
+        return AppDelegate.realm
+    }
     
     let cellIdentifier = "categoryCell"
     let segueIdentifier = "gotoItems"
-    var categories = [Category]()
+    var categories : Results<Category>?
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         var textfield = UITextField()
@@ -44,14 +43,9 @@ public class CategoryViewController: UITableViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    override public func viewDidLoad() {
-        super.viewDidLoad()
-        
-        print(FileManager.default.urls(for: .documentDirectory,in: .userDomainMask))
-    }
-    
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+     
         fetchCategoryItems()
     }
 }
@@ -60,53 +54,45 @@ public class CategoryViewController: UITableViewController {
 //MARK: - CoreData SQL DataBase implemetation
 extension CategoryViewController {
     
-    // MARK: - Create new category item in SQL DataBase
+    // MARK: - Create a new category item in Realm DataBase
     func add(categoryItem category : String){
-        let categoryItem = Category(context: context)
-        categoryItem.name = category
-        
-        categories.append(categoryItem)
-        saveCategory()
-    }
-    
-    // MARK: - Save categories changes in SQL DataBase
-    func saveCategory() {
+        let categoryItem = Category(name: category)
         do {
-            try context.save()
+            try realm.write {
+                realm.add(categoryItem)
+            }
             tableView.reloadData()
         }catch {
             print("Error saving context", error)
         }
     }
     
-    // MARK: - Read from category SQL DataBase
-    func fetchCategoryItems(with request : NSFetchRequest<Category> = Category.fetchRequest()) {
-        do {
-            categories = try context.fetch(request)
-        } catch let error as NSError {
-            print("Could not fetch data from context. \(error), \(error.userInfo)")
-        }
+    // MARK: - Read from category Realm DataBase
+    func fetchCategoryItems() {
+        categories = realm.objects(Category.self) 
         tableView.reloadData()
     }
     
-    // MARK: - Destroy category item in SQL DataBase
+    // MARK: - Destroy category item in Realm DataBase
     func destroy(categoryItem category: Category) {
-        guard let index = categories.index(of: category) else { return }
-        categories.remove(at: index)
-        context.delete(category)
-        saveCategory()
-    }
-   
-    
-    // MARK: - Delete all category items in SQL DataBase
-    func deleteAllCategoryItems() {
-        let deleteFetch : NSFetchRequest<NSFetchRequestResult> = Category.fetchRequest()
-        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
         do {
-            try context.execute(deleteRequest)
-            try context.save()
+            try realm.write {
+                realm.delete(category)
+                tableView.reloadData()
+            }
         } catch {
-            print ("There was an error deleting all records in data model")
+            print("Error deleting todo item in Realm \(error)")
+        }
+    }
+    
+    // MARK: - Delete all TodoItem in Realm DataBase
+    func deleteAllTodoItems() {
+        do {
+            try realm.write {
+                realm.deleteAll()
+            }
+        } catch {
+            print("Error deleting all todo items in Realm \(error)")
         }
     }
     
@@ -121,12 +107,12 @@ extension CategoryViewController {
     }
     
     override public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count
+        return categories?.count ?? 1
     }
     
     override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        cell.textLabel?.text = categories[indexPath.row].name
+        cell.textLabel?.text = categories?[indexPath.row].name ?? "No category added yet"
         return cell
     }
     
@@ -136,10 +122,10 @@ extension CategoryViewController {
     
     override public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            let category = categories[indexPath.row]
-            destroy(categoryItem: category)
-            //tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            if let category = categories?[indexPath.row] {
+                destroy(categoryItem: category)
+            }
         } 
     }
  
@@ -149,20 +135,16 @@ extension CategoryViewController {
         performSegue(withIdentifier: segueIdentifier, sender: self)
     }
     
-     // MARK: - Navigation
+    // MARK: - Navigation
      
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
         if segue.identifier == segueIdentifier {
             if let destinationVC = segue.destination as? TodoeyViewController,
-                let indexPath = tableView.indexPathForSelectedRow {
-                let category = categories[indexPath.row]
+                let indexPath = tableView.indexPathForSelectedRow, 
+                let category = categories?[indexPath.row] {
                 destinationVC.selectedCategory = category
-                destinationVC.title = (category.name ?? "") + " Items"
+                destinationVC.title = category.name + " Items"
             }
-            
         }
     }
     

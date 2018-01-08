@@ -1,0 +1,9 @@
+{
+  "commitish" : "2.0.0",
+  "iOS" : [
+    {
+      "name" : "RxSegue",
+      "hash" : "7940dde8d041022a90c052974536e3a51f6ec6881c131ce2a04ebb979b2ff34b"
+    }
+  ]
+}

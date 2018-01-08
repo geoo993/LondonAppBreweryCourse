@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C7C6485B20029F7700B407D6 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C7C6485920029F7700B407D6 /* DataModel.xcdatamodeld */; };
+		C78B8B4A200395A400E96E7D /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78B8B49200395A400E96E7D /* TodoItem.swift */; };
+		C78B8B612003995400E96E7D /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C78B8B602003995400E96E7D /* Realm.framework */; };
+		C78B8B622003995400E96E7D /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C78B8B602003995400E96E7D /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C78B8B642003995400E96E7D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C78B8B632003995400E96E7D /* RealmSwift.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		C78B8B652003995400E96E7D /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C78B8B632003995400E96E7D /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C78B8B6820039FAE00E96E7D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78B8B6720039FAE00E96E7D /* Category.swift */; };
 		C7C648802002F2E300B407D6 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C6487F2002F2E300B407D6 /* CategoryViewController.swift */; };
 		C7D64AA7200196AB001F3191 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D64AA6200196AB001F3191 /* AppDelegate.swift */; };
 		C7D64AA9200196AB001F3191 /* TodoeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D64AA8200196AB001F3191 /* TodoeyViewController.swift */; };
@@ -16,7 +21,26 @@
 		C7D64AB1200196AB001F3191 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7D64AAF200196AB001F3191 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C78B8B662003995400E96E7D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C78B8B652003995400E96E7D /* RealmSwift.framework in Embed Frameworks */,
+				C78B8B622003995400E96E7D /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		C78B8B49200395A400E96E7D /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
+		C78B8B602003995400E96E7D /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C78B8B632003995400E96E7D /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C78B8B6720039FAE00E96E7D /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		C7C6485A20029F7700B407D6 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		C7C6487F2002F2E300B407D6 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		C7D64AA3200196AB001F3191 /* Todoey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todoey.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C78B8B642003995400E96E7D /* RealmSwift.framework in Frameworks */,
+				C78B8B612003995400E96E7D /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +68,8 @@
 		C7D64A9A200196AB001F3191 = {
 			isa = PBXGroup;
 			children = (
+				C78B8B632003995400E96E7D /* RealmSwift.framework */,
+				C78B8B602003995400E96E7D /* Realm.framework */,
 				C7D64AA5200196AB001F3191 /* Todoey */,
 				C7D64AA4200196AB001F3191 /* Products */,
 			);
@@ -70,6 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				C7C6485920029F7700B407D6 /* DataModel.xcdatamodeld */,
+				C78B8B6720039FAE00E96E7D /* Category.swift */,
+				C78B8B49200395A400E96E7D /* TodoItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -104,6 +134,8 @@
 				C7D64A9F200196AB001F3191 /* Sources */,
 				C7D64AA0200196AB001F3191 /* Frameworks */,
 				C7D64AA1200196AB001F3191 /* Resources */,
+				C78B8B1E20038CE100E96E7D /* Carthage Copy Frameworks */,
+				C78B8B662003995400E96E7D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,14 +193,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C78B8B1E20038CE100E96E7D /* Carthage Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/../Cartfile/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/../Cartfile/Carthage/Build/iOS/RealmSwift.framework",
+			);
+			name = "Carthage Copy Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C7D64A9F200196AB001F3191 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C7C648802002F2E300B407D6 /* CategoryViewController.swift in Sources */,
+				C78B8B6820039FAE00E96E7D /* Category.swift in Sources */,
 				C7D64AA9200196AB001F3191 /* TodoeyViewController.swift in Sources */,
-				C7C6485B20029F7700B407D6 /* DataModel.xcdatamodeld in Sources */,
+				C78B8B4A200395A400E96E7D /* TodoItem.swift in Sources */,
 				C7D64AA7200196AB001F3191 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +360,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UZ49Z7W654;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../Cartfile/Carthage/Build/iOS/";
 				INFOPLIST_FILE = Todoey/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.geo-games.Todoey";
@@ -323,6 +376,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UZ49Z7W654;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../Cartfile/Carthage/Build/iOS/";
 				INFOPLIST_FILE = Todoey/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.geo-games.Todoey";

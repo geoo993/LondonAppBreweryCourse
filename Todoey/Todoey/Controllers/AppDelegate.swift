@@ -8,17 +8,27 @@
 
 import UIKit
 import CoreData
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    static var realm : Realm!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! )
-        return true
+        //print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! )
+        //print(Realm.Configuration.defaultConfiguration.fileURL)
+        
+        do {
+            AppDelegate.realm = try Realm()
+            return true
+        } catch {
+            
+            print("Could not initialise realm")
+            return false
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -42,7 +52,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
-        self.saveContext()
+        
+        // self.saveContext()
     }
     
     // MARK: - Core Data stack
