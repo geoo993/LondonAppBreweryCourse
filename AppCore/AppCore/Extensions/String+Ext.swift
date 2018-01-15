@@ -12,6 +12,11 @@ public extension String {
         return self.tokenize(option: kCFStringTokenizerUnitWord)
     }
     
+    public func tokenizeToWordRemovingHyphenation() -> [String] {
+        return self.filter { $0 != "-" }
+            .tokenize(option: kCFStringTokenizerUnitWord)
+    }
+    
     public func tokenizeToWordRanges() -> [CountableRange<Int>] {
         return self.tokenizeRanges(option: kCFStringTokenizerUnitWord)
     }
@@ -20,16 +25,14 @@ public extension String {
         return self.tokenizeIndexRanges(option: kCFStringTokenizerUnitWord)
     }
     
-    /// Splits the string to sentences.
     public func tokenizeToSentences() -> [String] {
         return self.tokenize(option: kCFStringTokenizerUnitSentence)
     }
-    /// Splits the string to paragraphs.    
+    
     public func tokenizeToParagraphs() -> [String] {
         return self.tokenize(option: kCFStringTokenizerUnitParagraph)
     }
     
-    /// Splits the string to words based on potential line-breaks.    
     public func tokenizeToLineBreaks() -> [String] {
         return self.tokenize(option: kCFStringTokenizerUnitLineBreak)
     }
@@ -72,13 +75,9 @@ public extension String {
         }
         return words
     }
-    
+   
     public func toWordsFromRegex() -> [String] {
         return self["(\\b[^\\s]+\\b)"].matches()
-    }
-    
-    public func toWordNSRangesFromRegex() -> [NSRange] {
-        return self["(\\b[^\\s]+\\b)"].ranges()
     }
     
     public func toWordRangesFromRegex() -> [Range<Int>] {
@@ -86,6 +85,48 @@ public extension String {
             .ranges()
             .map { $0.location ..< ($0.location + $0.length) }
     }
+ 
+    private var regexIncludingSpecialCharactersWithinWords: String {
+        return 
+"(?<=\\s|^|\\b)(?:[-'%$#&/]\\b|\\b[-'%$#&/]|\\d*\\.?\\d+|[A-Za-z0-9]|\\([A-Za-z0-9]+\\))+(?=\\s|$|\\b)"
+    }
+    
+    private var regexIncludingSpecialCharactersWithinWordsAndPunctuations: String {
+        /// add more characters at the end of the line with ->    \\$        $ for the character
+        // previously (?<=\\s|^|\\b)(?:[-'%$#&/]\\b|\\b[-'%$#&/]|\\d*\\.?\\d+|[A-Za-z0-9]
+        // |\\([A-Za-z0-9]+\\))+(?=\\s|$|\\b)|\\ (\\-)|(\\.|\\,)
+        return 
+"(?<=\\s|^|\\b)(?:[-'%$#&/]\\b|\\b[-'%$#&/]|\\d*\\.?\\d+|[A-Za-z0-9]|\\([A-Za-z0-9]+\\))+(?=\\s|$|\\b)"
++ "|(\\.|\\,|\\:)"
+    }
+    
+    public func toWordsFromRegexIncludingSpecialCharactersWithinWords() -> [String] {
+        return self[regexIncludingSpecialCharactersWithinWords]
+            .matches()
+    }
+    
+    public func toRangesFromRegexIncludingSpecialCharactersWithinWords() -> [Range<Int>] {
+        return self[regexIncludingSpecialCharactersWithinWords]
+            .ranges()
+            .map { $0.location ..< ($0.location + $0.length) }
+    }
+    
+    public func toWordsFromRegexIncludingSpecialCharactersWithinWordsAndPunctuations() -> [String] {
+        return self[regexIncludingSpecialCharactersWithinWordsAndPunctuations]
+            .matches()
+    }
+    
+    public func toNSRangesFromRegexIncludingSpecialCharactersWithinWordsAndPunctuations() -> [NSRange] {
+        return self[regexIncludingSpecialCharactersWithinWordsAndPunctuations]
+            .ranges()
+    }
+    
+    public func toRangesFromRegexIncludingSpecialCharactersWithinWordsAndPunctuations() -> [Range<Int>] {
+        return self[regexIncludingSpecialCharactersWithinWordsAndPunctuations]
+            .ranges()
+            .map { $0.location ..< ($0.location + $0.length) }
+    }
+    
     
     func toWordRanges() -> [Range<String.Index>] {
         
@@ -99,7 +140,116 @@ public extension String {
         return ranges
     }
     
-    func toLinguisticWordRanges() -> [(word: String, range: Range<String.Index>)] {
+    public func toSentenceRanges() ->  [Range<String.Index>] {
+        
+        let charset = CharacterSet.whitespacesAndNewlines
+        
+        let (tags, textRanges) = 
+            self.trimmingCharacters(in: charset)
+                .toLinguisticTagsAndRanges()
+        
+        let sentenceSplit = 
+            tags
+                .enumerated()
+                .split(omittingEmptySubsequences: true, 
+                       whereSeparator: { 
+                        return $0.element == "SentenceTerminator"
+                })
+                .map { $0.flatMap { $0 } }
+        
+        let sentenceRanges = 
+            sentenceSplit
+                .map { ($0.first?.offset ?? 0, $0.last?.offset ?? 0) }
+                .map { first, last in textRanges[first].lowerBound ..< textRanges[last].upperBound }
+        return sentenceRanges
+    }
+    
+    public func toLinguisticSentences() -> [String] {
+        let (tags, ranges) = toLinguisticTagsAndRanges()
+        
+        var result = [String]()
+        let ixs = tags.enumerated().filter {
+            $0.element == "SentenceTerminator"
+            }
+            .map { return ranges[$0.offset].lowerBound}
+        
+        if ixs.count == 0 {
+            return [self]
+        }
+        var prev = self.startIndex
+        for ix in ixs {
+            let r = prev...ix
+            let charset = CharacterSet.whitespacesAndNewlines.union(.punctuationCharacters)
+            let trimmed = self[r].trimmingCharacters(in: charset)
+            result.append(trimmed)
+            prev = self.index(after: ix)
+        }
+        return result
+    }
+    
+    public func toLinguisticTagsAndRanges() -> (tags: [String], ranges: [Range<String.Index>]) {
+        var r = [Range<String.Index>]()
+        let i = self.indices
+        let t = self.linguisticTags(in: i.startIndex ..< i.endIndex, 
+                                    scheme: NSLinguisticTagScheme.lexicalClass.rawValue, 
+                                    options: NSLinguisticTagger.Options.joinNames, 
+                                    orthography: nil, 
+                                    tokenRanges: &r)
+        return (t, r)
+    }
+    
+    public func toLinguisticTagsWordsAndRanges() -> (tags: [String], words: [String], ranges: [NSRange]) {
+        //www.hackingwithswift.com/example-code/strings/how-to-parse-a-sentence-using-nslinguistictagger
+        let options = NSLinguisticTagger.Options.omitWhitespace.rawValue 
+            | NSLinguisticTagger.Options.joinNames.rawValue
+        let tagger = NSLinguisticTagger(tagSchemes: NSLinguisticTagger
+            .availableTagSchemes(forLanguage: "en"), 
+                                        options: Int(options))
+        let inputString = self
+        tagger.string = inputString
+        var tags = [String]()
+        var words = [String]()
+        var ranges = [NSRange]()
+        let range = NSRange(location: 0, length: inputString.utf16.count)
+        tagger
+            .enumerateTags(in: range, 
+                           scheme: .nameTypeOrLexicalClass, 
+                           options: NSLinguisticTagger
+                            .Options(rawValue: options)) { (tag, tokenRange, _, _) in
+                                guard let tag = tag?.rawValue, let range = Range(tokenRange, in: inputString) else { return }
+                                let token = inputString[range]
+                                let word = String(token)
+                                //print("\(tag): \(token), \(tokenRange), \(sentenceRange)")
+                                tags.append(tag)
+                                words.append(word) 
+                                ranges.append(tokenRange)
+        }
+        return (tags, words, ranges)
+    }
+    
+    public func toLinguiticRangesWhilstResolvingHyphensAndParticles()
+        -> [Range<Int>] {
+            var ranges = [Range<Int>]()
+            var foundDashOrParticle = 0
+            let (tags, _, nsRanges) = toLinguisticTagsWordsAndRanges()
+            _ = zip(tags, nsRanges)
+                .map({ (tag, nsRange) in
+                    let rangeInt = self.range(withNSRange: nsRange)
+                    print(tag, substring(withRange: rangeInt))
+                    if (tag == "Dash" || tag == "Particle" || foundDashOrParticle == 1) {
+                        if let lastRange = ranges.last, let index = ranges.index(of: lastRange) {
+                            ranges[index] = lastRange.lowerBound..<rangeInt.upperBound
+                            foundDashOrParticle = (foundDashOrParticle == 1 || tag == "Particle") 
+                                ? 0 : foundDashOrParticle + 1
+                        }
+                    } else {
+                        ranges.append(rangeInt)
+                    }
+                })
+            return ranges
+    }
+    
+    public func toLinguisticWordAndRange() -> [(word: String, range: Range<String.Index>)] {
         var wordRanges = [(String, Range<String.Index>)]()
         let nsString = NSString(string: self)
         let range = NSRange(location: 0, length: self.count)
@@ -205,13 +355,17 @@ public extension String {
         return str.substring(to: index - 1)  + newCharac + str.substring(from: index)
     }
     
-    func nsRange(fromStringIndex range: Range<String.Index>) -> NSRange {
+    public func nsRange(fromStringIndex range: Range<String.Index>) -> NSRange {
         return NSRange(range, in: self)
     }
 
-    func nsRange(fromRangeInt rangeInt : Range<Int>) -> NSRange {
+    public func nsRange(fromRangeInt rangeInt : Range<Int>) -> NSRange {
         return NSRange.init(location: rangeInt.lowerBound,
                          length: rangeInt.count)
+    }
+    
+    public func nsRange() -> NSRange {
+        return NSRange.init(location: 0,length: count)
     }
     
     public func range(fromNSRange nsRange: NSRange) -> Range<String.Index>? {
@@ -224,19 +378,24 @@ public extension String {
         return from ..< to
     }
     
+    public func range(usingNSRange nsRange : NSRange) -> Range<String.Index> {
+        let startIndex = indexAt(from: nsRange.location)
+        let endIndex = indexAt(from: nsRange.location + nsRange.length)
+        return startIndex..<endIndex
+    }
+    
+    public func range(withNSRange nsRange : NSRange) -> Range<Int> {
+        let start = nsRange.location
+        let end = nsRange.location + nsRange.length
+        return start..<end
+    }
+    
     public func range(fromStringIndex stringIndex: Range<String.Index>?) -> Range<Int> {
         guard let start = stringIndex?.lowerBound.encodedOffset,
             let end = stringIndex?.upperBound.encodedOffset else { return 0..<0 }
         return start..<end
     }
-    
-    /*
-    public func range(fromNSRange nsRange : NSRange) -> Range<String.Index> {
-        let startIndex = indexAt(from: nsRange.location)
-        let endIndex = indexAt(from: nsRange.location + nsRange.length)
-        return startIndex..<endIndex
-    }
-    */
+
     public func range(fromRangeInt rangeInt: Range<Int>) -> Range<String.Index> {
         let startIndex = self.indexAt(from: rangeInt.lowerBound)
         let endIndex = self.indexAt(from: rangeInt.upperBound)
@@ -334,13 +493,6 @@ public extension String {
         return attribute
     }
     
-    public func changeWord(withInitialCharacter : Character) -> String {
-        let word = self.flatMap { _ -> Character in
-            return withInitialCharacter
-        }
-        return String(word)
-    }
-
     func highlight(word words: [String], this color: UIColor) -> NSMutableAttributedString {
         let attributedString = NSMutableAttributedString(string: self)
         for word in words {
@@ -351,79 +503,19 @@ public extension String {
         }
         return attributedString
     }
-
-    public func changeColorAndLineSpacing(lineSpacing: CGFloat,
-                                          font: UIFont,
-                                          textAlignment: NSTextAlignment,
-                                          wordsToColor : [String],
-                                          color: UIColor) -> NSAttributedString {
-        let text = self
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = lineSpacing
-        //paragraphStyle.lineHeightMultiple = 2
-        paragraphStyle.alignment = textAlignment
-
-        let attribute = NSMutableAttributedString(string: text)
-        attribute.addAttribute(NSAttributedStringKey.font,
-                               value: font,
-                               range: NSRange.init(location: 0, length:attribute.length))
-        attribute.addAttribute(NSAttributedStringKey.paragraphStyle,
-                               value: paragraphStyle,
-                               range: NSRange.init(location: 0,length: attribute.length))
-
-        for word in wordsToColor {
-            let ranges = text.ranges(from: word)
-            for range in ranges {
-                attribute.addAttributes([NSAttributedStringKey.foregroundColor: color], range: range)
-            }
-        }
-
-        return attribute
-    }
-
-    public func getNonDuplicatedWords( _ minCount: Int, _ maxCount: Int) -> [String] {
-
-        let originalWords = self
-            .replaceHypthensWithNonBreakingHyphens()
-            .replacingOccurrences(of: ",", with: "")
-            .replacingOccurrences(of: ".", with: "")
-            .replacingOccurrences(of: "\n", with: "")
-            .replacingOccurrences(of: "\r", with: "")
-            .replacingOccurrences(of: "\t", with: "")
-            .replacingOccurrences(of: "\"", with: "")
-            .replacingOccurrences(of: "!", with: "")
-            .replacingOccurrences(of: "?", with: "")
-            .replacingOccurrences(of: ";", with: "")
-            .replacingOccurrences(of: "(", with: "")
-            .replacingOccurrences(of: ")", with: "")
-            .replacingOccurrences(of: "“", with: "")
-            .replacingOccurrences(of: "”", with: "")
-            .components(separatedBy: " ").removeExtras()
-
-        let wordsWithoutApostrophe = originalWords.removeApostropheWords()
-        let wordsWithoutPlural = wordsWithoutApostrophe.removePluralWords(with: minCount)
-        let wordsWithoutDuplicates = wordsWithoutPlural.skipDuplicates()
-        let wordsWithoutEmpties = wordsWithoutDuplicates.filter { ( $0 != "" ) }
-
-        return wordsWithoutEmpties.flatMap {  word -> String?  in
-            return (word.count > minCount && word.count < maxCount) ? word : nil
-        }
-
+    
+    public func getUniqueWords() -> [String] {
+        let words = toWordsFromRegexIncludingSpecialCharactersWithinWords()
+        let uniqueWords = Set(words)
+        return Array(uniqueWords)
     }
     
-    public func wordsInOrderOfAppearance(using words: [String]) -> [String] {
-        if (words.isEmpty) {
-            return words
-        }
-        var wordsInOrderofAppearance = [String]()
-        let wordRanges = self.toWordRangesFromRegex()
-        for range in wordRanges {
-            let wordInRange = self.substring(withRange: range)
-            if (words.contains(wordInRange)) {
-                wordsInOrderofAppearance.append(wordInRange)
-            }
-        }
-        return wordsInOrderofAppearance
+    public func getNonRepeatingWord() -> [String] {
+        let words = toWordsFromRegexIncludingSpecialCharactersWithinWords()
+        let wordsFrequency = words.frequencyCount()
+        return wordsFrequency
+            .filter({ $0.value == 1 })
+            .map({$0.key })
     }
     
     func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
@@ -581,12 +673,6 @@ extension Collection where Iterator.Element == String {
         }
     }
 
-    public func removeExtras () -> [String] {
-        return self.flatMap { str -> [String] in
-            return str.components(separatedBy: ["—", "*", "/"])
-        }
-    }
-
     ///remove Apostrophe words and its original word 
     public func removeApostropheWords() -> [String] {
         guard let originalWords = self as? [String] else { return [] }
@@ -620,10 +706,8 @@ extension Collection where Iterator.Element == String {
 
     }
 
-    ///remove plural words and its original word 
     public func removeDuplicatedString() -> [String] {
         guard let originalWords = self as? [String] else { return [] }
-
         let makeAllLowercased = originalWords.map { $0.lowercased() }
         return Array( Set(makeAllLowercased) )
     }

@@ -89,7 +89,7 @@ public extension Array where Array.Iterator.Element: Hashable {
         return tempList
     }
     
-    public func frequentElements() -> [Element: Int] {
+    public func frequencyCount() -> [Element: Int] {
         return reduce([:]) { (accu: [Element: Int], element) in
             var accu = accu
             accu[element] = accu[element]?.advanced(by: 1) ?? 1
@@ -105,7 +105,7 @@ public extension Array where Array.Iterator.Element: Hashable {
         return list[random]
     }
     
-    public func take(_ amount: Int) -> [Element] {
+    public func takeRandom(amount: Int) -> [Element] {
         var list = self 
         if list.isEmpty { return [] }
         
