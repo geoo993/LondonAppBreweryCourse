@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:SmartCameraML/SmartCameraML.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:CoreML-Vision/CoreML-Vision.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:RegularExpressions/RegularExpressions.xcodeproj">
    </FileRef>
    <FileRef

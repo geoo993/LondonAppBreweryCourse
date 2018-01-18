@@ -45,13 +45,13 @@ class SearchOptionsViewController: UITableViewController {
         searchTextField.becomeFirstResponder()
   }
   
-    @IBAction func cancelTapped(sender: AnyObject) {
+    @IBAction func cancelTapped(_ sender: AnyObject) {
         searchOptions = nil
     
         performSegue(withIdentifier: Storyboard.Identifiers.UnwindSegueIdentifier, sender: self)
     }
   
-    @IBAction func searchTapped(sender: AnyObject) {
+    @IBAction func searchTapped(_ sender: AnyObject) {
         searchOptions = SearchOptions(searchString: searchTextField.text!,
                                       replacementString: (replaceTextSwitch.isOn) ? replacementTextField.text : nil,
                                       matchCase: matchCaseSwitch.isOn,
@@ -60,7 +60,7 @@ class SearchOptionsViewController: UITableViewController {
         performSegue(withIdentifier: Storyboard.Identifiers.UnwindSegueIdentifier, sender: self)
     }
   
-    @IBAction func replaceTextSwitchToggled(sender: AnyObject) {
+    @IBAction func replaceTextSwitchToggled(_ sender: AnyObject) {
         replacementTextField.isEnabled = replaceTextSwitch.isOn
     }
 }

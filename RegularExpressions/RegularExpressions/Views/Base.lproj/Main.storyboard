@@ -132,6 +132,7 @@ Project Gutenburg: http://www.gutenberg.org/ebooks/1342</string>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="ZGT-uY-kRX">
                             <connections>
+                                <action selector="unwindToTextHighlightViewController:" destination="9pv-A4-QxB" id="MPQ-fP-3fz"/>
                                 <segue destination="cjc-cb-qEs" kind="presentation" identifier="SearchOptionsSegue" id="WSG-pF-j5l"/>
                             </connections>
                         </barButtonItem>

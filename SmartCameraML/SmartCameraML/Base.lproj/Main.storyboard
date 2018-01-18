@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Smart Camera View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="SmartCameraViewController" id="BYZ-38-t0r" customClass="SmartCameraViewController" customModule="SmartCameraML" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bb9-Qh-M4v" userLabel="Background View">
+                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3D9-ma-exj">
+                                <rect key="frame" x="0.0" y="613.5" width="375" height="53.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yfP-XP-sO8">
+                                        <rect key="frame" x="0.0" y="0.0" width="10" height="53.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="10" id="cl3-7G-H77"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mg5-fs-xhJ">
+                                        <rect key="frame" x="10" y="0.0" width="262.5" height="53.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" name="Alice Blue"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Probability" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qm-pr-H1q" userLabel="ConfidenceLabel Label">
+                                        <rect key="frame" x="272.5" y="0.0" width="92.5" height="53.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" name="Alice Blue"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6U-kH-THT">
+                                        <rect key="frame" x="365" y="0.0" width="10" height="53.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="10" id="NZh-82-FlN"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Mg5-fs-xhJ" firstAttribute="width" secondItem="3D9-ma-exj" secondAttribute="width" multiplier="0.7" id="h41-71-HWx"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3D9-ma-exj" secondAttribute="trailing" id="64Z-lo-S24"/>
+                            <constraint firstItem="Bb9-Qh-M4v" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6Cn-Id-7Fa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3D9-ma-exj" secondAttribute="bottom" id="Abl-pr-Nzl"/>
+                            <constraint firstItem="Bb9-Qh-M4v" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Jva-xA-Bsc"/>
+                            <constraint firstItem="3D9-ma-exj" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.08" id="QiF-cH-Srl"/>
+                            <constraint firstItem="Bb9-Qh-M4v" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="WsP-fs-eUB"/>
+                            <constraint firstItem="3D9-ma-exj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b8f-xC-ar8"/>
+                            <constraint firstItem="3D9-ma-exj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nTk-Vq-Fxw"/>
+                            <constraint firstItem="Bb9-Qh-M4v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zMb-rc-CnI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="Bb9-Qh-M4v" id="P6a-t5-GQr"/>
+                        <outlet property="confidenceLabel" destination="5qm-pr-H1q" id="K6t-I4-cN3"/>
+                        <outlet property="descriptionLabel" destination="Mg5-fs-xhJ" id="UAq-xf-dBh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="Alice Blue">
+            <color red="0.94117647058823528" green="0.97254901960784312" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

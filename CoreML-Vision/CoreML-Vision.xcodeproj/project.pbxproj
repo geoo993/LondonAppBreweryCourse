@@ -1,0 +1,375 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C732F07D2010D38D0001DAA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C732F07C2010D38D0001DAA0 /* AppDelegate.swift */; };
+		C732F07F2010D38D0001DAA0 /* CoreMLVisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C732F07E2010D38D0001DAA0 /* CoreMLVisionViewController.swift */; };
+		C732F0872010D38D0001DAA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C732F0862010D38D0001DAA0 /* Assets.xcassets */; };
+		C732F099201113210001DAA0 /* VideoCameraType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C732F096201113210001DAA0 /* VideoCameraType.swift */; };
+		C732F09A201113210001DAA0 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C732F097201113210001DAA0 /* VideoCapture.swift */; };
+		C732F09B201113210001DAA0 /* AVCaptureDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C732F098201113210001DAA0 /* AVCaptureDevice+Extension.swift */; };
+		C732F09C201113750001DAA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C732F0802010D38D0001DAA0 /* Main.storyboard */; };
+		C732F09D201113750001DAA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C732F0882010D38D0001DAA0 /* LaunchScreen.storyboard */; };
+		C771624C2011429F000C97C3 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C771624B2011429E000C97C3 /* Inceptionv3.mlmodel */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C732F0792010D38D0001DAA0 /* CoreML-Vision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoreML-Vision.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C732F07C2010D38D0001DAA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C732F07E2010D38D0001DAA0 /* CoreMLVisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLVisionViewController.swift; sourceTree = "<group>"; };
+		C732F0812010D38D0001DAA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C732F0862010D38D0001DAA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C732F0892010D38D0001DAA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C732F08B2010D38D0001DAA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C732F096201113210001DAA0 /* VideoCameraType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCameraType.swift; sourceTree = "<group>"; };
+		C732F097201113210001DAA0 /* VideoCapture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
+		C732F098201113210001DAA0 /* AVCaptureDevice+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVCaptureDevice+Extension.swift"; sourceTree = "<group>"; };
+		C771624B2011429E000C97C3 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Inceptionv3.mlmodel; path = ../../../MachineLearningModels/Inceptionv3.mlmodel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C732F0762010D38D0001DAA0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C732F0702010D38D0001DAA0 = {
+			isa = PBXGroup;
+			children = (
+				C732F07B2010D38D0001DAA0 /* CoreML-Vision */,
+				C732F07A2010D38D0001DAA0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C732F07A2010D38D0001DAA0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C732F0792010D38D0001DAA0 /* CoreML-Vision.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C732F07B2010D38D0001DAA0 /* CoreML-Vision */ = {
+			isa = PBXGroup;
+			children = (
+				C732F0A0201114E90001DAA0 /* Controllers */,
+				C732F09F201114E10001DAA0 /* Models */,
+				C732F09E201114DB0001DAA0 /* Views */,
+				C732F0882010D38D0001DAA0 /* LaunchScreen.storyboard */,
+				C732F08B2010D38D0001DAA0 /* Info.plist */,
+			);
+			path = "CoreML-Vision";
+			sourceTree = "<group>";
+		};
+		C732F095201113210001DAA0 /* VideoCapture */ = {
+			isa = PBXGroup;
+			children = (
+				C732F096201113210001DAA0 /* VideoCameraType.swift */,
+				C732F097201113210001DAA0 /* VideoCapture.swift */,
+				C732F098201113210001DAA0 /* AVCaptureDevice+Extension.swift */,
+			);
+			path = VideoCapture;
+			sourceTree = "<group>";
+		};
+		C732F09E201114DB0001DAA0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C732F0802010D38D0001DAA0 /* Main.storyboard */,
+				C732F0862010D38D0001DAA0 /* Assets.xcassets */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C732F09F201114E10001DAA0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C771624B2011429E000C97C3 /* Inceptionv3.mlmodel */,
+				C732F095201113210001DAA0 /* VideoCapture */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C732F0A0201114E90001DAA0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C732F07C2010D38D0001DAA0 /* AppDelegate.swift */,
+				C732F07E2010D38D0001DAA0 /* CoreMLVisionViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C732F0782010D38D0001DAA0 /* CoreML-Vision */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C732F08E2010D38D0001DAA0 /* Build configuration list for PBXNativeTarget "CoreML-Vision" */;
+			buildPhases = (
+				C732F0752010D38D0001DAA0 /* Sources */,
+				C732F0762010D38D0001DAA0 /* Frameworks */,
+				C732F0772010D38D0001DAA0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CoreML-Vision";
+			productName = "CoreML-Vision";
+			productReference = C732F0792010D38D0001DAA0 /* CoreML-Vision.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C732F0712010D38D0001DAA0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Geo Games";
+				TargetAttributes = {
+					C732F0782010D38D0001DAA0 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = C732F0742010D38D0001DAA0 /* Build configuration list for PBXProject "CoreML-Vision" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C732F0702010D38D0001DAA0;
+			productRefGroup = C732F07A2010D38D0001DAA0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C732F0782010D38D0001DAA0 /* CoreML-Vision */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C732F0772010D38D0001DAA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C732F09C201113750001DAA0 /* Main.storyboard in Resources */,
+				C732F09D201113750001DAA0 /* LaunchScreen.storyboard in Resources */,
+				C732F0872010D38D0001DAA0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C732F0752010D38D0001DAA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C732F07F2010D38D0001DAA0 /* CoreMLVisionViewController.swift in Sources */,
+				C771624C2011429F000C97C3 /* Inceptionv3.mlmodel in Sources */,
+				C732F09A201113210001DAA0 /* VideoCapture.swift in Sources */,
+				C732F099201113210001DAA0 /* VideoCameraType.swift in Sources */,
+				C732F07D2010D38D0001DAA0 /* AppDelegate.swift in Sources */,
+				C732F09B201113210001DAA0 /* AVCaptureDevice+Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C732F0802010D38D0001DAA0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C732F0812010D38D0001DAA0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C732F0882010D38D0001DAA0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C732F0892010D38D0001DAA0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C732F08C2010D38D0001DAA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C732F08D2010D38D0001DAA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C732F08F2010D38D0001DAA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UZ49Z7W654;
+				INFOPLIST_FILE = "CoreML-Vision/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.geo-games.CoreML-Vision";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C732F0902010D38D0001DAA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UZ49Z7W654;
+				INFOPLIST_FILE = "CoreML-Vision/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.geo-games.CoreML-Vision";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C732F0742010D38D0001DAA0 /* Build configuration list for PBXProject "CoreML-Vision" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C732F08C2010D38D0001DAA0 /* Debug */,
+				C732F08D2010D38D0001DAA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C732F08E2010D38D0001DAA0 /* Build configuration list for PBXNativeTarget "CoreML-Vision" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C732F08F2010D38D0001DAA0 /* Debug */,
+				C732F0902010D38D0001DAA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C732F0712010D38D0001DAA0 /* Project object */;
+}

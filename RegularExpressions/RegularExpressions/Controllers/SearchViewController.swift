@@ -21,8 +21,10 @@ class SearchViewController: UIViewController {
   
   @IBOutlet weak var textView: UITextView!
   
-    @IBAction func unwindToTextHighlightViewController(segue: UIStoryboardSegue) {
+    @IBAction func unwindToTextHighlightViewController(_ segue: UIStoryboardSegue) {
+        
         if let searchOptionsViewController = segue.source as? SearchOptionsViewController {
+            
           if let options = searchOptionsViewController.searchOptions {
             performSearchWithOptions(searchOptions: options)
           }
@@ -64,7 +66,7 @@ class SearchViewController: UIViewController {
   
   //MARK: Underline dates, times, and locations
   
-  @IBAction func underlineInterestingData(sender: AnyObject) {
+  @IBAction func underlineInterestingData(_ sender: AnyObject) {
     underlineAllDates()
     underlineAllTimes()
     underlineAllLocations()

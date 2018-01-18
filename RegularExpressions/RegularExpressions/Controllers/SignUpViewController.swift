@@ -26,7 +26,7 @@ class SignUpViewController: UITableViewController {
   func validateTextField(textField: UITextField) {
   }
   
-  @IBAction func doneButtonTapped(sender: AnyObject) {
+  @IBAction func doneButtonTapped(_ sender: AnyObject) {
     for textField in textFields {
         validateTextField(textField: textField)
         textField.resignFirstResponder()
