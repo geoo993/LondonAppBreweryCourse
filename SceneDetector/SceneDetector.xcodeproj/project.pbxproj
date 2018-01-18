@@ -7,123 +7,103 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C71766202011563200EB23D0 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C717661F2011563200EB23D0 /* Resnet50.mlmodel */; };
-		C732F0AE20111F080001DAA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C732F0AD20111F080001DAA0 /* AppDelegate.swift */; };
-		C732F0B020111F080001DAA0 /* SmartCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C732F0AF20111F080001DAA0 /* SmartCameraViewController.swift */; };
-		C732F0B320111F080001DAA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C732F0B120111F080001DAA0 /* Main.storyboard */; };
-		C732F0B520111F080001DAA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C732F0B420111F080001DAA0 /* Assets.xcassets */; };
-		C732F0B820111F080001DAA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C732F0B620111F080001DAA0 /* LaunchScreen.storyboard */; };
-		C7716246201137C6000C97C3 /* AppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7716245201137C6000C97C3 /* AppCore.framework */; };
-		C7716247201137C6000C97C3 /* AppCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C7716245201137C6000C97C3 /* AppCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C717662E20115A4200EB23D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C717662D20115A4200EB23D0 /* AppDelegate.swift */; };
+		C717663020115A4200EB23D0 /* SceneDetectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C717662F20115A4200EB23D0 /* SceneDetectorViewController.swift */; };
+		C717663320115A4200EB23D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C717663120115A4200EB23D0 /* Main.storyboard */; };
+		C717663520115A4200EB23D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C717663420115A4200EB23D0 /* Assets.xcassets */; };
+		C717663820115A4200EB23D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C717663620115A4200EB23D0 /* LaunchScreen.storyboard */; };
+		C71766442011675500EB23D0 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C71766432011675500EB23D0 /* Resnet50.mlmodel */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		C7716248201137C6000C97C3 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				C7716247201137C6000C97C3 /* AppCore.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		C717661F2011563200EB23D0 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Resnet50.mlmodel; path = ../../MachineLearningModels/Resnet50.mlmodel; sourceTree = "<group>"; };
-		C732F0AA20111F080001DAA0 /* SmartCameraML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartCameraML.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C732F0AD20111F080001DAA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C732F0AF20111F080001DAA0 /* SmartCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartCameraViewController.swift; sourceTree = "<group>"; };
-		C732F0B220111F080001DAA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C732F0B420111F080001DAA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C732F0B720111F080001DAA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C732F0B920111F080001DAA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C7716245201137C6000C97C3 /* AppCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C717662A20115A4200EB23D0 /* SceneDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SceneDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C717662D20115A4200EB23D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C717662F20115A4200EB23D0 /* SceneDetectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDetectorViewController.swift; sourceTree = "<group>"; };
+		C717663220115A4200EB23D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C717663420115A4200EB23D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C717663720115A4200EB23D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C717663920115A4200EB23D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C71766432011675500EB23D0 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Resnet50.mlmodel; path = ../../MachineLearningModels/Resnet50.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C732F0A720111F080001DAA0 /* Frameworks */ = {
+		C717662720115A4200EB23D0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7716246201137C6000C97C3 /* AppCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C732F0A120111F080001DAA0 = {
+		C717662120115A4200EB23D0 = {
 			isa = PBXGroup;
 			children = (
-				C7716245201137C6000C97C3 /* AppCore.framework */,
-				C732F0AC20111F080001DAA0 /* SmartCameraML */,
-				C732F0AB20111F080001DAA0 /* Products */,
+				C717662C20115A4200EB23D0 /* SceneDetector */,
+				C717662B20115A4200EB23D0 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		C732F0AB20111F080001DAA0 /* Products */ = {
+		C717662B20115A4200EB23D0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C732F0AA20111F080001DAA0 /* SmartCameraML.app */,
+				C717662A20115A4200EB23D0 /* SceneDetector.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C732F0AC20111F080001DAA0 /* SmartCameraML */ = {
+		C717662C20115A4200EB23D0 /* SceneDetector */ = {
 			isa = PBXGroup;
 			children = (
-				C717661F2011563200EB23D0 /* Resnet50.mlmodel */,
-				C732F0AD20111F080001DAA0 /* AppDelegate.swift */,
-				C732F0AF20111F080001DAA0 /* SmartCameraViewController.swift */,
-				C732F0B120111F080001DAA0 /* Main.storyboard */,
-				C732F0B420111F080001DAA0 /* Assets.xcassets */,
-				C732F0B620111F080001DAA0 /* LaunchScreen.storyboard */,
-				C732F0B920111F080001DAA0 /* Info.plist */,
+				C71766432011675500EB23D0 /* Resnet50.mlmodel */,
+				C717662D20115A4200EB23D0 /* AppDelegate.swift */,
+				C717662F20115A4200EB23D0 /* SceneDetectorViewController.swift */,
+				C717663120115A4200EB23D0 /* Main.storyboard */,
+				C717663420115A4200EB23D0 /* Assets.xcassets */,
+				C717663620115A4200EB23D0 /* LaunchScreen.storyboard */,
+				C717663920115A4200EB23D0 /* Info.plist */,
 			);
-			path = SmartCameraML;
+			path = SceneDetector;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C732F0A920111F080001DAA0 /* SmartCameraML */ = {
+		C717662920115A4200EB23D0 /* SceneDetector */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C732F0BC20111F080001DAA0 /* Build configuration list for PBXNativeTarget "SmartCameraML" */;
+			buildConfigurationList = C717663C20115A4200EB23D0 /* Build configuration list for PBXNativeTarget "SceneDetector" */;
 			buildPhases = (
-				C732F0A620111F080001DAA0 /* Sources */,
-				C732F0A720111F080001DAA0 /* Frameworks */,
-				C732F0A820111F080001DAA0 /* Resources */,
-				C7716248201137C6000C97C3 /* Embed Frameworks */,
+				C717662620115A4200EB23D0 /* Sources */,
+				C717662720115A4200EB23D0 /* Frameworks */,
+				C717662820115A4200EB23D0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = SmartCameraML;
-			productName = SmartCameraML;
-			productReference = C732F0AA20111F080001DAA0 /* SmartCameraML.app */;
+			name = SceneDetector;
+			productName = SceneDetector;
+			productReference = C717662A20115A4200EB23D0 /* SceneDetector.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		C732F0A220111F080001DAA0 /* Project object */ = {
+		C717662220115A4200EB23D0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Geo Games";
 				TargetAttributes = {
-					C732F0A920111F080001DAA0 = {
+					C717662920115A4200EB23D0 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = C732F0A520111F080001DAA0 /* Build configuration list for PBXProject "SmartCameraML" */;
+			buildConfigurationList = C717662520115A4200EB23D0 /* Build configuration list for PBXProject "SceneDetector" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -131,55 +111,55 @@
 				en,
 				Base,
 			);
-			mainGroup = C732F0A120111F080001DAA0;
-			productRefGroup = C732F0AB20111F080001DAA0 /* Products */;
+			mainGroup = C717662120115A4200EB23D0;
+			productRefGroup = C717662B20115A4200EB23D0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C732F0A920111F080001DAA0 /* SmartCameraML */,
+				C717662920115A4200EB23D0 /* SceneDetector */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C732F0A820111F080001DAA0 /* Resources */ = {
+		C717662820115A4200EB23D0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C732F0B820111F080001DAA0 /* LaunchScreen.storyboard in Resources */,
-				C732F0B520111F080001DAA0 /* Assets.xcassets in Resources */,
-				C732F0B320111F080001DAA0 /* Main.storyboard in Resources */,
+				C717663820115A4200EB23D0 /* LaunchScreen.storyboard in Resources */,
+				C717663520115A4200EB23D0 /* Assets.xcassets in Resources */,
+				C717663320115A4200EB23D0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C732F0A620111F080001DAA0 /* Sources */ = {
+		C717662620115A4200EB23D0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C732F0B020111F080001DAA0 /* SmartCameraViewController.swift in Sources */,
-				C71766202011563200EB23D0 /* Resnet50.mlmodel in Sources */,
-				C732F0AE20111F080001DAA0 /* AppDelegate.swift in Sources */,
+				C717663020115A4200EB23D0 /* SceneDetectorViewController.swift in Sources */,
+				C71766442011675500EB23D0 /* Resnet50.mlmodel in Sources */,
+				C717662E20115A4200EB23D0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C732F0B120111F080001DAA0 /* Main.storyboard */ = {
+		C717663120115A4200EB23D0 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C732F0B220111F080001DAA0 /* Base */,
+				C717663220115A4200EB23D0 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		C732F0B620111F080001DAA0 /* LaunchScreen.storyboard */ = {
+		C717663620115A4200EB23D0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C732F0B720111F080001DAA0 /* Base */,
+				C717663720115A4200EB23D0 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -187,7 +167,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		C732F0BA20111F080001DAA0 /* Debug */ = {
+		C717663A20115A4200EB23D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -244,7 +224,7 @@
 			};
 			name = Debug;
 		};
-		C732F0BB20111F080001DAA0 /* Release */ = {
+		C717663B20115A4200EB23D0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -294,32 +274,30 @@
 			};
 			name = Release;
 		};
-		C732F0BD20111F080001DAA0 /* Debug */ = {
+		C717663D20115A4200EB23D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				COREML_CODEGEN_LANGUAGE = Swift;
 				DEVELOPMENT_TEAM = UZ49Z7W654;
-				INFOPLIST_FILE = SmartCameraML/Info.plist;
+				INFOPLIST_FILE = SceneDetector/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.geo-games.SmartCameraML";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.geo-games.SceneDetector";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		C732F0BE20111F080001DAA0 /* Release */ = {
+		C717663E20115A4200EB23D0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				COREML_CODEGEN_LANGUAGE = Swift;
 				DEVELOPMENT_TEAM = UZ49Z7W654;
-				INFOPLIST_FILE = SmartCameraML/Info.plist;
+				INFOPLIST_FILE = SceneDetector/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.geo-games.SmartCameraML";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.geo-games.SceneDetector";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -329,25 +307,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C732F0A520111F080001DAA0 /* Build configuration list for PBXProject "SmartCameraML" */ = {
+		C717662520115A4200EB23D0 /* Build configuration list for PBXProject "SceneDetector" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C732F0BA20111F080001DAA0 /* Debug */,
-				C732F0BB20111F080001DAA0 /* Release */,
+				C717663A20115A4200EB23D0 /* Debug */,
+				C717663B20115A4200EB23D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C732F0BC20111F080001DAA0 /* Build configuration list for PBXNativeTarget "SmartCameraML" */ = {
+		C717663C20115A4200EB23D0 /* Build configuration list for PBXNativeTarget "SceneDetector" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C732F0BD20111F080001DAA0 /* Debug */,
-				C732F0BE20111F080001DAA0 /* Release */,
+				C717663D20115A4200EB23D0 /* Debug */,
+				C717663E20115A4200EB23D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = C732F0A220111F080001DAA0 /* Project object */;
+	rootObject = C717662220115A4200EB23D0 /* Project object */;
 }

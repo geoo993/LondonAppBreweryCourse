@@ -7,7 +7,6 @@
 //
 
 // https://www.youtube.com/watch?v=p6GA8ODlnX0
-// https://www.raywenderlich.com/164213/coreml-and-vision-machine-learning-in-ios-11-tutorial
 // http://machinethink.net/blog/ios-11-machine-learning-for-everyone/
 // https://github.com/hollance/Inception-CoreML
 // https://developer.apple.com/machine-learning/
