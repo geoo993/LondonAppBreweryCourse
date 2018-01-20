@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a photo from library" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dx6-60-6pE">
-                                <rect key="frame" x="77.5" y="321.5" width="221.5" height="24"/>
+                                <rect key="frame" x="77.5" y="353.5" width="221.5" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -30,11 +30,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Dx6-60-6pE" firstAttribute="centerY" secondItem="A0K-Hu-wEX" secondAttribute="centerY" id="Mdb-Xx-TKB"/>
                             <constraint firstItem="A0K-Hu-wEX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ut0-cT-yS9"/>
-                            <constraint firstItem="Dx6-60-6pE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ZtN-bJ-e3p"/>
-                            <constraint firstItem="Dx6-60-6pE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="avr-eN-wLb"/>
                             <constraint firstItem="A0K-Hu-wEX" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="kCd-yq-40g"/>
                             <constraint firstItem="A0K-Hu-wEX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="oCZ-Bv-eUd"/>
+                            <constraint firstItem="Dx6-60-6pE" firstAttribute="centerX" secondItem="A0K-Hu-wEX" secondAttribute="centerX" id="pLz-nf-YRM"/>
                             <constraint firstItem="A0K-Hu-wEX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uGC-ZA-NpV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

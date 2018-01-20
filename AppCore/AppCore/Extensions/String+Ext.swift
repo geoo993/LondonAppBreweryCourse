@@ -86,18 +86,17 @@ public extension String {
             .map { $0.location ..< ($0.location + $0.length) }
     }
  
+    private var regexSpecialCharactersBounderies : String {
+        return "[-'%$#&/]\\b|\\b[‑'%$#&/]|\\b[‐'%$#&/]|\\d*\\.?\\d+|[A-Za-z0-9]|\\([A-Za-z0-9]"
+    }
+    
     private var regexIncludingSpecialCharactersWithinWords: String {
-        return 
-"(?<=\\s|^|\\b)(?:[-'%$#&/]\\b|\\b[-'%$#&/]|\\d*\\.?\\d+|[A-Za-z0-9]|\\([A-Za-z0-9]+\\))+(?=\\s|$|\\b)"
+        return "(?<=\\s|^|\\b)(?:\(regexSpecialCharactersBounderies)+\\))+(?=\\s|$|\\b)"
     }
     
     private var regexIncludingSpecialCharactersWithinWordsAndPunctuations: String {
-        /// add more characters at the end of the line with ->    \\$        $ for the character
-        // previously (?<=\\s|^|\\b)(?:[-'%$#&/]\\b|\\b[-'%$#&/]|\\d*\\.?\\d+|[A-Za-z0-9]
-        // |\\([A-Za-z0-9]+\\))+(?=\\s|$|\\b)|\\ (\\-)|(\\.|\\,)
-        return 
-"(?<=\\s|^|\\b)(?:[-'%$#&/]\\b|\\b[-'%$#&/]|\\d*\\.?\\d+|[A-Za-z0-9]|\\([A-Za-z0-9]+\\))+(?=\\s|$|\\b)"
-+ "|(\\.|\\,|\\:)"
+        return "(?<=\\s|^|\\b)(?:\(regexSpecialCharactersBounderies)+\\))+(?=\\s|$|\\b)"
+            + "|(\\.|\\,|\\:|\")"
     }
     
     public func toWordsFromRegexIncludingSpecialCharactersWithinWords() -> [String] {
@@ -110,23 +109,6 @@ public extension String {
             .ranges()
             .map { $0.location ..< ($0.location + $0.length) }
     }
-    
-    public func toWordsFromRegexIncludingSpecialCharactersWithinWordsAndPunctuations() -> [String] {
-        return self[regexIncludingSpecialCharactersWithinWordsAndPunctuations]
-            .matches()
-    }
-    
-    public func toNSRangesFromRegexIncludingSpecialCharactersWithinWordsAndPunctuations() -> [NSRange] {
-        return self[regexIncludingSpecialCharactersWithinWordsAndPunctuations]
-            .ranges()
-    }
-    
-    public func toRangesFromRegexIncludingSpecialCharactersWithinWordsAndPunctuations() -> [Range<Int>] {
-        return self[regexIncludingSpecialCharactersWithinWordsAndPunctuations]
-            .ranges()
-            .map { $0.location ..< ($0.location + $0.length) }
-    }
-    
     
     func toWordRanges() -> [Range<String.Index>] {
         

@@ -31,3 +31,6 @@
 [submodule "Carthage/Checkouts/SwipeCellKit"]
 	path = Cartfile/Carthage/Checkouts/SwipeCellKit
 	url = https://github.com/SwipeCellKit/SwipeCellKit.git
+[submodule "Carthage/Checkouts/swift-sdk"]
+	path = Cartfile/Carthage/Checkouts/swift-sdk
+	url = https://github.com/watson-developer-cloud/swift-sdk.git

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:SeaFood/SeaFood.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:HotdogDetector/HotdogDetector.xcodeproj">
    </FileRef>
    <FileRef
@@ -34,6 +37,9 @@
       <Group
          location = "container:"
          name = "Dependencies">
+         <FileRef
+            location = "group:Cartfile/Carthage/Checkouts/swift-sdk/WatsonDeveloperCloud.xcodeproj">
+         </FileRef>
          <FileRef
             location = "group:Cartfile/Carthage/Checkouts/SwipeCellKit/SwipeCellKit.xcodeproj">
          </FileRef>

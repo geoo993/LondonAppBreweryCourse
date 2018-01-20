@@ -141,4 +141,23 @@ public  extension UIImage {
         return result!
     }
     
+    public func resizeByByte(maxByte: Int) {
+        
+        var compressQuality: CGFloat = 1
+        var imageByte = UIImageJPEGRepresentation(self, 1)?.count
+        
+        while imageByte! > maxByte {
+            
+            imageByte = UIImageJPEGRepresentation(self, compressQuality)?.count
+            compressQuality -= 0.1
+        }
+    }
+    
+    public var uncompressedPNGData: Data?      { return UIImagePNGRepresentation(self)        }
+    public var highestQualityJPEGNSData: Data? { return UIImageJPEGRepresentation(self, 1.0)  }
+    public var highQualityJPEGNSData: Data?    { return UIImageJPEGRepresentation(self, 0.75) }
+    public var mediumQualityJPEGNSData: Data?  { return UIImageJPEGRepresentation(self, 0.5)  }
+    public var lowQualityJPEGNSData: Data?     { return UIImageJPEGRepresentation(self, 0.25) }
+    public var lowestQualityJPEGNSData:Data?   { return UIImageJPEGRepresentation(self, 0.01)  }
+    
 }

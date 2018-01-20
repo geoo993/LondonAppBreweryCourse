@@ -22,12 +22,10 @@ public class HotdogDetectorViewController: UIViewController {
     @IBOutlet weak var descriptionLabel : UILabel!
     @IBAction func photosButtonTapped (_ sender: UIBarButtonItem) {
         use(mediaType: .photo)
-        present(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func cameraButtonTapped (_ sender: UIBarButtonItem) {
         use(mediaType: .camera)
-        present(imagePicker, animated: true, completion: nil)
     }
     
     override public func viewDidLoad() {
@@ -66,6 +64,8 @@ public class HotdogDetectorViewController: UIViewController {
         }
         imagePicker.allowsEditing = false
         descriptionLabel.isHidden = true
+        
+        present(imagePicker, animated: true, completion: nil)
     }
     
     func detect(image : CIImage) {

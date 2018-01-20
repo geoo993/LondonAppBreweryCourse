@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C70A35AC1FFC770F00857F88 /* UIDevice+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70A35AA1FFC770E00857F88 /* UIDevice+Ext.swift */; };
 		C70A35AD1FFC770F00857F88 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70A35AB1FFC770E00857F88 /* DeviceType.swift */; };
+		C71127F520137A8D00FBC479 /* Sequence+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71127F420137A8D00FBC479 /* Sequence+Ext.swift */; };
 		C785AB241FF126E4002360A6 /* Generic+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C785AAFE1FF126E4002360A6 /* Generic+Ext.swift */; };
 		C785AB251FF126E4002360A6 /* UIBezierPath+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C785AAFF1FF126E4002360A6 /* UIBezierPath+Ext.swift */; };
 		C785AB261FF126E4002360A6 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C785AB001FF126E4002360A6 /* UIImageView+Ext.swift */; };
@@ -79,6 +80,7 @@
 /* Begin PBXFileReference section */
 		C70A35AA1FFC770E00857F88 /* UIDevice+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Ext.swift"; sourceTree = "<group>"; };
 		C70A35AB1FFC770E00857F88 /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
+		C71127F420137A8D00FBC479 /* Sequence+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Ext.swift"; sourceTree = "<group>"; };
 		C741F2331FF29BAA002B42D3 /* Variables Constants and Data types.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Variables Constants and Data types.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C741F2341FF29C02002B42D3 /* Comments, printing and the console.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Comments, printing and the console.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C741F2351FF2DF86002B42D3 /* Colors.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Colors.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -184,6 +186,7 @@
 				C785AB1B1FF126E4002360A6 /* NSMutableAttributedString+Ext.swift */,
 				C7E8E8E92006A27B0089C856 /* NSAttributedString+Ext.swift */,
 				C785AB4E1FF13F2F002360A6 /* NSRange+Ext.swift */,
+				C71127F420137A8D00FBC479 /* Sequence+Ext.swift */,
 				C785AB1F1FF126E4002360A6 /* String+Ext.swift */,
 				C785AB041FF126E4002360A6 /* SwiftRegex.swift */,
 				C785AB061FF126E4002360A6 /* UIApplication+Ext.swift */,
@@ -390,6 +393,7 @@
 				C7B9FEAA1FF151CE00D15B45 /* LayoutableView.swift in Sources */,
 				C785AB291FF126E4002360A6 /* UITableViewCell+Ext.swift in Sources */,
 				C7B9FEA41FF151CE00D15B45 /* ParticleEmitterView.swift in Sources */,
+				C71127F520137A8D00FBC479 /* Sequence+Ext.swift in Sources */,
 				C785AB361FF126E4002360A6 /* GameLoop.swift in Sources */,
 				C785AB3B1FF126E4002360A6 /* UIScrollView+Ext.swift in Sources */,
 				C785AB261FF126E4002360A6 /* UIImageView+Ext.swift in Sources */,
