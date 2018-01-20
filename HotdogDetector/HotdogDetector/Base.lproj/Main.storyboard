@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hpb-6J-uWl">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Hotdog Detector View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="HotdogDetectorViewController" id="BYZ-38-t0r" customClass="HotdogDetectorViewController" customModule="HotdogDetector" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A0K-Hu-wEX">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a photo from library" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dx6-60-6pE">
+                                <rect key="frame" x="77.5" y="321.5" width="221.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="A0K-Hu-wEX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ut0-cT-yS9"/>
+                            <constraint firstItem="Dx6-60-6pE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ZtN-bJ-e3p"/>
+                            <constraint firstItem="Dx6-60-6pE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="avr-eN-wLb"/>
+                            <constraint firstItem="A0K-Hu-wEX" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="kCd-yq-40g"/>
+                            <constraint firstItem="A0K-Hu-wEX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="oCZ-Bv-eUd"/>
+                            <constraint firstItem="A0K-Hu-wEX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uGC-ZA-NpV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fSG-yH-duZ">
+                        <barButtonItem key="leftBarButtonItem" image="photos-icon" id="WUX-Wv-YiM">
+                            <connections>
+                                <action selector="photosButtonTapped:" destination="BYZ-38-t0r" id="N0A-RD-rJM"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="Q5i-M4-ZMp">
+                            <connections>
+                                <action selector="cameraButtonTapped:" destination="BYZ-38-t0r" id="fnB-gi-lnu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="Dx6-60-6pE" id="786-5X-zFI"/>
+                        <outlet property="imageView" destination="A0K-Hu-wEX" id="78C-eq-tRP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="372" y="31.934032983508249"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Qaj-kp-76C">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hpb-6J-uWl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ELT-oD-DaN">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4OW-Tx-Wtp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hYZ-cc-4Zz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-620" y="32"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="photos-icon" width="25" height="25"/>
+    </resources>
+</document>

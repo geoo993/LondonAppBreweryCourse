@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:HotdogDetector/HotdogDetector.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:SceneDetector/SceneDetector.xcodeproj">
    </FileRef>
    <FileRef
