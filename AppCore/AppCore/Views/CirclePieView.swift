@@ -89,7 +89,7 @@ class CirclePieView: UIView {
             let midPath = UIBezierPath()
             midPath.move(to: viewCenter)
             
-            midPath.addArc(withCenter: viewCenter, radius: CGFloat(radius), startAngle: startAngle.degreesToRadians, endAngle: endAngle.degreesToRadians, clockwise: true)
+            midPath.addArc(withCenter: viewCenter, radius: CGFloat(radius), startAngle: CGFloat(startAngle.toRadians), endAngle: CGFloat(endAngle.toRadians), clockwise: true)
             
             midPath.close()
             midPath.fill()

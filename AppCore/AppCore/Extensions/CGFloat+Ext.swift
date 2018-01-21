@@ -1,17 +1,29 @@
 import Foundation
 
 public extension FloatingPoint {
-    public var degreesToRadians: Self { return self * .pi / 180 }
-    public var radiansToDegrees: Self { return self * 180 / .pi }
+    public var toRadians: Self { return self * .pi / 180 }
+    public var toDegrees: Self { return self * 180 / .pi }
 }
 
 public extension Float {
-    var degreesToRadians : CGFloat {
-        return CGFloat(self) * CGFloat(Double.pi) / 180.0
+    public var toRadians : Float { return self * Float.pi / 180.0 }
+    public var toDegrees : Float { return self * 180.0 / Float.pi }
+    
+    public static func rand() -> Float {
+        return Float(arc4random()) / Float(UInt32.max)
+    }
+    
+    public static func random(min: Float, max: Float) -> Float {
+        let rand = Float(arc4random()) / Float(UINT32_MAX)
+        let minimum = min < max ? min : max 
+        return  rand * Swift.abs(Float( min - max)) + minimum
     }
 }
 
 public extension CGFloat {
+    
+    public var toRadians : CGFloat { return self * CGFloat.pi / 180.0 }
+    public var toDegrees : CGFloat { return self * 180.0 / CGFloat.pi }
     
     public var float: Double {
         return Double(self)
