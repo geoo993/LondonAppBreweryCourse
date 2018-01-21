@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C75A36C01FF254B10081F6CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75A36BF1FF254B10081F6CB /* AppDelegate.swift */; };
-		C75A36C21FF254B10081F6CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75A36C11FF254B10081F6CB /* ViewController.swift */; };
+		C75A36C21FF254B10081F6CB /* Magic8BallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75A36C11FF254B10081F6CB /* Magic8BallViewController.swift */; };
 		C75A36C51FF254B10081F6CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C75A36C31FF254B10081F6CB /* Main.storyboard */; };
 		C75A36C71FF254B10081F6CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C75A36C61FF254B10081F6CB /* Assets.xcassets */; };
 		C75A36CA1FF254B10081F6CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C75A36C81FF254B10081F6CB /* LaunchScreen.storyboard */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		C75A36BC1FF254B10081F6CB /* Magic 8 Ball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Magic 8 Ball.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C75A36BF1FF254B10081F6CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C75A36C11FF254B10081F6CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C75A36C11FF254B10081F6CB /* Magic8BallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Magic8BallViewController.swift; sourceTree = "<group>"; };
 		C75A36C41FF254B10081F6CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C75A36C61FF254B10081F6CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C75A36C91FF254B10081F6CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				C75A36BF1FF254B10081F6CB /* AppDelegate.swift */,
-				C75A36C11FF254B10081F6CB /* ViewController.swift */,
+				C75A36C11FF254B10081F6CB /* Magic8BallViewController.swift */,
 				C75A36C31FF254B10081F6CB /* Main.storyboard */,
 				C75A36C61FF254B10081F6CB /* Assets.xcassets */,
 				C75A36C81FF254B10081F6CB /* LaunchScreen.storyboard */,
@@ -136,7 +136,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C75A36C21FF254B10081F6CB /* ViewController.swift in Sources */,
+				C75A36C21FF254B10081F6CB /* Magic8BallViewController.swift in Sources */,
 				C75A36C01FF254B10081F6CB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

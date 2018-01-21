@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  Magic8BallViewController.swift
 //  Magic 8 Ball
 //
 //  Created by GEORGE QUENTIN on 26/12/2017.
@@ -9,7 +9,7 @@
 import UIKit
 import AppCore
 
-class ViewController: UIViewController {
+class Magic8BallViewController: UIViewController {
 
     @IBOutlet weak var label : UILabel!
     @IBOutlet weak var imageView : UIImageView!

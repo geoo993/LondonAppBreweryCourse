@@ -159,7 +159,6 @@ extension SeaFoodViewController: UIImagePickerControllerDelegate, UINavigationCo
                 let hotdogResult = SeaFood.isSeaFood(classiffierWithTypeHierachy: highestClassification)
                 print(hotdogResult, highestClassification.classification)
                 let titleText = hotdogResult ? highestClassification.classification : "Not Sea Food!"
-                let image = hotdogResult ? #imageLiteral(resourceName: "hotdog") : #imageLiteral(resourceName: "not-hotdog")
                 let colorHex = hotdogResult ? "00ff00" : "ff0000"
                 
                 DispatchQueue.main.async { [unowned self] () in

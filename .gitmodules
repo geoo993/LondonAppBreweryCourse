@@ -34,3 +34,6 @@
 [submodule "Carthage/Checkouts/swift-sdk"]
 	path = Cartfile/Carthage/Checkouts/swift-sdk
 	url = https://github.com/watson-developer-cloud/swift-sdk.git
+[submodule "Carthage/Checkouts/SDWebImage"]
+	path = Cartfile/Carthage/Checkouts/SDWebImage
+	url = https://github.com/rs/SDWebImage.git

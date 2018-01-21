@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6go-IQ-85o">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Flower Detector View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="FlowerDetectorViewController" id="BYZ-38-t0r" customClass="FlowerDetectorViewController" customModule="FlowerDetector" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a photo from library" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwW-8E-OKo">
+                                <rect key="frame" x="76" y="321.5" width="221.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ye2-Of-zA6">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="stA-Kl-o7q">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="njc-SG-uAh" userLabel="Flower Description Label">
+                                        <rect key="frame" x="0.0" y="603" width="375" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="stA-Kl-o7q" firstAttribute="height" secondItem="ye2-Of-zA6" secondAttribute="height" id="Rxe-gJ-i6K"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="Azure"/>
+                        <constraints>
+                            <constraint firstItem="lwW-8E-OKo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6ld-oG-575"/>
+                            <constraint firstItem="ye2-Of-zA6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Y6g-56-hoc"/>
+                            <constraint firstItem="ye2-Of-zA6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YoN-ZL-JgG"/>
+                            <constraint firstAttribute="bottom" secondItem="ye2-Of-zA6" secondAttribute="bottom" id="amX-mK-leF"/>
+                            <constraint firstItem="lwW-8E-OKo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mhB-9K-NSZ"/>
+                            <constraint firstItem="ye2-Of-zA6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="w3o-rP-pDL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bT9-nv-61W">
+                        <barButtonItem key="leftBarButtonItem" image="photos-icon" id="lhR-9p-txV">
+                            <connections>
+                                <action selector="photosButtonTapped:" destination="BYZ-38-t0r" id="SG0-mv-Hfz"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="eL4-Z5-g4y">
+                            <connections>
+                                <action selector="cameraButtonTapped:" destination="BYZ-38-t0r" id="wBV-KY-Exw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cameraButton" destination="eL4-Z5-g4y" id="3rS-5D-6h9"/>
+                        <outlet property="descriptionLabel" destination="lwW-8E-OKo" id="spp-J0-QXS"/>
+                        <outlet property="flowerDescriptionLabel" destination="njc-SG-uAh" id="L5U-Cl-hM2"/>
+                        <outlet property="imageView" destination="stA-Kl-o7q" id="miP-0S-WQu"/>
+                        <outlet property="imageViewHeightConstraint" destination="Rxe-gJ-i6K" id="AtA-lH-Dhn"/>
+                        <outlet property="photosButton" destination="lhR-9p-txV" id="Xro-lu-VGl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="572" y="33.733133433283363"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ogy-kQ-et6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6go-IQ-85o" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="65e-Ph-j3T">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="iFt-aC-e0T"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gkl-fv-8fC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-335" y="34"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="photos-icon" width="25" height="25"/>
+        <namedColor name="Azure">
+            <color red="0.94117647058823528" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

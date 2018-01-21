@@ -1,0 +1,383 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C72E67D92013E31E00EA02E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72E67D82013E31E00EA02E3 /* AppDelegate.swift */; };
+		C72E67DB2013E31E00EA02E3 /* FlowerDetectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72E67DA2013E31E00EA02E3 /* FlowerDetectorViewController.swift */; };
+		C72E67DE2013E31E00EA02E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C72E67DC2013E31E00EA02E3 /* Main.storyboard */; };
+		C72E67E02013E31E00EA02E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C72E67DF2013E31E00EA02E3 /* Assets.xcassets */; };
+		C72E67E32013E31E00EA02E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C72E67E12013E31E00EA02E3 /* LaunchScreen.storyboard */; };
+		C72E67EB2013E3BF00EA02E3 /* FlowerClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C72E67EA2013E3BF00EA02E3 /* FlowerClassifier.mlmodel */; };
+		C72E67ED2013E50400EA02E3 /* Chameleon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C72E67EC2013E50400EA02E3 /* Chameleon.framework */; };
+		C72E67EE2013E50400EA02E3 /* Chameleon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C72E67EC2013E50400EA02E3 /* Chameleon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C72E67F02013E50400EA02E3 /* AppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C72E67EF2013E50400EA02E3 /* AppCore.framework */; };
+		C72E67F12013E50400EA02E3 /* AppCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C72E67EF2013E50400EA02E3 /* AppCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C72E67F42013EF1F00EA02E3 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C72E67F32013EF1F00EA02E3 /* SwiftyJSON.framework */; };
+		C72E67F52013EF1F00EA02E3 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C72E67F32013EF1F00EA02E3 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C72E67F72013EF1F00EA02E3 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C72E67F62013EF1F00EA02E3 /* SVProgressHUD.framework */; };
+		C72E67F82013EF1F00EA02E3 /* SVProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C72E67F62013EF1F00EA02E3 /* SVProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C72E67FA2013EF1F00EA02E3 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C72E67F92013EF1F00EA02E3 /* Alamofire.framework */; };
+		C72E67FB2013EF1F00EA02E3 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C72E67F92013EF1F00EA02E3 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C72E67FF201406E200EA02E3 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C72E67FE201406E200EA02E3 /* SDWebImage.framework */; };
+		C72E6800201406E200EA02E3 /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C72E67FE201406E200EA02E3 /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C72E67F22013E50400EA02E3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C72E67EE2013E50400EA02E3 /* Chameleon.framework in Embed Frameworks */,
+				C72E67F12013E50400EA02E3 /* AppCore.framework in Embed Frameworks */,
+				C72E67F82013EF1F00EA02E3 /* SVProgressHUD.framework in Embed Frameworks */,
+				C72E67FB2013EF1F00EA02E3 /* Alamofire.framework in Embed Frameworks */,
+				C72E6800201406E200EA02E3 /* SDWebImage.framework in Embed Frameworks */,
+				C72E67F52013EF1F00EA02E3 /* SwiftyJSON.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C72E67D52013E31D00EA02E3 /* FlowerDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowerDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C72E67D82013E31E00EA02E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C72E67DA2013E31E00EA02E3 /* FlowerDetectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerDetectorViewController.swift; sourceTree = "<group>"; };
+		C72E67DD2013E31E00EA02E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C72E67DF2013E31E00EA02E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C72E67E22013E31E00EA02E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C72E67E42013E31E00EA02E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C72E67EA2013E3BF00EA02E3 /* FlowerClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = FlowerClassifier.mlmodel; path = "../../MachineLearningModels/Flower Classification/FlowerClassifier.mlmodel"; sourceTree = "<group>"; };
+		C72E67EC2013E50400EA02E3 /* Chameleon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Chameleon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C72E67EF2013E50400EA02E3 /* AppCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C72E67F32013EF1F00EA02E3 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C72E67F62013EF1F00EA02E3 /* SVProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SVProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C72E67F92013EF1F00EA02E3 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C72E67FE201406E200EA02E3 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C72E67D22013E31D00EA02E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C72E67ED2013E50400EA02E3 /* Chameleon.framework in Frameworks */,
+				C72E67F02013E50400EA02E3 /* AppCore.framework in Frameworks */,
+				C72E67F72013EF1F00EA02E3 /* SVProgressHUD.framework in Frameworks */,
+				C72E67FA2013EF1F00EA02E3 /* Alamofire.framework in Frameworks */,
+				C72E67FF201406E200EA02E3 /* SDWebImage.framework in Frameworks */,
+				C72E67F42013EF1F00EA02E3 /* SwiftyJSON.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C72E67CC2013E31D00EA02E3 = {
+			isa = PBXGroup;
+			children = (
+				C72E67FE201406E200EA02E3 /* SDWebImage.framework */,
+				C72E67F92013EF1F00EA02E3 /* Alamofire.framework */,
+				C72E67F62013EF1F00EA02E3 /* SVProgressHUD.framework */,
+				C72E67F32013EF1F00EA02E3 /* SwiftyJSON.framework */,
+				C72E67EF2013E50400EA02E3 /* AppCore.framework */,
+				C72E67EC2013E50400EA02E3 /* Chameleon.framework */,
+				C72E67D72013E31E00EA02E3 /* FlowerDetector */,
+				C72E67D62013E31D00EA02E3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C72E67D62013E31D00EA02E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C72E67D52013E31D00EA02E3 /* FlowerDetector.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C72E67D72013E31E00EA02E3 /* FlowerDetector */ = {
+			isa = PBXGroup;
+			children = (
+				C72E67EA2013E3BF00EA02E3 /* FlowerClassifier.mlmodel */,
+				C72E67D82013E31E00EA02E3 /* AppDelegate.swift */,
+				C72E67DA2013E31E00EA02E3 /* FlowerDetectorViewController.swift */,
+				C72E67DC2013E31E00EA02E3 /* Main.storyboard */,
+				C72E67DF2013E31E00EA02E3 /* Assets.xcassets */,
+				C72E67E12013E31E00EA02E3 /* LaunchScreen.storyboard */,
+				C72E67E42013E31E00EA02E3 /* Info.plist */,
+			);
+			path = FlowerDetector;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C72E67D42013E31D00EA02E3 /* FlowerDetector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C72E67E72013E31E00EA02E3 /* Build configuration list for PBXNativeTarget "FlowerDetector" */;
+			buildPhases = (
+				C72E67D12013E31D00EA02E3 /* Sources */,
+				C72E67D22013E31D00EA02E3 /* Frameworks */,
+				C72E67D32013E31D00EA02E3 /* Resources */,
+				C72E67F22013E50400EA02E3 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlowerDetector;
+			productName = FlowerDetector;
+			productReference = C72E67D52013E31D00EA02E3 /* FlowerDetector.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C72E67CD2013E31D00EA02E3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Geo Games";
+				TargetAttributes = {
+					C72E67D42013E31D00EA02E3 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = C72E67D02013E31D00EA02E3 /* Build configuration list for PBXProject "FlowerDetector" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C72E67CC2013E31D00EA02E3;
+			productRefGroup = C72E67D62013E31D00EA02E3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C72E67D42013E31D00EA02E3 /* FlowerDetector */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C72E67D32013E31D00EA02E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C72E67E32013E31E00EA02E3 /* LaunchScreen.storyboard in Resources */,
+				C72E67E02013E31E00EA02E3 /* Assets.xcassets in Resources */,
+				C72E67DE2013E31E00EA02E3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C72E67D12013E31D00EA02E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C72E67EB2013E3BF00EA02E3 /* FlowerClassifier.mlmodel in Sources */,
+				C72E67DB2013E31E00EA02E3 /* FlowerDetectorViewController.swift in Sources */,
+				C72E67D92013E31E00EA02E3 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C72E67DC2013E31E00EA02E3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C72E67DD2013E31E00EA02E3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C72E67E12013E31E00EA02E3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C72E67E22013E31E00EA02E3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C72E67E52013E31E00EA02E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C72E67E62013E31E00EA02E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C72E67E82013E31E00EA02E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COREML_CODEGEN_LANGUAGE = Swift;
+				DEVELOPMENT_TEAM = UZ49Z7W654;
+				INFOPLIST_FILE = FlowerDetector/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.geo-games.FlowerDetector";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C72E67E92013E31E00EA02E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COREML_CODEGEN_LANGUAGE = Swift;
+				DEVELOPMENT_TEAM = UZ49Z7W654;
+				INFOPLIST_FILE = FlowerDetector/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.geo-games.FlowerDetector";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C72E67D02013E31D00EA02E3 /* Build configuration list for PBXProject "FlowerDetector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C72E67E52013E31E00EA02E3 /* Debug */,
+				C72E67E62013E31E00EA02E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C72E67E72013E31E00EA02E3 /* Build configuration list for PBXNativeTarget "FlowerDetector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C72E67E82013E31E00EA02E3 /* Debug */,
+				C72E67E92013E31E00EA02E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C72E67CD2013E31D00EA02E3 /* Project object */;
+}

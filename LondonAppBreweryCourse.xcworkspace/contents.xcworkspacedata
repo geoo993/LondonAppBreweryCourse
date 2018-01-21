@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:FlowerDetector/FlowerDetector.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:SeaFood/SeaFood.xcodeproj">
    </FileRef>
    <FileRef
@@ -37,6 +40,9 @@
       <Group
          location = "container:"
          name = "Dependencies">
+         <FileRef
+            location = "group:Cartfile/Carthage/Checkouts/SDWebImage/SDWebImage.xcodeproj">
+         </FileRef>
          <FileRef
             location = "group:Cartfile/Carthage/Checkouts/swift-sdk/WatsonDeveloperCloud.xcodeproj">
          </FileRef>

@@ -10,3 +10,4 @@ github "DaveWoodCom/XCGLogger" ~> 6.0.2
 github "ViccAlexander/Chameleon"
 github "SwipeCellKit/SwipeCellKit"
 github "watson-developer-cloud/swift-sdk"
+github "rs/SDWebImage"
