@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ARPrimitives/ARPrimitives.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:ARLines/ARLines.xcodeproj">
    </FileRef>
    <FileRef
