@@ -13,42 +13,59 @@ import AppCore
 
 struct NodeGenerator {
     
-    static func generateRandomShapeInFrontOf(node: SCNNode, color: UIColor) -> SCNNode {
-        let shapeNumber = Int.random(min: 1, max: 8)
+    static func generateRandomShape(with color: UIColor, at position:SCNVector3, with physics: Bool = false) -> SCNNode {
+        let shapeType = ShapeType.random
         var shape = SCNGeometry()
-        let radius = (0.02...0.06).random()
-        switch shapeNumber {
-        case 1:
-            shape = SCNCone(topRadius: CGFloat(radius), bottomRadius: 0.01, height: 0.05)
-        case 2:
-            shape = SCNSphere(radius: CGFloat(radius))
-        case 3:
-            shape = SCNBox(width: CGFloat(radius), height: CGFloat(radius), length: CGFloat(radius), chamferRadius: 0.01)
-        case 4:
-            shape = SCNCylinder(radius: CGFloat(radius), height: (CGFloat(radius * 2)))
-        case 5:
-            shape = SCNCapsule(capRadius: CGFloat(radius), height: (CGFloat(radius * 2)) )
-        case 6:
-            shape = SCNTorus(ringRadius: CGFloat(radius), pipeRadius: 0.01)
-        case 7:
-            shape = SCNTube(innerRadius: 0.01, outerRadius: 0.03, height: CGFloat(radius))
-        case 8:
-            shape = SCNPyramid(width: CGFloat(radius), height: CGFloat(radius), length: CGFloat(radius))
-        default:
-            print("wrong shape number")
-        }
+        let radius = CGFloat((0.05...0.1).random())
+        
+        switch shapeType {
+        case .box:
+            shape = SCNBox(width: radius, height: radius, length: radius, chamferRadius: 0.01)
+        case .sphere:
+            shape = SCNSphere(radius: radius)
+        case .pyramid:
+            shape = SCNPyramid(width: radius, height: radius, length: radius)
+        case .torus:
+            shape = SCNTorus(ringRadius: radius, pipeRadius: 0.02)
+        case .capsule:
+            shape = SCNCapsule(capRadius: radius, height: (radius * 2) )
+        case .cylinder:
+            shape = SCNCylinder(radius: radius, height: (radius * 2))
+        case .cone:
+            shape = SCNCone(topRadius: radius, bottomRadius: 0.02, height: 0.06)
+        case .tube:
+            shape = SCNTube(innerRadius: 0.02, outerRadius: 0.05, height: radius)
+        }  
         
         let material = SCNMaterial()
         material.diffuse.contents = color
         shape.materials = [material]
         
-        let sphereNode = SCNNode(geometry: shape)
+        let shapeNode = SCNNode(geometry: shape)
+        shapeNode.position = position
         
-        let position = SCNVector3(x: 0, y: 0, z: -1)
-        sphereNode.position = node.convertPosition(position, to: nil)
-        sphereNode.rotation = node.rotation
+        if physics {
+            let physicsBody = SCNPhysicsBody(type: .dynamic, shape: SCNPhysicsShape(geometry: shape, options: nil))
+            physicsBody.mass = 1.25
+            physicsBody.restitution = 0.25
+            physicsBody.friction = 0.75
+            physicsBody.categoryBitMask = CollisionTypes.shape.rawValue
+            shapeNode.physicsBody = physicsBody
+        }
         
-        return sphereNode
+        return shapeNode
+    }
+    
+    static func generateRandomShapeInFrontOf(node: SCNNode, color: UIColor, 
+                                             at position:SCNVector3, 
+                                             with physics: Bool = false) -> SCNNode {
+       
+        let shapeNode = generateRandomShape(with: color, at: position, with: physics)
+        
+        shapeNode.position = node.convertPosition(position, to: nil)
+        shapeNode.rotation = node.rotation
+        
+        return shapeNode
     }
     
     static func generateSphereInFrontOf(node: SCNNode, color: UIColor) -> SCNNode {

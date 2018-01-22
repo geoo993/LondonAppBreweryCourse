@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C79C276C20165DAA0093F888 /* TossShapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79C276A20165DAA0093F888 /* TossShapeViewController.swift */; };
+		C79C276D20165DAA0093F888 /* TossShapeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C79C276B20165DAA0093F888 /* TossShapeViewController.xib */; };
+		C79C276F2016709B0093F888 /* ShapeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79C276E2016709B0093F888 /* ShapeType.swift */; };
+		C79C2777201688350093F888 /* GameHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79C2770201688340093F888 /* GameHelper.swift */; };
 		C7A8DF61201636EC00FB43F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A8DF60201636EC00FB43F9 /* AppDelegate.swift */; };
 		C7A8DF63201636EC00FB43F9 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C7A8DF62201636EC00FB43F9 /* art.scnassets */; };
 		C7A8DF68201636EC00FB43F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7A8DF66201636EC00FB43F9 /* Main.storyboard */; };
@@ -45,6 +49,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C79C276A20165DAA0093F888 /* TossShapeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TossShapeViewController.swift; sourceTree = "<group>"; };
+		C79C276B20165DAA0093F888 /* TossShapeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TossShapeViewController.xib; sourceTree = "<group>"; };
+		C79C276E2016709B0093F888 /* ShapeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeType.swift; sourceTree = "<group>"; };
+		C79C2770201688340093F888 /* GameHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameHelper.swift; sourceTree = "<group>"; };
 		C7A8DF5D201636EB00FB43F9 /* ARPrimitives.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARPrimitives.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7A8DF60201636EC00FB43F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7A8DF62201636EC00FB43F9 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -116,8 +124,10 @@
 		C7A8DF76201638CE00FB43F9 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				C79C2770201688340093F888 /* GameHelper.swift */,
 				C7A8DF77201638CE00FB43F9 /* ShapeGenerator.swift */,
 				C7A8DF78201638CE00FB43F9 /* NodeGenerator.swift */,
+				C79C276E2016709B0093F888 /* ShapeType.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -134,6 +144,8 @@
 				C7A8DF802016399A00FB43F9 /* PlaneMapperViewController.xib */,
 				C7A8DF8C2016481800FB43F9 /* LineDrawerViewController.swift */,
 				C7A8DF8D2016481900FB43F9 /* LineDrawerViewController.xib */,
+				C79C276A20165DAA0093F888 /* TossShapeViewController.swift */,
+				C79C276B20165DAA0093F888 /* TossShapeViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -206,6 +218,7 @@
 				C7A8DF6A201636EC00FB43F9 /* Assets.xcassets in Resources */,
 				C7A8DF862016399A00FB43F9 /* PlaneMapperViewController.xib in Resources */,
 				C7A8DF68201636EC00FB43F9 /* Main.storyboard in Resources */,
+				C79C276D20165DAA0093F888 /* TossShapeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,13 +230,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7A8DF872016399A00FB43F9 /* SimpleShapeViewController.swift in Sources */,
+				C79C276C20165DAA0093F888 /* TossShapeViewController.swift in Sources */,
 				C7A8DF842016399A00FB43F9 /* PlaneAnchorViewController.swift in Sources */,
 				C7A8DF61201636EC00FB43F9 /* AppDelegate.swift in Sources */,
 				C7A8DF79201638CE00FB43F9 /* ShapeGenerator.swift in Sources */,
 				C7A8DF752016385800FB43F9 /* ARPrimitivesViewController.swift in Sources */,
 				C7A8DF8E2016481900FB43F9 /* LineDrawerViewController.swift in Sources */,
+				C79C276F2016709B0093F888 /* ShapeType.swift in Sources */,
 				C7A8DF832016399A00FB43F9 /* PlaneMapperViewController.swift in Sources */,
 				C7A8DF7A201638CE00FB43F9 /* NodeGenerator.swift in Sources */,
+				C79C2777201688350093F888 /* GameHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

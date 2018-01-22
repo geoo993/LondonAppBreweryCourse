@@ -50,7 +50,9 @@ public class SimpleShapeViewController: UIViewController {
     
     @IBAction func tapScreen() {
         if let camera = self.sceneView.pointOfView {
-            let sphere = NodeGenerator.generateRandomShapeInFrontOf(node: camera, color: .random)
+            let sphere = NodeGenerator.generateRandomShapeInFrontOf(node: camera, 
+                                                                    color: .random, 
+                                                                    at: SCNVector3(x: 0, y: 0, z: -1))
             self.sceneView.scene.rootNode.addChildNode(sphere)
         }
     }

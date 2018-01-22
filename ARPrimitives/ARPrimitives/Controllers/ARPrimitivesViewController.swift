@@ -43,6 +43,7 @@ public class ARPrimitivesViewController: UITableViewController {
         self.options = [
             Option(title: "Shape", vc: SimpleShapeViewController.self),
             Option(title: "Lines", vc: LineDrawerViewController.self),
+            Option(title: "Toss Shape", vc: TossShapeViewController.self),
             Option(title: "Plane Mapper", vc: PlaneMapperViewController.self),
             Option(title: "Plane Anchor", vc: PlaneAnchorViewController.self)
         ]

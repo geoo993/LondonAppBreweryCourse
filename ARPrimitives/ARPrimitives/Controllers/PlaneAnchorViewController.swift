@@ -56,7 +56,7 @@ public class PlaneAnchorViewController: UIViewController {
         print(results)
         
         if let match = results.first {
-            let scene = SCNScene(named: "art.scnassets/mug.scn")!
+            let scene = SCNScene(named: "art.scnassets/Scenes/mug.scn")!
             let node = scene.rootNode.childNode(withName: "mug", recursively: true)!
             
             let t = match.worldTransform

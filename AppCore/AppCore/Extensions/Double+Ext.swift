@@ -7,7 +7,6 @@ public extension Double {
     }
     
     public static func random(min: Double, max: Double) -> Double {
-        
         let rand = Double(arc4random()) / Double(UINT32_MAX)
         let minimum = min < max ? min : max 
         return  rand * Swift.abs(Double( min - max)) + minimum
