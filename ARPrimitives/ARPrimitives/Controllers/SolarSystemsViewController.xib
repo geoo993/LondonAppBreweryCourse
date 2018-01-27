@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SolarSystemsViewController" customModule="ARPrimitives" customModuleProvider="target">
+            <connections>
+                <outlet property="sceneView" destination="V2v-ks-TIO" id="FZ2-R3-0xt"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V2v-ks-TIO">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                </arscnView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="V2v-ks-TIO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="44a-UF-RwW"/>
+                <constraint firstItem="V2v-ks-TIO" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="DK4-rz-HfM"/>
+                <constraint firstItem="V2v-ks-TIO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Mvs-Pr-aTG"/>
+                <constraint firstItem="V2v-ks-TIO" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="iPY-YD-e52"/>
+                <constraint firstItem="V2v-ks-TIO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pcE-ii-VO3"/>
+                <constraint firstItem="V2v-ks-TIO" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ypf-MR-c4G"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
+        </view>
+    </objects>
+</document>

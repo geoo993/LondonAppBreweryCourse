@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C7667E31201D395600225F09 /* ARDrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7667E2F201D395600225F09 /* ARDrawingViewController.swift */; };
+		C7667E32201D395600225F09 /* ARDrawingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7667E30201D395600225F09 /* ARDrawingViewController.xib */; };
+		C7667E4A201D3DF600225F09 /* SolarSystemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7667E48201D3DF600225F09 /* SolarSystemsViewController.swift */; };
+		C7667E4B201D3DF600225F09 /* SolarSystemsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7667E49201D3DF600225F09 /* SolarSystemsViewController.xib */; };
 		C79C276C20165DAA0093F888 /* TossShapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79C276A20165DAA0093F888 /* TossShapeViewController.swift */; };
 		C79C276D20165DAA0093F888 /* TossShapeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C79C276B20165DAA0093F888 /* TossShapeViewController.xib */; };
 		C79C276F2016709B0093F888 /* ShapeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79C276E2016709B0093F888 /* ShapeType.swift */; };
@@ -49,6 +53,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C7667E2F201D395600225F09 /* ARDrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARDrawingViewController.swift; sourceTree = "<group>"; };
+		C7667E30201D395600225F09 /* ARDrawingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ARDrawingViewController.xib; sourceTree = "<group>"; };
+		C7667E48201D3DF600225F09 /* SolarSystemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystemsViewController.swift; sourceTree = "<group>"; };
+		C7667E49201D3DF600225F09 /* SolarSystemsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SolarSystemsViewController.xib; sourceTree = "<group>"; };
 		C79C276A20165DAA0093F888 /* TossShapeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TossShapeViewController.swift; sourceTree = "<group>"; };
 		C79C276B20165DAA0093F888 /* TossShapeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TossShapeViewController.xib; sourceTree = "<group>"; };
 		C79C276E2016709B0093F888 /* ShapeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeType.swift; sourceTree = "<group>"; };
@@ -146,6 +154,10 @@
 				C7A8DF8D2016481900FB43F9 /* LineDrawerViewController.xib */,
 				C79C276A20165DAA0093F888 /* TossShapeViewController.swift */,
 				C79C276B20165DAA0093F888 /* TossShapeViewController.xib */,
+				C7667E2F201D395600225F09 /* ARDrawingViewController.swift */,
+				C7667E30201D395600225F09 /* ARDrawingViewController.xib */,
+				C7667E48201D3DF600225F09 /* SolarSystemsViewController.swift */,
+				C7667E49201D3DF600225F09 /* SolarSystemsViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -212,6 +224,7 @@
 			files = (
 				C7A8DF852016399A00FB43F9 /* PlaneAnchorViewController.xib in Resources */,
 				C7A8DF8F2016481900FB43F9 /* LineDrawerViewController.xib in Resources */,
+				C7667E32201D395600225F09 /* ARDrawingViewController.xib in Resources */,
 				C7A8DF63201636EC00FB43F9 /* art.scnassets in Resources */,
 				C7A8DF6D201636EC00FB43F9 /* LaunchScreen.storyboard in Resources */,
 				C7A8DF822016399A00FB43F9 /* SimpleShapeViewController.xib in Resources */,
@@ -219,6 +232,7 @@
 				C7A8DF862016399A00FB43F9 /* PlaneMapperViewController.xib in Resources */,
 				C7A8DF68201636EC00FB43F9 /* Main.storyboard in Resources */,
 				C79C276D20165DAA0093F888 /* TossShapeViewController.xib in Resources */,
+				C7667E4B201D3DF600225F09 /* SolarSystemsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +253,8 @@
 				C79C276F2016709B0093F888 /* ShapeType.swift in Sources */,
 				C7A8DF832016399A00FB43F9 /* PlaneMapperViewController.swift in Sources */,
 				C7A8DF7A201638CE00FB43F9 /* NodeGenerator.swift in Sources */,
+				C7667E4A201D3DF600225F09 /* SolarSystemsViewController.swift in Sources */,
+				C7667E31201D395600225F09 /* ARDrawingViewController.swift in Sources */,
 				C79C2777201688350093F888 /* GameHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

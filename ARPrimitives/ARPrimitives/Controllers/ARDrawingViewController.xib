@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ARDrawingViewController" customModule="ARPrimitives" customModuleProvider="target">
+            <connections>
+                <outlet property="drawButton" destination="Aok-Lp-rAc" id="WbQ-HL-cez"/>
+                <outlet property="sceneView" destination="M9D-q8-Yyl" id="r3l-rc-lw0"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M9D-q8-Yyl">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                </arscnView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aok-Lp-rAc" customClass="UIButtonX" customModule="AppCore">
+                    <rect key="frame" x="149.5" y="533" width="75" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="r4s-54-pWi"/>
+                    </constraints>
+                    <state key="normal" title="Draw"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
+                            <color key="value" name="Aqua"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
+                            <color key="value" red="1" green="0.2202214237" blue="0.675911857" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalGradient" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Aok-Lp-rAc" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.2" id="7XT-I0-e9V"/>
+                <constraint firstItem="M9D-q8-Yyl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="CNG-Io-FTv"/>
+                <constraint firstItem="M9D-q8-Yyl" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="E4r-Wj-sNn"/>
+                <constraint firstItem="M9D-q8-Yyl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="GTk-f2-1N2"/>
+                <constraint firstItem="M9D-q8-Yyl" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Xhd-Hc-y8y"/>
+                <constraint firstItem="Aok-Lp-rAc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="eje-sk-ZZx"/>
+                <constraint firstItem="M9D-q8-Yyl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="meH-k3-cii"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Aok-Lp-rAc" secondAttribute="bottom" constant="20" id="pgh-5g-G5C"/>
+                <constraint firstItem="M9D-q8-Yyl" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="yOv-jl-AYf"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Aqua">
+            <color red="0.0" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

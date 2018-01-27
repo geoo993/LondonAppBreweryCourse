@@ -17,7 +17,7 @@ public class PlaneAnchorViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Plane Anchor"
+        self.title = "Tea Cup"
         
         self.sceneView.antialiasingMode = .multisampling4X
         self.sceneView.autoenablesDefaultLighting = true

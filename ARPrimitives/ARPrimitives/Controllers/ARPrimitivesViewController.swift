@@ -43,9 +43,11 @@ public class ARPrimitivesViewController: UITableViewController {
         self.options = [
             Option(title: "Shape", vc: SimpleShapeViewController.self),
             Option(title: "Lines", vc: LineDrawerViewController.self),
+            Option(title: "Thick Lines", vc: ARDrawingViewController.self),
             Option(title: "Toss Shape", vc: TossShapeViewController.self),
             Option(title: "Plane Mapper", vc: PlaneMapperViewController.self),
-            Option(title: "Plane Anchor", vc: PlaneAnchorViewController.self)
+            Option(title: "Tea Cup", vc: PlaneAnchorViewController.self),
+            Option(title: "Solar System", vc: SolarSystemsViewController.self)
         ]
         
         updateNavBar(with: selectedColor)
