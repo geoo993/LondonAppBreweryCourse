@@ -22,7 +22,7 @@ public class TossShapeViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Toss Shape"
+        self.title = "Toss Shapes"
         
         // Set the view's delegate
         sceneView.delegate = self

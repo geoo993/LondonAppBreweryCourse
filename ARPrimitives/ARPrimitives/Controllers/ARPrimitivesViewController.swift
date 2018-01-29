@@ -35,7 +35,7 @@ public class ARPrimitivesViewController: UITableViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "ARKit Demo"
+        self.title = "ARKit Demos"
         
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: CellIdentifier)
         self.tableView.separatorStyle = .none
@@ -44,7 +44,7 @@ public class ARPrimitivesViewController: UITableViewController {
             Option(title: "Shape", vc: SimpleShapeViewController.self),
             Option(title: "Lines", vc: LineDrawerViewController.self),
             Option(title: "Thick Lines", vc: ARDrawingViewController.self),
-            Option(title: "Toss Shape", vc: TossShapeViewController.self),
+            Option(title: "Toss Shapes", vc: TossShapeViewController.self),
             Option(title: "Plane Mapper", vc: PlaneMapperViewController.self),
             Option(title: "Tea Cup", vc: PlaneAnchorViewController.self),
             Option(title: "Solar System", vc: SolarSystemsViewController.self)
