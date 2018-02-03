@@ -7,100 +7,132 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C7C966451FEF2BEF009DDA06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C966441FEF2BEF009DDA06 /* AppDelegate.swift */; };
-		C7C966471FEF2BEF009DDA06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C966461FEF2BEF009DDA06 /* ViewController.swift */; };
-		C7C9664A1FEF2BEF009DDA06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7C966481FEF2BEF009DDA06 /* Main.storyboard */; };
-		C7C9664C1FEF2BEF009DDA06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7C9664B1FEF2BEF009DDA06 /* Assets.xcassets */; };
-		C7C9664F1FEF2BEF009DDA06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7C9664D1FEF2BEF009DDA06 /* LaunchScreen.storyboard */; };
+		C7F9E5652025C156005B12DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F9E5642025C156005B12DB /* AppDelegate.swift */; };
+		C7F9E5672025C156005B12DB /* WorldLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F9E5662025C156005B12DB /* WorldLocationViewController.swift */; };
+		C7F9E56A2025C156005B12DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7F9E5682025C156005B12DB /* Main.storyboard */; };
+		C7F9E56C2025C156005B12DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7F9E56B2025C156005B12DB /* Assets.xcassets */; };
+		C7F9E56F2025C156005B12DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7F9E56D2025C156005B12DB /* LaunchScreen.storyboard */; };
+		C7F9E5782025C231005B12DB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7F9E5772025C231005B12DB /* CoreLocation.framework */; };
+		C7F9E57A2025C33D005B12DB /* AppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7F9E5792025C33D005B12DB /* AppCore.framework */; };
+		C7F9E57B2025C33D005B12DB /* AppCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C7F9E5792025C33D005B12DB /* AppCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C7F9E57C2025C33E005B12DB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C7F9E57B2025C33D005B12DB /* AppCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		C7C966411FEF2BEF009DDA06 /* I am Poor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "I am Poor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C7C966441FEF2BEF009DDA06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C7C966461FEF2BEF009DDA06 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C7C966491FEF2BEF009DDA06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C7C9664B1FEF2BEF009DDA06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C7C9664E1FEF2BEF009DDA06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C7C966501FEF2BEF009DDA06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7F9E5612025C156005B12DB /* WorldLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7F9E5642025C156005B12DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C7F9E5662025C156005B12DB /* WorldLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldLocationViewController.swift; sourceTree = "<group>"; };
+		C7F9E5692025C156005B12DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C7F9E56B2025C156005B12DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C7F9E56E2025C156005B12DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C7F9E5702025C156005B12DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7F9E5772025C231005B12DB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C7F9E5792025C33D005B12DB /* AppCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C7C9663E1FEF2BEF009DDA06 /* Frameworks */ = {
+		C7F9E55E2025C156005B12DB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7F9E5782025C231005B12DB /* CoreLocation.framework in Frameworks */,
+				C7F9E57A2025C33D005B12DB /* AppCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C7C966381FEF2BEF009DDA06 = {
+		C7F9E5582025C156005B12DB = {
 			isa = PBXGroup;
 			children = (
-				C7C966431FEF2BEF009DDA06 /* I am Poor */,
-				C7C966421FEF2BEF009DDA06 /* Products */,
+				C7F9E5792025C33D005B12DB /* AppCore.framework */,
+				C7F9E5632025C156005B12DB /* WorldLocation */,
+				C7F9E5622025C156005B12DB /* Products */,
+				C7F9E5762025C231005B12DB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		C7C966421FEF2BEF009DDA06 /* Products */ = {
+		C7F9E5622025C156005B12DB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C7C966411FEF2BEF009DDA06 /* I am Poor.app */,
+				C7F9E5612025C156005B12DB /* WorldLocation.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C7C966431FEF2BEF009DDA06 /* I am Poor */ = {
+		C7F9E5632025C156005B12DB /* WorldLocation */ = {
 			isa = PBXGroup;
 			children = (
-				C7C966441FEF2BEF009DDA06 /* AppDelegate.swift */,
-				C7C966461FEF2BEF009DDA06 /* ViewController.swift */,
-				C7C966481FEF2BEF009DDA06 /* Main.storyboard */,
-				C7C9664B1FEF2BEF009DDA06 /* Assets.xcassets */,
-				C7C9664D1FEF2BEF009DDA06 /* LaunchScreen.storyboard */,
-				C7C966501FEF2BEF009DDA06 /* Info.plist */,
+				C7F9E5642025C156005B12DB /* AppDelegate.swift */,
+				C7F9E5662025C156005B12DB /* WorldLocationViewController.swift */,
+				C7F9E5682025C156005B12DB /* Main.storyboard */,
+				C7F9E56B2025C156005B12DB /* Assets.xcassets */,
+				C7F9E56D2025C156005B12DB /* LaunchScreen.storyboard */,
+				C7F9E5702025C156005B12DB /* Info.plist */,
 			);
-			path = "I am Poor";
+			path = WorldLocation;
+			sourceTree = "<group>";
+		};
+		C7F9E5762025C231005B12DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C7F9E5772025C231005B12DB /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C7C966401FEF2BEF009DDA06 /* I am Poor */ = {
+		C7F9E5602025C156005B12DB /* WorldLocation */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C7C966531FEF2BEF009DDA06 /* Build configuration list for PBXNativeTarget "I am Poor" */;
+			buildConfigurationList = C7F9E5732025C156005B12DB /* Build configuration list for PBXNativeTarget "WorldLocation" */;
 			buildPhases = (
-				C7C9663D1FEF2BEF009DDA06 /* Sources */,
-				C7C9663E1FEF2BEF009DDA06 /* Frameworks */,
-				C7C9663F1FEF2BEF009DDA06 /* Resources */,
+				C7F9E55D2025C156005B12DB /* Sources */,
+				C7F9E55E2025C156005B12DB /* Frameworks */,
+				C7F9E55F2025C156005B12DB /* Resources */,
+				C7F9E57C2025C33E005B12DB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "I am Poor";
-			productName = "I am Poor";
-			productReference = C7C966411FEF2BEF009DDA06 /* I am Poor.app */;
+			name = WorldLocation;
+			productName = WorldLocation;
+			productReference = C7F9E5612025C156005B12DB /* WorldLocation.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		C7C966391FEF2BEF009DDA06 /* Project object */ = {
+		C7F9E5592025C156005B12DB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Geo Games";
 				TargetAttributes = {
-					C7C966401FEF2BEF009DDA06 = {
+					C7F9E5602025C156005B12DB = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = C7C9663C1FEF2BEF009DDA06 /* Build configuration list for PBXProject "I am Poor" */;
+			buildConfigurationList = C7F9E55C2025C156005B12DB /* Build configuration list for PBXProject "WorldLocation" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -108,54 +140,54 @@
 				en,
 				Base,
 			);
-			mainGroup = C7C966381FEF2BEF009DDA06;
-			productRefGroup = C7C966421FEF2BEF009DDA06 /* Products */;
+			mainGroup = C7F9E5582025C156005B12DB;
+			productRefGroup = C7F9E5622025C156005B12DB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C7C966401FEF2BEF009DDA06 /* I am Poor */,
+				C7F9E5602025C156005B12DB /* WorldLocation */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C7C9663F1FEF2BEF009DDA06 /* Resources */ = {
+		C7F9E55F2025C156005B12DB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7C9664F1FEF2BEF009DDA06 /* LaunchScreen.storyboard in Resources */,
-				C7C9664C1FEF2BEF009DDA06 /* Assets.xcassets in Resources */,
-				C7C9664A1FEF2BEF009DDA06 /* Main.storyboard in Resources */,
+				C7F9E56F2025C156005B12DB /* LaunchScreen.storyboard in Resources */,
+				C7F9E56C2025C156005B12DB /* Assets.xcassets in Resources */,
+				C7F9E56A2025C156005B12DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C7C9663D1FEF2BEF009DDA06 /* Sources */ = {
+		C7F9E55D2025C156005B12DB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7C966471FEF2BEF009DDA06 /* ViewController.swift in Sources */,
-				C7C966451FEF2BEF009DDA06 /* AppDelegate.swift in Sources */,
+				C7F9E5672025C156005B12DB /* WorldLocationViewController.swift in Sources */,
+				C7F9E5652025C156005B12DB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C7C966481FEF2BEF009DDA06 /* Main.storyboard */ = {
+		C7F9E5682025C156005B12DB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C7C966491FEF2BEF009DDA06 /* Base */,
+				C7F9E5692025C156005B12DB /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		C7C9664D1FEF2BEF009DDA06 /* LaunchScreen.storyboard */ = {
+		C7F9E56D2025C156005B12DB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C7C9664E1FEF2BEF009DDA06 /* Base */,
+				C7F9E56E2025C156005B12DB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -163,7 +195,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		C7C966511FEF2BEF009DDA06 /* Debug */ = {
+		C7F9E5712025C156005B12DB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -220,7 +252,7 @@
 			};
 			name = Debug;
 		};
-		C7C966521FEF2BEF009DDA06 /* Release */ = {
+		C7F9E5722025C156005B12DB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -270,62 +302,58 @@
 			};
 			name = Release;
 		};
-		C7C966541FEF2BEF009DDA06 /* Debug */ = {
+		C7F9E5742025C156005B12DB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "I am Poor/Info.plist";
+				DEVELOPMENT_TEAM = U28DQFZA3Z;
+				INFOPLIST_FILE = WorldLocation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.geo-games.I-am-Poor";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.geo-games.WorldLocation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		C7C966551FEF2BEF009DDA06 /* Release */ = {
+		C7F9E5752025C156005B12DB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "I am Poor/Info.plist";
+				DEVELOPMENT_TEAM = U28DQFZA3Z;
+				INFOPLIST_FILE = WorldLocation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.geo-games.I-am-Poor";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.geo-games.WorldLocation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C7C9663C1FEF2BEF009DDA06 /* Build configuration list for PBXProject "I am Poor" */ = {
+		C7F9E55C2025C156005B12DB /* Build configuration list for PBXProject "WorldLocation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C7C966511FEF2BEF009DDA06 /* Debug */,
-				C7C966521FEF2BEF009DDA06 /* Release */,
+				C7F9E5712025C156005B12DB /* Debug */,
+				C7F9E5722025C156005B12DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C7C966531FEF2BEF009DDA06 /* Build configuration list for PBXNativeTarget "I am Poor" */ = {
+		C7F9E5732025C156005B12DB /* Build configuration list for PBXNativeTarget "WorldLocation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C7C966541FEF2BEF009DDA06 /* Debug */,
-				C7C966551FEF2BEF009DDA06 /* Release */,
+				C7F9E5742025C156005B12DB /* Debug */,
+				C7F9E5752025C156005B12DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = C7C966391FEF2BEF009DDA06 /* Project object */;
+	rootObject = C7F9E5592025C156005B12DB /* Project object */;
 }

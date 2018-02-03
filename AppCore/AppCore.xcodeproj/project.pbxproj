@@ -11,6 +11,7 @@
 		C70A35AD1FFC770F00857F88 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70A35AB1FFC770E00857F88 /* DeviceType.swift */; };
 		C71127F520137A8D00FBC479 /* Sequence+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71127F420137A8D00FBC479 /* Sequence+Ext.swift */; };
 		C72E67FD2013FE7A00EA02E3 /* NSLayoutConstraint+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72E67FC2013FE7A00EA02E3 /* NSLayoutConstraint+Ext.swift */; };
+		C7603CC32025D3410082876B /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7603CC22025D3410082876B /* LocationManager.swift */; };
 		C7667E3E201D39AF00225F09 /* UIViewXRadialGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7667E34201D39AF00225F09 /* UIViewXRadialGradient.swift */; };
 		C7667E3F201D39AF00225F09 /* UITextFieldX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7667E35201D39AF00225F09 /* UITextFieldX.swift */; };
 		C7667E40201D39AF00225F09 /* UIButtonX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7667E36201D39AF00225F09 /* UIButtonX.swift */; };
@@ -98,6 +99,7 @@
 		C741F2331FF29BAA002B42D3 /* Variables Constants and Data types.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Variables Constants and Data types.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C741F2341FF29C02002B42D3 /* Comments, printing and the console.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Comments, printing and the console.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C741F2351FF2DF86002B42D3 /* Colors.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Colors.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		C7603CC22025D3410082876B /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C7667E34201D39AF00225F09 /* UIViewXRadialGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewXRadialGradient.swift; sourceTree = "<group>"; };
 		C7667E35201D39AF00225F09 /* UITextFieldX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldX.swift; sourceTree = "<group>"; };
 		C7667E36201D39AF00225F09 /* UIButtonX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonX.swift; sourceTree = "<group>"; };
@@ -191,6 +193,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C7603CC12025D31E0082876B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C7603CC22025D3410082876B /* LocationManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		C7667E33201D39AF00225F09 /* DesignableX */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +319,7 @@
 		C7DAF1211FF11C6E000D93C7 /* AppCore */ = {
 			isa = PBXGroup;
 			children = (
+				C7603CC12025D31E0082876B /* Utilities */,
 				C7DEB11E1FF29B760048FCD1 /* Playgrounds */,
 				C7B9FE3E1FF151A200D15B45 /* Models */,
 				C7B9FE681FF151CD00D15B45 /* Views */,
@@ -482,6 +493,7 @@
 				C785AB371FF126E4002360A6 /* CAEmitterCell+Ext.swift in Sources */,
 				C785AB2B1FF126E4002360A6 /* UIImage+GIF.swift in Sources */,
 				C785AB401FF126E4002360A6 /* ImageProcessor.swift in Sources */,
+				C7603CC32025D3410082876B /* LocationManager.swift in Sources */,
 				C7B9FEA21FF151CD00D15B45 /* AnimatableHamburgerView.swift in Sources */,
 				C785AB2C1FF126E4002360A6 /* UIApplication+Ext.swift in Sources */,
 				C785AB4D1FF13B7F002360A6 /* UIFont+Ext.swift in Sources */,
