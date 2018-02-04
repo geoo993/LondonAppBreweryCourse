@@ -58,6 +58,9 @@
 		C785AB4D1FF13B7F002360A6 /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C785AB4C1FF13B7F002360A6 /* UIFont+Ext.swift */; };
 		C785AB4F1FF13F2F002360A6 /* NSRange+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C785AB4E1FF13F2F002360A6 /* NSRange+Ext.swift */; };
 		C785AB511FF13F71002360A6 /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C785AB501FF13F71002360A6 /* Array+Ext.swift */; };
+		C795DE4720271A84001CC4C3 /* Unit+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C795DE4620271A84001CC4C3 /* Unit+Ext.swift */; };
+		C795DE4920271B41001CC4C3 /* FormatDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C795DE4820271B41001CC4C3 /* FormatDisplay.swift */; };
+		C795DE4D20272312001CC4C3 /* MulticolorPolyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = C795DE4C20272312001CC4C3 /* MulticolorPolyline.swift */; };
 		C79B28B0201615F500E9EEE7 /* SCNVector3+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79B28AF201615F500E9EEE7 /* SCNVector3+Ext.swift */; };
 		C79C277F201689790093F888 /* SCNAction+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79C277E201689790093F888 /* SCNAction+Ext.swift */; };
 		C7B4BE781FF80ED100D54698 /* UIStackView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B4BE771FF80ED100D54698 /* UIStackView+Ext.swift */; };
@@ -146,6 +149,9 @@
 		C785AB4C1FF13B7F002360A6 /* UIFont+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
 		C785AB4E1FF13F2F002360A6 /* NSRange+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSRange+Ext.swift"; sourceTree = "<group>"; };
 		C785AB501FF13F71002360A6 /* Array+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
+		C795DE4620271A84001CC4C3 /* Unit+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Unit+Ext.swift"; sourceTree = "<group>"; };
+		C795DE4820271B41001CC4C3 /* FormatDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatDisplay.swift; sourceTree = "<group>"; };
+		C795DE4C20272312001CC4C3 /* MulticolorPolyline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticolorPolyline.swift; sourceTree = "<group>"; };
 		C79B28AF201615F500E9EEE7 /* SCNVector3+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNVector3+Ext.swift"; sourceTree = "<group>"; };
 		C79C277E201689790093F888 /* SCNAction+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNAction+Ext.swift"; sourceTree = "<group>"; };
 		C7B4BE771FF80ED100D54698 /* UIStackView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Ext.swift"; sourceTree = "<group>"; };
@@ -221,8 +227,6 @@
 		C785AAFD1FF126E4002360A6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				C70A35AB1FFC770E00857F88 /* DeviceType.swift */,
-				C70A35AA1FFC770E00857F88 /* UIDevice+Ext.swift */,
 				C785AB501FF13F71002360A6 /* Array+Ext.swift */,
 				C7B9FE691FF151CD00D15B45 /* BezierCubicCurveAlgorithm.swift */,
 				C785AB111FF126E4002360A6 /* CAEmitterCell+Ext.swift */,
@@ -230,10 +234,12 @@
 				C785AB191FF126E4002360A6 /* CGPath+Ext.swift */,
 				C785AB0F1FF126E4002360A6 /* CGPoint+Ext.swift */,
 				C785AB021FF126E4002360A6 /* CGRect+Ext.swift */,
-				C785AB221FF126E4002360A6 /* Double+Ext.swift */,
+				C70A35AB1FFC770E00857F88 /* DeviceType.swift */,
 				C785AB011FF126E4002360A6 /* Dictionary+Ext.swift */,
+				C785AB221FF126E4002360A6 /* Double+Ext.swift */,
 				C785AB101FF126E4002360A6 /* GameLoop.swift */,
 				C785AAFE1FF126E4002360A6 /* Generic+Ext.swift */,
+				C795DE4820271B41001CC4C3 /* FormatDisplay.swift */,
 				C785AB4A1FF127AB002360A6 /* Int+Ext.swift */,
 				C785AB1A1FF126E4002360A6 /* ImageProcessor.swift */,
 				C7E8E8E92006A27B0089C856 /* NSAttributedString+Ext.swift */,
@@ -249,6 +255,7 @@
 				C785AAFF1FF126E4002360A6 /* UIBezierPath+Ext.swift */,
 				C785AB141FF126E4002360A6 /* UIButton+Ext.swift */,
 				C785AB181FF126E4002360A6 /* UIColor+Ext.swift */,
+				C70A35AA1FFC770E00857F88 /* UIDevice+Ext.swift */,
 				C785AB4C1FF13B7F002360A6 /* UIFont+Ext.swift */,
 				C785AB001FF126E4002360A6 /* UIImageView+Ext.swift */,
 				C785AB081FF126E4002360A6 /* UIImage+Ext.swift */,
@@ -266,6 +273,7 @@
 				C785AB201FF126E4002360A6 /* UIViewController+Ext.swift */,
 				C785AB211FF126E4002360A6 /* UIView+Ext.swift */,
 				C785AB1D1FF126E4002360A6 /* UIWindow+Ext.swift */,
+				C795DE4620271A84001CC4C3 /* Unit+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -312,6 +320,7 @@
 				C7B9FE741FF151CD00D15B45 /* SlideShowView.swift */,
 				C7B9FE6E1FF151CD00D15B45 /* TopDrawerView.swift */,
 				C7B9FE731FF151CD00D15B45 /* ZIgZagScrollView.swift */,
+				C795DE4C20272312001CC4C3 /* MulticolorPolyline.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -459,11 +468,13 @@
 				C785AB3B1FF126E4002360A6 /* UIScrollView+Ext.swift in Sources */,
 				C785AB261FF126E4002360A6 /* UIImageView+Ext.swift in Sources */,
 				C7B9FE9E1FF151CD00D15B45 /* ParallaxHeaderView.swift in Sources */,
+				C795DE4720271A84001CC4C3 /* Unit+Ext.swift in Sources */,
 				C7B9FEB71FF151CE00D15B45 /* RoundedCornerView.swift in Sources */,
 				C785AB411FF126E4002360A6 /* NSMutableAttributedString+Ext.swift in Sources */,
 				C785AB491FF126E4002360A6 /* UINavigationBar+Ext.swift in Sources */,
 				C785AB4F1FF13F2F002360A6 /* NSRange+Ext.swift in Sources */,
 				C785AB2A1FF126E4002360A6 /* SwiftRegex.swift in Sources */,
+				C795DE4D20272312001CC4C3 /* MulticolorPolyline.swift in Sources */,
 				C7B9FE991FF151CD00D15B45 /* PartialCircleView.swift in Sources */,
 				C7B9FEAC1FF151CE00D15B45 /* BezierView.swift in Sources */,
 				C7B9FEBA1FF151CE00D15B45 /* PieChartView.swift in Sources */,
@@ -485,6 +496,7 @@
 				C785AB451FF126E4002360A6 /* String+Ext.swift in Sources */,
 				C7B9FE981FF151CD00D15B45 /* CirclePieView.swift in Sources */,
 				C7667E3E201D39AF00225F09 /* UIViewXRadialGradient.swift in Sources */,
+				C795DE4920271B41001CC4C3 /* FormatDisplay.swift in Sources */,
 				C7B9FE9D1FF151CD00D15B45 /* SlideShowView.swift in Sources */,
 				C785AB301FF126E4002360A6 /* UITextField+Ext.swift in Sources */,
 				C7B9FE961FF151CD00D15B45 /* DotView.swift in Sources */,
