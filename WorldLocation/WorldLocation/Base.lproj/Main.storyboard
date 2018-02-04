@@ -25,16 +25,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FMe-xr-bRG">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="500.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="533.5"/>
                             </mapView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aKp-aX-yaI">
-                                <rect key="frame" x="-0.5" y="500.5" width="375" height="166.5"/>
+                                <rect key="frame" x="-0.5" y="533.5" width="375" height="133.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="28O-q7-zEH">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="33.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="27"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="London" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBj-TP-5xm">
-                                                <rect key="frame" x="10" y="0.0" width="365" height="33.5"/>
+                                                <rect key="frame" x="10" y="0.0" width="365" height="27"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -49,10 +49,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6kW-Np-nlN">
-                                        <rect key="frame" x="0.0" y="33.5" width="375" height="33"/>
+                                        <rect key="frame" x="0.0" y="27" width="375" height="26.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Streatham" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNb-2S-lty">
-                                                <rect key="frame" x="10" y="0.0" width="365" height="33"/>
+                                                <rect key="frame" x="10" y="0.0" width="365" height="26.5"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -67,20 +67,54 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QfF-5T-Yx8">
-                                        <rect key="frame" x="0.0" y="66.5" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="53.5" width="375" height="80"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1O7-Pw-ndX">
-                                                <rect key="frame" x="162" y="35.5" width="51" height="30"/>
-                                                <state key="normal" title="Update"/>
-                                                <connections>
-                                                    <action selector="update:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T2g-0k-cIe"/>
-                                                </connections>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kZR-nY-uDf">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUy-gu-aNa">
+                                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="80"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1O7-Pw-ndX">
+                                                                <rect key="frame" x="68.5" y="25" width="51" height="30"/>
+                                                                <state key="normal" title="Update"/>
+                                                                <connections>
+                                                                    <action selector="update:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T2g-0k-cIe"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="1O7-Pw-ndX" firstAttribute="centerY" secondItem="XUy-gu-aNa" secondAttribute="centerY" id="TCg-wE-M9u"/>
+                                                            <constraint firstItem="1O7-Pw-ndX" firstAttribute="centerX" secondItem="XUy-gu-aNa" secondAttribute="centerX" id="mgb-SZ-nY0"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ica-bO-cxx">
+                                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="80"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXF-FB-2sH">
+                                                                <rect key="frame" x="78" y="25" width="32" height="30"/>
+                                                                <state key="normal" title="Next"/>
+                                                                <connections>
+                                                                    <action selector="next:" destination="BYZ-38-t0r" eventType="touchUpInside" id="smo-Fw-jSi"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="kXF-FB-2sH" firstAttribute="centerY" secondItem="ica-bO-cxx" secondAttribute="centerY" id="DoH-qW-2nP"/>
+                                                            <constraint firstItem="kXF-FB-2sH" firstAttribute="centerX" secondItem="ica-bO-cxx" secondAttribute="centerX" id="sTw-KN-K2d"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="1O7-Pw-ndX" firstAttribute="centerX" secondItem="QfF-5T-Yx8" secondAttribute="centerX" id="loT-Xj-89L"/>
-                                            <constraint firstItem="1O7-Pw-ndX" firstAttribute="centerY" secondItem="QfF-5T-Yx8" secondAttribute="centerY" id="qkU-JW-iV5"/>
+                                            <constraint firstItem="kZR-nY-uDf" firstAttribute="top" secondItem="QfF-5T-Yx8" secondAttribute="top" id="2fQ-vD-bME"/>
+                                            <constraint firstItem="kZR-nY-uDf" firstAttribute="leading" secondItem="QfF-5T-Yx8" secondAttribute="leading" id="3dF-57-bd8"/>
+                                            <constraint firstAttribute="trailing" secondItem="kZR-nY-uDf" secondAttribute="trailing" id="52j-S2-9Zl"/>
+                                            <constraint firstAttribute="bottom" secondItem="kZR-nY-uDf" secondAttribute="bottom" id="db4-WY-HcD"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -96,7 +130,7 @@
                             <constraint firstItem="aKp-aX-yaI" firstAttribute="top" secondItem="FMe-xr-bRG" secondAttribute="bottom" id="8vk-W0-UGR"/>
                             <constraint firstItem="aKp-aX-yaI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IOi-yv-a3U"/>
                             <constraint firstItem="FMe-xr-bRG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="KOj-U2-WCu"/>
-                            <constraint firstItem="aKp-aX-yaI" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="S1q-sO-iS3"/>
+                            <constraint firstItem="aKp-aX-yaI" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="S1q-sO-iS3"/>
                             <constraint firstItem="FMe-xr-bRG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="iPg-OB-si4"/>
                             <constraint firstItem="aKp-aX-yaI" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="uxK-B1-eXv"/>
                             <constraint firstItem="FMe-xr-bRG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xg0-EM-iSG"/>

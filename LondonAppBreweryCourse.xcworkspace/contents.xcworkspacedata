@@ -2,10 +2,16 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:WorldLocation/WorldLocation.xcodeproj">
+      location = "group:Plotter/Plotter.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:ARPrimitives/ARPrimitives.xcodeproj">
+      location = "group:MapOverlays/MapOverlays.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:WorldLocationTracking/WorldLocationTracking.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:WorldLocation/WorldLocation.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:ARLines/ARLines.xcodeproj">
@@ -33,6 +39,9 @@
    </FileRef>
    <FileRef
       location = "group:CoreML-Vision/CoreML-Vision.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ARPrimitives/ARPrimitives.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:RegularExpressions/RegularExpressions.xcodeproj">
