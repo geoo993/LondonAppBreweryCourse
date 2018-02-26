@@ -7,7 +7,15 @@
 		<key>MusicHitList.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>106</integer>
+			<integer>101</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>C794D66620012D0E00A7BB19</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

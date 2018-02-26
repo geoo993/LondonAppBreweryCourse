@@ -12,7 +12,7 @@
 		C717663320115A4200EB23D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C717663120115A4200EB23D0 /* Main.storyboard */; };
 		C717663520115A4200EB23D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C717663420115A4200EB23D0 /* Assets.xcassets */; };
 		C717663820115A4200EB23D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C717663620115A4200EB23D0 /* LaunchScreen.storyboard */; };
-		C71766442011675500EB23D0 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C71766432011675500EB23D0 /* Resnet50.mlmodel */; };
+		C7735285204444AA00224603 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C7735284204444AA00224603 /* Resnet50.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,7 @@
 		C717663420115A4200EB23D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C717663720115A4200EB23D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C717663920115A4200EB23D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C71766432011675500EB23D0 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Resnet50.mlmodel; path = ../../MachineLearningModels/Resnet50.mlmodel; sourceTree = "<group>"; };
+		C7735284204444AA00224603 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Resnet50.mlmodel; path = ../../AppCore/AppCore/Models/CoreML/Resnet50.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +56,7 @@
 		C717662C20115A4200EB23D0 /* SceneDetector */ = {
 			isa = PBXGroup;
 			children = (
-				C71766432011675500EB23D0 /* Resnet50.mlmodel */,
+				C7735284204444AA00224603 /* Resnet50.mlmodel */,
 				C717662D20115A4200EB23D0 /* AppDelegate.swift */,
 				C717662F20115A4200EB23D0 /* SceneDetectorViewController.swift */,
 				C717663120115A4200EB23D0 /* Main.storyboard */,
@@ -140,7 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C717663020115A4200EB23D0 /* SceneDetectorViewController.swift in Sources */,
-				C71766442011675500EB23D0 /* Resnet50.mlmodel in Sources */,
+				C7735285204444AA00224603 /* Resnet50.mlmodel in Sources */,
 				C717662E20115A4200EB23D0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,7 +279,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UZ49Z7W654;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SceneDetector/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.geo-games.SceneDetector";
@@ -294,7 +294,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UZ49Z7W654;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SceneDetector/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.geo-games.SceneDetector";

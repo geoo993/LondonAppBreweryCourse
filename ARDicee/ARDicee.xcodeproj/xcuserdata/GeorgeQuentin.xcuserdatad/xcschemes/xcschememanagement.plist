@@ -7,7 +7,15 @@
 		<key>ARDicee.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>98</integer>
+			<integer>91</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>C7F499CA2014B73100C89434</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
