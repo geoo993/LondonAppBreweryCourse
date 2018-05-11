@@ -55,7 +55,7 @@ public class BezierView: UIView {
         lineLayer.removeFromSuperlayer()
         outlineLayer.removeFromSuperlayer()
         roadlineLayer.removeFromSuperlayer()
-        self.removeEverything()
+        self.removeNestedSubviewsAndConstraints()
         self.layer.sublayers?.forEach({ (layer: CALayer) -> () in
             layer.removeFromSuperlayer()
         })

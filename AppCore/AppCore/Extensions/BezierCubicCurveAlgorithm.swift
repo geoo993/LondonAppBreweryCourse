@@ -96,8 +96,8 @@ public class BezierCubicCurveAlgorithm
                 let b1 = b[i] - m * c[i-1];
                 b[i] = b1
                 
-                let r2x = rhsValueX.float - m * prevRhsValueX.float
-                let r2y = rhsValueY.float - m * prevRhsValueY.float
+                let r2x = rhsValueX.toDouble - m * prevRhsValueX.toDouble
+                let r2y = rhsValueY.toDouble - m * prevRhsValueY.toDouble
                 
                 rhsArray[i] = CGPoint(x: r2x, y: r2y)
                 
@@ -106,16 +106,16 @@ public class BezierCubicCurveAlgorithm
             //Get First Control Points
             
             //Last control Point
-            let lastControlPointX = rhsArray[count-1].x.float / b[count-1]
-            let lastControlPointY = rhsArray[count-1].y.float / b[count-1]
+            let lastControlPointX = rhsArray[count-1].x.toDouble / b[count-1]
+            let lastControlPointY = rhsArray[count-1].y.toDouble / b[count-1]
             
             firstControlPoints[count-1] = CGPoint(x: lastControlPointX, y: lastControlPointY)
             
             for i in (0...(count-2)).reversed() {
             //for var i=count-2; i>=0; --i {
                 if let nextControlPoint = firstControlPoints[i+1] {
-                    let controlPointX = (rhsArray[i].x.float - c[i] * nextControlPoint.x.float)/b[i]
-                    let controlPointY = (rhsArray[i].y.float - c[i] * nextControlPoint.y.float)/b[i]
+                    let controlPointX = (rhsArray[i].x.toDouble - c[i] * nextControlPoint.x.toDouble)/b[i]
+                    let controlPointY = (rhsArray[i].y.toDouble - c[i] * nextControlPoint.y.toDouble)/b[i]
                     
                     firstControlPoints[i] = CGPoint(x: controlPointX, y: controlPointY)
                     

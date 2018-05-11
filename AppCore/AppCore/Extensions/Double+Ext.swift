@@ -17,4 +17,13 @@ public extension Double {
         let divisor = pow(10.0, Double(places))
         return (self * divisor).rounded() / divisor
     }
+
+    /// Convert a Double to Int
+    public var toInt: Int { // swiftlint:disable:this identifier_name
+        return Int(self)
+    }
+
+    public var toCGFloat: CGFloat {
+        return CGFloat(self)
+    }
 }

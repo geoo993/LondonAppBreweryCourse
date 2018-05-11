@@ -387,13 +387,14 @@ public extension UIView {
             $0.removeFromSuperview()
         })
     }
-    
-    public func removeEverything (){
-        while(self.subviews.count > 0) 
+
+    public func removeNestedSubviewsAndConstraints(){
+        while(self.subviews.count > 0)
         {
             self.removeSubviewsAndConstraints()
         }
     }
+
 
     /**
      Removes all constrains for this view
@@ -407,11 +408,30 @@ public extension UIView {
         self.superview?.removeConstraints(constraints)
         self.removeConstraints(self.constraints)
     }
-    
+
+
+    /// Removes all constrains for this view
+    public func removeViewConstraints() {
+        var topView: UIView? = self
+        repeat {
+            var list = [NSLayoutConstraint]()
+            for c in topView?.constraints ?? [] {
+                if c.firstItem as? UIView == self || c.secondItem as? UIView == self {
+                    list.append(c)
+                }
+            }
+            topView?.removeConstraints(list)
+            topView = topView?.superview
+
+        } while topView != nil
+
+        translatesAutoresizingMaskIntoConstraints = true
+    }
+
     func removeSubview<T>(with type : T.Type){
         for subview in self.subviews {
             if (subview is T) {
-                subview.removeEverything()
+                subview.removeNestedSubviewsAndConstraints()
                 subview.removeFromSuperview()
             }
         }
@@ -420,7 +440,7 @@ public extension UIView {
     func removeSubview(with view : UIView){
         for subview in self.subviews {
             if (subview == view) {
-                subview.removeEverything()
+                subview.removeNestedSubviewsAndConstraints()
                 subview.removeFromSuperview()
             }
         }

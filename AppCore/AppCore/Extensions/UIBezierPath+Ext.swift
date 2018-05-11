@@ -10,21 +10,44 @@ import UIKit
 
 public extension UIBezierPath {
     
-    struct BezierSubpath {
-        var startPoint: CGPoint = CGPoint.zero
-        var controlPoint1: CGPoint = CGPoint.zero
-        var controlPoint2: CGPoint = CGPoint.zero
-        var endPoint: CGPoint = CGPoint.zero
-        var length: CGFloat = 0.0
-        var type: CGPathElementType = CGPathElementType(rawValue: 0)!
+    public struct BezierSubpath {
+        public var startPoint: CGPoint = CGPoint.zero
+        public var controlPoint1: CGPoint = CGPoint.zero
+        public var controlPoint2: CGPoint = CGPoint.zero
+        public var endPoint: CGPoint = CGPoint.zero
+        public var length: CGFloat = 0.0
+        public var type: CGPathElementType = CGPathElementType(rawValue: 0)!
+        public var description: String {
+            switch type {
+            case .moveToPoint:
+                return "MoveTo(\(endPoint.format(Decimals.one))"
+            case .addLineToPoint:
+                return "AddLine(from: \(startPoint.format(Decimals.one)), to: \(endPoint.format(Decimals.one)))"
+            case .addQuadCurveToPoint:
+                return """
+                AddQuadCurve(from: \(startPoint.format(Decimals.one)),
+                control: \(controlPoint1.format(Decimals.one)),
+                to: \(endPoint.format(Decimals.one)))
+                """
+            case .addCurveToPoint:
+                return """
+                AddCubicCurve(from: \(startPoint.format(Decimals.one)), \
+                control1: \(controlPoint1.format(Decimals.one)), \
+                control2: \(controlPoint2.format(Decimals.one)), \
+                to: \(endPoint.format(Decimals.one)))
+                """
+            case .closeSubpath:
+                return "ClosePath(from: \(startPoint.format(Decimals.one)), to: \(endPoint.format(Decimals.one))"
+            }
+        }
     }
     
     // MARK: - Math helpers
-    func linearLineLength(fromPoint: CGPoint, toPoint: CGPoint) -> CGFloat {
+    public func linearLineLength(fromPoint: CGPoint, toPoint: CGPoint) -> CGFloat {
         return CGFloat(sqrtf(powf(Float(toPoint.x - fromPoint.x), 2) + powf(Float(toPoint.y - fromPoint.y), 2)))
     }
 
-    func linearBezierPoint(t: Float, start: CGPoint, end: CGPoint) -> CGPoint {
+    public func linearBezierPoint(t: Float, start: CGPoint, end: CGPoint) -> CGPoint {
         let dx: CGFloat = end.x - start.x
         let dy: CGFloat = end.y - start.y
         let px: CGFloat = start.x + (CGFloat(t) * dx)
@@ -33,7 +56,7 @@ public extension UIBezierPath {
     }
 
    
-    public static func CubicBezierCurveFactors(t:CGFloat) -> (CGFloat,CGFloat,CGFloat,CGFloat){
+    public static func cubicBezierCurveFactors(t:CGFloat) -> (CGFloat,CGFloat,CGFloat,CGFloat){
         let t1 = pow(1.0-t, 3.0)
         let t2 = 3.0*pow(1.0-t,2.0)*t
         let t3 = 3.0*(1.0-t)*pow(t,2.0)
@@ -43,7 +66,7 @@ public extension UIBezierPath {
     }
     
     
-    public static func QuadBezierCurveFactors(t:CGFloat) -> (CGFloat,CGFloat,CGFloat){
+    public static func quadBezierCurveFactors(t:CGFloat) -> (CGFloat,CGFloat,CGFloat){
         let t1 = pow(1.0-t,2.0)
         let t2 = 2.0*(1-t)*t
         let t3 = pow(t, 2.0)
@@ -52,36 +75,36 @@ public extension UIBezierPath {
     }
     
     // Quadratic Bezier Curve
-    public static func BezierCurvef(with t:CGFloat,p0:CGFloat,c1:CGFloat,p1:CGFloat) -> CGFloat{
-        let factors = QuadBezierCurveFactors(t: t)
+    public static func bezierCurvef(with t:CGFloat,p0:CGFloat,c1:CGFloat,p1:CGFloat) -> CGFloat{
+        let factors = quadBezierCurveFactors(t: t)
         return (factors.0*p0) + (factors.1*c1) + (factors.2*p1)
     }
     
     
     // Quadratic Bezier Curve
-    public static func BezierCurve(with t:CGFloat,p0:CGPoint,c1:CGPoint,p1:CGPoint) -> CGPoint{
-        let x = BezierCurvef(with: t, p0: p0.x, c1: c1.x, p1: p1.x)
-        let y = BezierCurvef(with: t, p0: p0.y, c1: c1.y, p1: p1.y)
+    public static func bezierCurve(with t:CGFloat,p0:CGPoint,c1:CGPoint,p1:CGPoint) -> CGPoint{
+        let x = bezierCurvef(with: t, p0: p0.x, c1: c1.x, p1: p1.x)
+        let y = bezierCurvef(with: t, p0: p0.y, c1: c1.y, p1: p1.y)
         return CGPoint(x: x, y: y)
     }
     
     // Cubic Bezier Curve
-    public static func BezierCurvef(with t:CGFloat,p0:CGFloat, c1:CGFloat, c2:CGFloat, p1:CGFloat) -> CGFloat{
-        let factors = CubicBezierCurveFactors(t: t)
+    public static func bezierCurvef(with t:CGFloat,p0:CGFloat, c1:CGFloat, c2:CGFloat, p1:CGFloat) -> CGFloat{
+        let factors = cubicBezierCurveFactors(t: t)
         return (factors.0*p0) + (factors.1*c1) + (factors.2*c2) + (factors.3*p1)
     }
     
     
     // Cubic Bezier Curve
-    public static func BezierCurve(with t: CGFloat, p0:CGPoint, c1:CGPoint, c2: CGPoint, p1: CGPoint) -> CGPoint{
-        let x = BezierCurvef(with: t, p0: p0.x, c1: c1.x, c2: c2.x, p1: p1.x)
-        let y = BezierCurvef(with: t, p0: p0.y, c1: c1.y, c2: c2.y, p1: p1.y)
+    public static func bezierCurve(with t: CGFloat, p0:CGPoint, c1:CGPoint, c2: CGPoint, p1: CGPoint) -> CGPoint{
+        let x = bezierCurvef(with: t, p0: p0.x, c1: c1.x, c2: c2.x, p1: p1.x)
+        let y = bezierCurvef(with: t, p0: p0.y, c1: c1.y, c2: c2.y, p1: p1.y)
         return CGPoint(x: x, y: y)
     }
     
     
     // Cubic Bezier Curve Length
-    public static func BezierCurveLength(p0:CGPoint,c1:CGPoint, c2:CGPoint, p1:CGPoint) -> CGFloat{
+    public static func bezierCurveLength(p0:CGPoint,c1:CGPoint, c2:CGPoint, p1:CGPoint) -> CGFloat{
         let steps = 12 // on greater samples, more presicion
         
         var current  = p0
@@ -90,7 +113,7 @@ public extension UIBezierPath {
         
         for i in 1...steps{
             let t = CGFloat(i) / CGFloat(steps)
-            current = BezierCurve(with: t, p0: p0, c1: c1, c2: c2, p1: p1)
+            current = bezierCurve(with: t, p0: p0, c1: c1, c2: c2, p1: p1)
             length += previous.distance(to: current)
             previous = current
         }
@@ -100,7 +123,7 @@ public extension UIBezierPath {
     
     
     // Quadratic Bezier Curve Length
-    public static func BezierCurveLength(p0:CGPoint,c1:CGPoint, p1:CGPoint) -> CGFloat{
+    public static func bezierCurveLength(p0:CGPoint,c1:CGPoint, p1:CGPoint) -> CGFloat{
         let steps = 12 // on greater samples, more presicion
         
         var current  = p0
@@ -109,7 +132,7 @@ public extension UIBezierPath {
         
         for i in 1...steps{
             let t = CGFloat(i) / CGFloat(steps)
-            current = BezierCurve(with: t, p0: p0, c1: c1, p1: p1)
+            current = bezierCurve(with: t, p0: p0, c1: c1, p1: p1)
             length += previous.distance(to: current)
             previous = current
         }
@@ -120,7 +143,7 @@ public extension UIBezierPath {
     /*  Cubic Bezier Curve
      *  http://ericasadun.com/2013/03/25/calculating-bezier-points/
      */
-    func CubicBezier(t: Float, start: Float, c1: Float, c2: Float, end: Float) -> Float {
+    public func cubicBezier(t: Float, start: Float, c1: Float, c2: Float, end: Float) -> Float {
         let t_ = CGFloat((1.0 - t))
         let tt_: CGFloat = t_ * t_
         let ttt_: CGFloat = t_ * t_ * t_
@@ -135,14 +158,14 @@ public extension UIBezierPath {
         return Float(t1 + t2 + t3 + t4)
     }
     
-    func cubicBezierPoint(t: Float, start: CGPoint, c1: CGPoint, c2: CGPoint, end: CGPoint) -> CGPoint {
-        let x: Float = CubicBezier(t: t, start: Float(start.x), c1: Float(c1.x), c2: Float(c2.x), end: Float(end.x))
-        let y: Float = CubicBezier(t: t, start: Float(start.y), c1: Float(c1.y), c2: Float(c2.y), end: Float(end.y))
+    public func cubicBezierPoint(t: Float, start: CGPoint, c1: CGPoint, c2: CGPoint, end: CGPoint) -> CGPoint {
+        let x: Float = cubicBezier(t: t, start: Float(start.x), c1: Float(c1.x), c2: Float(c2.x), end: Float(end.x))
+        let y: Float = cubicBezier(t: t, start: Float(start.y), c1: Float(c1.y), c2: Float(c2.y), end: Float(end.y))
         return CGPoint(x: CGFloat(x), y: CGFloat(y))
     }
     
     // Cubic Bezier Curve Length
-    func cubicCurveLength(fromPoint: CGPoint, toPoint: CGPoint, controlPoint1: CGPoint, controlPoint2: CGPoint) -> CGFloat {
+    public func cubicCurveLength(fromPoint: CGPoint, toPoint: CGPoint, controlPoint1: CGPoint, controlPoint2: CGPoint) -> CGFloat {
         let iterations: Int = 100
         var length: CGFloat = 0
         for idx in 0..<iterations {
@@ -158,7 +181,7 @@ public extension UIBezierPath {
     /*  Quadratic Bezier Curve
      *  http://ericasadun.com/2013/03/25/calculating-bezier-points/
      */
-    func QuadBezier(t: Float, start: Float, c1: Float, end: Float) -> Float {
+    public func quadBezier(t: Float, start: Float, c1: Float, end: Float) -> Float {
         let t_ = CGFloat((1.0 - t))
         let tt_: CGFloat = t_ * t_
         let tt = CGFloat(t * t)
@@ -166,14 +189,14 @@ public extension UIBezierPath {
         return Float(CGFloat(start) * tt_ + offset * CGFloat(c1) * t_ * CGFloat(t) + CGFloat(end) * tt)
     }
     
-    func quadBezierPoint(t: Float, start: CGPoint, c1: CGPoint, end: CGPoint) -> CGPoint {
-        let x: Float = QuadBezier(t: t, start: Float(start.x), c1: Float(c1.x), end: Float(end.x))
-        let y: Float = QuadBezier(t: t, start: Float(start.y), c1: Float(c1.y), end: Float(end.y))
+    public func quadBezierPoint(t: Float, start: CGPoint, c1: CGPoint, end: CGPoint) -> CGPoint {
+        let x: Float = quadBezier(t: t, start: Float(start.x), c1: Float(c1.x), end: Float(end.x))
+        let y: Float = quadBezier(t: t, start: Float(start.y), c1: Float(c1.y), end: Float(end.y))
         return CGPoint(x: CGFloat(x), y: CGFloat(y))
     }
 
     // Quadratic Bezier Curve Length
-    func quadCurveLength(fromPoint: CGPoint, toPoint: CGPoint, controlPoint: CGPoint) -> CGFloat {
+    public func quadCurveLength(fromPoint: CGPoint, toPoint: CGPoint, controlPoint: CGPoint) -> CGFloat {
         let iterations: Int = 100
         var length: CGFloat = 0
         for idx in 0..<iterations {
@@ -186,7 +209,7 @@ public extension UIBezierPath {
         return length
     }
     
-    var length: CGFloat{
+    public var length: CGFloat {
         var pathLength:CGFloat = 0.0
         var current = CGPoint.zero
         var first   = CGPoint.zero
@@ -255,7 +278,7 @@ public extension UIBezierPath {
         }
     }
 
-    func forEachPathElement( body: @convention(block) (CGPathElement) -> Void) {
+    public func forEachPathElement( body: @convention(block) (CGPathElement) -> Void) {
         typealias Body = @convention(block) (CGPathElement) -> Void
         let callback: @convention(c) (UnsafeMutableRawPointer, UnsafePointer<CGPathElement>) -> Void = { (info, element) in
             let body = unsafeBitCast(info, to: Body.self)
@@ -281,9 +304,8 @@ public extension UIBezierPath {
     }
  
     public func extractSubpaths(_ subpathArray: [BezierSubpath]) -> [BezierSubpath]{
-        var subpaths = subpathArray
-        var currentPoint = CGPoint.zero
-        var i: Int = 0
+
+        var subpaths = subpathArray, currentPoint = CGPoint.zero, i: Int = 0
         
         //enumerateSubpaths({(_ element: CGPathElement) -> Void in
         forEachPathElement { element in
@@ -306,13 +328,16 @@ public extension UIBezierPath {
             case .addQuadCurveToPoint:
                 endPoint = points[1]
                 let controlPoint = points[0]
-                subLength = quadCurveLength(fromPoint: currentPoint, toPoint: endPoint, controlPoint: controlPoint)
+                subLength = quadCurveLength(fromPoint: currentPoint, toPoint: endPoint,
+                                                         controlPoint: controlPoint)
                 subpath.controlPoint1 = controlPoint
             case .addCurveToPoint:
                 endPoint = points[2]
                 let controlPoint1 = points[0]
                 let controlPoint2 = points[1]
-                subLength = cubicCurveLength(fromPoint: currentPoint, toPoint: endPoint, controlPoint1: controlPoint1, controlPoint2: controlPoint2)
+                subLength = cubicCurveLength(fromPoint: currentPoint, toPoint: endPoint,
+                                                          controlPoint1: controlPoint1,
+                                                          controlPoint2: controlPoint2)
                 subpath.controlPoint1 = controlPoint1
                 subpath.controlPoint2 = controlPoint2
             default:
@@ -334,6 +359,12 @@ public extension UIBezierPath {
         
         return subpaths
     }
+
+    public func extractSubpaths() -> [BezierSubpath] {
+        let subpathCount: Int = countSubpaths()
+        let subpaths = [BezierSubpath](repeating: BezierSubpath(), count: subpathCount)
+        return extractSubpaths(subpaths)
+    }
         
     public func point(atPercent t: CGFloat, of subpath: BezierSubpath) -> CGPoint {
         var p = CGPoint.zero
@@ -348,5 +379,26 @@ public extension UIBezierPath {
             break
         }
         return p
+    }
+
+
+    /// Rotate path anticlockwise around an anchor point defaulting to the center
+    public func rotate(inRadians radians: CGFloat, aroundAnchor anchor: CGPoint = CGPoint(x: 0.5, y: 0.5)) {
+        let tX = bounds.minX + bounds.width * anchor.x
+        let tY = bounds.minY + bounds.height * anchor.y
+        // Move anchor point to origin
+        apply(CGAffineTransform(translationX: -tX, y: -tY))
+        // Rotate
+        apply(CGAffineTransform(rotationAngle: radians))
+        // Move origin back to anchor point
+        apply(CGAffineTransform(translationX: tX, y: tY))
+    }
+
+    public func translate(x: CGFloat, y: CGFloat) {
+        apply(CGAffineTransform(translationX: x, y: y))
+    }
+
+    public func scale(x: CGFloat, y: CGFloat) {
+        apply(CGAffineTransform(scaleX: x, y: y))
     }
 }

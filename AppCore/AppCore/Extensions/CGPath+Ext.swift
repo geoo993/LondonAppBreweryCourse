@@ -89,9 +89,9 @@ public extension CGPathElement{
         case .addLineToPoint:
             return point.distance(to:self.points[0])
         case .addCurveToPoint:
-            return UIBezierPath.BezierCurveLength(p0: point, c1: self.points[0], c2: self.points[1], p1: self.points[2])
+            return UIBezierPath.bezierCurveLength(p0: point, c1: self.points[0], c2: self.points[1], p1: self.points[2])
         case .addQuadCurveToPoint:
-            return UIBezierPath.BezierCurveLength(p0: point, c1: self.points[0], p1: self.points[1])
+            return UIBezierPath.bezierCurveLength(p0: point, c1: self.points[0], p1: self.points[1])
         }
     }
 }

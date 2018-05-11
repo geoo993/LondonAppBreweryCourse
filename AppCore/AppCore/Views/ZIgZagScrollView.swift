@@ -171,7 +171,7 @@ public class ZIgZagScrollView: UIScrollView {
     
     func setup(){
         
-        self.removeEverything()
+        self.removeNestedSubviewsAndConstraints()
         
         self.setControlPoints(with: maxButtons)
         

@@ -92,7 +92,7 @@ public class JourneyView: UIControl {
     }
     
     func setup(){
-        self.removeEverything()
+        self.removeNestedSubviewsAndConstraints()
         
         // setup image view
         imageView.isUserInteractionEnabled = false

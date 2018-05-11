@@ -179,7 +179,7 @@ class DraggableView: UIView, UICollisionBehaviorDelegate {
      */
     
     deinit {
-        self.removeEverything()
+        self.removeNestedSubviewsAndConstraints()
         animator = nil
         containerBoundary = nil
         snapBehavior = nil
