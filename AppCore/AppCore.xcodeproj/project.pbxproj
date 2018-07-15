@@ -200,7 +200,7 @@
 		C7DAF1221FF11C6E000D93C7 /* AppCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppCore.h; sourceTree = "<group>"; };
 		C7DAF1231FF11C6E000D93C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7E8E8E92006A27B0089C856 /* NSAttributedString+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Ext.swift"; sourceTree = "<group>"; };
-		C7EFDCF11FF2EBE500ACCD73 /* Functions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Functions.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		C7EFDCF11FF2EBE500ACCD73 /* BodyMassIndex.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BodyMassIndex.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C7F266DC1FED5C0A0001D56C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -376,7 +376,7 @@
 		C7DEB11E1FF29B760048FCD1 /* Playgrounds */ = {
 			isa = PBXGroup;
 			children = (
-				C7EFDCF11FF2EBE500ACCD73 /* Functions.playground */,
+				C7EFDCF11FF2EBE500ACCD73 /* BodyMassIndex.playground */,
 				C741F2351FF2DF86002B42D3 /* Colors.playground */,
 				C741F2341FF29C02002B42D3 /* Comments, printing and the console.playground */,
 				C741F2331FF29BAA002B42D3 /* Variables Constants and Data types.playground */,
