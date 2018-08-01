@@ -11,6 +11,7 @@
 		C70A35AD1FFC770F00857F88 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70A35AB1FFC770E00857F88 /* DeviceType.swift */; };
 		C71127F520137A8D00FBC479 /* Sequence+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71127F420137A8D00FBC479 /* Sequence+Ext.swift */; };
 		C72E67FD2013FE7A00EA02E3 /* NSLayoutConstraint+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72E67FC2013FE7A00EA02E3 /* NSLayoutConstraint+Ext.swift */; };
+		C733FAF42111B35100FEF9EA /* Range+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C733FAF32111B35000FEF9EA /* Range+Ext.swift */; };
 		C73689BB20A3C1F3006E339A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73689B420A3C1F2006E339A /* Constants.swift */; };
 		C73689BC20A3C1F3006E339A /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73689B520A3C1F3006E339A /* NumberFormatter.swift */; };
 		C73689BD20A3C1F3006E339A /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73689B620A3C1F3006E339A /* General.swift */; };
@@ -64,7 +65,6 @@
 		C785AB491FF126E4002360A6 /* UINavigationBar+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C785AB231FF126E4002360A6 /* UINavigationBar+Ext.swift */; };
 		C785AB4B1FF127AB002360A6 /* Int+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C785AB4A1FF127AB002360A6 /* Int+Ext.swift */; };
 		C785AB4D1FF13B7F002360A6 /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C785AB4C1FF13B7F002360A6 /* UIFont+Ext.swift */; };
-		C785AB4F1FF13F2F002360A6 /* NSRange+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C785AB4E1FF13F2F002360A6 /* NSRange+Ext.swift */; };
 		C785AB511FF13F71002360A6 /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C785AB501FF13F71002360A6 /* Array+Ext.swift */; };
 		C795DE4720271A84001CC4C3 /* Unit+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C795DE4620271A84001CC4C3 /* Unit+Ext.swift */; };
 		C795DE4920271B41001CC4C3 /* FormatDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C795DE4820271B41001CC4C3 /* FormatDisplay.swift */; };
@@ -107,6 +107,7 @@
 		C70A35AB1FFC770E00857F88 /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
 		C71127F420137A8D00FBC479 /* Sequence+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Ext.swift"; sourceTree = "<group>"; };
 		C72E67FC2013FE7A00EA02E3 /* NSLayoutConstraint+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Ext.swift"; sourceTree = "<group>"; };
+		C733FAF32111B35000FEF9EA /* Range+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Range+Ext.swift"; sourceTree = "<group>"; };
 		C73689B420A3C1F2006E339A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C73689B520A3C1F3006E339A /* NumberFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberFormatter.swift; sourceTree = "<group>"; };
 		C73689B620A3C1F3006E339A /* General.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
@@ -163,7 +164,6 @@
 		C785AB231FF126E4002360A6 /* UINavigationBar+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Ext.swift"; sourceTree = "<group>"; };
 		C785AB4A1FF127AB002360A6 /* Int+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Ext.swift"; sourceTree = "<group>"; };
 		C785AB4C1FF13B7F002360A6 /* UIFont+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
-		C785AB4E1FF13F2F002360A6 /* NSRange+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSRange+Ext.swift"; sourceTree = "<group>"; };
 		C785AB501FF13F71002360A6 /* Array+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
 		C795DE4620271A84001CC4C3 /* Unit+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Unit+Ext.swift"; sourceTree = "<group>"; };
 		C795DE4820271B41001CC4C3 /* FormatDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatDisplay.swift; sourceTree = "<group>"; };
@@ -275,7 +275,7 @@
 				C7E8E8E92006A27B0089C856 /* NSAttributedString+Ext.swift */,
 				C72E67FC2013FE7A00EA02E3 /* NSLayoutConstraint+Ext.swift */,
 				C785AB1B1FF126E4002360A6 /* NSMutableAttributedString+Ext.swift */,
-				C785AB4E1FF13F2F002360A6 /* NSRange+Ext.swift */,
+				C733FAF32111B35000FEF9EA /* Range+Ext.swift */,
 				C79C277E201689790093F888 /* SCNAction+Ext.swift */,
 				C79B28AF201615F500E9EEE7 /* SCNVector3+Ext.swift */,
 				C71127F420137A8D00FBC479 /* Sequence+Ext.swift */,
@@ -505,7 +505,6 @@
 				C7B9FEB71FF151CE00D15B45 /* RoundedCornerView.swift in Sources */,
 				C785AB411FF126E4002360A6 /* NSMutableAttributedString+Ext.swift in Sources */,
 				C785AB491FF126E4002360A6 /* UINavigationBar+Ext.swift in Sources */,
-				C785AB4F1FF13F2F002360A6 /* NSRange+Ext.swift in Sources */,
 				C785AB2A1FF126E4002360A6 /* SwiftRegex.swift in Sources */,
 				C795DE4D20272312001CC4C3 /* MulticolorPolyline.swift in Sources */,
 				C7B9FE991FF151CD00D15B45 /* PartialCircleView.swift in Sources */,
@@ -565,6 +564,7 @@
 				C7667E41201D39AF00225F09 /* UILabelX.swift in Sources */,
 				C7B9FEAF1FF151CE00D15B45 /* LayoutableButton.swift in Sources */,
 				C7667E45201D39AF00225F09 /* UIViewX.swift in Sources */,
+				C733FAF42111B35100FEF9EA /* Range+Ext.swift in Sources */,
 				C79B28B0201615F500E9EEE7 /* SCNVector3+Ext.swift in Sources */,
 				C785AB4B1FF127AB002360A6 /* Int+Ext.swift in Sources */,
 				C785AB511FF13F71002360A6 /* Array+Ext.swift in Sources */,
