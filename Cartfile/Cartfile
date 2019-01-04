@@ -1,3 +1,6 @@
+# carthage bootstrap [RepositoryName] --no-use-binaries --platform ios --cache-builds
+# or (beware!)
+# carthage update [RepositoryName] --no-use-binaries --platform ios  --cache-builds
 github "Alamofire/Alamofire" ~> 4.5
 github "SVProgressHUD/SVProgressHUD"
 github "SwiftyJSON/SwiftyJSON"
@@ -9,8 +12,15 @@ github "RxSwiftCommunity/RxSegue"
 github "RxSwiftCommunity/RxSwiftExt"
 github "NoTests/RxFeedback.swift"
 github "mac-cain13/R.swift.Library"
-github "DaveWoodCom/XCGLogger" ~> 6.0.2
+github "DaveWoodCom/XCGLogger"
 github "ViccAlexander/Chameleon"
 github "SwipeCellKit/SwipeCellKit"
 github "watson-developer-cloud/swift-sdk"
 github "rs/SDWebImage"
+
+github "Haneke/HanekeSwift"
+# github "facebook/pop"
+# github "Friend-LGA/LGSideMenuController"
+# github "johnsundell/require"
+github "onevcat/Kingfisher"
+github "krzyzanowskim/CryptoSwift"

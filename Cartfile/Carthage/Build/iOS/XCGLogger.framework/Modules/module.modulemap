@@ -1,4 +1,3 @@
-framework module XCGLogger {
-    header "XCGLogger-Swift.h"
-    requires objc
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:475b6cb7696cc04a2636ec4e12f1d49760696e87ab30aed707c9f00d519bd2f8
+size 76
