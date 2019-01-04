@@ -205,7 +205,7 @@ extension FlowerDetectorViewController {
                     self.updateFlowerData(json: flowerJSON)
                     self.imageViewHeightConstraint = self
                         .imageViewHeightConstraint
-                        .changeMultiplier(multiplier: constraintMulitiplier)
+                        .setMultiplier(multiplier: constraintMulitiplier)
                     
                     print("JSON: \(flowerJSON)") 
                 }

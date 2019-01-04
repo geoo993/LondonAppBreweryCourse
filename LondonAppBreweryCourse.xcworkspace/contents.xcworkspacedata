@@ -68,6 +68,18 @@
          location = "container:"
          name = "Dependencies">
          <FileRef
+            location = "group:Cartfile/Carthage/Checkouts/R.swift.Library/R.swift.Library.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:Cartfile/Carthage/Checkouts/RxFeedback.swift/RxFeedback.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:Cartfile/Carthage/Checkouts/RxDataSources/RxDataSources.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:Cartfile/Carthage/Checkouts/restkit/RestKit.xcodeproj">
+         </FileRef>
+         <FileRef
             location = "group:Cartfile/Carthage/Checkouts/SDWebImage/SDWebImage.xcodeproj">
          </FileRef>
          <FileRef

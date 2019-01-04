@@ -37,7 +37,6 @@
 		C7A363591FFDB354006EDB4F /* SVProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C7A363571FFDB354006EDB4F /* SVProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C7A3635B1FFDB6C3006EDB4F /* Chameleon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A3635A1FFDB6C3006EDB4F /* Chameleon.framework */; };
 		C7A3635C1FFDB6C3006EDB4F /* Chameleon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C7A3635A1FFDB6C3006EDB4F /* Chameleon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C7E8775A1FFD59520099205C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7E877591FFD59520099205C /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -304,7 +303,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7E8775A1FFD59520099205C /* Info.plist in Resources */,
 				C765CB511FFD10D4009C0DDA /* LaunchScreen.storyboard in Resources */,
 				C765CB631FFD1167009C0DDA /* Images.xcassets in Resources */,
 				C78F42B21FFD1B7D00466256 /* GoogleService-Info.plist in Resources */,
@@ -493,6 +491,7 @@
 					"$(PROJECT_DIR)/Firebase/Performance",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Flash Chat/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.geo-games.Flash-Chat";
@@ -529,6 +528,7 @@
 					"$(PROJECT_DIR)/Firebase/Performance",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Flash Chat/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.geo-games.Flash-Chat";

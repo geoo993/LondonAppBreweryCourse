@@ -302,6 +302,7 @@
 				COREML_CODEGEN_LANGUAGE = Swift;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SmartCameraML/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.geo-games.SmartCameraML";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -318,6 +319,7 @@
 				COREML_CODEGEN_LANGUAGE = Swift;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SmartCameraML/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.geo-games.SmartCameraML";
 				PRODUCT_NAME = "$(TARGET_NAME)";

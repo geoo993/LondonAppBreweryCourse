@@ -14,12 +14,11 @@ import AppCore
 public class RegEx {
     
     func highlightMatches(pattern: String, inString string: String) -> NSAttributedString {
-        let range = string.nsRange() 
         let regex = try? NSRegularExpression(pattern: pattern, options: NSRegularExpression.Options(rawValue: 0))
         let matches = (regex?
         .matches(in: string, 
                  options: NSRegularExpression.MatchingOptions(rawValue: 0), 
-                 range: range) )!
+                 range: string.nsRange) )!
         
         let attributedText = NSMutableAttributedString(string: string)
         
@@ -33,11 +32,10 @@ public class RegEx {
     func listMatches(pattern: String, inString string: String) -> [String] {
         let regex = try? NSRegularExpression(pattern: pattern, 
                                              options: NSRegularExpression.Options(rawValue: 0))
-        let range = string.nsRange()
         let matches = (regex?
         .matches(in: string, 
                  options: NSRegularExpression.MatchingOptions(rawValue: 0), 
-                 range: range) )!
+                 range: string.nsRange) )!
         
         return matches.map {
             let range = $0.range
@@ -46,13 +44,12 @@ public class RegEx {
     }
     
     func listGroups(pattern: String, inString string: String) -> [String] {
-        let range = string.nsRange()
-        let regex = try? NSRegularExpression(pattern: pattern, 
+        let regex = try? NSRegularExpression(pattern: pattern,
                                         options: NSRegularExpression.Options(rawValue: 0))
         let matches = (regex?
             .matches(in: string, 
                      options: NSRegularExpression.MatchingOptions(rawValue: 0), 
-                     range: range) )!
+                     range: string.nsRange) )!
         
         var groupMatches = [String]()
         for match in matches {
@@ -69,19 +66,17 @@ public class RegEx {
     func containsMatch(pattern: String, inString string: String) -> Bool {
         let regex = try? NSRegularExpression(pattern: pattern, 
                                              options: NSRegularExpression.Options(rawValue: 0))
-        let range = string.nsRange()
-        return regex?.firstMatch(in: string, 
+        return regex?.firstMatch(in: string,
                                  options: NSRegularExpression.MatchingOptions(rawValue: 0), 
-                                 range: range) != nil
+                                 range: string.nsRange) != nil
     }
     
     func replaceMatches(pattern: String, inString string: String, withString replacementString: String) -> String? {
         let regex = try? NSRegularExpression(pattern: pattern, 
                                              options: NSRegularExpression.Options(rawValue: 0))
-        let range = string.nsRange()
-        return regex?.stringByReplacingMatches(in: string, 
+        return regex?.stringByReplacingMatches(in: string,
                                                options: NSRegularExpression.MatchingOptions(rawValue: 0), 
-                                               range: range, 
+                                               range: string.nsRange,
                                                withTemplate: replacementString)
     }
 
