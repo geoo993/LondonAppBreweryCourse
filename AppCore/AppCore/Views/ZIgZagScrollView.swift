@@ -188,7 +188,7 @@ public class ZIgZagScrollView: UIScrollView {
         self.addSubview(animatableView)
         
         guard let path = bezierView?.getBezierPath() else { return }
-        print("magnitude = \(path.magnitude())")
+        print("magnitude = \(path.magnitude)")
         /*
          animatableView.center = path.point(atPercentOfLength: 0.01)
          

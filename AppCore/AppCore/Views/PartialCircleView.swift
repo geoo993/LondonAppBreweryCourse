@@ -80,7 +80,6 @@ public class PartialCircleView: UIView {
         strokeLayer.strokeColor = ringColor.cgColor
         strokeLayer.lineWidth = ringThickness
         layer.addSublayer(strokeLayer)
-        
     }
     
 

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import AppCore
+//import AppCore
 import VisualRecognitionV3
 
 struct SeaFood {
@@ -157,7 +157,7 @@ struct SeaFood {
         ]
     }
     
-    static func isSeaFood (classiffierWithTypeHierachy: Classification) -> Bool {
+    static func isSeaFood (classiffierWithTypeHierachy: ClassResult) -> Bool {
     
         if let seafoodHierachy = seaFoodCategory(classiffierWithTypeHierachy: classiffierWithTypeHierachy) {
             let seafoodCategoryWords = uniqueWordsInSeaFoodFound(classiffierWithTypeHierachy: classiffierWithTypeHierachy)
@@ -181,7 +181,7 @@ struct SeaFood {
             .contains(item)
     }
     
-    static func seaFoodCategory (classiffierWithTypeHierachy: Classification) -> String? {
+    static func seaFoodCategory (classiffierWithTypeHierachy: ClassResult) -> String? {
         return classiffierWithTypeHierachy
             .typeHierarchy?
             .components(separatedBy: "/")
@@ -189,9 +189,9 @@ struct SeaFood {
             .last
     }
     
-    static func uniqueWordsInSeaFoodFound(classiffierWithTypeHierachy: Classification) -> [String] {
+    static func uniqueWordsInSeaFoodFound(classiffierWithTypeHierachy: ClassResult) -> [String] {
         return classiffierWithTypeHierachy
-            .classification
+            .className //.classification
             .lowercased()
             .toWordsFromRegexIncludingSpecialCharactersWithinWords()
     }

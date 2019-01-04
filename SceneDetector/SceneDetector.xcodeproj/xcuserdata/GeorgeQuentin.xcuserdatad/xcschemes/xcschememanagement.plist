@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>109</integer>
 		</dict>
+		<key>SceneDetector.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>101</integer>
+		</dict>
 	</dict>
 </dict>
 </plist>

@@ -19,11 +19,16 @@ public extension Double {
     }
 
     /// Convert a Double to Int
-    public var toInt: Int { // swiftlint:disable:this identifier_name
+    public var toInt: Int {
         return Int(self)
     }
 
     public var toCGFloat: CGFloat {
         return CGFloat(self)
+    }
+    
+    public func percentageValueBetween(maxValue: Double, minValue: Double = 0) -> Double {
+        let difference: Double = (minValue < 0) ? maxValue : maxValue - minValue
+        return (Double(100) * ((self - minValue) / difference))
     }
 }

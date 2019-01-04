@@ -1,7 +1,4 @@
 
-import Foundation
-import UIKit
-
 func * (lhs: Character, rhs: Int) -> String {
     return String(repeating: String(lhs), count: rhs)
 }
@@ -62,11 +59,95 @@ public extension String {
     }
     
     private func tokenizeIndexRanges(option: CFOptionFlags) -> [Range<String.Index>] {
-        
-        return tokenizeRanges(option: option).flatMap { self.range(fromCountableRange: $0) }
+        return tokenizeRanges(option: option).compactMap { self.range(fromCountableRange: $0) }
     }
     
-    func toWords() -> [String] {
+    // Use linguistic tags to generate sentences from String
+    public func toLinguisticTagRanges() -> (tags: [String], ranges: [Range<String.Index>]) {
+        var r = [Range<String.Index>]()
+        let i = self.indices
+        let t = self.linguisticTags(
+            in: i.startIndex ..< i.endIndex,
+            scheme: NSLinguisticTagScheme.lexicalClass.rawValue,
+            options: .joinNames,
+            orthography: nil,
+            tokenRanges: &r)
+        
+        return (t, r)
+    }
+    // Use linguistic tags to generate sentences from String
+    public func toLinguisticWordRanges() -> (tags: [String], ranges: [Range<String.Index>]) {
+        var r = [Range<String.Index>]()
+        let i = self.indices
+        let t = self.linguisticTags(
+            in: i.startIndex ..< i.endIndex,
+            scheme: NSLinguisticTagScheme.tokenType.rawValue,
+            options: [.omitPunctuation, .omitWhitespace, .omitOther, .joinNames],
+            orthography: nil,
+            tokenRanges: &r)
+        
+        return (t, r)
+    }
+    
+    private var regexSpecialCharactersBounderies: String {
+        // https://regex101.com/
+        return "[-'’%$#&/]\\b|\\b[‑'’%$#&/]|\\b[‐'’%$#&/]|\\d*\\.?\\d+|[A-Za-z0-9]|\\([A-Za-z0-9]"
+    }
+    
+    private var regexWithSpecialCharactersWithinWords: String {
+        // http://rubular.com/r/egE3v951RH
+        return "(?<=\\s|^|\\b)(?:\(regexSpecialCharactersBounderies)+\\))+(?=\\s|$|\\b)"
+    }
+    
+    private var regexWithCharactersAndPunctuations: String {
+        // https://regex101.com/r/IpOqXy/17
+        // https://stackoverflow.com/questions/42019240/regex-to-match-words-with-punctuation-but-not-punctuation-alone
+        return "(?<=\\s|^|\\b)(?:\(regexSpecialCharactersBounderies)+\\))+(?=\\s|$|\\b)"
+            + "|[^A-Za-z0-9\\s]"
+    }
+    
+    public func toWordsFromRegexIncludingSpecialCharactersWithinWords() -> [String] {
+        return self[regexWithSpecialCharactersWithinWords]
+            .matches()
+    }
+    
+    public func toRangesFromRegexIncludingSpecialCharactersWithinWords() -> [Range<Int>] {
+        return self[regexWithSpecialCharactersWithinWords]
+            .ranges()
+            .map { $0.location ..< ($0.location + $0.length) }
+    }
+    
+    public func toWordsFromRegexIncludingSpecialCharactersWithinWordsAndPunctuations() -> [String] {
+        return self[regexWithCharactersAndPunctuations]
+            .matches()
+    }
+    
+    public func toNSRangesFromRegexIncludingSpecialCharactersWithinWordsAndPunctuations() -> [NSRange] {
+        return self[regexWithCharactersAndPunctuations]
+            .ranges()
+    }
+    
+    public func toRangesFromRegexIncludingSpecialCharactersWithinWordsAndPunctuations() -> [Range<Int>] {
+        return self[regexWithCharactersAndPunctuations]
+            .ranges()
+            .map { $0.location ..< ($0.location + $0.length) }
+    }
+    
+    public func toWordsFromRegex() -> [String] {
+        return self["(\\b[^\\s]+\\b)"].matches()
+    }
+    
+    public func toWordNSRangesFromRegex() -> [NSRange] {
+        return self["(\\b[^\\s]+\\b)"].ranges()
+    }
+    
+    public func toWordRangesFromRegex() -> [Range<Int>] {
+        return self["(\\b[^\\s]+\\b)"]
+            .ranges()
+            .map { $0.location ..< ($0.location + $0.length) }
+    }
+
+    public func toWords() -> [String] {
         let range = self.range(of: self)!
         var words = [String]()
         
@@ -75,42 +156,8 @@ public extension String {
         }
         return words
     }
-   
-    public func toWordsFromRegex() -> [String] {
-        return self["(\\b[^\\s]+\\b)"].matches()
-    }
     
-    public func toWordRangesFromRegex() -> [Range<Int>] {
-        return self["(\\b[^\\s]+\\b)"]
-            .ranges()
-            .map { $0.location ..< ($0.location + $0.length) }
-    }
- 
-    private var regexSpecialCharactersBounderies : String {
-        return "[-'%$#&/]\\b|\\b[‑'%$#&/]|\\b[‐'%$#&/]|\\d*\\.?\\d+|[A-Za-z0-9]|\\([A-Za-z0-9]"
-    }
-    
-    private var regexIncludingSpecialCharactersWithinWords: String {
-        return "(?<=\\s|^|\\b)(?:\(regexSpecialCharactersBounderies)+\\))+(?=\\s|$|\\b)"
-    }
-    
-    private var regexIncludingSpecialCharactersWithinWordsAndPunctuations: String {
-        return "(?<=\\s|^|\\b)(?:\(regexSpecialCharactersBounderies)+\\))+(?=\\s|$|\\b)"
-            + "|(\\.|\\,|\\:|\")"
-    }
-    
-    public func toWordsFromRegexIncludingSpecialCharactersWithinWords() -> [String] {
-        return self[regexIncludingSpecialCharactersWithinWords]
-            .matches()
-    }
-    
-    public func toRangesFromRegexIncludingSpecialCharactersWithinWords() -> [Range<Int>] {
-        return self[regexIncludingSpecialCharactersWithinWords]
-            .ranges()
-            .map { $0.location ..< ($0.location + $0.length) }
-    }
-    
-    func toWordRanges() -> [Range<String.Index>] {
+    public func toWordRanges() -> [Range<String.Index>] {
         
         let wordRange = self.range(of: self)!
         var ranges = [Range<String.Index>]()
@@ -137,7 +184,7 @@ public extension String {
                        whereSeparator: { 
                         return $0.element == "SentenceTerminator"
                 })
-                .map { $0.flatMap { $0 } }
+                .map { $0.compactMap { $0 } }
         
         let sentenceRanges = 
             sentenceSplit
@@ -217,7 +264,7 @@ public extension String {
             _ = zip(tags, nsRanges)
                 .map({ (tag, nsRange) in
                     let rangeInt = self.range(withNSRange: nsRange)
-                    print(tag, substring(withRange: rangeInt))
+                    //print(tag, substring(withRange: rangeInt))
                     if (tag == "Dash" || tag == "Particle" || foundDashOrParticle == 1) {
                         if let lastRange = ranges.last, let index = ranges.index(of: lastRange) {
                             ranges[index] = lastRange.lowerBound..<rangeInt.upperBound
@@ -243,7 +290,7 @@ public extension String {
             switch tag.rawValue {
             case "Word":
                 let word = nsString.substring(with: nsRange)
-                if let range = self.range(fromNSRange: nsRange) {
+                if let range = self.range(usingNSRange: nsRange) {
                     wordRanges.append((word, range))
                 }
             default: break
@@ -302,11 +349,19 @@ public extension String {
         return self[charIndex]
     }
     
+    subscript(_ range: NSRange) -> String {
+        let start = self.index(self.startIndex, offsetBy: range.lowerBound)
+        let end = self.index(self.startIndex, offsetBy: range.upperBound)
+        let subString = self[start..<end]
+        return String(subString)
+    }
+    
     subscript (range: Range<Int>) -> String {
-        let startIndex = self.index(self.startIndex,offsetBy: range.lowerBound) 
-        let endIndex = self.index(self.startIndex,offsetBy: range.count) 
+        let startIndex = self.index(self.startIndex, offsetBy: range.lowerBound)
+        let endIndex = self.index(self.startIndex, offsetBy: range.count)
         return String(self[startIndex..<endIndex])
     }
+    
     
     public func substring(from: Int) -> String {
         let fromIndex = self.indexAt(from: from)
@@ -318,9 +373,9 @@ public extension String {
         return String(self[..<index]) // Swift 4
     }
 
-    public func substring(from: Int, to: Int) -> String {
-        let start = index(startIndex, offsetBy: from)
-        let end = index(start, offsetBy: to - from)
+    public func substring(from fromIndex: Int, to toIndex: Int) -> String {
+        let start = index(startIndex, offsetBy: fromIndex)
+        let end = index(start, offsetBy: toIndex - fromIndex)
         return String(self[start ..< end])
     }
     
@@ -329,12 +384,21 @@ public extension String {
         return String(self[range])
     }
     
+    public func substring(withCountableRange range: CountableRange<Int>) -> String {
+        let range = self.range(fromRangeInt: range.toRangeInt)
+        return String(self[range])
+    }
+    
     public func substring(withNSRange range: NSRange) -> String {
         return substring(from: range.lowerBound, to: range.upperBound)
     }
     
-    public static func replaceAt(str: String, index: Int, newCharac: String) -> String {
-        return str.substring(to: index - 1)  + newCharac + str.substring(from: index)
+    public func contains(find: String) -> Bool {
+        return self.range(of: find) != nil
+    }
+    
+    public func containsIgnoringCase(find: String) -> Bool{
+        return self.range(of: find, options: .caseInsensitive) != nil
     }
     
     public func nsRange(fromStringIndex range: Range<String.Index>) -> NSRange {
@@ -346,11 +410,11 @@ public extension String {
                          length: rangeInt.count)
     }
     
-    public func nsRange() -> NSRange {
-        return NSRange.init(location: 0,length: count)
+    public var nsRange: NSRange {
+        return NSRange(location: 0, length: self.utf16.count)
     }
     
-    public func range(fromNSRange nsRange: NSRange) -> Range<String.Index>? {
+    public func range(usingNSRange nsRange: NSRange) -> Range<String.Index>? {
         guard
             let from16 = utf16.index(utf16.startIndex, offsetBy: nsRange.location, limitedBy: utf16.endIndex),
             let to16 = utf16.index(from16, offsetBy: nsRange.length, limitedBy: utf16.endIndex),
@@ -358,12 +422,6 @@ public extension String {
             let to = String.Index(to16, within: self)
             else { return nil }
         return from ..< to
-    }
-    
-    public func range(usingNSRange nsRange : NSRange) -> Range<String.Index> {
-        let startIndex = indexAt(from: nsRange.location)
-        let endIndex = indexAt(from: nsRange.location + nsRange.length)
-        return startIndex..<endIndex
     }
     
     public func range(withNSRange nsRange : NSRange) -> Range<Int> {
@@ -384,11 +442,16 @@ public extension String {
         return startIndex..<endIndex
     }
 
-    public func range(fromRange range: Range<Int>) -> Range<String.Index>
-    {
+    public func range(fromRange range: Range<Int>) -> Range<String.Index> {
         let from = self.index(self.startIndex, offsetBy: range.lowerBound)
         let to = self.index(self.startIndex, offsetBy: range.upperBound)
         return from..<to
+    }
+    
+    public func range(fromNSRange nsRange: NSRange) -> Range<String.Index> {
+        let startIndex = indexAt(from: nsRange.location)
+        let endIndex = indexAt(from: nsRange.location + nsRange.length)
+        return startIndex..<endIndex
     }
     
     public func range(fromCountableRange countableRange: CountableRange<Int>) -> Range<String.Index>? {
@@ -417,6 +480,41 @@ public extension String {
             }
         }
         return ranges
+    }
+    
+    public func range(ofUniqueWord word: String) -> NSRange? {
+        let words = self
+            .toWordsFromRegexIncludingSpecialCharactersWithinWords()
+            .elementOccurencesCount()
+        let ranges = self
+            .toRangesFromRegexIncludingSpecialCharactersWithinWords()
+        if let count = words[word],
+            count < 2,
+            let range = ranges.first(where: { self.substring(withRange: $0) == word }) {
+            return range.toNSRange
+        }
+        return nil
+    }
+    
+    public func ranges(ofWord word: String) -> [NSRange] {
+        let words = self
+            .toWordsFromRegexIncludingSpecialCharactersWithinWords()
+            .elementOccurencesCount()
+        let ranges = self
+            .toRangesFromRegexIncludingSpecialCharactersWithinWords()
+        if let count = words[word], count > 0 {
+            return ranges
+                .filter({ self.substring(withRange: $0) == word })
+                .map({ $0.toNSRange })
+        }
+        return []
+    }
+    
+    public func ranges(ofLinguisticTag type: [String]) -> [Range<String.Index>] {
+        let (tags, ranges) = toLinguisticTagRanges()
+        return zip(tags, ranges)
+            .filter({ type.contains($0.0) })
+            .map({ $0.1 })
     }
     
     // Correctly implement a shrink to fit on NSAttributedString
@@ -454,28 +552,41 @@ public extension String {
             return string.replacingOccurrences(of: hyphen, with: nonBreakingHyphen)
         }
     }
-
-    public func swapTwoWords(first: String, last: String) -> String {
-        let temp = "---79123923--"
-        let change1 = self.replacingOccurrences(of: first, with: temp)
-        let change2 = change1.replacingOccurrences(of: last, with: first)
-        let change3 = change2.replacingOccurrences(of: temp, with: last)
-        return change3
-    }
-
-    public func changesWordColor (_ wordsToColor : [String], _ color: UIColor) -> NSAttributedString {
-        let text = self
-        let attribute = NSMutableAttributedString.init(string: text)
-
-        for word in wordsToColor {
-            let range = (text as NSString).range(of: word)
-            attribute.addAttribute(NSAttributedStringKey.foregroundColor, value: color, range: range)
-        }
-
-        return attribute
+    
+    public static func replaceAt(str: String, index: Int, newCharac: String) -> String {
+        return str.substring(to: index - 1)  + newCharac + str.substring(from: index)
     }
     
-    func highlight(word words: [String], this color: UIColor) -> NSMutableAttributedString {
+    public func trimTrailingLeadingSpaces() -> String {
+        return self["^\\s+|\\s+$|\\s+(?=\\s)"].replaceWith(template: "") as String
+    }
+
+    public func swapTwoUniqueWords(first: String, last: String) -> String {
+        let words = self
+            .toWordsFromRegexIncludingSpecialCharactersWithinWords()
+            .elementOccurencesCount()
+        if let firstWordCount = words[first], let secondWordCount = words[last],
+            firstWordCount == 1, secondWordCount == 1 {
+        
+            let temp = "---79123923--"
+            let change1 = self.replacingOccurrences(of: first, with: temp)
+            let change2 = change1.replacingOccurrences(of: last, with: first)
+            let change3 = change2.replacingOccurrences(of: temp, with: last)
+            
+            return change3
+        }
+        return self
+    }
+
+    public func highlight(wordsInRange ranges: [NSRange], toColor color: UIColor) -> NSMutableAttributedString {
+        let attributedString = NSMutableAttributedString(string: self)
+        for range in ranges {
+            attributedString.addAttributes([.foregroundColor: color], range: range)
+        }
+        return attributedString
+    }
+    
+    func highlight(words: [String], toColor color: UIColor) -> NSMutableAttributedString {
         let attributedString = NSMutableAttributedString(string: self)
         for word in words {
             let ranges = self.ranges(from: word)
@@ -487,16 +598,21 @@ public extension String {
     }
     
     public func getUniqueWords() -> [String] {
-        let words = toWordsFromRegexIncludingSpecialCharactersWithinWords()
-        let uniqueWords = Set(words)
-        return Array(uniqueWords)
+        let words = self.toWordsFromRegexIncludingSpecialCharactersWithinWords()
+        return words.uniqueElements()
     }
     
-    public func getNonRepeatingWord() -> [String] {
-        let words = toWordsFromRegexIncludingSpecialCharactersWithinWords()
-        let wordsFrequency = words.frequencyCount()
+    public func toWordsWhileRemovingRepeatedWords() -> [String] {
+        return self
+            .toWordsFromRegexIncludingSpecialCharactersWithinWords()
+            .removeRepeatedWords()
+    }
+    
+    public func getRepeatedWords() -> [String] {
+        let words = self.toWordsFromRegexIncludingSpecialCharactersWithinWords()
+        let wordsFrequency = words.elementOccurencesCount()
         return wordsFrequency
-            .filter({ $0.value == 1 })
+            .filter({ $0.value > 1 })
             .map({$0.key })
     }
     
@@ -534,6 +650,15 @@ public extension String {
         return size.height
     }
 
+    public func removeUnwantedCharacters(desiredSet: CharacterSet? = nil) -> String {
+        let characterSet = desiredSet ?? CharacterSet.punctuationCharacters
+        return self.components(separatedBy: characterSet).joined()
+    }
+    
+    public func removeSpecialCharacters() -> String {
+        return self[regexSpecialCharactersBounderies]
+            .matches().joined()
+    }
     
     //emoji 
     
@@ -554,6 +679,40 @@ public extension String {
             return UIImage()
         }
         return im
+    }
+    
+    public func toUIImage(with size: CGSize) -> UIImage {
+        
+        let baseSize = self.boundingRect(with: CGSize(width: 2048, height: 2048),
+                                         options: .usesLineFragmentOrigin,
+                                         attributes: [.font: UIFont.systemFont(ofSize: size.width / 2)],
+                                         context: nil).size
+        let fontSize = size.width / max(baseSize.width, baseSize.height) * (size.width / 2)
+        let font = UIFont.systemFont(ofSize: fontSize)
+        let textSize = self.boundingRect(with: CGSize(width: size.width, height: size.height),
+                                         options: .usesLineFragmentOrigin,
+                                         attributes: [.font: font],
+                                         context: nil).size
+        
+        let style = NSMutableParagraphStyle()
+        style.alignment = NSTextAlignment.center
+        style.lineBreakMode = NSLineBreakMode.byClipping
+        
+        let attr : [NSAttributedString.Key : Any] = [NSAttributedString.Key.font : font,
+                                                     NSAttributedString.Key.paragraphStyle: style,
+                                                     NSAttributedString.Key.backgroundColor: UIColor.clear]
+        
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        (self as NSString).draw(in: CGRect(x: (size.width - textSize.width) / 2,
+                                           y: (size.height - textSize.height) / 2,
+                                           width: textSize.width,
+                                           height: textSize.height),
+                                withAttributes: attr)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        guard let img = image else { return UIImage() }
+        return img
     }
     
     
@@ -636,177 +795,15 @@ public extension String {
         return NSString(string: self).boundingRect(with: size, options: nsstring, attributes: [NSAttributedStringKey.font : font], context: nil)
     }
 
-}
-
-extension Collection where Iterator.Element == String {
-
-    public func take (_ amount: Int, with minCharacterCount: Int) -> [String] {
-        let words =  self.filter({ $0.count >= minCharacterCount})
-        return words.takeRandom(amount)
+    public func pad(_ width: Int) -> String {
+        return padding(toLength: width, withPad: " ", startingAt: 0)
     }
-
-    public func removeFirstEmptySpace () -> [String] {
-        return self.flatMap { sentence -> String in
-            if (sentence.first == " ") {
-                return String.replaceAt(str: sentence, index: 1, newCharac: "")
-            } else {
-                return sentence
-            }
-        }
-    }
-
-    ///remove Apostrophe words and its original word 
-    public func removeApostropheWords() -> [String] {
-        guard let originalWords = self as? [String] else { return [] }
-
-        var words = originalWords
-        for (ind,word) in originalWords.enumerated() {
-            if (originalWords.contains("\(word)\'s") ) {
-                words.remove(at: ind)
-                if let removeApostropheWordAtIndex = words.index(of: "\(word)\'s") {
-                    words.remove(at: removeApostropheWordAtIndex)
-                }
-            }
-        }
-
-        return words
-    }
-
-    ///remove plural words and its original word 
-    public func removePluralWords(with minCharacterCount: Int) -> [String] {
-
-        guard let originalWords = self as? [String] else { return [] }
-
-        var wordsToRemove = [String]()
-        for w in originalWords {
-            if (originalWords.contains("\(w)s") && w.count > minCharacterCount) {
-                wordsToRemove.append("\(w)s")
-                wordsToRemove.append(w)
-            }
-        }
-        return originalWords.filter { wordsToRemove.contains($0) == false }
-
-    }
-
-    public func removeDuplicatedString() -> [String] {
-        guard let originalWords = self as? [String] else { return [] }
-        let makeAllLowercased = originalWords.map { $0.lowercased() }
-        return Array( Set(makeAllLowercased) )
-    }
-
-    public func removeHyphenatedWords() -> [String] {
-        return self.flatMap { word -> String? in
-            return ( word.contains("-") || word.contains("‐") || word.contains("‑") ) ? nil : word
-        }
-    }
-
-}
-
-public protocol StringExtensions : RangeReplaceableCollection {}
-
-extension Array : StringExtensions { }
-
-public extension StringExtensions where Self.Iterator.Element: Hashable {
-    public typealias Element = Self.Iterator.Element
-
-    public func removeDuplicates() -> [Element] {
-        guard let list = (self as? [Element]) else { return [] }
-
-        // Convert array into a set to get unique values.
-        let uniques = Set<Element>(list)
-        // Convert set back into an Array of Ints.
-        let result = [Self.Element](uniques)
-        return result
-    }
-
-    public func skipDuplicates() -> [Element] {
-
-        guard var list = (self as? [Element]) else { return [] }
-
-        //do not take duplicated words
-        var tempList = [Self.Element]()
-        var elementsRemoved = [Self.Element]()
-
-        for word in list {
-            if (tempList.contains(word)) {
-                //found the next of the duplicated word
-                if let index = tempList.index(of: word) {
-                    tempList.remove(at: index)
-                    list.remove(at: index)
-                }
-                elementsRemoved.append(word)
-            } else {
-
-                if elementsRemoved.contains(word) {
-                    //do not add any word that is been removed
-                } else {
-                    tempList.append(word)
-                }
-            }
-        }
-        return tempList
-
-    }
-
-    public func numberOfOccurrences() -> [Element: Int] {
-        return reduce([:]) { (accu: [Element: Int], element) in
-            var accu = accu
-            accu[element] = accu[element]?.advanced(by: 1) ?? 1
-            return accu
-        }
-    }
-
-    public func chooseOne () -> Element {
-        let list: [Element] = self as! [Self.Element]
-        let len = UInt32(list.count)
-        let random = Int(arc4random_uniform(len))
-        return list[random]
-    }
-
-    public func takeRandom(_ amount: Int) -> [Element] {
-        guard var list = (self as? [Self.Iterator.Element])
-            , list.count > 1, amount <= list.count else { return [] }
-
-        var temp = [Self.Element]()
-        var counter = amount
-
-        while counter > 0 {
-            let index = Int(arc4random_uniform(UInt32(list.count - 1)))
-            temp.append(list[index])
-            list.remove(at: index)
-
-            counter -= 1
-        }
-
-        return temp
-    }
-
-    public func randomise() -> [Element] {
-
-        guard var list = (self as? [Self.Iterator.Element]), list.isEmpty == false else { return [] }
-
-        var temp = [Self.Iterator.Element]()
-
-        while list.isEmpty == false {
-            let index = Int(arc4random_uniform(UInt32(list.count - 1)))
-            temp.append(list[index])
-            list.remove(at: index)
-        }
-
-        return temp
-    }
-
-    public func removeAfter(index: Int) -> [Element] {
-
-        guard let list = (self as? [Self.Iterator.Element]), list.count > index else { return [] }
-        return list.enumerated().flatMap { (ind, _ ) -> Element? in
-            return (ind <= index) ? list[ind] : nil
-        }
-    }
-}
-
-public extension Array where Element: Comparable {
-    public func containsSameElements(as other: [Element]) -> Bool {
-        return self.count == other.count && self.sorted() == other.sorted()
+    
+    public static func timeString(time:TimeInterval) -> String {
+        //let hours = Int(time) / 3600
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        //return String(format: "%02i:%02i:%02i", hours, minutes, seconds)
+        return String(format:"%02i:%02i", minutes, seconds)
     }
 }

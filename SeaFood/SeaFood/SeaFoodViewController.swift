@@ -5,6 +5,8 @@
 //  Created by GEORGE QUENTIN on 20/01/2018.
 //  Copyright © 2018 Geo Games. All rights reserved.
 //
+// https://www.raywenderlich.com/87-ibm-watson-services-for-core-ml-tutorial
+// https://www.ibm.com/watson/services/visual-recognition/
 
 import UIKit
 import VisualRecognitionV3
@@ -68,16 +70,14 @@ public class SeaFoodViewController: UIViewController {
             //Navigation Bar text
             let attributedString = NSAttributedString(string: text, 
                                                       attributes: navController.navigationBar.titleTextAttributes) 
-            
-            let font = attributedString.font ?? UIFont.systemFont(ofSize: 17)
-            
+                        
             let textColor : UIColor = .yellow
             let textContrastColor = ContrastColorOf(textColor, returnFlat: true)
             
             navController
                 .navigationBar
                 .addBorderOnTitle(with: textColor, 
-                                  font: font, 
+                                  font: attributedString.font,
                                   borderWidth: 6.0, 
                                   borderColor: textContrastColor)
             navController.navigationBar.isTranslucent = false
@@ -146,21 +146,33 @@ extension SeaFoodViewController: UIImagePickerControllerDelegate, UINavigationCo
             
             let fileURL = documentsURL.appendingPathComponent("tempImage.jpg")
             try? imageData.write(to: fileURL)
+            print(fileURL)
             
-            let visualRecognition = VisualRecognition(apiKey: apiKey, version: version)
-            visualRecognition.classify(imageFile: fileURL, success: { (classifiedImage) in
-                guard let classes = classifiedImage.images.first?.classifiers.first?.classes,
-                let highestClassification = classes
-                    .filter({ $0.typeHierarchy != nil && $0.score > 0.5 })
-                    .sorted(by: { ($1.score > $0.score) } )
-                    .last
-                else { return }
-                print(highestClassification)
-                let hotdogResult = SeaFood.isSeaFood(classiffierWithTypeHierachy: highestClassification)
-                print(hotdogResult, highestClassification.classification)
-                let titleText = hotdogResult ? highestClassification.classification : "Not Sea Food!"
+            let visualRecognition = VisualRecognition(version: version, apiKey: apiKey)
+            visualRecognition.classify(imagesFile: fileURL, classifierIDs: ["food"]) { (classifiedImage, error) in
+                print(error)
+                if (error != nil) {
+                    print("classifying Error: \(String(describing: error))")
+                    return
+                }
+                guard
+                    let result = classifiedImage?.result,
+                    let image = result.images.first,
+                    let classes = image.classifiers.first?.classes,
+                    let highestClassificationResult = classes
+                        .filter({ $0.typeHierarchy != nil && $0.score > 0.5 })
+                        .sorted(by: { ($1.score > $0.score) } )
+                        .last
+                    else {
+                        print("Could not get classifier result")
+                        return
+                }
+                print(highestClassificationResult)
+                let hotdogResult = SeaFood.isSeaFood(classiffierWithTypeHierachy: highestClassificationResult)
+                print(hotdogResult, highestClassificationResult.className)
+                let titleText = hotdogResult
+                    ? highestClassificationResult.className : "Not Sea Food!"
                 let colorHex = hotdogResult ? "00ff00" : "ff0000"
-                
                 DispatchQueue.main.async { [unowned self] () in
                     self.navigationItem.title = titleText
                     self.photosButton.isEnabled = true
@@ -170,7 +182,7 @@ extension SeaFoodViewController: UIImagePickerControllerDelegate, UINavigationCo
                 }
                 
                 SVProgressHUD.dismiss()
-            })
+            }
         }
         dismissImagePicker()
     }
