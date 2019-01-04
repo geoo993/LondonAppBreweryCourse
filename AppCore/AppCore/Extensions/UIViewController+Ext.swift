@@ -4,6 +4,34 @@
 import Foundation
 
 public extension UIViewController {
+    func getVisibleViewController(with rootViewController: UIViewController?) -> UIViewController? {
+        var rootVC = rootViewController
+        if rootVC == nil {
+            rootVC = UIApplication.shared.keyWindow?.rootViewController
+        }
+        
+        if rootVC?.presentedViewController == nil { // vc
+            return rootVC
+        }
+        
+        if let presented = rootVC?.presentedViewController {
+            if presented.isKind(of: UINavigationController.self) {
+                let navigationController = presented as? UINavigationController
+                
+                return navigationController!.viewControllers.last!
+            }
+            
+            if presented.isKind(of: UITabBarController.self) {
+                let tabBarController = presented as? UITabBarController
+                return tabBarController!.selectedViewController!
+            }
+            
+            return getVisibleViewController(with: presented)
+        }
+        
+        return nil
+    }
+    
 //    var controllerAppDelegate : AppDelegate? {
 //        return UIApplication.shared.delegate as? AppDelegate
 //    }
@@ -37,4 +65,36 @@ public extension UIViewController {
 
     }
     
+    func presentModally(_ viewControllerToPresent: UIViewController, transitionStyle: UIModalTransitionStyle) {
+        viewControllerToPresent.modalTransitionStyle = transitionStyle
+        present(viewControllerToPresent, animated: true)
+    }
+    
+    func presentDetail(_ viewControllerToPresent: UIViewController, duration: CFTimeInterval) {
+        let transition = CATransition()
+        transition.duration = duration
+        transition.type = kCATransitionPush// kCATransitionFromBottom // transition type
+        transition.subtype = kCATransitionFromRight // starts from
+        view.window!.layer.add(transition, forKey: kCATransition)
+        
+        present(viewControllerToPresent, animated: true)
+    }
+    
+    func dismissDetail(transitionType _: String = kCATransitionPush) {
+        let transition = CATransition()
+        transition.duration = 0.25
+        transition.type = kCATransitionPush // transition type
+        transition.subtype = kCATransitionFromLeft// starts from
+        view.window!.layer.add(transition, forKey: kCATransition)
+        
+        dismiss(animated: false)
+    }
+    
+    func hideRemoveNavigationbarItems() {
+        navigationController?.navigationBar.clearNavigationBar()
+        navigationController?.view.backgroundColor = UIColor.clear
+        
+        navigationController?.isNavigationBarHidden = true
+        navigationItem.disableAllNavItems()
+    }
 }

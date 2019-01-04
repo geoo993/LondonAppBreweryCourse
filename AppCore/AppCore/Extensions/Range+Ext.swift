@@ -16,9 +16,6 @@ extension CountableClosedRange where Bound == Int {
 }
 
 extension CountableRange where Bound == Int {
-    public var toNSRange: NSRange {
-        return NSRange(location: lowerBound, length: upperBound - lowerBound)
-    }
     public var toRangeInt: Range<Int> {
         return lowerBound..<upperBound
     }
@@ -100,6 +97,14 @@ extension Array where Element == NSRange {
             return abs(now.lowerBound - range.lowerBound) < abs(next.lowerBound - range.lowerBound)
         }
     }
-
 }
+
+extension Array where Element == Range<Int> {
+    public func closestRange(to range: Element) -> Element? {
+        return self.min { (now, next) -> Bool in
+            return abs(now.lowerBound - range.lowerBound) < abs(next.lowerBound - range.lowerBound)
+        }
+    }
+}
+
 

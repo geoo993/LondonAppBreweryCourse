@@ -5,25 +5,87 @@
 import UIKit
 
 @IBDesignable
-public class CircularImageView: LayoutableImageView {
-
-    override public var image: UIImage? {
-        didSet {
-            super.image = image?.circularImage(with: nil)
+public final class CircularImageView: UIImageView {
+    
+    @IBInspectable
+    var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = newValue > 0
         }
     }
     
-    open override func awakeFromNib() {
+    @IBInspectable
+    var borderWidth: CGFloat {
+        get {
+            return layer.borderWidth
+        }
+        set {
+            layer.borderWidth = newValue
+        }
+    }
+    
+    @IBInspectable
+    var borderColor: UIColor? {
+        get {
+            return UIColor(cgColor: layer.borderColor ?? UIColor.clear.cgColor)
+        }
+        set {
+            layer.borderColor = newValue?.cgColor
+        }
+    }
+    
+    @IBInspectable var rotation: CGFloat = 0 {
+        didSet {
+            updateLayout()
+        }
+    }
+    
+    @IBInspectable var enableCircularImage: Bool = false {
+        didSet {
+            updateLayout()
+        }
+    }
+    
+    @IBInspectable var imageSize: CGSize = CGSize(width: 100, height: 100) {
+        didSet {
+            updateLayout()
+        }
+    }
+    
+    @IBInspectable var circularImage: UIImage = UIImage() {
+        didSet {
+            updateLayout()
+        }
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        updateLayout()
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        updateLayout()
+    }
+    
+    public override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        updateLayout()
+    }
+    
+    public override func awakeFromNib() {
         super.awakeFromNib()
+        updateLayout()
     }
     
-    public override func willMove(toSuperview newSuperview: UIView?) {
-        super.willMove(toSuperview: newSuperview)
+    func updateLayout() {
+        super.image = enableCircularImage
+            ? circularImage.circularImage(with: imageSize) : image
+        transform = CGAffineTransform(rotationAngle: rotation.toRadians)
     }
     
-    public override func layoutSubviews() {
-        super.layoutSubviews()
-    
-    }
-
 }

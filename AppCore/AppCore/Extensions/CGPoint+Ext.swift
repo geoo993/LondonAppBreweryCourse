@@ -2,6 +2,10 @@ import Foundation
 
 public extension CGPoint {
     
+    public static func point(_ x: CGFloat, _ y: CGFloat) -> CGPoint {
+        return CGPoint(x: x, y: y)
+    }
+    
     public func distance(from rect: CGRect) -> CGFloat {
         let dx = max(rect.minX - x, x - rect.maxX, 0)
         let dy = max(rect.minY - y, y - rect.maxY, 0)
@@ -14,7 +18,7 @@ public extension CGPoint {
         return sqrt(dx+dy)
     }
     
-    public func RotatePointAboutOrigin( angle: CGFloat) -> CGPoint
+    public func rotatePointAboutOrigin( angle: CGFloat) -> CGPoint
     {
         // https://stackoverflow.com/questions/1595285/what-is-the-best-way-to-rotate-a-cgpoint-on-a-grid
         let s : CGFloat = CGFloat(sinf(Float(angle)))

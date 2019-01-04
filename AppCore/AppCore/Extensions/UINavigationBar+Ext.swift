@@ -2,12 +2,17 @@ import Foundation
 
 public extension UINavigationBar {
     
-    public func clearNavigationBarBackground(with color: UIColor){
+    public func clearNavigationBar(to color: UIColor){
         self.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.shadowImage = UIImage()
         self.isTranslucent = true
         self.backgroundColor = color
-        
+    }
+    
+    func clearNavigationBar() {
+        setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        shadowImage = UIImage()
+        isTranslucent = true
     }
     
     public func addBorderOnTitle(with textColor: UIColor, font: UIFont, borderWidth: CGFloat, borderColor: UIColor) {
