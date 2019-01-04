@@ -28,3 +28,13 @@
 /Cartfile/Carthage/Build/iOS/VisualRecognitionV3.framework/** filter=lfs diff=lfs merge=lfs -text
 /Cartfile/Carthage/Build/iOS/Realm.framework.dSYM/** filter=lfs diff=lfs merge=lfs -text
 /Cartfile/Carthage/Build/iOS/Realm.framework/** filter=lfs diff=lfs merge=lfs -text
+/Cartfile/Carthage/Build/iOS/XCGLogger.framework/** filter=lfs diff=lfs merge=lfs -text
+/Cartfile/Carthage/Build/iOS/XCGLogger.framework.dSYM/** filter=lfs diff=lfs merge=lfs -text
+/Cartfile/Carthage/Build/iOS/CryptoSwift.framework/** filter=lfs diff=lfs merge=lfs -text
+/Cartfile/Carthage/Build/iOS/CryptoSwift.framework.dSYM/** filter=lfs diff=lfs merge=lfs -text
+/Cartfile/Carthage/Build/iOS/Haneke.framework/** filter=lfs diff=lfs merge=lfs -text
+/Cartfile/Carthage/Build/iOS/Haneke.framework.dSYM/** filter=lfs diff=lfs merge=lfs -text
+/Cartfile/Carthage/Build/iOS/Kingfisher.framework/** filter=lfs diff=lfs merge=lfs -text
+/Cartfile/Carthage/Build/iOS/Kingfisher.framework.dSYM/** filter=lfs diff=lfs merge=lfs -text
+/Cartfile/Carthage/Build/iOS/ObjcExceptionBridging.framework/** filter=lfs diff=lfs merge=lfs -text
+/Cartfile/Carthage/Build/iOS/ObjcExceptionBridging.framework.dSYM/** filter=lfs diff=lfs merge=lfs -text
