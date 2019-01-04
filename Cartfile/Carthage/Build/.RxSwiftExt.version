@@ -1,9 +1,9 @@
 {
-  "commitish" : "3.1.0",
+  "commitish" : "3.4.0",
   "iOS" : [
     {
       "name" : "RxSwiftExt",
-      "hash" : "a62b4769ad508f413f0cb6e6079b82cf7a6fe57c80703bcdd2a35f9cf4ebea10"
+      "hash" : "0441e709a1e5e414853139ab629d3429b5a3527fde7a2d5ac277bd1d8b4539cb"
     }
   ]
 }

@@ -1,0 +1,30 @@
+[submodule "Carthage/Checkouts/swift-sdk"]
+	url = https://github.com/watson-developer-cloud/swift-sdk.git
+[submodule "Carthage/Checkouts/realm-cocoa"]
+	url = https://github.com/realm/realm-cocoa.git
+[submodule "Carthage/Checkouts/RxSwift"]
+	url = https://github.com/ReactiveX/RxSwift.git
+[submodule "Carthage/Checkouts/RxSwiftExt"]
+	url = https://github.com/RxSwiftCommunity/RxSwiftExt.git
+[submodule "Carthage/Checkouts/Alamofire"]
+	url = https://github.com/Alamofire/Alamofire.git
+[submodule "Carthage/Checkouts/SwiftyJSON"]
+	url = https://github.com/SwiftyJSON/SwiftyJSON.git
+[submodule "Carthage/Checkouts/Starscream"]
+	url = https://github.com/daltoniam/Starscream.git
+[submodule "Carthage/Checkouts/RxGesture"]
+	url = https://github.com/RxSwiftCommunity/RxGesture.git
+[submodule "Carthage/Checkouts/XCGLogger"]
+	url = https://github.com/DaveWoodCom/XCGLogger.git
+[submodule "Carthage/Checkouts/SVProgressHUD"]
+	url = https://github.com/SVProgressHUD/SVProgressHUD.git
+[submodule "Carthage/Checkouts/RxSegue"]
+	url = https://github.com/RxSwiftCommunity/RxSegue.git
+[submodule "Carthage/Checkouts/SwipeCellKit"]
+	url = https://github.com/SwipeCellKit/SwipeCellKit.git
+[submodule "Carthage/Checkouts/SDWebImage"]
+	url = https://github.com/rs/SDWebImage.git
+[submodule "Carthage/Checkouts/restkit"]
+	url = https://github.com/watson-developer-cloud/restkit.git
+[submodule "Carthage/Checkouts/Chameleon"]
+	url = https://github.com/ViccAlexander/Chameleon.git

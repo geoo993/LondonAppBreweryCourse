@@ -1,4 +1,4 @@
 framework module RxSwiftExt {
-    header "RxSwiftExt-Swift.h"
-    requires objc
+  header "RxSwiftExt-Swift.h"
+  requires objc
 }
