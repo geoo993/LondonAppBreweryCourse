@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='raw'>
+    <pages>
+        <page name='EDUMobile1'/>
+        <page name='EDUMobile2'/>
+        <page name='EDUMobile3'/>
+        <page name='EDUMobile4'/>
+        <page name='EDUMobile5'/>
+        <page name='MemorySizeOfDataTypes'/>
+        <page name='Optionals'/>
+        <page name='Variables and Constants'/>
+        <page name='Functions'/>
+        <page name='Arrays and Tuples'/>
+        <page name='Dictionaries'/>
+        <page name='Closures'/>
+        <page name='Enumerations'/>
+        <page name='Structures'/>
+        <page name='Classes'/>
+        <page name='PropertiesAndMethods'/>
+        <page name='GettersAndSetters'/>
+        <page name='Inheritance'/>
+        <page name='UpcastingAndDowncasting'/>
+        <page name='Protocols'/>
+        <page name='Observables'/>
+        <page name='Observables2'/>
+        <page name='Observables3'/>
+        <page name='Observables+Scan'/>
+        <page name='Observable+Gestures'/>
+        <page name='Arrays'/>
+        <page name='WalletExample'/>
+        <page name='FilterReduceMapAndFlatMap'/>
+        <page name='Weak and Strong'/>
+        <page name='GridLayout'/>
+        <page name='Colorable'/>
+    </pages>
+</playground>

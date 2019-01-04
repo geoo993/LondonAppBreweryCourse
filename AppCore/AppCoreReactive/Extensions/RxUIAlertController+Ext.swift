@@ -10,6 +10,11 @@
 import Foundation
 import RxSwift
 
+public enum AlertAction: String {
+    case quit = "Quit"
+    case cancel = "Cancel"
+}
+
 public protocol RxAlertActionType {
     associatedtype Result
 
@@ -71,8 +76,8 @@ public extension Reactive where Base: UIAlertController {
 
 }
 
-extension UIAlertController {
-    static func rx_present<Action: RxAlertActionType, Result>
+public extension UIAlertController {
+    public static func rx_present<Action: RxAlertActionType, Result>
         (viewController: UIViewController, title: String, message: String,
          preferredStyle: UIAlertController.Style = .alert, animated: Bool = true, actions: [Action])
         -> Observable<Result> where Action.Result == Result {
@@ -90,5 +95,18 @@ extension UIAlertController {
             viewController.present(alertController, animated: animated, completion: nil)
             return alertController.rx.isDismissing.subscribe()
         }
+    }
+    
+     /// Display model dialog to quit exercise
+    public static func startAlertAction(title: String, message: String, in controller: UIViewController) -> Observable<AlertAction> {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let cancelAction = RxAlertAction(title: AlertAction.cancel.rawValue, style: .cancel, result: AlertAction.cancel)
+        let quitAction = RxAlertAction(title: AlertAction.quit.rawValue, style: .default, result: AlertAction.quit)
+        return
+            alertController.rx.present(
+                presentingViewController: controller,
+                animated: true,
+                actions: [cancelAction, quitAction]
+        )
     }
 }
