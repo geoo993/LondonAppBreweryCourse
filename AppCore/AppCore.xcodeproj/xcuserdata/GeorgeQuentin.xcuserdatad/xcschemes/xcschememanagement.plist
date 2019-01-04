@@ -7,16 +7,36 @@
 		<key>AppCore.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>78</integer>
+			<integer>102</integer>
+		</dict>
+		<key>AppCorePlayground.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>142</integer>
 		</dict>
 		<key>AppCoreReactive.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>109</integer>
+			<integer>138</integer>
+		</dict>
+		<key>AppCoreRealm.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>141</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>C71E3EA721E009D200B7531B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C71E3EAC21E00DFB00B7531B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C7DAF11F1FF11C6E000D93C7</key>
 		<dict>
 			<key>primary</key>

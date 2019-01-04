@@ -72,18 +72,17 @@ public class BackgroundShapesView: UIButton {
             .map({ rect -> UIView in
                 let rotation = CGFloat.random(min: 0, max: 360)
                 if image != nil {
-                    return UIImageView().then {
-                        $0.frame = rect
-                        $0.image = image?.withRenderingMode(.alwaysOriginal)
-                        $0.tintColor = imageColor
-                        $0.transform = CGAffineTransform(rotationAngle: rotation.toRadians)
-                    }
+                    let newImage = UIImageView(frame: rect)
+                    newImage.image = image?.withRenderingMode(.alwaysOriginal)
+                    newImage.tintColor = imageColor
+                    newImage.transform = CGAffineTransform(rotationAngle: rotation.toRadians)
+                    return newImage
                 } else {
-                    return UIView().then {
-                        $0.frame = rect
-                        $0.backgroundColor = color
-                        $0.transform = CGAffineTransform(rotationAngle: rotation.toRadians)
-                    }
+                    let newView = UIView(frame: rect)
+                    newView.frame = rect
+                    newView.backgroundColor = color
+                    newView.transform = CGAffineTransform(rotationAngle: rotation.toRadians)
+                    return newView
                 }
             })
         backgroundSquares.forEach { addSubview($0) }

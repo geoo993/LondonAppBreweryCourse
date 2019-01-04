@@ -2,6 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Chatter/Chatter.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SwiftTransition/SwiftTransition.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Exams/Exams.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:RoadMap/RoadMap.xcodeproj">
    </FileRef>
    <FileRef
@@ -68,6 +77,18 @@
          location = "container:"
          name = "Dependencies">
          <FileRef
+            location = "group:Cartfile/Carthage/Checkouts/CryptoSwift/CryptoSwift.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:Cartfile/Carthage/Checkouts/realm-cocoa/Realm.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:Cartfile/Carthage/Checkouts/Kingfisher/Kingfisher.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:Cartfile/Carthage/Checkouts/HanekeSwift/Haneke.xcodeproj">
+         </FileRef>
+         <FileRef
             location = "group:Cartfile/Carthage/Checkouts/R.swift.Library/R.swift.Library.xcodeproj">
          </FileRef>
          <FileRef
@@ -87,9 +108,6 @@
          </FileRef>
          <FileRef
             location = "group:Cartfile/Carthage/Checkouts/SwipeCellKit/SwipeCellKit.xcodeproj">
-         </FileRef>
-         <FileRef
-            location = "group:Cartfile/Carthage/Checkouts/realm-cocoa/Realm.xcodeproj">
          </FileRef>
          <FileRef
             location = "group:Cartfile/Carthage/Checkouts/Chameleon/Chameleon.xcodeproj">

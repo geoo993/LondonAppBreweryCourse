@@ -127,56 +127,57 @@ final public class ProgressWaveView: UIView {
             CATransaction.commit()
         })
 
-        let dotAnimation = CAKeyframeAnimation().then {
-            $0.path = animationPath.cgPath
-            $0.keyPath = "position"
-            $0.duration = duration
-            $0.fillMode = kCAFillModeForwards //CAMediaTimingFillMode.forwards
-            $0.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)//CAMediaTimingFunctionName.easeInEaseOut)
-            $0.isRemovedOnCompletion = false
-        }
+        let dotAnimation = CAKeyframeAnimation()
+        dotAnimation.path = animationPath.cgPath
+        dotAnimation.keyPath = "position"
+        dotAnimation.duration = duration
+        dotAnimation.fillMode = kCAFillModeForwards //CAMediaTimingFillMode.forwards
+        dotAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)//CAMediaTimingFunctionName.easeInEaseOut)
+        dotAnimation.isRemovedOnCompletion = false
         dotLayer.add(dotAnimation, forKey: "position")
-        let waveAnimation = CABasicAnimation().then {
-            $0.keyPath = "strokeEnd"
-            $0.duration = duration
-            $0.fromValue = progressPercentage//
-            $0.toValue = newProgress
-            $0.isRemovedOnCompletion = false
-        }
+        
+        let waveAnimation = CABasicAnimation()
+        waveAnimation.keyPath = "strokeEnd"
+        waveAnimation.duration = duration
+        waveAnimation.fromValue = progressPercentage//
+        waveAnimation.toValue = newProgress
+        waveAnimation.isRemovedOnCompletion = false
         waveLayer.add(waveAnimation, forKey: "strokeEnd")
         CATransaction.commit()
     }
     // MARK: - Setup Progress Bar
-    lazy var waveBackground = CAShapeLayer().then {
-        $0.fillColor = UIColor.clear.cgColor
-        $0.lineCap = kCALineCapRound //CAShapeLayerLineCap.round
-    }
-    lazy var waveLayer = CAShapeLayer().then {
-        $0.fillColor = UIColor.clear.cgColor
-        $0.strokeColor = progressColor.cgColor
-        $0.lineCap = kCALineCapRound //CAShapeLayerLineCap.round
-    }
-    lazy var dotLayer = CAShapeLayer().then {
-        $0.bounds = CGRect(origin: .zero, size: CGSize(width: progressIndicatorSize, height: progressIndicatorSize))
-    }
+    lazy var waveBackground = { [unowned self] () -> CAShapeLayer in
+        let layer = CAShapeLayer()
+        layer.fillColor = UIColor.clear.cgColor
+        layer.lineCap = kCALineCapRound //CAShapeLayerLineCap.round
+        return layer
+    }()
+    lazy var waveLayer =  { [unowned self] () -> CAShapeLayer in
+        let layer = CAShapeLayer()
+        layer.fillColor = UIColor.clear.cgColor
+        layer.strokeColor = self.progressColor.cgColor
+        layer.lineCap = kCALineCapRound //CAShapeLayerLineCap.round
+        return layer
+    }()
+    lazy var dotLayer =  { [unowned self] () -> CAShapeLayer in
+        let layer = CAShapeLayer()
+        layer.bounds = CGRect(origin: .zero,
+                              size: CGSize(width: self.progressIndicatorSize, height: self.progressIndicatorSize))
+        return layer
+    }()
 
     private func progressBar() {
-        waveBackground.then {
-            $0.path = sineWavePath.cgPath
-            $0.lineWidth = progressWidth
-            $0.strokeColor = progressBackgroundColor.cgColor
-        }
-        waveLayer.then {
-            $0.path = sineWavePath.cgPath
+        waveBackground.path = sineWavePath.cgPath
+        waveBackground.lineWidth = progressWidth
+        waveBackground.strokeColor = progressBackgroundColor.cgColor
 
-            $0.lineWidth = progressWidth
-            $0.strokeEnd = progressPercentage.toCGFloat
-        }
-        dotLayer.then {
-            $0.backgroundColor = progressIndicatorColor.cgColor
-            $0.cornerRadius = progressIndicatorSize * 0.5
-            $0.position = sineWavePath.point(atPercentOfLength: progressPercentage.toCGFloat)
-        }
+        waveLayer.path = sineWavePath.cgPath
+        waveLayer.lineWidth = progressWidth
+        waveLayer.strokeEnd = progressPercentage.toCGFloat
+
+        dotLayer.backgroundColor = progressIndicatorColor.cgColor
+        dotLayer.cornerRadius = progressIndicatorSize * 0.5
+        dotLayer.position = sineWavePath.point(atPercentOfLength: progressPercentage.toCGFloat)
     }
     // MARK: - Bezier Path
     private var sineWavePoints: [(percentage: Double, point: CGPoint)] = []

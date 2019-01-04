@@ -21,6 +21,15 @@ extension CountableRange where Bound == Int {
     }
 }
 
+
+extension ClosedRange where Bound : FloatingPoint {
+    public func random() -> Bound {
+        let range = self.upperBound - self.lowerBound
+        let randomValue = (Bound(arc4random_uniform(UINT32_MAX)) / Bound(UINT32_MAX)) * range + self.lowerBound
+        return randomValue
+    }
+}
+
 extension Range where Bound == Int {
     public var toNSRange: NSRange {
         return NSRange(location: lowerBound, length: upperBound - lowerBound)

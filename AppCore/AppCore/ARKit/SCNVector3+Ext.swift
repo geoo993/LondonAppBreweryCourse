@@ -23,8 +23,206 @@
 import Foundation
 import SceneKit
 
+extension SCNVector3 : Equatable
+{
+    public static func == (a:SCNVector3, b:SCNVector3) -> Bool {
+        return SCNVector3EqualToVector3(a, b)
+    }
+}
+
+extension GLKVector3 {
+    public func toSCN() -> SCNVector3 {
+        return SCNVector3FromGLKVector3(self)
+    }
+}
+
 public extension SCNVector3
 {
+    public static let zero = SCNVector3Zero
+
+    // MARK: Type Conversions
+    public func toSimd() -> float3 {
+        #if swift(>=4.0)
+        return float3(self)
+        #else
+        return SCNVector3ToFloat3(self)
+        #endif
+    }
+    public func toGLK() -> GLKVector3 {
+        return SCNVector3ToGLKVector3(self)
+    }
+
+
+    // MARK: Add
+
+//    public static func + (a:SCNVector3, b:SCNVector3) -> SCNVector3 { return a.added(to: b) }
+    public func added(to other:SCNVector3) -> SCNVector3 {
+        return (self.toSimd() + other.toSimd()).toSCN()
+    }
+//    public static func += (v:inout SCNVector3, o:SCNVector3) { v.add(o) }
+    public mutating func add(_ other:SCNVector3) {
+        self = self.added(to: other)
+    }
+
+    // MARK: Cross Product
+
+    public func crossProduct(_ other:SCNVector3) -> SCNVector3 {
+        return simd.cross(self.toSimd(), other.toSimd()).toSCN()
+    }
+    public mutating func formCrossProduct(_ other:SCNVector3) {
+        self = self.crossProduct(other)
+    }
+    public static func crossProductOf(_ a:SCNVector3, _ b:SCNVector3) -> SCNVector3 {
+        return a.crossProduct(b)
+    }
+
+    // MARK: Divide
+
+//    public static func / (a:SCNVector3, b:SCNVector3) -> SCNVector3 { return a.divided(by: b) }
+    public func divided(by other:SCNVector3) -> SCNVector3 {
+        return (self.toSimd() / other.toSimd()).toSCN()
+    }
+//    public static func / (a:SCNVector3, b:Float) -> SCNVector3 { return a.divided(by: b) }
+    public func divided(by scalar:Float) -> SCNVector3 {
+        return (self.toSimd() * recip(scalar)).toSCN()
+    }
+//    public static func /= (v:inout SCNVector3, o:SCNVector3) { v.divide(by: o) }
+    public mutating func divide(by other:SCNVector3) {
+        self = self.divided(by: other)
+    }
+//    public static func /= (v:inout SCNVector3, o:Float) { v.divide(by: o) }
+    public mutating func divide(by scalar:Float) {
+        self = self.divided(by: scalar)
+    }
+
+    // MARK: Dot Product
+
+    public func dotProduct(_ other:SCNVector3) -> Float {
+        return simd.dot(self.toSimd(), other.toSimd())
+    }
+    public static func dotProductOf(_ a:SCNVector3, _ b:SCNVector3) -> Float {
+        return a.dotProduct(b)
+    }
+
+    // MARK: Is… Flags
+
+    public var isFinite:Bool {
+        return self.x.isFinite && self.y.isFinite && self.z.isFinite
+    }
+    public var isInfinite:Bool {
+        return self.x.isInfinite || self.y.isInfinite || self.z.isInfinite
+    }
+    public var isNaN:Bool {
+        return self.x.isNaN || self.y.isNaN || self.z.isNaN
+    }
+    public var isZero:Bool {
+        return self.x.isZero && self.y.isZero && self.z.isZero
+    }
+
+    // MARK: Magnitude
+
+    public func magnitude() -> Float {
+        return simd.length(self.toSimd())
+    }
+    public func magnitudeSquared() -> Float {
+        return simd.length_squared(self.toSimd())
+    }
+
+    // MARK: Mix
+
+    public func mixed(with other:SCNVector3, ratio:Float) -> SCNVector3 {
+        return simd.mix(self.toSimd(), other.toSimd(), t: ratio).toSCN()
+    }
+    public mutating func mix(with other:SCNVector3, ratio:Float) {
+        self = self.mixed(with: other, ratio: ratio)
+    }
+    public static func mixOf(_ a:SCNVector3, _ b:SCNVector3, ratio:Float) -> SCNVector3 {
+        return a.mixed(with: b, ratio: ratio)
+    }
+
+    // MARK: Multiply
+
+//    public static func * (a:SCNVector3, b:SCNVector3) -> SCNVector3 { return a.multiplied(by: b) }
+    public func multiplied(by other:SCNVector3) -> SCNVector3 {
+        return (self.toSimd() * other.toSimd()).toSCN()
+    }
+//    public static func * (a:SCNVector3, b:Float) -> SCNVector3 { return a.multiplied(by: b) }
+    public func multiplied(by scalar:Float) -> SCNVector3 {
+        return (self.toSimd() * scalar).toSCN()
+    }
+//    public static func *= (v:inout SCNVector3, o:SCNVector3) { v.multiply(by: o) }
+    public mutating func multiply(by other:SCNVector3) {
+        self = self.multiplied(by: other)
+    }
+//    public static func *= (v:inout SCNVector3, o:Float) { v.multiply(by: o) }
+    public mutating func multiply(by scalar:Float) {
+        self = self.multiplied(by: scalar)
+    }
+
+    // MARK: Invert
+
+    public static prefix func - (v:SCNVector3) -> SCNVector3 { return v.inverted() }
+    public func inverted() -> SCNVector3 {
+        return (float3(0) - self.toSimd()).toSCN()
+    }
+    public mutating func invert() {
+        self = self.inverted()
+    }
+
+
+    // MARK: Project
+
+    public func projected(onto other:SCNVector3) -> SCNVector3 {
+        return simd.project(self.toSimd(), other.toSimd()).toSCN()
+    }
+    public mutating func project(onto other:SCNVector3) {
+        self = self.projected(onto: other)
+    }
+
+    // MARK: Reflect
+
+    public func reflected(normal:SCNVector3) -> SCNVector3 {
+        return simd.reflect(self.toSimd(), n: normal.toSimd()).toSCN()
+    }
+    public mutating func reflect(normal:SCNVector3) {
+        self = self.reflected(normal: normal)
+    }
+
+    // MARK: Refract
+
+    public func refracted(normal:SCNVector3, refractiveIndex:Float) -> SCNVector3 {
+        return simd.refract(self.toSimd(), n: normal.toSimd(), eta: refractiveIndex).toSCN()
+    }
+    public mutating func refract(normal:SCNVector3, refractiveIndex:Float) {
+        self = self.refracted(normal: normal, refractiveIndex: refractiveIndex)
+    }
+
+    // MARK: Replace
+
+    public mutating func replace(x:Float?=nil, y:Float?=nil, z:Float?=nil) {
+        if let xValue = x { self.x = xValue }
+        if let yValue = y { self.y = yValue }
+        if let zValue = z { self.z = zValue }
+    }
+    public func replacing(x:Float?=nil, y:Float?=nil, z:Float?=nil) -> SCNVector3 {
+        return SCNVector3(
+            x ?? self.x,
+            y ?? self.y,
+            z ?? self.z
+        )
+    }
+
+    // MARK: Subtract
+
+//    public static func - (a:SCNVector3, b:SCNVector3) -> SCNVector3 { return a.subtracted(by: b) }
+    public func subtracted(by other:SCNVector3) -> SCNVector3 {
+        return (self.toSimd() - other.toSimd()).toSCN()
+    }
+//    public static func -= (v:inout SCNVector3, o:SCNVector3) { v.subtract(o) }
+    public mutating func subtract(_ other:SCNVector3) {
+        self = self.subtracted(by: other)
+    }
+
     /**
      * Negates the vector described by SCNVector3 and returns
      * the result as a new SCNVector3.
@@ -55,7 +253,10 @@ public extension SCNVector3
     public func normalized() -> SCNVector3 {
         return self / length()
     }
-    
+//    public func normalized() -> SCNVector3 {
+//        return simd.normalize(self.toSimd()).toSCN()
+//    }
+
     /**
      * Normalizes the vector described by the SCNVector3 to length 1.0.
      */

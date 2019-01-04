@@ -71,12 +71,10 @@ final public class ProgressBarView: UIView {
         let percentage: CGFloat = value.clamped(to: CGFloat(0.0)...CGFloat(100.0))
         let point: CGFloat = (percentage / 100.0).clamped(to: CGFloat(0.0)...CGFloat(0.99999))
         let location: NSNumber = NSNumber(value: point.toFloat)
-        let gradientLayer = CAGradientLayer().then {
-            $0.frame = bounds
-            $0.colors = [progressColor.cgColor,
-                         progressBackgroundColor.cgColor]
-            $0.locations = [location, location]
-        }
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = bounds
+        gradientLayer.colors = [progressColor.cgColor, progressBackgroundColor.cgColor]
+        gradientLayer.locations = [location, location]
 
         gradientLayer.startPoint = vertical ? CGPoint(x: 0.5, y: 0.0) : CGPoint(x: 0.0, y: 0.5)
         gradientLayer.endPoint = vertical ? CGPoint(x: 0.5, y: 1.0) : CGPoint(x: 1.0, y: 0.5)

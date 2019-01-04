@@ -5,7 +5,8 @@
 //  Created by Daniel Asher on 04/12/2017.
 //  Copyright © 2017 LEXI LABS. All rights reserved.
 //
-import protocol StoryCore.Then
+
+import protocol AppCore.Then
 import XCGLogger
 extension XCGLogger: Then {}
 
@@ -14,6 +15,7 @@ let log = XCGLogger.default
 let printlog = XCGLogger.default.then {
     $0.setup(showLogIdentifier: false, showFunctionName: true, showThreadName: false, showLevel: false,
              showFileNames: true, showLineNumbers: true, showDate: true)
+    let dateForm = DateFormatter()
     $0.dateFormatter = DateFormatter().then {
         $0.dateFormat = "HH:mm:ss.SSS"
     }

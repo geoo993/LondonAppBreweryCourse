@@ -1,23 +1,5 @@
 import Foundation
 
-public extension FloatingPoint {
-    public var toRadians: Self { return self * .pi / 180 }
-    public var toDegrees: Self { return self * 180 / .pi }
-}
-
-public extension Float {
-   
-    public static func rand() -> Float {
-        return Float(arc4random()) / Float(UInt32.max)
-    }
-    
-    public static func random(min: Float, max: Float) -> Float {
-        let rand = Float(arc4random()) / Float(UINT32_MAX)
-        let minimum = min < max ? min : max 
-        return  rand * Swift.abs(Float( min - max)) + minimum
-    }
-}
-
 public extension CGFloat {
     
     public var toInt: Int {
