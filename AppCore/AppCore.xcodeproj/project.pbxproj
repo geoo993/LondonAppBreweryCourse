@@ -160,6 +160,7 @@
 		C7B43C2D21DFCBE400A362E0 /* Geometric.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B43C2421DFCBE400A362E0 /* Geometric.swift */; };
 		C7B43C2E21DFCBE400A362E0 /* Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B43C2521DFCBE400A362E0 /* Transform.swift */; };
 		C7B4BE781FF80ED100D54698 /* UIStackView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B4BE771FF80ED100D54698 /* UIStackView+Ext.swift */; };
+		C7B7239521E2E2D000C6F65D /* CGVector+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B7239421E2E2D000C6F65D /* CGVector+Ext.swift */; };
 		C7B9FE921FF151CD00D15B45 /* BezierCubicCurveAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B9FE691FF151CD00D15B45 /* BezierCubicCurveAlgorithm.swift */; };
 		C7B9FE931FF151CD00D15B45 /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B9FE6A1FF151CD00D15B45 /* CircularImageView.swift */; };
 		C7B9FE961FF151CD00D15B45 /* DotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B9FE6D1FF151CD00D15B45 /* DotView.swift */; };
@@ -422,6 +423,7 @@
 		C7B43C2421DFCBE400A362E0 /* Geometric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometric.swift; sourceTree = "<group>"; };
 		C7B43C2521DFCBE400A362E0 /* Transform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transform.swift; sourceTree = "<group>"; };
 		C7B4BE771FF80ED100D54698 /* UIStackView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Ext.swift"; sourceTree = "<group>"; };
+		C7B7239421E2E2D000C6F65D /* CGVector+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGVector+Ext.swift"; sourceTree = "<group>"; };
 		C7B9FE691FF151CD00D15B45 /* BezierCubicCurveAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierCubicCurveAlgorithm.swift; sourceTree = "<group>"; };
 		C7B9FE6A1FF151CD00D15B45 /* CircularImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
 		C7B9FE6D1FF151CD00D15B45 /* DotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotView.swift; sourceTree = "<group>"; };
@@ -661,6 +663,7 @@
 				C785AB0F1FF126E4002360A6 /* CGPoint+Ext.swift */,
 				C785AB021FF126E4002360A6 /* CGRect+Ext.swift */,
 				C71744A021DE415100FD6B0F /* CGSize+Ext.swift */,
+				C7B7239421E2E2D000C6F65D /* CGVector+Ext.swift */,
 				C717449121DE39C100FD6B0F /* CollectionType+Ext.swift */,
 				C717449821DE3D1600FD6B0F /* Comparable+Ext.swift */,
 				C717449A21DE3D1600FD6B0F /* Date+Ext.swift */,
@@ -1399,6 +1402,7 @@
 				C7B43C0121DFCBC800A362E0 /* ARSCNView+Ext.swift in Sources */,
 				C785AB2C1FF126E4002360A6 /* UIApplication+Ext.swift in Sources */,
 				C717449B21DE3D1600FD6B0F /* Comparable+Ext.swift in Sources */,
+				C7B7239521E2E2D000C6F65D /* CGVector+Ext.swift in Sources */,
 				C7B43C0521DFCBC800A362E0 /* CollisionTypes.swift in Sources */,
 				C785AB4D1FF13B7F002360A6 /* UIFont+Ext.swift in Sources */,
 				C785AB251FF126E4002360A6 /* UIBezierPath+Ext.swift in Sources */,

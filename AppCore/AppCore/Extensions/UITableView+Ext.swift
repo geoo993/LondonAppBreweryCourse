@@ -39,11 +39,11 @@ public extension UITableView {
     }
     
     public func applyChanges(section: Int, deletions: [Int], insertions: [Int], updates: [Int]) {
-//        beginUpdates()
-//        deleteRows(at: deletions.map(IndexPath.fromRow), with: .automatic)
-//        insertRows(at: insertions.map(IndexPath.fromRow), with: .automatic)
-//        reloadRows(at: updates.map(IndexPath.fromRow), with: .none)
-//        endUpdates()
+        beginUpdates()
+        deleteRows(at: deletions.map(IndexPath.fromRow), with: .automatic)
+        insertRows(at: insertions.map(IndexPath.fromRow), with: .automatic)
+        reloadRows(at: updates.map(IndexPath.fromRow), with: .none)
+        endUpdates()
     }
     
 }
