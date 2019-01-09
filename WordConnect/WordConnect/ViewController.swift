@@ -7,37 +7,34 @@
 //
 
 import UIKit
-import AppCore
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var panel: Panel!
-    @IBAction func didReduce(_ sender: UIButton) {
-        panel.numberOfTiles -= 1
-    }
+    @IBOutlet weak var grid: GridView!
+    @IBOutlet weak var panel: PanelView!
     
-    @IBAction func didAdd(_ sender: UIButton) {
-        panel.numberOfTiles += 1
-    }
-
+    var words: [String] = ["roma", "made", "red", "dear", "road", "dream", "more"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        grid.createGrid(words: words, rows: 10, columns: 10, spacing: 2)
+        
         panel.delegate = self
+        panel.createWordPanel(with: words)
         
     }
-
 }
 
 extension ViewController: WordPanelDelegate {
-    func wordPanel(tiles: [WordTile]) {
-        print("Word tiles added", tiles.count)
+    func panelView(tiles: [WordTile]) {
+        let letters = tiles.map({ $0.letter })
+        print("Word tiles added", tiles.count, letters)
     }
     
-    func wordPanel(wordFound: String) {
-        
+    func panelView(wordFound: String) {
+        print("word found: ", wordFound)
+        panel.wordsToIgnore.append(wordFound)
     }
-    
-    
 }
 

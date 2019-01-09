@@ -110,6 +110,7 @@
 		C785AB4B1FF127AB002360A6 /* Int+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C785AB4A1FF127AB002360A6 /* Int+Ext.swift */; };
 		C785AB4D1FF13B7F002360A6 /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C785AB4C1FF13B7F002360A6 /* UIFont+Ext.swift */; };
 		C785AB511FF13F71002360A6 /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C785AB501FF13F71002360A6 /* Array+Ext.swift */; };
+		C78A65E721E5658D00937456 /* Character+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78A65E621E5658D00937456 /* Character+Ext.swift */; };
 		C795DE4720271A84001CC4C3 /* Unit+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C795DE4620271A84001CC4C3 /* Unit+Ext.swift */; };
 		C795DE4920271B41001CC4C3 /* FormatDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C795DE4820271B41001CC4C3 /* FormatDisplay.swift */; };
 		C795DE4D20272312001CC4C3 /* MulticolorPolyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = C795DE4C20272312001CC4C3 /* MulticolorPolyline.swift */; };
@@ -374,6 +375,7 @@
 		C785AB4A1FF127AB002360A6 /* Int+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Ext.swift"; sourceTree = "<group>"; };
 		C785AB4C1FF13B7F002360A6 /* UIFont+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
 		C785AB501FF13F71002360A6 /* Array+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
+		C78A65E621E5658D00937456 /* Character+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character+Ext.swift"; sourceTree = "<group>"; };
 		C795DE4620271A84001CC4C3 /* Unit+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Unit+Ext.swift"; sourceTree = "<group>"; };
 		C795DE4820271B41001CC4C3 /* FormatDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatDisplay.swift; sourceTree = "<group>"; };
 		C795DE4C20272312001CC4C3 /* MulticolorPolyline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticolorPolyline.swift; sourceTree = "<group>"; };
@@ -664,6 +666,7 @@
 				C785AB021FF126E4002360A6 /* CGRect+Ext.swift */,
 				C71744A021DE415100FD6B0F /* CGSize+Ext.swift */,
 				C7B7239421E2E2D000C6F65D /* CGVector+Ext.swift */,
+				C78A65E621E5658D00937456 /* Character+Ext.swift */,
 				C717449121DE39C100FD6B0F /* CollectionType+Ext.swift */,
 				C717449821DE3D1600FD6B0F /* Comparable+Ext.swift */,
 				C717449A21DE3D1600FD6B0F /* Date+Ext.swift */,
@@ -1371,6 +1374,7 @@
 				C7B43BE021DFC93D00A362E0 /* UserDefaults+Ext.swift in Sources */,
 				C795DE4920271B41001CC4C3 /* FormatDisplay.swift in Sources */,
 				C7B43C0021DFCBC800A362E0 /* ShapeGenerator.swift in Sources */,
+				C78A65E721E5658D00937456 /* Character+Ext.swift in Sources */,
 				C7B43C2721DFCBE400A362E0 /* Trigonometric.swift in Sources */,
 				C7B9FE9D1FF151CD00D15B45 /* SlideShowView.swift in Sources */,
 				C71744C021DE4F6E00FD6B0F /* MKGradientView.swift in Sources */,

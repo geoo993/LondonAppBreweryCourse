@@ -34,3 +34,10 @@ public extension Int {
     }
 }
 
+public extension Array where Element == Int {
+    public func sum() -> Element {
+        return self.reduce(0) { acc, int in
+            return acc + int
+        }
+    }
+}

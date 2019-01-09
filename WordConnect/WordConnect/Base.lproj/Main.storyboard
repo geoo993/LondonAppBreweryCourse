@@ -18,68 +18,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uXq-OW-hFM" customClass="Panel" customModule="WordConnect" customModuleProvider="target">
-                                <rect key="frame" x="62.5" y="208.5" width="250" height="250"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="uXq-OW-hFM" secondAttribute="height" multiplier="1:1" id="JN4-DO-EvA"/>
-                                    <constraint firstAttribute="width" constant="250" id="uzH-fs-TCV"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="numberOfTiles">
-                                        <integer key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="tilesCornerRadius">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="tilesColor">
-                                        <color key="value" red="0.98184436559999999" green="0.45865672829999998" blue="0.076797775920000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="tilesOffset">
-                                        <real key="value" value="0.80000000000000004"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="tilesSize">
-                                        <real key="value" value="30"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="tilesLineSize">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BT8-8i-Vph">
-                                <rect key="frame" x="20" y="617" width="30" height="30"/>
-                                <color key="backgroundColor" red="0.4431372549" green="0.63529411759999999" blue="1" alpha="0.93999999999999995" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="-">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="didReduce:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3tA-4H-4S8"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsh-MV-GOa">
-                                <rect key="frame" x="325" y="617" width="30" height="30"/>
-                                <color key="backgroundColor" red="0.4431372549" green="0.63529411759999999" blue="1" alpha="0.93999999999999995" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="+">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="didAdd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pPL-Dd-aiH"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hyB-0W-cP2">
+                                <rect key="frame" x="0.0" y="10" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sPy-El-6RQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2a1-k5-ZNf" customClass="GridView" customModule="WordConnect" customModuleProvider="target">
+                                                <rect key="frame" x="37.5" y="17" width="300" height="300"/>
+                                                <color key="backgroundColor" red="0.4431372549" green="0.63529411759999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="300" id="MC5-MP-MAx"/>
+                                                    <constraint firstAttribute="width" secondItem="2a1-k5-ZNf" secondAttribute="height" multiplier="1:1" id="UB9-Xc-ox5"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="2a1-k5-ZNf" firstAttribute="centerX" secondItem="sPy-El-6RQ" secondAttribute="centerX" id="9Yk-KY-NML"/>
+                                            <constraint firstItem="2a1-k5-ZNf" firstAttribute="centerY" secondItem="sPy-El-6RQ" secondAttribute="centerY" id="rne-Y7-yiR"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mng-60-Ln1">
+                                        <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
+                                        <subviews>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uXq-OW-hFM" customClass="PanelView" customModule="WordConnect" customModuleProvider="target">
+                                                <rect key="frame" x="62.5" y="42" width="250" height="250"/>
+                                                <color key="backgroundColor" red="0.14901960780000001" green="0.75294117650000003" blue="0.72549019609999998" alpha="0.51898107390000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="uXq-OW-hFM" secondAttribute="height" multiplier="1:1" id="JN4-DO-EvA"/>
+                                                    <constraint firstAttribute="width" constant="250" id="uzH-fs-TCV"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="tilesColor">
+                                                        <color key="value" red="0.98184436559999999" green="0.45865672829999998" blue="0.076797775920000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tilesOffset">
+                                                        <real key="value" value="0.80000000000000004"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tilesSize">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tilesLineSize">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="uXq-OW-hFM" firstAttribute="centerX" secondItem="Mng-60-Ln1" secondAttribute="centerX" id="HyW-9t-YNi"/>
+                                            <constraint firstItem="uXq-OW-hFM" firstAttribute="centerY" secondItem="Mng-60-Ln1" secondAttribute="centerY" id="U3B-Xg-I1d"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="uXq-OW-hFM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0ri-oa-R9H"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zsh-MV-GOa" secondAttribute="trailing" constant="20" id="PSt-dG-azi"/>
-                            <constraint firstItem="BT8-8i-Vph" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ZTZ-o0-P69"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zsh-MV-GOa" secondAttribute="bottom" constant="20" id="bmj-Or-0b0"/>
-                            <constraint firstItem="uXq-OW-hFM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dPc-Hc-beo"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BT8-8i-Vph" secondAttribute="bottom" constant="20" id="gzw-Wn-k6j"/>
+                            <constraint firstItem="hyB-0W-cP2" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="aAY-Kk-9d5"/>
+                            <constraint firstItem="hyB-0W-cP2" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="n6g-CU-UES"/>
+                            <constraint firstItem="hyB-0W-cP2" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="oYS-MX-5ch"/>
+                            <constraint firstItem="hyB-0W-cP2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xSb-c4-OCK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="panel" destination="uXq-OW-hFM" id="flT-hA-3re"/>
+                        <outlet property="grid" destination="2a1-k5-ZNf" id="CQ9-4S-Yb4"/>
+                        <outlet property="panel" destination="uXq-OW-hFM" id="Xhp-CH-BlX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

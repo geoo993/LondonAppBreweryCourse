@@ -74,23 +74,40 @@ public extension UIView {
         return view
     }
     
+    public static func animateLayer(duration: Double, animations: () -> Void,
+                                    completion: (() -> Void)? = nil) {
+        CATransaction.begin()
+        CATransaction.setAnimationDuration(duration)
+        if let completion = completion {
+            CATransaction.setCompletionBlock(completion)
+        }
+        animations()
+        CATransaction.commit()
+    }
     
-    public func shakeView(repeatCount: Float){
+    //https://stackoverflow.com/questions/27987048/shake-animation-for-uitextfield-uiview-in-swift?rq=1
+    public func shake(repeatCount: Float,
+                      duration : TimeInterval = 0.1,
+                      translation : Float = 4,
+                      completion: (() -> Void)? = nil){
         
         let view = self
         CATransaction.begin()
-        CATransaction.setCompletionBlock({
-            //view.isHidden = true
-        })
+        //CATransaction.setAnimationDuration(duration)
+        if let completion = completion {
+            CATransaction.setCompletionBlock(completion)
+        }
+        
         let shake = CABasicAnimation(keyPath: "position")
-        shake.duration = 0.1
+        shake.duration = duration
         shake.repeatCount = repeatCount
         shake.autoreverses = true
+        shake.isRemovedOnCompletion = true
         
-        let from_point = CGPoint(x: view.center.x - 5, y: view.center.y)
+        let from_point = CGPoint(x: view.center.x - CGFloat(-translation), y: view.center.y)
         let from_value : NSValue = NSValue(cgPoint: from_point)
         
-        let to_point = CGPoint(x: view.center.x + 5, y:view.center.y)
+        let to_point = CGPoint(x: view.center.x + CGFloat(-translation), y:view.center.y)
         let to_value : NSValue = NSValue(cgPoint: to_point)
         
         shake.fromValue = from_value
@@ -98,7 +115,6 @@ public extension UIView {
         view.layer.add(shake, forKey: "position")
         
         //shake.delegate = self
-        
         CATransaction.commit()
     }
     
@@ -653,5 +669,5 @@ public extension UIView {
             self.frame = frame
         }
     }
-    
+
 }

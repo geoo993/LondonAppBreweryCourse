@@ -7,18 +7,18 @@
 //
 
 import UIKit
+import AppCore
 
 //Write the protocol declaration here:
 protocol WordPanelDelegate {
-    func wordPanel(tiles: [WordTile])
-    func wordPanel(wordFound: String)
+    func panelView(tiles: [WordTile])
+    func panelView(wordFound: String)
 }
 
 @IBDesignable
-public final class Panel: UIView {
+public final class PanelView: UIView {
     
-    @IBInspectable
-    var borderWidth: CGFloat {
+    @IBInspectable var borderWidth: CGFloat {
         get {
             return layer.borderWidth
         }
@@ -27,8 +27,7 @@ public final class Panel: UIView {
         }
     }
     
-    @IBInspectable
-    var borderColor: UIColor? {
+    @IBInspectable var borderColor: UIColor? {
         get {
             return UIColor(cgColor: layer.borderColor ?? UIColor.clear.cgColor)
         }
@@ -37,7 +36,7 @@ public final class Panel: UIView {
         }
     }
     
-    private var _numberOfTiles: Int = 4
+    private var _numberOfTiles: Int = 5
     @IBInspectable
     public var numberOfTiles: Int {
         get {
@@ -51,15 +50,7 @@ public final class Panel: UIView {
         }
         
     }
-    
-    
-    @IBInspectable
-    public var tilesCornerRadius: CGFloat = 2 {
-        didSet {
-            updateLayout()
-        }
-    }
-    
+
     @IBInspectable
     public var tilesSize: CGFloat = 20 {
         didSet {
@@ -76,6 +67,13 @@ public final class Panel: UIView {
     
     @IBInspectable
     public var tilesColor: UIColor = UIColor.red {
+        didSet {
+            updateLayout()
+        }
+    }
+    
+    @IBInspectable
+    public var tilesTextColor: UIColor = UIColor.white {
         didSet {
             updateLayout()
         }
@@ -104,6 +102,8 @@ public final class Panel: UIView {
     
     //Declare the delegate variable here:
     var delegate : WordPanelDelegate?
+    var wordsToFind: [String] = []
+    var wordsToIgnore: [String] = []
     var buttons: [WordTile] = []
     var recentSelectedTile: Int?
     var selectedTiled: [Int] = []
@@ -127,15 +127,31 @@ public final class Panel: UIView {
     
     public override func draw(_ rect: CGRect) {
         super.draw(rect)
-        updateLayout()
-        if let delegate = self.delegate {
-            delegate.wordPanel(tiles: buttons)
-        }
     }
     
     public override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    func createWordPanel(with words: [String]) {
+        generateWordTiles(with: words)
+        removePanGestures()
+        addPanGesture()
+        addLine()
+    
+    }
+    
+    func generateWordTiles(with words: [String]) {
+        wordsToFind = words.map({ $0.uppercased() })
+        let uniqueLetters = wordsToFind.joined().uppercased().sorted().uniqueElements()
+        numberOfTiles = uniqueLetters.count
         updateLayout()
+        uniqueLetters.enumerated().forEach({
+            buttons[$0.offset].letter = $0.element
+        })
+        if let delegate = self.delegate {
+            delegate.panelView(tiles: buttons)
+        }
     }
     
     func updateCircle() {
@@ -144,9 +160,6 @@ public final class Panel: UIView {
     
     func initialLayout() {
         removeSubviewsAndConstraints()
-        removePanGestures()
-        addPanGesture()
-        addLine()
         updateCircle()
         calculateTiles(amount: numberOfTiles)
     }
@@ -154,10 +167,13 @@ public final class Panel: UIView {
     func updateLayout() {
         for subUIView in self.subviews as [UIView] {
             if let button = buttons.first(where: { $0 == subUIView }),
-                button.index >= numberOfTiles  {
+                let buttonIndex = buttons.firstIndex(where: { $0 == button }),
+                buttonIndex >= numberOfTiles  {
                 subUIView.removeSubviewsAndConstraints()
                 subUIView.removeFromSuperview()
-                buttons.remove(at: button.index)
+                if buttons.isEmpty == false {
+                    buttons.remove(at: buttonIndex)
+                }
             }
         }
         calculateTiles(amount: numberOfTiles)
@@ -183,23 +199,22 @@ public final class Panel: UIView {
                 // update button
                 button.frame = CGRect(center: point, size: CGSize(width: tilesSize, height: tilesSize))
                 button.backgroundColor = tilesColor
-                button.cornerRadius = tilesCornerRadius
+                button.textColor = tilesTextColor
                 //print("updated tile: ", index)
             } else {
                 // create new button
                 let button = WordTile(type: .system)
                 button.frame = CGRect(center: point, size: CGSize(width: tilesSize, height: tilesSize))
                 button.backgroundColor = tilesColor
-                button.cornerRadius = tilesCornerRadius
+                button.textColor = tilesTextColor
+                button.letter = Character("A")
                 button.index = index
                 addSubview(button)
                 buttons.append(button)
                 //print("new added: ", index)
             }
         }
-        
-        print("update ",bounds, ", tilesCount", amount, ", number of tiles", buttons.count, ", number of subviews", self.subviews.count)
-        
+        //print("update ",bounds, ", tilesCount", amount, ", number of tiles", buttons.count, ", number of subviews", self.subviews.count)
     }
     
     func removePanGestures(){
@@ -217,7 +232,6 @@ public final class Panel: UIView {
         panGesture?.cancelsTouchesInView = false
         isUserInteractionEnabled = true
         addGestureRecognizer(panGesture)
-        
     }
     
     @objc func handlePanGesture(pan: UIPanGestureRecognizer) {
@@ -226,23 +240,23 @@ public final class Panel: UIView {
         
         switch pan.state {
         case .began:
+            //print("began at", location)
             onBeganEvents(with: location)
-            //print("began at", location, ", touched view: ", dragview)
             break
         case .changed:
-            
-            //print("changed at", location, ", touched view: ", dragview)
+            //print("changed at", location)
             onChangedEvents(with: location)
             break
         case .ended:
-            //print("ended at", location, ", touched view: ", dragview)
+            //print("ended at", location)
             onEndedEvents(with: location)
+            break
+        case .cancelled:
+            //print("cancelled at", location)
             break
         default:
             break
         }
-        
-        updatePanel(with: location)
     }
     
     func onBeganEvents(with location: CGPoint) {
@@ -252,6 +266,7 @@ public final class Panel: UIView {
             selectedTiled.append(wordTile.index)
             recentSelectedTile = wordTile.index
         }
+        updatePanel(with: location)
     }
     
     func onChangedEvents(with location: CGPoint) {
@@ -270,18 +285,32 @@ public final class Panel: UIView {
                         selectedTiled.removeLast()
                         recentSelectedTile = selectedTiled.last
                     }
-                    
                 } else {
                     selectedTiled.append(wordTile.index)
                     recentSelectedTile = wordTile.index
                 }
             }
         }
+        updatePanel(with: location)
     }
     
     func onEndedEvents(with location: CGPoint) {
         recentSelectedTile = nil
         selectedTiled = []
+        updatePanel(with: location)
+    }
+    
+    func cancelPanEvents(with location: CGPoint) {
+        panGesture.isEnabled = false
+        
+        self.shake(repeatCount: 10, completion: { [weak self] () in
+            guard let this = self else { return }
+            print("finished shaking")
+            this.onEndedEvents(with: location)
+            this.updatePanel(with: location)
+            this.panGesture.isEnabled = true
+        })
+
     }
     
     func updatePanel(with location: CGPoint) {
@@ -298,6 +327,18 @@ public final class Panel: UIView {
             tile.frame.size = CGSize(width: tilesSize, height: tilesSize)
         }
         drawLine(from: selectedWordTiles.map({ $0.center }), currentLocation: location)
+        checkWordTiles(from: selectedWordTiles, currentLocation: location)
+    }
+    
+    func checkWordTiles(from selectedTiles: [WordTile], currentLocation: CGPoint) {
+        let wordFromTiles = selectedTiles.map({ $0.letter }).toString
+        if wordsToFind.contains(wordFromTiles) && wordsToIgnore.contains(wordFromTiles) == false {
+            // found word
+            cancelPanEvents(with: currentLocation)
+            if let delegate = self.delegate {
+                delegate.panelView(wordFound: wordFromTiles)
+            }
+        }
     }
     
     func addLine() {
@@ -330,6 +371,7 @@ public final class Panel: UIView {
         line.fillColor = UIColor.clear.cgColor
         line.lineWidth = tilesLineSize
         line.lineJoin = CAShapeLayerLineJoin.round
+        line.zPosition = -1
         //layer.addSublayer(line)
         //print(layer.sublayers!.count)
     }

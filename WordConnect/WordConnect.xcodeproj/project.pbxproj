@@ -15,7 +15,9 @@
 		C7A3FDB021E4839200C94AFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7A3FDAE21E4839200C94AFB /* LaunchScreen.storyboard */; };
 		C7A3FDB821E483A100C94AFB /* AppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A3FDB721E483A100C94AFB /* AppCore.framework */; };
 		C7A3FDB921E483A100C94AFB /* AppCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C7A3FDB721E483A100C94AFB /* AppCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C7A3FDCC21E484B500C94AFB /* Panel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A3FDCB21E484B500C94AFB /* Panel.swift */; };
+		C7A3FDCC21E484B500C94AFB /* PanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A3FDCB21E484B500C94AFB /* PanelView.swift */; };
+		C7A9009921E66E9A005175F6 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A9009821E66E9A005175F6 /* Grid.swift */; };
+		C7A9009B21E67096005175F6 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A9009A21E67096005175F6 /* GridView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,7 +44,9 @@
 		C7A3FDAF21E4839200C94AFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7A3FDB121E4839200C94AFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7A3FDB721E483A100C94AFB /* AppCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C7A3FDCB21E484B500C94AFB /* Panel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panel.swift; sourceTree = "<group>"; };
+		C7A3FDCB21E484B500C94AFB /* PanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelView.swift; sourceTree = "<group>"; };
+		C7A9009821E66E9A005175F6 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		C7A9009A21E67096005175F6 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +82,9 @@
 			isa = PBXGroup;
 			children = (
 				C7A3FDA521E4839100C94AFB /* AppDelegate.swift */,
-				C7A3FDCB21E484B500C94AFB /* Panel.swift */,
+				C7A3FDCB21E484B500C94AFB /* PanelView.swift */,
+				C7A9009A21E67096005175F6 /* GridView.swift */,
+				C7A9009821E66E9A005175F6 /* Grid.swift */,
 				C76C737A21E5138D00C670F7 /* WordTile.swift */,
 				C7A3FDA721E4839100C94AFB /* ViewController.swift */,
 				C7A3FDA921E4839100C94AFB /* Main.storyboard */,
@@ -163,7 +169,9 @@
 			files = (
 				C7A3FDA821E4839100C94AFB /* ViewController.swift in Sources */,
 				C7A3FDA621E4839100C94AFB /* AppDelegate.swift in Sources */,
-				C7A3FDCC21E484B500C94AFB /* Panel.swift in Sources */,
+				C7A3FDCC21E484B500C94AFB /* PanelView.swift in Sources */,
+				C7A9009921E66E9A005175F6 /* Grid.swift in Sources */,
+				C7A9009B21E67096005175F6 /* GridView.swift in Sources */,
 				C76C737B21E5138D00C670F7 /* WordTile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +321,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BM7962EZPA;
 				INFOPLIST_FILE = WordConnect/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -331,6 +340,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BM7962EZPA;
 				INFOPLIST_FILE = WordConnect/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

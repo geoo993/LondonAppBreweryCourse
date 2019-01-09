@@ -307,6 +307,10 @@ public extension String {
         return self[self.index(self.startIndex, offsetBy: index)]
     }
     
+    public func characterAsString(index: Int) -> String {
+        return String(Array(self)[index])
+    }
+    
     public static func randomCharacter() -> Character {
         let characters = "ABCDEFGHIJKLKMNOPQRSTUVWXYZ"
         let len = UInt32(characters.count)
@@ -361,7 +365,6 @@ public extension String {
         let endIndex = self.index(self.startIndex, offsetBy: range.count)
         return String(self[startIndex..<endIndex])
     }
-    
     
     public func substring(from: Int) -> String {
         let fromIndex = self.indexAt(from: from)
@@ -728,7 +731,7 @@ public extension String {
             }.replacingOccurrences(of:"\\N", with:"") // strips "\N"
         
     }
-    
+    /*
     public var containsEmoji: Bool {
         
         for scalar in self.unicodeScalars {
@@ -742,6 +745,28 @@ public extension String {
         }
         return false
     }
+    */
+    /// SwifterSwift: Check if string contains one or more emojis.
+    ///
+    ///        "Hello 😀".containEmoji -> true
+    ///
+    public var containsEmoji: Bool {
+        // http://stackoverflow.com/questions/30757193/find-out-if-character-in-string-is-emoji
+        for scalar in unicodeScalars {
+            switch scalar.value {
+            case 0x3030, 0x00AE, 0x00A9, // Special Characters
+            0x1D000...0x1F77F, // Emoticons
+            0x2100...0x27BF, // Misc symbols and Dingbats
+            0xFE00...0xFE0F, // Variation Selectors
+            0x1F900...0x1F9FF: // Supplemental Symbols and Pictographs
+                return true
+            default:
+                continue
+            }
+        }
+        return false
+    }
+    
     
     public func removeSpecialCharsFromString() -> String {
         let validCharacters = Set("abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLKMNOPQRSTUVWXYZ1234567890+-*=(),.:!_")
@@ -765,7 +790,6 @@ public extension String {
             }
         }
     }
-    
     
     public static func getItemUrlFromBundle (bundleID: String, itemName:String, extention: String, subDirectory:String = "") -> URL? {
         guard let bundle = Bundle(identifier: bundleID) else { 
@@ -805,5 +829,307 @@ public extension String {
         let seconds = Int(time) % 60
         //return String(format: "%02i:%02i:%02i", hours, minutes, seconds)
         return String(format:"%02i:%02i", minutes, seconds)
+    }
+    
+    public func uniqueCharacter() -> Bool
+    {
+        var isUnique: Bool = true
+        var sortedCharacters = self.sorted()
+        for i in 0..<sortedCharacters.count {
+            let character = sortedCharacters[i]
+            sortedCharacters.remove(at: i)
+            for y in 0..<sortedCharacters.count {
+                let anotherCharacter = sortedCharacters[y]
+                if character == anotherCharacter {
+                    print(character)
+                    print(anotherCharacter)
+                    isUnique = false
+                    return isUnique
+                }
+                else {
+                    sortedCharacters.remove(at: i)
+                }
+            }
+        }
+        return isUnique
+    }
+    
+    // https://github.com/SwifterSwift/SwifterSwift/blob/master/Sources/Extensions/SwiftStdlib/StringExtensions.swift
+    
+    /// SwifterSwift: CamelCase of string.
+    ///
+    ///        "sOme vAriable naMe".camelCased -> "someVariableName"
+    ///
+    public var camelCased: String {
+        let source = lowercased()
+        let first = source[..<source.index(after: source.startIndex)]
+        if source.contains(" ") {
+            let connected = source.capitalized.replacingOccurrences(of: " ", with: "")
+            let camel = connected.replacingOccurrences(of: "\n", with: "")
+            let rest = String(camel.dropFirst())
+            return first + rest
+        }
+        let rest = String(source.dropFirst())
+        return first + rest
+    }
+    
+    /// SwifterSwift: Check if string contains one or more letters.
+    ///
+    ///        "123abc".hasLetters -> true
+    ///        "123".hasLetters -> false
+    ///
+    public var hasLetters: Bool {
+        return rangeOfCharacter(from: .letters, options: .numeric, range: nil) != nil
+    }
+    
+    /// SwifterSwift: Check if string contains one or more numbers.
+    ///
+    ///        "abcd".hasNumbers -> false
+    ///        "123abc".hasNumbers -> true
+    ///
+    public var hasNumbers: Bool {
+        return rangeOfCharacter(from: .decimalDigits, options: .literal, range: nil) != nil
+    }
+    
+    /// SwifterSwift: Check if string contains only letters.
+    ///
+    ///        "abc".isAlphabetic -> true
+    ///        "123abc".isAlphabetic -> false
+    ///
+    public var isAlphabetic: Bool {
+        let hasLetters = rangeOfCharacter(from: .letters, options: .numeric, range: nil) != nil
+        let hasNumbers = rangeOfCharacter(from: .decimalDigits, options: .literal, range: nil) != nil
+        return hasLetters && !hasNumbers
+    }
+    
+    /// SwifterSwift: Check if string contains at least one letter and one number.
+    ///
+    ///        // useful for passwords
+    ///        "123abc".isAlphaNumeric -> true
+    ///        "abc".isAlphaNumeric -> false
+    ///
+    public var isAlphaNumeric: Bool {
+        let hasLetters = rangeOfCharacter(from: .letters, options: .numeric, range: nil) != nil
+        let hasNumbers = rangeOfCharacter(from: .decimalDigits, options: .literal, range: nil) != nil
+        let comps = components(separatedBy: .alphanumerics)
+        return comps.joined(separator: "").count == 0 && hasLetters && hasNumbers
+    }
+    
+    /// SwifterSwift: Check if string is valid email format.
+    ///
+    /// - Note: Note that this property does not validate the email address against an email server. It merely attempts to determine whether its format is suitable for an email address.
+    ///
+    ///        "john@doe.com".isValidEmail -> true
+    ///
+    public var isValidEmail: Bool {
+        // http://emailregex.com/
+        let regex = "^(?:[\\p{L}0-9!#$%\\&'*+/=?\\^_`{|}~-]+(?:\\.[\\p{L}0-9!#$%\\&'*+/=?\\^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[\\p{L}0-9](?:[a-z0-9-]*[\\p{L}0-9])?\\.)+[\\p{L}0-9](?:[\\p{L}0-9-]*[\\p{L}0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[\\p{L}0-9-]*[\\p{L}0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])$"
+        return range(of: regex, options: .regularExpression, range: nil, locale: nil) != nil
+    }
+    
+    /// SwifterSwift: Check if string is a valid URL.
+    ///
+    ///        "https://google.com".isValidUrl -> true
+    ///
+    public var isValidUrl: Bool {
+        return URL(string: self) != nil
+    }
+    
+    /// SwifterSwift: Check if string is a valid schemed URL.
+    ///
+    ///        "https://google.com".isValidSchemedUrl -> true
+    ///        "google.com".isValidSchemedUrl -> false
+    ///
+    public var isValidSchemedUrl: Bool {
+        guard let url = URL(string: self) else { return false }
+        return url.scheme != nil
+    }
+    
+    /// SwifterSwift: Check if string is a valid https URL.
+    ///
+    ///        "https://google.com".isValidHttpsUrl -> true
+    ///
+    public var isValidHttpsUrl: Bool {
+        guard let url = URL(string: self) else { return false }
+        return url.scheme == "https"
+    }
+    
+    /// SwifterSwift: Check if string is a valid http URL.
+    ///
+    ///        "http://google.com".isValidHttpUrl -> true
+    ///
+    public var isValidHttpUrl: Bool {
+        guard let url = URL(string: self) else { return false }
+        return url.scheme == "http"
+    }
+    
+    /// SwifterSwift: Check if string is a valid file URL.
+    ///
+    ///        "file://Documents/file.txt".isValidFileUrl -> true
+    ///
+    public var isValidFileUrl: Bool {
+        return URL(string: self)?.isFileURL ?? false
+    }
+    
+    /// SwifterSwift: Check if string is a valid Swift number.
+    ///
+    /// Note:
+    /// In North America, "." is the decimal separator,
+    /// while in many parts of Europe "," is used,
+    ///
+    ///        "123".isNumeric -> true
+    ///     "1.3".isNumeric -> true (en_US)
+    ///     "1,3".isNumeric -> true (fr_FR)
+    ///        "abc".isNumeric -> false
+    ///
+    public var isNumeric: Bool {
+        let scanner = Scanner(string: self)
+        scanner.locale = NSLocale.current
+        return scanner.scanDecimal(nil) && scanner.isAtEnd
+    }
+    
+    /// SwifterSwift: Check if string only contains digits.
+    ///
+    ///     "123".isDigits -> true
+    ///     "1.3".isDigits -> false
+    ///     "abc".isDigits -> false
+    ///
+    public var isDigits: Bool {
+        return CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: self))
+    }
+    
+    /// SwifterSwift: Return each character in string as an Array.
+    ///
+    ///     "hello".toCharacters -> ["h", "e", "l", "l", "o"]
+    ///
+    public var toCharacters: [Character] {
+        return Array(self)
+    }
+    
+    /// SwifterSwift: Last character of string (if applicable).
+    ///
+    ///        "Hello".lastCharacterAsString -> Optional("o")
+    ///        "".lastCharacterAsString -> nil
+    ///
+    public var lastCharacterAsString: String? {
+        guard let last = last else { return nil }
+        return String(last)
+    }
+    
+    /// SwifterSwift: Latinized string.
+    ///
+    ///        "Hèllö Wórld!".latinized -> "Hello World!"
+    ///
+    public var latinized: String {
+        return folding(options: .diacriticInsensitive, locale: Locale.current)
+    }
+    
+    /// SwifterSwift: Bool value from string (if applicable).
+    ///
+    ///        "1".bool -> true
+    ///        "False".bool -> false
+    ///        "Hello".bool = nil
+    ///
+    public var bool: Bool? {
+        let selfLowercased = trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        switch selfLowercased {
+        case "true", "1":
+            return true
+        case "false", "0":
+            return false
+        default:
+            return nil
+        }
+    }
+    
+    /// SwifterSwift: Date object from "yyyy-MM-dd" formatted string.
+    ///
+    ///        "2007-06-29".date -> Optional(Date)
+    ///
+    public var date: Date? {
+        let selfLowercased = trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter.date(from: selfLowercased)
+    }
+    
+    /// SwifterSwift: Date object from "yyyy-MM-dd HH:mm:ss" formatted string.
+    ///
+    ///        "2007-06-29 14:23:09".dateTime -> Optional(Date)
+    ///
+    public var dateTime: Date? {
+        let selfLowercased = trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return formatter.date(from: selfLowercased)
+    }
+    
+    /// SwifterSwift: Lorem ipsum string of given length.
+    ///
+    /// - Parameter length: number of characters to limit lorem ipsum to (default is 445 - full lorem ipsum).
+    /// - Returns: Lorem ipsum dolor sit amet... string.
+    public static func loremIpsum(ofLength length: Int = 445) -> String {
+        guard length > 0 else { return "" }
+        
+        // https://www.lipsum.com/
+        let loremIpsum = """
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        """
+        if loremIpsum.count > length {
+            return String(loremIpsum[loremIpsum.startIndex..<loremIpsum.index(loremIpsum.startIndex, offsetBy: length)])
+        }
+        return loremIpsum
+    }
+    
+    /// SwifterSwift: URL from string (if applicable).
+    ///
+    ///        "https://google.com".url -> URL(string: "https://google.com")
+    ///        "not url".toURL -> nil
+    ///
+    public var toURL: URL? {
+        return URL(string: self)
+    }
+    
+    /// SwifterSwift: String with no spaces or new lines in beginning and end.
+    ///
+    ///        "   hello  \n".trimmed -> "hello"
+    ///
+    public var trimmed: String {
+        return trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    
+    /// SwifterSwift: Readable string from a URL string.
+    ///
+    ///        "it's%20easy%20to%20decode%20strings".urlDecoded -> "it's easy to decode strings"
+    ///
+    public var urlDecoded: String {
+        return removingPercentEncoding ?? self
+    }
+    
+    /// SwifterSwift: URL escaped string.
+    ///
+    ///        "it's easy to encode strings".urlEncoded -> "it's%20easy%20to%20encode%20strings"
+    ///
+    public var urlEncoded: String {
+        return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
+    }
+    
+    /// SwifterSwift: String without spaces and new lines.
+    ///
+    ///        "   \n Swifter   \n  Swift  ".withoutSpacesAndNewLines -> "SwifterSwift"
+    ///
+    public var removeSpacesAndNewLines: String {
+        return replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "\n", with: "")
+    }
+    
+    /// SwifterSwift: Check if the given string spelled correctly
+    public var isSpelledCorrectly: Bool {
+        let checker = UITextChecker()
+        let range = NSRange(location: 0, length: utf16.count)
+        
+        let misspelledRange = checker.rangeOfMisspelledWord(in: self, range: range, startingAt: 0, wrap: false, language: Locale.preferredLanguages.first ?? "en")
+        return misspelledRange.location == NSNotFound
     }
 }

@@ -219,11 +219,3 @@ public extension Array where Element: Comparable {
         return count == other.count && sorted() == other.sorted()
     }
 }
-
-public extension Array where Element == Int {
-    public func sum() -> Element {
-        return self.reduce(0) { acc, int in
-            return acc + int
-        }
-    }
-}

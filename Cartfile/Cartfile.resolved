@@ -1,6 +1,7 @@
 github "Alamofire/Alamofire" "4.6.0"
 github "DaveWoodCom/XCGLogger" "6.1.0"
 github "Haneke/HanekeSwift" "v0.11.1"
+github "IBAnimatable/IBAnimatable" "5.2.1"
 github "NoTests/RxFeedback.swift" "1.1.1"
 github "ReactiveX/RxSwift" "4.4.0"
 github "RxSwiftCommunity/RxDataSources" "3.1.0"
