@@ -9,6 +9,12 @@
 import UIKit
 import AppCore
 
+//Write the protocol declaration here:
+protocol GridLayoutDelegate {
+    func gridView(grid: [(rect: CGRect, index: Int)], wordTiles: [GridTile])
+    func gridView(found wordTile: [GridTile], completed: Bool)
+}
+
 @IBDesignable
 public final class GridView: UIView {
     
@@ -40,6 +46,30 @@ public final class GridView: UIView {
         }
     }
     
+    @IBInspectable
+    public var tilesColor: UIColor = UIColor.red {
+        didSet {
+            updateLayout()
+        }
+    }
+    
+    @IBInspectable
+    public var tilesTextColor: UIColor = UIColor.white {
+        didSet {
+            updateLayout()
+        }
+    }
+    
+    @IBInspectable
+    public var tilesSelectedColor: UIColor = UIColor.green {
+        didSet {
+            updateLayout()
+        }
+    }
+    
+    var delegate : GridLayoutDelegate?
+    private var wordTiles: [GridTile] = []
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         initialLayout()
@@ -66,7 +96,8 @@ public final class GridView: UIView {
     }
     
     func initialLayout() {
-        
+        removeSubviewsAndConstraints()
+        wordTiles = []
     }
     
     func updateLayout() {
@@ -77,33 +108,28 @@ public final class GridView: UIView {
         let grid = Grid(columns: columns, rows: rows, spacing: spacing)
         let wordsearch = GridLayout.createGrid(with: bounds, grid: grid)
         let wordsList = GridLayout.calculateWordsToSearch(with: words, rows: rows, columns: columns)
-        let wordTiles = wordsList.flatMap({ (arg) -> [GridTile] in
+        self.wordTiles = wordsList.flatMap({ (arg) -> [GridTile] in
             let (word, indexes) = arg
+            let color = UIColor.random
             return indexes.enumerated()
-                .map({ GridTile(word: word, letter: word[$0], letterIndex: $0, positionInGrid: $1) })
+                .map({ GridTile(frame: CGRect.zero,
+                                word: word,
+                                letter: word[$0],
+                                letterIndex: $0,
+                                positionInGrid: $1,
+                                color: color) })
         })
         
-        let tiles = wordsearch.frame.compactMap({ rect, index -> UILabel in
-            if let tile = wordTiles.first(where: { $0.positionInGrid == index }) {
-                return UILabel().then {
-                    $0.frame = rect
-                    $0.text = String(tile.letter).uppercased()
-                    $0.textAlignment = .center
-                    $0.backgroundColor = UIColor.yellow
-                    $0.tag = tile.positionInGrid
-                    $0.isUserInteractionEnabled = false
-                }
-            } else {
-                return UILabel().then {
-                    $0.frame = rect
-                    $0.text = ""//"\(index)"
-                    $0.textAlignment = .center
-                    $0.backgroundColor = UIColor.clear
-                    $0.tag = index
-                    $0.isUserInteractionEnabled = false
-                }
-            }
-        })
-        tiles.forEach { addSubview($0) }
+        if let delegate = self.delegate {
+            delegate.gridView(grid: wordsearch.frame, wordTiles: wordTiles)
+        }
+    }
+    
+    func wordFound(word: String, in panel: PanelView) {
+        let tilesFound = wordTiles.filter({ $0.word == word })
+        if let delegate = self.delegate {
+            panel.ignore(word: word)
+            delegate.gridView(found: tilesFound, completed: panel.isWordsFound)
+        }
     }
 }

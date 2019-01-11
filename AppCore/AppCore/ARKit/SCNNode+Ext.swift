@@ -101,7 +101,7 @@ public extension SCNNode {
           
             SCNTransaction.begin()
             SCNTransaction.animationDuration = CFTimeInterval(distanceToPlane * 500) // Move 2 mm per second.
-            SCNTransaction.animationTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+            SCNTransaction.animationTimingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
             self.position.y = anchor.transform.columns.3.y
             SCNTransaction.commit()
         }

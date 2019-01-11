@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C76C737B21E5138D00C670F7 /* WordTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76C737A21E5138D00C670F7 /* WordTile.swift */; };
+		C791E36721E6BF740023AFF5 /* GridTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C791E36621E6BF740023AFF5 /* GridTile.swift */; };
 		C7A3FDA621E4839100C94AFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A3FDA521E4839100C94AFB /* AppDelegate.swift */; };
 		C7A3FDA821E4839100C94AFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A3FDA721E4839100C94AFB /* ViewController.swift */; };
 		C7A3FDAB21E4839100C94AFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7A3FDA921E4839100C94AFB /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		C76C737A21E5138D00C670F7 /* WordTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordTile.swift; sourceTree = "<group>"; };
+		C791E36621E6BF740023AFF5 /* GridTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTile.swift; sourceTree = "<group>"; };
 		C7A3FDA221E4839100C94AFB /* WordConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7A3FDA521E4839100C94AFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7A3FDA721E4839100C94AFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				C7A3FDCB21E484B500C94AFB /* PanelView.swift */,
 				C7A9009A21E67096005175F6 /* GridView.swift */,
 				C7A9009821E66E9A005175F6 /* Grid.swift */,
+				C791E36621E6BF740023AFF5 /* GridTile.swift */,
 				C76C737A21E5138D00C670F7 /* WordTile.swift */,
 				C7A3FDA721E4839100C94AFB /* ViewController.swift */,
 				C7A3FDA921E4839100C94AFB /* Main.storyboard */,
@@ -167,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C791E36721E6BF740023AFF5 /* GridTile.swift in Sources */,
 				C7A3FDA821E4839100C94AFB /* ViewController.swift in Sources */,
 				C7A3FDA621E4839100C94AFB /* AppDelegate.swift in Sources */,
 				C7A3FDCC21E484B500C94AFB /* PanelView.swift in Sources */,

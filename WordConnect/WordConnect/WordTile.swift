@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 @IBDesignable
-public class WordTile: UIButton {
+public class PanelTile: UIButton {
     
     private var state_: UIControl.State = .normal
     public override var state: UIControl.State {

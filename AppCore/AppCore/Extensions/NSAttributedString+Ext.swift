@@ -8,7 +8,7 @@
 
 extension NSUnderlineStyle {
     public static var none: NSUnderlineStyle {
-        return NSUnderlineStyle.init(rawValue: 0)!
+        return NSUnderlineStyle.init(rawValue: 0)
     }
 }
 
@@ -257,30 +257,30 @@ extension NSAttributedString {
         paragraphStyle.lineHeightMultiple = attributedText.paragraphStyle?.lineHeightMultiple ?? 0
         paragraphStyle.alignment = attributedText.textAlignment
         paragraphStyle.lineBreakMode = attributedText.lineBreakMode
-        let paragraphStyleAttribute = [NSAttributedStringKey.paragraphStyle: paragraphStyle]
+        let paragraphStyleAttribute = [NSAttributedString.Key.paragraphStyle: paragraphStyle]
 
         // add text color
         let textColorAttribute = [
-            NSAttributedStringKey.foregroundColor: textColor
+            NSAttributedString.Key.foregroundColor: textColor
         ]
 
         // add Background Color
         let backgroundColorAttribute = [
-            NSAttributedStringKey.backgroundColor: attributedText.backgroundColor ?? .clear
+            NSAttributedString.Key.backgroundColor: attributedText.backgroundColor ?? .clear
         ]
 
         // Font
         let fonSize = CGFloat.recommenedWidth(withReferencedDevice: deviceUsedInDesigner,
                                               desiredWidth: attributedText.font.pointSize )
         let font = attributedText.font.withSize(fonSize)
-        let fontAttribute = [NSAttributedStringKey.font: font]
+        let fontAttribute = [NSAttributedString.Key.font: font]
 
         // Underline
         //let underLineAttribute: [NSAttributedStringKey: Any] =
         //    [  NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleThick.rawValue ]
 
         // Highlight
-        let highlightAttribute: [NSAttributedStringKey: Any] = [ NSAttributedStringKey.foregroundColor: wordsToHighlightColor ]
+        let highlightAttribute: [NSAttributedString.Key: Any] = [ NSAttributedString.Key.foregroundColor: wordsToHighlightColor ]
 
         // add attributes
         let range = NSRange(location: 0, length: attributedString.length)
@@ -319,7 +319,7 @@ extension NSAttributedString {
         for i in 0 ..< iteration {
             let fontSize = CGFloat(iteration - i)
             let font = attributedString.font.withSize(fontSize)
-            let textAttributedFont = [NSAttributedStringKey.font: font]
+            let textAttributedFont = [NSAttributedString.Key.font: font]
             let newMutable = mutableAttributedString
             let range = NSRange(location: 0, length: newMutable.length)
             newMutable.addAttributes(textAttributedFont, range: range)

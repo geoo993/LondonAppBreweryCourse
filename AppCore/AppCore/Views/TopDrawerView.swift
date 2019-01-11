@@ -144,7 +144,7 @@ public class TopDrawerView: UIView {
     
     func setupSwipeUpGesture(){
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(self.swiped))
-        swipeUp.direction = UISwipeGestureRecognizerDirection.up
+        swipeUp.direction = UISwipeGestureRecognizer.Direction.up
         self.addGestureRecognizer(swipeUp)
     }
     
@@ -181,7 +181,7 @@ public class TopDrawerView: UIView {
     
     @objc func swiped(swipeGestureRecognizer: UISwipeGestureRecognizer)
     {
-        if swipeGestureRecognizer.direction ==  UISwipeGestureRecognizerDirection.up {
+        if swipeGestureRecognizer.direction ==  UISwipeGestureRecognizer.Direction.up {
             
             removePanGestures()
             removeSwipeUpGesture(swipeGestureRecognizer)

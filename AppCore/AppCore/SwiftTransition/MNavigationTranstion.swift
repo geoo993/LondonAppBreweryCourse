@@ -24,7 +24,7 @@ open class MNavigationTranstion: NSObject, UIViewControllerAnimatedTransitioning
     
     public var duration = 0.30
     
-    public var operation: UINavigationControllerOperation = .push
+    public var operation: UINavigationController.Operation = .push
     
     public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.3

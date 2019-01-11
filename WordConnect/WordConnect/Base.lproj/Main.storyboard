@@ -26,11 +26,22 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2a1-k5-ZNf" customClass="GridView" customModule="WordConnect" customModuleProvider="target">
                                                 <rect key="frame" x="37.5" y="17" width="300" height="300"/>
-                                                <color key="backgroundColor" red="0.4431372549" green="0.63529411759999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="MC5-MP-MAx"/>
                                                     <constraint firstAttribute="width" secondItem="2a1-k5-ZNf" secondAttribute="height" multiplier="1:1" id="UB9-Xc-ox5"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="tilesColor">
+                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="tilesTextColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="tilesSelectedColor">
+                                                        <color key="value" red="0.14901960780000001" green="0.75294117650000003" blue="0.72549019609999998" alpha="0.51898107390000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -54,13 +65,19 @@
                                                         <color key="value" red="0.98184436559999999" green="0.45865672829999998" blue="0.076797775920000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="tilesOffset">
-                                                        <real key="value" value="0.80000000000000004"/>
+                                                        <real key="value" value="0.69999999999999996"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="tilesSize">
-                                                        <real key="value" value="40"/>
+                                                        <real key="value" value="50"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="tilesLineSize">
                                                         <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="tilesSelectedColor">
+                                                        <color key="value" red="0.18631712147887325" green="0.65478650872535205" blue="0.11094300176056338" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="tilesTextColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
@@ -73,17 +90,26 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congrtulations!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cM3-Sg-kMk">
+                                <rect key="frame" x="101" y="318" width="173" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" red="0.14901960780000001" green="0.75294117650000003" blue="0.72549019609999998" alpha="0.51898107390000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="cM3-Sg-kMk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="I5Z-C1-9LS"/>
                             <constraint firstItem="hyB-0W-cP2" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="aAY-Kk-9d5"/>
                             <constraint firstItem="hyB-0W-cP2" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="n6g-CU-UES"/>
                             <constraint firstItem="hyB-0W-cP2" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="oYS-MX-5ch"/>
+                            <constraint firstItem="cM3-Sg-kMk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uU5-lP-EtJ"/>
                             <constraint firstItem="hyB-0W-cP2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xSb-c4-OCK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="congratsLabel" destination="cM3-Sg-kMk" id="19o-Z2-0AC"/>
                         <outlet property="grid" destination="2a1-k5-ZNf" id="CQ9-4S-Yb4"/>
                         <outlet property="panel" destination="uXq-OW-hFM" id="Xhp-CH-BlX"/>
                     </connections>

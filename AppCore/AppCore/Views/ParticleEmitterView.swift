@@ -66,22 +66,22 @@ public class ParticleEmitterView: UIView {
     
     func setupEmitter(){
         //initialize the emitter
-        emitter = self.layer as! CAEmitterLayer
+        emitter = (self.layer as! CAEmitterLayer)
         emitter.emitterPosition = CGPoint(x: self.bounds.size.width/2, y: self.bounds.size.height/2)
         emitter.emitterSize = self.bounds.size
-        emitter.emitterMode = kCAEmitterLayerAdditive
+        emitter.emitterMode  = CAEmitterLayerEmitterMode.surface
         
         switch particleType {
         case .explosion:
-            emitter.emitterShape = kCAEmitterLayerRectangle
+            emitter.emitterShape = CAEmitterLayerEmitterShape.rectangle
         case .firework:
-            emitter.emitterShape = kCAEmitterLayerRectangle
+            emitter.emitterShape = CAEmitterLayerEmitterShape.rectangle
         case .simple:
-            emitter.emitterShape = kCAEmitterLayerRectangle
+            emitter.emitterShape = CAEmitterLayerEmitterShape.rectangle
         case .snow:
-            emitter.emitterShape = kCAEmitterLayerLine
+            emitter.emitterShape = CAEmitterLayerEmitterShape.line
         case .rain:
-            emitter.emitterShape = kCAEmitterLayerLine
+            emitter.emitterShape = CAEmitterLayerEmitterShape.line
         }
     }
     

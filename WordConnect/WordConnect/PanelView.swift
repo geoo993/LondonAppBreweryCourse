@@ -11,7 +11,7 @@ import AppCore
 
 //Write the protocol declaration here:
 protocol WordPanelDelegate {
-    func panelView(tiles: [WordTile])
+    func panelView(tiles: [PanelTile])
     func panelView(wordFound: String)
 }
 
@@ -102,13 +102,14 @@ public final class PanelView: UIView {
     
     //Declare the delegate variable here:
     var delegate : WordPanelDelegate?
-    var wordsToFind: [String] = []
-    var wordsToIgnore: [String] = []
-    var buttons: [WordTile] = []
-    var recentSelectedTile: Int?
-    var selectedTiled: [Int] = []
-    var panGesture : UIPanGestureRecognizer!
-    var line = CAShapeLayer()
+    private var wordsToFind: [String] = []
+    private var wordsToIgnore: [String] = []
+    var isWordsFound: Bool { return wordsToFind.containsSameElements(as: wordsToIgnore) }
+    private var buttons: [PanelTile] = []
+    private var recentSelectedTile: Int?
+    private var selectedTiled: [Int] = []
+    private var panGesture : UIPanGestureRecognizer!
+    private var line = CAShapeLayer()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -138,7 +139,10 @@ public final class PanelView: UIView {
         removePanGestures()
         addPanGesture()
         addLine()
+    }
     
+    func unusedTiles(tiles: [GridTile]) {
+        
     }
     
     func generateWordTiles(with words: [String]) {
@@ -203,7 +207,7 @@ public final class PanelView: UIView {
                 //print("updated tile: ", index)
             } else {
                 // create new button
-                let button = WordTile(type: .system)
+                let button = PanelTile(type: .system)
                 button.frame = CGRect(center: point, size: CGSize(width: tilesSize, height: tilesSize))
                 button.backgroundColor = tilesColor
                 button.textColor = tilesTextColor
@@ -261,7 +265,7 @@ public final class PanelView: UIView {
     
     func onBeganEvents(with location: CGPoint) {
         if let firstView = self.hitTest(location, with: nil),
-            let wordTile = firstView as? WordTile {
+            let wordTile = firstView as? PanelTile {
             selectedTiled.removeAll()
             selectedTiled.append(wordTile.index)
             recentSelectedTile = wordTile.index
@@ -275,7 +279,7 @@ public final class PanelView: UIView {
         } else {
             if selectedTiled.count > 0,
                 let selectedView = self.hitTest(location, with: nil),
-                let wordTile = selectedView as? WordTile {
+                let wordTile = selectedView as? PanelTile {
                 
                 if selectedTiled.contains(wordTile.index) {
                     if selectedTiled.count > 1,
@@ -303,19 +307,24 @@ public final class PanelView: UIView {
     func cancelPanEvents(with location: CGPoint) {
         panGesture.isEnabled = false
         
+        let selectedWordTiles = selectedTiled
+            .compactMap({ index -> PanelTile? in
+                return buttons.first(where: { $0.index == index })
+            })
+        drawLine(from: selectedWordTiles.map({ $0.center }),
+                 currentLocation: location,
+                 drawLastLine: false)
+        
         self.shake(repeatCount: 10, completion: { [weak self] () in
             guard let this = self else { return }
-            print("finished shaking")
             this.onEndedEvents(with: location)
-            this.updatePanel(with: location)
             this.panGesture.isEnabled = true
         })
-
     }
     
     func updatePanel(with location: CGPoint) {
         let selectedWordTiles = selectedTiled
-            .compactMap({ index -> WordTile? in
+            .compactMap({ index -> PanelTile? in
                 return buttons.first(where: { $0.index == index })
             })
         selectedWordTiles.forEach {
@@ -330,7 +339,7 @@ public final class PanelView: UIView {
         checkWordTiles(from: selectedWordTiles, currentLocation: location)
     }
     
-    func checkWordTiles(from selectedTiles: [WordTile], currentLocation: CGPoint) {
+    func checkWordTiles(from selectedTiles: [PanelTile], currentLocation: CGPoint) {
         let wordFromTiles = selectedTiles.map({ $0.letter }).toString
         if wordsToFind.contains(wordFromTiles) && wordsToIgnore.contains(wordFromTiles) == false {
             // found word
@@ -339,6 +348,10 @@ public final class PanelView: UIView {
                 delegate.panelView(wordFound: wordFromTiles)
             }
         }
+    }
+    
+    func ignore(word: String) {
+        wordsToIgnore.append(word)
     }
     
     func addLine() {
@@ -353,7 +366,7 @@ public final class PanelView: UIView {
         layer.addSublayer(line)
     }
     
-    func drawLine(from points: [CGPoint], currentLocation: CGPoint) {
+    func drawLine(from points: [CGPoint], currentLocation: CGPoint, drawLastLine: Bool = true) {
         let linePath = UIBezierPath()
         if points.count > 0 {
             for (index, point) in points.enumerated() {
@@ -363,7 +376,10 @@ public final class PanelView: UIView {
                     linePath.addLine(to: point)
                 }
             }
-            linePath.addLine(to: currentLocation)
+            
+            if drawLastLine {
+                linePath.addLine(to: currentLocation)
+            }
         }
         
         line.path = linePath.cgPath

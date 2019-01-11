@@ -189,21 +189,21 @@ public  extension UIImage {
     public func resizeByByte(maxByte: Int) {
         
         var compressQuality: CGFloat = 1
-        var imageByte = UIImageJPEGRepresentation(self, 1)?.count
+        var imageByte = self.jpegData(compressionQuality: 1)?.count
         
         while imageByte! > maxByte {
             
-            imageByte = UIImageJPEGRepresentation(self, compressQuality)?.count
+            imageByte = self.jpegData(compressionQuality: compressQuality)?.count
             compressQuality -= 0.1
         }
     }
     
-    public var uncompressedPNGData: Data?      { return UIImagePNGRepresentation(self)        }
-    public var highestQualityJPEGNSData: Data? { return UIImageJPEGRepresentation(self, 1.0)  }
-    public var highQualityJPEGNSData: Data?    { return UIImageJPEGRepresentation(self, 0.75) }
-    public var mediumQualityJPEGNSData: Data?  { return UIImageJPEGRepresentation(self, 0.5)  }
-    public var lowQualityJPEGNSData: Data?     { return UIImageJPEGRepresentation(self, 0.25) }
-    public var lowestQualityJPEGNSData:Data?   { return UIImageJPEGRepresentation(self, 0.01)  }
+    public var uncompressedPNGData: Data?      { return self.pngData()        }
+    public var highestQualityJPEGNSData: Data? { return self.jpegData(compressionQuality: 1.0)  }
+    public var highQualityJPEGNSData: Data?    { return self.jpegData(compressionQuality: 0.75) }
+    public var mediumQualityJPEGNSData: Data?  { return self.jpegData(compressionQuality: 0.5)  }
+    public var lowQualityJPEGNSData: Data?     { return self.jpegData(compressionQuality: 0.25) }
+    public var lowestQualityJPEGNSData:Data?   { return self.jpegData(compressionQuality: 0.01)  }
     
     func getPixelColor(pos: CGPoint) -> UIColor {
         // https://stackoverflow.com/questions/39548344/getting-pixel-color-from-an-image-using-cgpoint-in-swift-3

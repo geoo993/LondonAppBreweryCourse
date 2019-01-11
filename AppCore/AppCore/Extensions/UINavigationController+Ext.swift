@@ -145,7 +145,7 @@ public extension UINavigationController {
         for tempVC: UIViewController in self.viewControllers
         {
             if tempVC.isKind(of: T.classForCoder()) {
-                tempVC.removeFromParentViewController()
+                tempVC.removeFromParent()
             }
         }
     }
@@ -155,7 +155,7 @@ public extension UINavigationController {
         for tempVC: UIViewController in self.viewControllers
         {
             if tempVC.isKind(of: T.classForCoder()) == false {
-                tempVC.removeFromParentViewController()
+                tempVC.removeFromParent()
             }
         }
     }
@@ -190,13 +190,13 @@ public extension UINavigationController {
  
  */
     // TODO: SWIFT4-2 Consider using CATransitionType in parameter list
-    public func addTransition(transitionType type: String = kCATransitionFade,
-                              subtype: String = kCATransitionReveal,
+    public func addTransition(transitionType type: String = CATransitionType.fade.rawValue,
+                              subtype: String = CATransitionType.reveal.rawValue,
                               duration: CFTimeInterval = 0.3) {
         let transition = CATransition()
         transition.duration = duration
-        transition.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseInEaseOut)
-        transition.type = type
+        transition.timingFunction = CAMediaTimingFunction.init(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.type = CATransitionType(rawValue: type)
         self.view.layer.add(transition, forKey: nil)
     }
 }

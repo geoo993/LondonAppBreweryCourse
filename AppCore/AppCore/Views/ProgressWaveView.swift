@@ -131,8 +131,8 @@ final public class ProgressWaveView: UIView {
         dotAnimation.path = animationPath.cgPath
         dotAnimation.keyPath = "position"
         dotAnimation.duration = duration
-        dotAnimation.fillMode = kCAFillModeForwards //CAMediaTimingFillMode.forwards
-        dotAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)//CAMediaTimingFunctionName.easeInEaseOut)
+        dotAnimation.fillMode = CAMediaTimingFillMode.forwards //CAMediaTimingFillMode.forwards
+        dotAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)//CAMediaTimingFunctionName.easeInEaseOut)
         dotAnimation.isRemovedOnCompletion = false
         dotLayer.add(dotAnimation, forKey: "position")
         
@@ -149,14 +149,14 @@ final public class ProgressWaveView: UIView {
     lazy var waveBackground = { [unowned self] () -> CAShapeLayer in
         let layer = CAShapeLayer()
         layer.fillColor = UIColor.clear.cgColor
-        layer.lineCap = kCALineCapRound //CAShapeLayerLineCap.round
+        layer.lineCap = CAShapeLayerLineCap.round //CAShapeLayerLineCap.round
         return layer
     }()
     lazy var waveLayer =  { [unowned self] () -> CAShapeLayer in
         let layer = CAShapeLayer()
         layer.fillColor = UIColor.clear.cgColor
         layer.strokeColor = self.progressColor.cgColor
-        layer.lineCap = kCALineCapRound //CAShapeLayerLineCap.round
+        layer.lineCap = CAShapeLayerLineCap.round //CAShapeLayerLineCap.round
         return layer
     }()
     lazy var dotLayer =  { [unowned self] () -> CAShapeLayer in

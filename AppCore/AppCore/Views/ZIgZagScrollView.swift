@@ -78,7 +78,7 @@ public class ZIgZagScrollView: UIScrollView {
         }
     }
     
-    @IBInspectable var imageContentMode: UIViewContentMode = UIViewContentMode.scaleToFill {
+    @IBInspectable var imageContentMode: UIView.ContentMode = UIView.ContentMode.scaleToFill {
         didSet {
         }
     }
@@ -219,11 +219,11 @@ public class ZIgZagScrollView: UIScrollView {
         keyFrameAnimation.path = path
         keyFrameAnimation.duration = 20.0  // How long to animate 
         keyFrameAnimation.speed = 1  // How fast to animate want
-        keyFrameAnimation.fillMode = kCAFillModeForwards
+        keyFrameAnimation.fillMode = CAMediaTimingFillMode.forwards
         keyFrameAnimation.isRemovedOnCompletion = false
-        keyFrameAnimation.calculationMode = kCAAnimationPaced // This give the animation an even pace
+        keyFrameAnimation.calculationMode = CAAnimationCalculationMode.paced // This give the animation an even pace
         keyFrameAnimation.repeatCount = Float(CGFloat.infinity) // This makes the animation repeat forever
-        keyFrameAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        keyFrameAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
         
         animatableView.layer.add(keyFrameAnimation, forKey: "animation")
         
@@ -269,13 +269,13 @@ public class ZIgZagScrollView: UIScrollView {
         
         if let bView = bezierView {
             self.addSubview(bView)
-            self.sendSubview(toBack: bView)
+            self.sendSubviewToBack(bView)
             
             let bgImage = UIImageView(frame: frame)
             bgImage.image = backgroundImage.imageWithSize(size: self.contentSize)
             bgImage.contentMode = imageContentMode
             self.addSubview(bgImage)
-            self.sendSubview(toBack: bgImage)
+            self.sendSubviewToBack(bgImage)
             
             bView.backgroundColor = background
             bView.dashLines = dashLines
@@ -386,7 +386,7 @@ public class ZIgZagScrollView: UIScrollView {
         
         if let jView = panGestureRecognizer.view as? JourneyView, let superView = jView.superview{
             
-            superView.bringSubview(toFront: jView)
+            superView.bringSubviewToFront(jView)
             
             let _ /* velocityInView */ = panGestureRecognizer.velocity(in: superView)
             let translation = panGestureRecognizer.translation(in: superView)

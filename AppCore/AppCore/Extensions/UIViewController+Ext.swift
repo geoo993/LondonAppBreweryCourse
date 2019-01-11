@@ -44,12 +44,12 @@ public extension UIViewController {
     }
     
     func addMenuButton(with target: Any?, selector: Selector?, image : UIImage? ){
-        let img = image?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        let img = image?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
         
         //create a new button
         let button: UIButton = UIButton(type: .system)
         //set image for button
-        button.setImage(img, for: UIControlState.normal)
+        button.setImage(img, for: UIControl.State.normal)
         //add function for button
         button.addTarget(target, action: selector!, for: .touchUpInside)
         //set frame
@@ -73,18 +73,18 @@ public extension UIViewController {
     func presentDetail(_ viewControllerToPresent: UIViewController, duration: CFTimeInterval) {
         let transition = CATransition()
         transition.duration = duration
-        transition.type = kCATransitionPush// kCATransitionFromBottom // transition type
-        transition.subtype = kCATransitionFromRight // starts from
+        transition.type = CATransitionType.push// kCATransitionFromBottom // transition type
+        transition.subtype = CATransitionSubtype.fromRight // starts from
         view.window!.layer.add(transition, forKey: kCATransition)
         
         present(viewControllerToPresent, animated: true)
     }
     
-    func dismissDetail(transitionType _: String = kCATransitionPush) {
+    func dismissDetail(transitionType _: String = CATransitionType.push.rawValue) {
         let transition = CATransition()
         transition.duration = 0.25
-        transition.type = kCATransitionPush // transition type
-        transition.subtype = kCATransitionFromLeft// starts from
+        transition.type = CATransitionType.push // transition type
+        transition.subtype = CATransitionSubtype.fromLeft// starts from
         view.window!.layer.add(transition, forKey: kCATransition)
         
         dismiss(animated: false)
@@ -102,7 +102,7 @@ public extension UIViewController {
     
     private func add(asChildViewController viewController: UIViewController) {
         // Add Child View Controller
-        addChildViewController(viewController)
+        addChild(viewController)
         
         // Add Child View as Subview
         view.addSubview(viewController.view)
@@ -112,17 +112,17 @@ public extension UIViewController {
         viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         // Notify Child View Controller
-        viewController.didMove(toParentViewController: self)
+        viewController.didMove(toParent: self)
     }
     
     private func remove(asChildViewController viewController: UIViewController) {
         // Notify Child View Controller
-        viewController.willMove(toParentViewController: nil)
+        viewController.willMove(toParent: nil)
         
         // Remove Child View From Superview
         viewController.view.removeFromSuperview()
         
         // Notify Child View Controller
-        viewController.removeFromParentViewController()
+        viewController.removeFromParent()
     }
 }

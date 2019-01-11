@@ -66,7 +66,7 @@ final public class PaddingLabel: UILabel {
     }
     public override func drawText(in rect: CGRect) {
         let insets = UIEdgeInsets(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
-        super.drawText(in: UIEdgeInsetsInsetRect(rect, insets))
+        super.drawText(in: rect.inset(by: insets))
     }
     public override var intrinsicContentSize: CGSize {
         var contentSize = super.intrinsicContentSize
@@ -95,7 +95,7 @@ final public class PaddingLabel: UILabel {
                 self.shadowView = shadowView
                 configureShadowView()
                 superview?.addSubview(shadowView)
-                superview?.bringSubview(toFront: self)
+                superview?.bringSubviewToFront(self)
                 
                 
                 // All edges of the item. This property affects top, bottom, leading and trailing.

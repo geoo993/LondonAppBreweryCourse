@@ -18,13 +18,6 @@ public struct Grid {
     }
 }
 
-public struct GridTile {
-    let word: String
-    let letter: Character
-    let letterIndex: Int
-    let positionInGrid: Int
-}
-
 public class GridLayout {
     static func createGrid(with container: CGRect,
                            grid: Grid, insectBy: CGFloat = 2)

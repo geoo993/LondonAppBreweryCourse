@@ -19,7 +19,7 @@ public extension UITextView {
     public func clearTextView(with color: UIColor){
         let attribute = self.attributedText.mutableCopy() as! NSMutableAttributedString
         let fullrange = self.fullNSRange
-        attribute.addAttributes([NSAttributedStringKey.foregroundColor: color], range: fullrange)
+        attribute.addAttributes([NSAttributedString.Key.foregroundColor: color], range: fullrange)
         self.attributedText = attribute
     }
     
