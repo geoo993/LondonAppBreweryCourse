@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Portfolio/Portfolio.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:WordConnect/WordConnect.xcodeproj">
    </FileRef>
    <FileRef
@@ -79,6 +82,9 @@
       <Group
          location = "container:"
          name = "Dependencies">
+         <FileRef
+            location = "group:Cartfile/Carthage/Checkouts/lottie-ios/Lottie.xcodeproj">
+         </FileRef>
          <FileRef
             location = "group:Cartfile/Carthage/Checkouts/CryptoSwift/CryptoSwift.xcodeproj">
          </FileRef>

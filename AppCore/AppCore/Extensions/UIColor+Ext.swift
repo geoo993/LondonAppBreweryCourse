@@ -241,6 +241,7 @@ public extension UIColor {
     public static var teal : UIColor { return  UIColor(hex: 0x008080)}
     public static var thistle : UIColor { return  UIColor(hex: 0xD8BFD8)}
     public static var tomato : UIColor { return  UIColor(hex: 0xFF6347)}
+    public static var tropicBlue: UIColor { return .rgb(red: 0, green: 192, blue: 255) }
     public static var turquoise : UIColor { return  UIColor(hex: 0x40E0D0)}
     public static var violet : UIColor { return UIColor(hex: 0xEE82EE)}
     public static var wheat : UIColor { return  UIColor(hex: 0xF5DEB3)}
