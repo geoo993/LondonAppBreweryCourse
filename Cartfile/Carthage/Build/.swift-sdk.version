@@ -1,58 +1,53 @@
 {
-  "Mac" : [
-
-  ],
-  "watchOS" : [
-
-  ],
-  "tvOS" : [
-
-  ],
-  "commitish" : "1.1.0",
+  "commitish" : "1.2.0",
   "iOS" : [
     {
       "name" : "NaturalLanguageClassifierV1",
-      "hash" : "afa0afcbe7efe80d8299aad0e9042a75554e8c340a476eb83d4d221039e0b18f"
-    },
-    {
-      "name" : "PersonalityInsightsV3",
-      "hash" : "f2efb28ea19fd7e69dc9433c847485419ceb05907260a7b542945417fad5d4dc"
-    },
-    {
-      "name" : "LanguageTranslatorV3",
-      "hash" : "dbe12153e14f8f0270d72010221864373024db2adf6c7def780342294d490278"
+      "hash" : "3bafac23c849ace90a78a8708f65164f2af62f3f63b3335bd43c49900f192dc4"
     },
     {
       "name" : "ToneAnalyzerV3",
-      "hash" : "d2891eafe903b1efb667d55aa95f7b25f0bc3254fd020203d57b1e8dca7135d7"
+      "hash" : "0ef7fb0a8d2777030444342b29acdfabbd7ab959836a6d0487965c4c331ed3d3"
     },
     {
-      "name" : "VisualRecognitionV3",
-      "hash" : "68cce3a40ba37c8d17930dd2e65c65fbe81bf3972728552eebd5c3f00566737a"
+      "name" : "LanguageTranslatorV3",
+      "hash" : "9de00bca943cbe35c292bb5433ebbba79b6314afd16b110b84706709851c72be"
+    },
+    {
+      "name" : "PersonalityInsightsV3",
+      "hash" : "418267c3a030892135f596e0f71124f476ef3c0fc68e428bd71711d6b203c6ab"
     },
     {
       "name" : "TextToSpeechV1",
-      "hash" : "582fb6139513831db81caffde05fb58716ce84f4b107d73f3a168f5c18238753"
+      "hash" : "4e5bc7b2e7a08c8fe68eb1d754e371217fd9e6e9413e9e228755d5e2b35078cc"
+    },
+    {
+      "name" : "VisualRecognitionV3",
+      "hash" : "5a729fe1d68b834442fd3fd3947c5b4ce6bd0f3bca97ae1d2fd1187750ad87a0"
     },
     {
       "name" : "AssistantV2",
-      "hash" : "cd6da18b19caa4b82a9c8a9fa937b39710ff463ea4f3083b35130349657db128"
+      "hash" : "e20c7cf5458c803506a0c3585280c2a878bc9730e7a85ad31f0886b4e3a5db18"
     },
     {
       "name" : "NaturalLanguageUnderstandingV1",
-      "hash" : "41799e62e73f0c4fe4027eb4c4ccf1c240e6a796d7ea8cc408181ad141840950"
+      "hash" : "acbffeffaffe9e6ec24e13f7879aacc5ced92cff9455aa54421d3549648bd30f"
+    },
+    {
+      "name" : "CompareComplyV1",
+      "hash" : "0a6861dd0a2a91c6c7b01a313322c8153de3b799aae0e6605fab635b3a497790"
     },
     {
       "name" : "SpeechToTextV1",
-      "hash" : "5a0c0b474119d57d6ffe6a9c15b71bb428eb47fbc72a5d5b5323ea2a0f156482"
+      "hash" : "81090304fc3ac74f4a223aed335782d06f61f88b0d3afe11daaca11c73445460"
     },
     {
       "name" : "AssistantV1",
-      "hash" : "719e083171428f67ae409684ae3e83ab0153b48b49f10282bb846e30d01de52c"
+      "hash" : "b88da2006aeb13af4d956e828db022d06a75fd6420e3fe24df7b751ab3c5a09a"
     },
     {
       "name" : "DiscoveryV1",
-      "hash" : "1a85fccac5a15d9830b797efa1bb1d4b7207c55271653c9dfa87c26ba0af1d72"
+      "hash" : "db9a749992bd63b6daf619bd39d4c96d744329ad742927d28e217128feeb5d8e"
     }
   ]
 }

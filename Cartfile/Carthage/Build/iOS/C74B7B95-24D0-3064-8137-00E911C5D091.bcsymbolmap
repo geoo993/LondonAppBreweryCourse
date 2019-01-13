@@ -1,0 +1,220 @@
+BCSymbolMap Version: 2.0
+_$S7RxSegue010NavigationB0V18fromViewControllerxSgXwvmytfU_
+_$S7RxSegue010NavigationB0V18fromViewController02toeF7Factory8animatedACyxq_q0_Gx_q_x_q0_tcSbtcfcfA1_
+_$S7RxSegue010NavigationB0V10asObserver0A5Swift03AnyE0Vyq0_GyF
+_$S7RxSegue010NavigationB0Vyxq_q0_GAA0B4TypeA2aEP18fromViewController1TQzSgvgTW
+_$S7RxSegue010NavigationB0Vyxq_q0_GAA0B4TypeA2aEP23toViewControllerFactoryy1UQz1TQz_1EQztcvgTW
+_$S7RxSegue010NavigationB0Vyxq_q0_GAA0B4TypeA2aEP8animatedSbvgTW
+_$S7RxSegue010NavigationB0Vyxq_q0_G0A5Swift12ObserverTypeAaeFP2onyyAE5EventOy1EQzGFTW
+_$S7RxSegue010NavigationB0V23toViewControllerFactoryyq_x_q0_tcvgTf4n_g
+_$S7RxSegue010NavigationB0Vyxq_q0_GSo22UINavigationControllerCRbzSo06UIViewE0CRb_r1_lWOc
+_$S7RxSegue010NavigationB0Vyxq_q0_GSo22UINavigationControllerCRbzSo06UIViewE0CRb_r1_lWOh
+_$S7RxSwift5EventOyq0_GSo22UINavigationControllerCRbzSo06UIViewE0CRb_r1_lWOc
+_$S7RxSegue23bindingErrorToInterfaceyys0D0_pF
+_$S7RxSegue010NavigationB0Vyxq_q0_GAA0B4TypeAA1TWt
+_$S7RxSegue010NavigationB0Vyxq_q0_GAA0B4TypeAA1UWt
+_$S7RxSegue010NavigationB0Vyxq_q0_GAA0B4TypeAAWI
+_$S7RxSegue010NavigationB0Vyxq_q0_G0A5Swift12ObserverTypeAA1EWt
+_$S7RxSegue010NavigationB0VMi
+_$S7RxSegue010NavigationB0VwCP
+_$S7RxSegue010NavigationB0Vwxx
+_$S7RxSegue010NavigationB0Vwcp
+_$S7RxSegue010NavigationB0Vwca
+_$S7RxSegue010NavigationB0Vwtk
+_$S7RxSegue010NavigationB0Vwta
+___swift_copy_outline_existential_box_pointer8
+_$S7RxSegue010NavigationB0Vwet
+_$S7RxSegue010NavigationB0Vwst
+_$Sxq0_q_Ieggno_xq0_q_Iegnnr_So22UINavigationControllerCRbzSo06UIViewB0CRb_r1_lTRTA
+_$S7RxSegue010NavigationB0Vyxq_q0_GSo22UINavigationControllerCRbzSo06UIViewE0CRb_r1_lWOb
+_$S7RxSegue010NavigationB0V2onyy0A5Swift5EventOyq0_GFTA
+_$S7RxSegue010NavigationB0Vyxq_q0_GAA0B4TypeAAWp
+_$S7RxSegue010NavigationB0Vyxq_q0_GAA0B4TypeAAWG
+_$S7RxSegue010NavigationB0Vyxq_q0_G0A5Swift12ObserverTypeAAWp
+_$S7RxSegue010NavigationB0VWV
+_$S7RxSegueMXM
+_$S7RxSegue010NavigationB0VMI
+_symbolic So22UINavigationControllerC
+_symbolic So16UIViewControllerC
+_$S7RxSegue010NavigationB0VMP
+_symbolic ____ 7RxSegue010NavigationB0V
+_symbolic xSgXw
+_symbolic q_x_q0_tc
+_symbolic Sb
+_$S7RxSegue010NavigationB0VMF
+__swift_FORCE_LOAD_$_swiftDarwin_$_RxSegue
+__swift_FORCE_LOAD_$_swiftFoundation_$_RxSegue
+__swift_FORCE_LOAD_$_swiftObjectiveC_$_RxSegue
+__swift_FORCE_LOAD_$_swiftCoreFoundation_$_RxSegue
+__swift_FORCE_LOAD_$_swiftDispatch_$_RxSegue
+__swift_FORCE_LOAD_$_swiftCoreGraphics_$_RxSegue
+__swift_FORCE_LOAD_$_swiftUIKit_$_RxSegue
+__swift_FORCE_LOAD_$_swiftCoreImage_$_RxSegue
+__swift_FORCE_LOAD_$_swiftMetal_$_RxSegue
+__swift_FORCE_LOAD_$_swiftQuartzCore_$_RxSegue
+_symbolic xq0_q_Ieggno_
+_symbolic x
+_symbolic B0
+_symbolic q_
+_symbolic B1
+_symbolic q0_
+_symbolic B2
+_symbolic ____yxq_q0_G 7RxSegue010NavigationB0V
+_symbolic 7RxSegue010NavigationB0V
+_symbolic $S7RxSegue0B4TypeP
+_$S7RxSegue010NavigationB0Vyxq_q0_GAA0B4TypeAAMA
+_symbolic $S7RxSwift12ObserverTypeP
+_$S7RxSegue010NavigationB0Vyxq_q0_G0A5Swift12ObserverTypeAAMA
+___swift_reflection_version
+Apple LLVM version 10.0.0 (clang-1000.11.45.1)
+-emit-bc -primary-file /Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue/Pod/Classes/NavigationSegue.swift /Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue/Pod/Classes/SegueType.swift /Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue/Pod/Classes/Helpers.swift /Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue/Pod/Classes/ModalSegue.swift -emit-module-path /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/Objects-normal/arm64/NavigationSegue~partial.swiftmodule -emit-module-doc-path /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/Objects-normal/arm64/NavigationSegue~partial.swiftdoc -serialize-diagnostics-path /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/Objects-normal/arm64/NavigationSegue.dia -emit-dependencies-path /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/Objects-normal/arm64/NavigationSegue.d -target arm64-apple-ios9.3 -Xllvm -aarch64-use-tbi -enable-objc-interop -sdk /Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.1.sdk -I /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/BuildProductsPath/Release-iphoneos -F /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/BuildProductsPath/Release-iphoneos -F /Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue/Carthage/Build/iOS -g -import-underlying-module -module-cache-path /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/ModuleCache.noindex -swift-version 4 -O -serialize-debugging-options -Xcc -I/Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/RxSegue-generated-files.hmap -Xcc -I/Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/RxSegue-own-target-headers.hmap -Xcc -I/Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/RxSegue-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/all-product-headers.yaml -Xcc -iquote -Xcc /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/RxSegue-project-headers.hmap -Xcc -I/Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/BuildProductsPath/Release-iphoneos/include -Xcc -I/Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/DerivedSources/arm64 -Xcc -I/Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/DerivedSources -Xcc -ivfsoverlay -Xcc /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/unextended-module-overlay.yaml -Xcc -working-directory/Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue -module-name RxSegue -o /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/Objects-normal/arm64/NavigationSegue.bc -resource-dir /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift
+<swift-imported-modules>
+/Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue
+Apple Swift version 4.2.1 effective-4.1.50 (swiftlang-1000.11.42 clang-1000.11.45.1)
+/Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue/Pod/Classes/NavigationSegue.swift
+$S7RxSegue010NavigationB0V2onyy0A5Swift5EventOyq0_GFTA
+<compiler-generated>
+$S7RxSegue010NavigationB0Vyxq_q0_GSo22UINavigationControllerCRbzSo06UIViewE0CRb_r1_lWOb
+objectdestroy.2
+$Sxq0_q_Ieggno_xq0_q_Iegnnr_So22UINavigationControllerCRbzSo06UIViewB0CRb_r1_lTRTA
+$Sxq0_q_Ieggno_xq0_q_Iegnnr_So22UINavigationControllerCRbzSo06UIViewB0CRb_r1_lTR
+objectdestroy
+$S7RxSegue010NavigationB0VMa
+$S7RxSegue010NavigationB0Vwst
+$S7RxSegue010NavigationB0Vwet
+__swift_copy_outline_existential_box_pointer8
+$S7RxSegue010NavigationB0Vwta
+$S7RxSegue010NavigationB0Vwtk
+$S7RxSegue010NavigationB0Vwca
+$S7RxSegue010NavigationB0Vwcp
+$S7RxSegue010NavigationB0Vwxx
+$S7RxSegue010NavigationB0VwCP
+$S7RxSegue010NavigationB0VMi
+$S7RxSegue010NavigationB0Vyxq_q0_G0A5Swift12ObserverTypeAA1EWt
+$S7RxSegue010NavigationB0Vyxq_q0_G0A5Swift12ObserverTypeAAWa
+$S7RxSegue010NavigationB0Vyxq_q0_GAA0B4TypeAAWI
+$S7RxSegue010NavigationB0Vyxq_q0_GAA0B4TypeAAWa
+$S7RxSegue010NavigationB0Vyxq_q0_GAA0B4TypeAA1UWt
+$S7RxSegue010NavigationB0Vyxq_q0_GAA0B4TypeAA1TWt
+$S7RxSwift5EventOyq0_GSo22UINavigationControllerCRbzSo06UIViewE0CRb_r1_lWOc
+$S7RxSegue010NavigationB0Vyxq_q0_GSo22UINavigationControllerCRbzSo06UIViewE0CRb_r1_lWOh
+$S7RxSegue010NavigationB0Vyxq_q0_GSo22UINavigationControllerCRbzSo06UIViewE0CRb_r1_lWOc
+toViewControllerFactory.get
+on
+animated.get
+fromViewController.get
+asObserver
+NavigationSegue.swift
+/Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue/Pod/Classes
+init
+$S7RxSegue010NavigationB0V18fromViewController02toeF7Factory8animatedACyxq_q0_Gx_q_x_q0_tcSbtcfcfA1_
+fromViewController.materialize
+fromViewController.set
+$S7RxSegue010NavigationB0V18fromViewControllerxSgXwvpfi
+_$S7RxSegue0B4Type_pMF
+_$S7RxSegue0B4TypeWR
+-emit-bc /Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue/Pod/Classes/NavigationSegue.swift -primary-file /Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue/Pod/Classes/SegueType.swift /Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue/Pod/Classes/Helpers.swift /Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue/Pod/Classes/ModalSegue.swift -emit-module-path /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/Objects-normal/arm64/SegueType~partial.swiftmodule -emit-module-doc-path /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/Objects-normal/arm64/SegueType~partial.swiftdoc -serialize-diagnostics-path /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/Objects-normal/arm64/SegueType.dia -emit-dependencies-path /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/Objects-normal/arm64/SegueType.d -target arm64-apple-ios9.3 -Xllvm -aarch64-use-tbi -enable-objc-interop -sdk /Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.1.sdk -I /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/BuildProductsPath/Release-iphoneos -F /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/BuildProductsPath/Release-iphoneos -F /Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue/Carthage/Build/iOS -g -import-underlying-module -module-cache-path /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/ModuleCache.noindex -swift-version 4 -O -serialize-debugging-options -Xcc -I/Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/RxSegue-generated-files.hmap -Xcc -I/Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/RxSegue-own-target-headers.hmap -Xcc -I/Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/RxSegue-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/all-product-headers.yaml -Xcc -iquote -Xcc /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/RxSegue-project-headers.hmap -Xcc -I/Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/BuildProductsPath/Release-iphoneos/include -Xcc -I/Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/DerivedSources/arm64 -Xcc -I/Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/DerivedSources -Xcc -ivfsoverlay -Xcc /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/unextended-module-overlay.yaml -Xcc -working-directory/Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue -module-name RxSegue -o /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/Objects-normal/arm64/SegueType.bc -resource-dir /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift
+/Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue/Pod/Classes/SegueType.swift
+_$Ss27_toStringReadOnlyStreamableySSxs010TextOutputE0RzlFSS_Tg5
+_$SSS19stringInterpolationS2Sd_tcfCTf4nd_n
+_$Ss23_ContiguousArrayStorageCySSGML
+_$Ss5Error_pML
+_$Ss23_ContiguousArrayStorageCyypGML
+-emit-bc /Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue/Pod/Classes/NavigationSegue.swift /Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue/Pod/Classes/SegueType.swift -primary-file /Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue/Pod/Classes/Helpers.swift /Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue/Pod/Classes/ModalSegue.swift -emit-module-path /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/Objects-normal/arm64/Helpers~partial.swiftmodule -emit-module-doc-path /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/Objects-normal/arm64/Helpers~partial.swiftdoc -serialize-diagnostics-path /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/Objects-normal/arm64/Helpers.dia -emit-dependencies-path /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/Objects-normal/arm64/Helpers.d -target arm64-apple-ios9.3 -Xllvm -aarch64-use-tbi -enable-objc-interop -sdk /Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.1.sdk -I /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/BuildProductsPath/Release-iphoneos -F /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/BuildProductsPath/Release-iphoneos -F /Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue/Carthage/Build/iOS -g -import-underlying-module -module-cache-path /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/ModuleCache.noindex -swift-version 4 -O -serialize-debugging-options -Xcc -I/Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/RxSegue-generated-files.hmap -Xcc -I/Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/RxSegue-own-target-headers.hmap -Xcc -I/Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/RxSegue-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/all-product-headers.yaml -Xcc -iquote -Xcc /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/RxSegue-project-headers.hmap -Xcc -I/Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/BuildProductsPath/Release-iphoneos/include -Xcc -I/Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/DerivedSources/arm64 -Xcc -I/Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/DerivedSources -Xcc -ivfsoverlay -Xcc /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/unextended-module-overlay.yaml -Xcc -working-directory/Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue -module-name RxSegue -o /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/Objects-normal/arm64/Helpers.bc -resource-dir /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift
+/Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue/Pod/Classes/Helpers.swift
+$SSa11_getElement_20wasNativeTypeChecked22matchingSubscriptCheckxSi_Sbs16_DependenceTokenVtFSS_Tgq5
+$SSa9_getCountSiyFSS_Tgq5
+$Ss27_toStringReadOnlyStreamableySSxs010TextOutputE0RzlFSS_Tg5
+$SSSs20TextOutputStreamablessAAP5write2toyqd__z_ts0aB6StreamRd__lFTWSS_Tg5
+$SSS5write2toyxz_ts16TextOutputStreamRzlFSS_Tg5
+$SSSs16TextOutputStreamssAAP5writeyySSFTW
+bindingErrorToInterface
+Helpers.swift
+_allocateUninitializedArray
+$SSa13_adoptStorage_5countSayxG_SpyxGts016_ContiguousArrayB0CyxGn_SitFZyp_Tg5
+$Ss23_ContiguousArrayStorageCyypGMa
+$Ss5Error_pMa
+$SSa13_adoptStorage_5countSayxG_SpyxGts016_ContiguousArrayB0CyxGn_SitFZSS_Tg5
+$Ss23_ContiguousArrayStorageCySSGMa
+_$S7RxSegue05ModalB0V18fromViewControllerxSgXwvmytfU_
+_$S7RxSegue05ModalB0V22presentationCompletionyycSgvg
+_$S7RxSegue05ModalB0V18fromViewController02toeF7Factory8animated22presentationCompletionACyxq_q0_Gx_q_x_q0_tcSbyycSgtcfcfA1_
+_$S7RxSegue05ModalB0V18fromViewController02toeF7Factory8animated22presentationCompletionACyxq_q0_Gx_q_x_q0_tcSbyycSgtcfcfA2_
+_$SIeg_IeyB_TR
+_$S7RxSegue05ModalB0V10asObserver0A5Swift03AnyE0Vyq0_GyF
+_$S7RxSegue05ModalB0Vyxq_q0_GAA0B4TypeA2aEP18fromViewController1TQzSgvgTW
+_$S7RxSegue05ModalB0Vyxq_q0_GAA0B4TypeA2aEP23toViewControllerFactoryy1UQz1TQz_1EQztcvgTW
+_$S7RxSegue05ModalB0Vyxq_q0_GAA0B4TypeA2aEP8animatedSbvgTW
+_$S7RxSegue05ModalB0Vyxq_q0_G0A5Swift12ObserverTypeAaeFP2onyyAE5EventOy1EQzGFTW
+_$S7RxSegue05ModalB0V23toViewControllerFactoryyq_x_q0_tcvgTf4n_g
+_$SIeg_SgWOy
+_$S7RxSegue05ModalB0Vyxq_q0_GSo16UIViewControllerCRbzAFRb_r1_lWOc
+_$S7RxSegue05ModalB0Vyxq_q0_GSo16UIViewControllerCRbzAFRb_r1_lWOh
+_$S7RxSwift5EventOyq0_GSo16UIViewControllerCRbzAFRb_r1_lWOc
+_block_copy_helper
+_block_destroy_helper
+_$S7RxSegue05ModalB0Vyxq_q0_GAA0B4TypeAA1TWt
+_$S7RxSegue05ModalB0Vyxq_q0_GAA0B4TypeAA1UWt
+_$S7RxSegue05ModalB0Vyxq_q0_GAA0B4TypeAAWI
+_$S7RxSegue05ModalB0Vyxq_q0_G0A5Swift12ObserverTypeAA1EWt
+_$S7RxSegue05ModalB0VMi
+_$S7RxSegue05ModalB0VwCP
+_$S7RxSegue05ModalB0Vwxx
+_$S7RxSegue05ModalB0Vwcp
+_$S7RxSegue05ModalB0Vwca
+_$S7RxSegue05ModalB0Vwtk
+_$S7RxSegue05ModalB0Vwta
+_$S7RxSegue05ModalB0Vwet
+_$S7RxSegue05ModalB0Vwst
+_$Sxq0_q_Ieggno_xq0_q_Iegnnr_So16UIViewControllerCRbzABRb_r1_lTRTA
+_$S7RxSegue05ModalB0Vyxq_q0_GSo16UIViewControllerCRbzAFRb_r1_lWOb
+_$S7RxSegue05ModalB0V2onyy0A5Swift5EventOyq0_GFTA
+_block_descriptor
+_$S7RxSegue05ModalB0Vyxq_q0_GAA0B4TypeAAWp
+_$S7RxSegue05ModalB0Vyxq_q0_GAA0B4TypeAAWG
+_$S7RxSegue05ModalB0Vyxq_q0_G0A5Swift12ObserverTypeAAWp
+_$S7RxSegue05ModalB0VWV
+_$S7RxSegue05ModalB0VMI
+_$S7RxSegue05ModalB0VMP
+_symbolic ____ 7RxSegue05ModalB0V
+_symbolic yycSg
+_$S7RxSegue05ModalB0VMF
+_symbolic ____yxq_q0_G 7RxSegue05ModalB0V
+_symbolic 7RxSegue05ModalB0V
+_$S7RxSegue05ModalB0Vyxq_q0_GAA0B4TypeAAMA
+_$S7RxSegue05ModalB0Vyxq_q0_G0A5Swift12ObserverTypeAAMA
+-emit-bc /Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue/Pod/Classes/NavigationSegue.swift /Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue/Pod/Classes/SegueType.swift /Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue/Pod/Classes/Helpers.swift -primary-file /Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue/Pod/Classes/ModalSegue.swift -emit-module-path /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/Objects-normal/arm64/ModalSegue~partial.swiftmodule -emit-module-doc-path /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/Objects-normal/arm64/ModalSegue~partial.swiftdoc -serialize-diagnostics-path /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/Objects-normal/arm64/ModalSegue.dia -emit-dependencies-path /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/Objects-normal/arm64/ModalSegue.d -target arm64-apple-ios9.3 -Xllvm -aarch64-use-tbi -enable-objc-interop -sdk /Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.1.sdk -I /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/BuildProductsPath/Release-iphoneos -F /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/BuildProductsPath/Release-iphoneos -F /Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue/Carthage/Build/iOS -g -import-underlying-module -module-cache-path /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/ModuleCache.noindex -swift-version 4 -O -serialize-debugging-options -Xcc -I/Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/RxSegue-generated-files.hmap -Xcc -I/Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/RxSegue-own-target-headers.hmap -Xcc -I/Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/RxSegue-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/all-product-headers.yaml -Xcc -iquote -Xcc /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/RxSegue-project-headers.hmap -Xcc -I/Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/BuildProductsPath/Release-iphoneos/include -Xcc -I/Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/DerivedSources/arm64 -Xcc -I/Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/DerivedSources -Xcc -ivfsoverlay -Xcc /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/unextended-module-overlay.yaml -Xcc -working-directory/Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue -module-name RxSegue -o /Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/Objects-normal/arm64/ModalSegue.bc -resource-dir /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift
+/Users/GeorgeQuentin/Dev/LondonAppBreweryCourse/Cartfile/Carthage/Checkouts/RxSegue/Pod/Classes/ModalSegue.swift
+$S7RxSegue05ModalB0V2onyy0A5Swift5EventOyq0_GFTA
+$S7RxSegue05ModalB0Vyxq_q0_GSo16UIViewControllerCRbzAFRb_r1_lWOb
+$Sxq0_q_Ieggno_xq0_q_Iegnnr_So16UIViewControllerCRbzABRb_r1_lTRTA
+$Sxq0_q_Ieggno_xq0_q_Iegnnr_So16UIViewControllerCRbzABRb_r1_lTR
+$S7RxSegue05ModalB0VMa
+$S7RxSegue05ModalB0Vwst
+$S7RxSegue05ModalB0Vwet
+$S7RxSegue05ModalB0Vwta
+$S7RxSegue05ModalB0Vwtk
+$S7RxSegue05ModalB0Vwca
+$S7RxSegue05ModalB0Vwcp
+$S7RxSegue05ModalB0Vwxx
+$S7RxSegue05ModalB0VwCP
+$S7RxSegue05ModalB0VMi
+$S7RxSegue05ModalB0Vyxq_q0_G0A5Swift12ObserverTypeAA1EWt
+$S7RxSegue05ModalB0Vyxq_q0_G0A5Swift12ObserverTypeAAWa
+$S7RxSegue05ModalB0Vyxq_q0_GAA0B4TypeAAWI
+$S7RxSegue05ModalB0Vyxq_q0_GAA0B4TypeAAWa
+$S7RxSegue05ModalB0Vyxq_q0_GAA0B4TypeAA1UWt
+$S7RxSegue05ModalB0Vyxq_q0_GAA0B4TypeAA1TWt
+block_destroy_helper
+block_copy_helper
+$S7RxSwift5EventOyq0_GSo16UIViewControllerCRbzAFRb_r1_lWOc
+$S7RxSegue05ModalB0Vyxq_q0_GSo16UIViewControllerCRbzAFRb_r1_lWOh
+$S7RxSegue05ModalB0Vyxq_q0_GSo16UIViewControllerCRbzAFRb_r1_lWOc
+ModalSegue.swift
+$SIeg_IeyB_TR
+$S7RxSegue05ModalB0V18fromViewController02toeF7Factory8animated22presentationCompletionACyxq_q0_Gx_q_x_q0_tcSbyycSgtcfcfA2_
+$S7RxSegue05ModalB0V18fromViewController02toeF7Factory8animated22presentationCompletionACyxq_q0_Gx_q_x_q0_tcSbyycSgtcfcfA1_
+presentationCompletion.get
+$S7RxSegue05ModalB0V18fromViewControllerxSgXwvpfi
+Apple LLVM version 10.0.0 (clang-1000.11.45.5)
+/Users/GeorgeQuentin/Library/Caches/org.carthage.CarthageKit/DerivedData/10.1_10O35n/RxSegue/2.0.0/Build/Intermediates.noindex/ArchiveIntermediates/RxSegue-iOS/IntermediateBuildFilesPath/RxSegue.build/Release-iphoneos/RxSegue-iOS.build/DerivedSources/RxSegue_vers.c

@@ -1,6 +1,3 @@
-framework module ObjcExceptionBridging {
-  umbrella header "ObjcExceptionBridging.h"
-
-  export *
-  module * { export * }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:2c3921c6e36a529167f31e703ea3c7d585e675c6d48351a6ec20054dc045e6b4
+size 123

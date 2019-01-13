@@ -1,9 +1,9 @@
 {
-  "commitish" : "1.2.1",
+  "commitish" : "2.1.0",
   "iOS" : [
     {
       "name" : "RxGesture",
-      "hash" : "39675bad4c7a629698a3e08d211d1f4e847b616f294f04f621606d8ec0c74eb4"
+      "hash" : "700308708c31556ff7b13d1e6eeeaf6dafc20901694d5a2f81f00fd468427c51"
     }
   ]
 }
