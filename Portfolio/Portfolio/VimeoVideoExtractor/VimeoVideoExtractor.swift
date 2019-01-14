@@ -72,7 +72,7 @@ public class VimeoVideoExtractor: NSObject {
                         completion(nil, NSError(domain: self.domain, code:3, userInfo:[NSLocalizedDescriptionKey :  "Invalid response" , NSLocalizedFailureReasonErrorKey : "Failed to parse Vimeo response"]))
                         return
                     }
-                    print(data)
+                    //print(data)
                     if let files = (data as NSDictionary).value(forKeyPath: "request.files.progressive") as? Array<Dictionary<String,Any>> {
                         
                         let video = VimeoVideo()
@@ -92,22 +92,22 @@ public class VimeoVideoExtractor: NSObject {
                             
                             if let id = owner["id"] as? Int {
                                 video.profileID = id
-                                print(id)
+                                //print(id)
                             }
                             
                             if let img = owner["img"] as? String {
                                 video.profileImage = URL(string: img)
-                                print(img)
+                                //print(img)
                             }
                             
                             if let name = owner["name"] as? String {
                                 video.profileName = name
-                                print(name)
+                                //print(name)
                             }
                             
                             if let url = owner["url"] as? String {
                                 video.profileUrl = url
-                                print(url)
+                                //print(url)
                             }
                         }
                         

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AppCore
 
 @IBDesignable
 public class VimeoCell: UICollectionViewCell {
@@ -39,7 +40,7 @@ public class VimeoCell: UICollectionViewCell {
         }
     }
     
-    @IBOutlet weak var thumbnailImageView: UIImageView!
+    @IBOutlet weak var thumbnailImageView: CustomImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
     required public init?(coder aDecoder: NSCoder) {

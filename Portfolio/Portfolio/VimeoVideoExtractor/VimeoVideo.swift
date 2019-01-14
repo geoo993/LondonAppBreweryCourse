@@ -21,10 +21,11 @@ public enum VimeoVideoQuality: String {
 
 public class VimeoVideo: NSObject {
     public var profileID: Int = 0
-    public var profileImage = URL(string: "")
-    public var profileName = ""
-    public var profileUrl = ""
-    public var title = ""
+    public var profileImage: URL? = URL(string: "")
+    public var profileName: String  = ""
+    public var profileUrl: String  = ""
+    public var title: String = ""
+    public var videoDescription: String = ""
     public var thumbnailURL = [VimeoThumbnailQuality: URL]()
     public var videoURL = [VimeoVideoQuality: URL]()
 }

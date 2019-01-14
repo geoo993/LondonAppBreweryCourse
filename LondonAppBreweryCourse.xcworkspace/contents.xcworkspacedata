@@ -83,6 +83,9 @@
          location = "container:"
          name = "Dependencies">
          <FileRef
+            location = "group:Cartfile/Carthage/Checkouts/VimeoNetworking/VimeoNetworking/VimeoNetworking.xcodeproj">
+         </FileRef>
+         <FileRef
             location = "group:Cartfile/Carthage/Checkouts/lottie-ios/Lottie.xcodeproj">
          </FileRef>
          <FileRef

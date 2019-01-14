@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		C70033A321EC02EC000C50F4 /* NSRegularExpression+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70033A221EC02EC000C50F4 /* NSRegularExpression+Ext.swift */; };
 		C70A35AC1FFC770F00857F88 /* UIDevice+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70A35AA1FFC770E00857F88 /* UIDevice+Ext.swift */; };
 		C70A35AD1FFC770F00857F88 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70A35AB1FFC770E00857F88 /* DeviceType.swift */; };
 		C71127F520137A8D00FBC479 /* Sequence+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71127F420137A8D00FBC479 /* Sequence+Ext.swift */; };
@@ -262,6 +263,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C70033A221EC02EC000C50F4 /* NSRegularExpression+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSRegularExpression+Ext.swift"; sourceTree = "<group>"; };
 		C70A35AA1FFC770E00857F88 /* UIDevice+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Ext.swift"; sourceTree = "<group>"; };
 		C70A35AB1FFC770E00857F88 /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
 		C71127F420137A8D00FBC479 /* Sequence+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Ext.swift"; sourceTree = "<group>"; };
@@ -686,6 +688,7 @@
 				C7E8E8E92006A27B0089C856 /* NSAttributedString+Ext.swift */,
 				C72E67FC2013FE7A00EA02E3 /* NSLayoutConstraint+Ext.swift */,
 				C785AB1B1FF126E4002360A6 /* NSMutableAttributedString+Ext.swift */,
+				C70033A221EC02EC000C50F4 /* NSRegularExpression+Ext.swift */,
 				C733FAF32111B35000FEF9EA /* Range+Ext.swift */,
 				C71127F420137A8D00FBC479 /* Sequence+Ext.swift */,
 				C785AB1F1FF126E4002360A6 /* String+Ext.swift */,
@@ -1398,6 +1401,7 @@
 				C7B43C1C21DFCBDC00A362E0 /* AddressParser.swift in Sources */,
 				C7B43C0321DFCBC800A362E0 /* SCNView+Ext.swift in Sources */,
 				C71744A121DE415100FD6B0F /* CGSize+Ext.swift in Sources */,
+				C70033A321EC02EC000C50F4 /* NSRegularExpression+Ext.swift in Sources */,
 				C785AB401FF126E4002360A6 /* ImageProcessor.swift in Sources */,
 				C7B43BE621DFCA8100A362E0 /* MNavigationTranstion.swift in Sources */,
 				C7B43BDF21DFC93D00A362E0 /* URL+Ext.swift in Sources */,

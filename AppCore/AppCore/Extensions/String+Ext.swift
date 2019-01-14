@@ -927,6 +927,10 @@ public extension String {
         return range(of: regex, options: .regularExpression, range: nil, locale: nil) != nil
     }
     
+    public func isMatching(expression: NSRegularExpression) -> Bool {
+        return expression.numberOfMatches(in: self, range: NSRange(location: 0, length: characters.count)) > 0
+    }
+    
     /// SwifterSwift: Check if string is a valid URL.
     ///
     ///        "https://google.com".isValidUrl -> true

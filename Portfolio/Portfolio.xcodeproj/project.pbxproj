@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C70033A021EBFB53000C50F4 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C700339F21EBFB53000C50F4 /* SVProgressHUD.framework */; };
+		C70033A121EBFB53000C50F4 /* SVProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C700339F21EBFB53000C50F4 /* SVProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C70192BC21EA06BE0062B0B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70192BB21EA06BE0062B0B5 /* AppDelegate.swift */; };
 		C70192C121EA06BE0062B0B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C70192BF21EA06BE0062B0B5 /* Main.storyboard */; };
 		C70192C321EA06C00062B0B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C70192C221EA06C00062B0B5 /* Assets.xcassets */; };
@@ -31,6 +33,10 @@
 		C718FB6521EAA2B90025485D /* VimeoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C718FB6421EAA2B90025485D /* VimeoCell.swift */; };
 		C718FB6921EAA5C20025485D /* VimeoVideoExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C718FB6721EAA5C20025485D /* VimeoVideoExtractor.swift */; };
 		C718FB6A21EAA5C20025485D /* VimeoVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C718FB6821EAA5C20025485D /* VimeoVideo.swift */; };
+		C7606C5021EC0F7500AAEB48 /* VimeoNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7606C4F21EC0F7500AAEB48 /* VimeoNetworking.framework */; };
+		C7606C5121EC0F7500AAEB48 /* VimeoNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C7606C4F21EC0F7500AAEB48 /* VimeoNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C7606C5321EC0F7500AAEB48 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7606C5221EC0F7500AAEB48 /* AFNetworking.framework */; };
+		C7606C5421EC0F7500AAEB48 /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C7606C5221EC0F7500AAEB48 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +47,9 @@
 			dstSubfolderSpec = 10;
 			files = (
 				C70192E021EA0A0A0062B0B5 /* AppCore.framework in Embed Frameworks */,
+				C7606C5421EC0F7500AAEB48 /* AFNetworking.framework in Embed Frameworks */,
+				C7606C5121EC0F7500AAEB48 /* VimeoNetworking.framework in Embed Frameworks */,
+				C70033A121EBFB53000C50F4 /* SVProgressHUD.framework in Embed Frameworks */,
 				C70192E421EA0A220062B0B5 /* Lottie.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -49,6 +58,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C700339F21EBFB53000C50F4 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = ../Cartfile/Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		C70192B821EA06BE0062B0B5 /* Portfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Portfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70192BB21EA06BE0062B0B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C70192C021EA06BE0062B0B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,6 +83,8 @@
 		C718FB6421EAA2B90025485D /* VimeoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VimeoCell.swift; sourceTree = "<group>"; };
 		C718FB6721EAA5C20025485D /* VimeoVideoExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VimeoVideoExtractor.swift; sourceTree = "<group>"; };
 		C718FB6821EAA5C20025485D /* VimeoVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VimeoVideo.swift; sourceTree = "<group>"; };
+		C7606C4F21EC0F7500AAEB48 /* VimeoNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VimeoNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7606C5221EC0F7500AAEB48 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +93,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C70192DF21EA0A0A0062B0B5 /* AppCore.framework in Frameworks */,
+				C7606C5321EC0F7500AAEB48 /* AFNetworking.framework in Frameworks */,
+				C7606C5021EC0F7500AAEB48 /* VimeoNetworking.framework in Frameworks */,
+				C70033A021EBFB53000C50F4 /* SVProgressHUD.framework in Frameworks */,
 				C70192E321EA0A220062B0B5 /* Lottie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,6 +106,9 @@
 		C70192AF21EA06BE0062B0B5 = {
 			isa = PBXGroup;
 			children = (
+				C7606C5221EC0F7500AAEB48 /* AFNetworking.framework */,
+				C7606C4F21EC0F7500AAEB48 /* VimeoNetworking.framework */,
+				C700339F21EBFB53000C50F4 /* SVProgressHUD.framework */,
 				C70192E221EA0A220062B0B5 /* Lottie.framework */,
 				C70192DE21EA0A0A0062B0B5 /* AppCore.framework */,
 				C70192BA21EA06BE0062B0B5 /* Portfolio */,
