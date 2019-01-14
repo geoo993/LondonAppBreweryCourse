@@ -6,6 +6,7 @@
 //  Copyright © 2019 GEORGE QUENTIN. All rights reserved.
 //
 // https://www.youtube.com/watch?v=m_0_XQEfrGQ
+// https://www.youtube.com/watch?v=sp8qEMY9X6Q&feature=youtu.be
 
 import UIKit
 
@@ -26,9 +27,25 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @IBAction func aboutPortfolio(_ sender: UIButton) {
+        if let nav = self.navigationController, let pageVC =
+            nav.viewControllers.first(where: { $0 is AboutPageViewController }) {
+            nav.popToViewController(pageVC, animated: true)
+        }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        print("\(#function) \(self.className)")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         textfield.delegate = self
+    }
+    
+    deinit {
+        print("\(#function) \(self.className)")
     }
 }
 

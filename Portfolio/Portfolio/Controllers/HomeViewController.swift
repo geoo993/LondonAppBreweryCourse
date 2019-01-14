@@ -31,10 +31,14 @@ class HomeViewController: UICollectionViewController {
         didSet
         {
             DispatchQueue.main.async {
-                print(self.videos.count)
                 self.collectionView.reloadData()
             }
         }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        print("\(#function) \(self.className)")
     }
     
     override func viewDidLoad() {
@@ -249,6 +253,9 @@ class HomeViewController: UICollectionViewController {
         }
     }
    
+    deinit {
+        print("\(#function) \(self.className)")
+    }
 }
 
 //MARK: UICollectionViewDataSource

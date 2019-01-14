@@ -15,6 +15,7 @@ import Lottie
 // https://www.youtube.com/watch?v=QyL-jp9bFdM
 // https://github.com/airbnb/lottie-ios
 // https://github.com/airbnb/lottie-web
+// https://www.lottiefiles.com/
 
 class WalkthroughViewController: UIViewController {
 

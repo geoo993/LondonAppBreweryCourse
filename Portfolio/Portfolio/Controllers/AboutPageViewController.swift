@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AppCore
 
 public struct WalkthroughModel {
     public let pages : [WalkthroughPageModel]
@@ -18,7 +19,7 @@ public struct WalkthroughPageModel {
     public let description : String
 }
 
-class PageViewController: UIPageViewController {
+class AboutPageViewController: UIPageViewController {
 
     fileprivate var walkthroughModel: WalkthroughModel {
         return WalkthroughModel(pages:
@@ -30,8 +31,12 @@ class PageViewController: UIPageViewController {
     public var numberOfPages = 0
     public var pageIndex = 0
     
-    override func viewDidLoad()
-    {
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        print("\(#function) \(self.className)")
+    }
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         self.delegate = self
@@ -93,9 +98,13 @@ class PageViewController: UIPageViewController {
         
         return nil
     }
+    
+    deinit {
+        print("\(#function) \(self.className)")
+    }
 }
 
-extension PageViewController: UIPageViewControllerDataSource {
+extension AboutPageViewController: UIPageViewControllerDataSource {
     
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
@@ -121,6 +130,6 @@ extension PageViewController: UIPageViewControllerDataSource {
    
 }
 
-extension PageViewController: UIPageViewControllerDelegate { }
+extension AboutPageViewController: UIPageViewControllerDelegate { }
 
 

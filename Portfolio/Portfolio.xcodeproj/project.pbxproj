@@ -19,7 +19,7 @@
 		C70192DA21EA07480062B0B5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70192D621EA07480062B0B5 /* LoginViewController.swift */; };
 		C70192DB21EA07480062B0B5 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70192D721EA07480062B0B5 /* WalkthroughViewController.swift */; };
 		C70192DC21EA07480062B0B5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70192D821EA07480062B0B5 /* HomeViewController.swift */; };
-		C70192DD21EA07480062B0B5 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70192D921EA07480062B0B5 /* PageViewController.swift */; };
+		C70192DD21EA07480062B0B5 /* AboutPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70192D921EA07480062B0B5 /* AboutPageViewController.swift */; };
 		C70192DF21EA0A0A0062B0B5 /* AppCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C70192DE21EA0A0A0062B0B5 /* AppCore.framework */; };
 		C70192E021EA0A0A0062B0B5 /* AppCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C70192DE21EA0A0A0062B0B5 /* AppCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C70192E321EA0A220062B0B5 /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C70192E221EA0A220062B0B5 /* Lottie.framework */; };
@@ -37,6 +37,7 @@
 		C7606C5121EC0F7500AAEB48 /* VimeoNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C7606C4F21EC0F7500AAEB48 /* VimeoNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C7606C5321EC0F7500AAEB48 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7606C5221EC0F7500AAEB48 /* AFNetworking.framework */; };
 		C7606C5421EC0F7500AAEB48 /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C7606C5221EC0F7500AAEB48 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C769410521ED0D70001E193E /* MemeoryLeaksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C769410421ED0D70001E193E /* MemeoryLeaksController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -71,7 +72,7 @@
 		C70192D621EA07480062B0B5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C70192D721EA07480062B0B5 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 		C70192D821EA07480062B0B5 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		C70192D921EA07480062B0B5 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		C70192D921EA07480062B0B5 /* AboutPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPageViewController.swift; sourceTree = "<group>"; };
 		C70192DE21EA0A0A0062B0B5 /* AppCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70192E221EA0A220062B0B5 /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = ../Cartfile/Carthage/Build/iOS/Lottie.framework; sourceTree = "<group>"; };
 		C70192E621EA1A810062B0B5 /* PinJump.aep */ = {isa = PBXFileReference; lastKnownFileType = file; path = PinJump.aep; sourceTree = "<group>"; };
@@ -85,6 +86,7 @@
 		C718FB6821EAA5C20025485D /* VimeoVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VimeoVideo.swift; sourceTree = "<group>"; };
 		C7606C4F21EC0F7500AAEB48 /* VimeoNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VimeoNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7606C5221EC0F7500AAEB48 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C769410421ED0D70001E193E /* MemeoryLeaksController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeoryLeaksController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,9 +157,10 @@
 		C70192CF21EA06EA0062B0B5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C769410621ED1AD7001E193E /* Memory Leaks */,
 				C70192D821EA07480062B0B5 /* HomeViewController.swift */,
 				C70192D621EA07480062B0B5 /* LoginViewController.swift */,
-				C70192D921EA07480062B0B5 /* PageViewController.swift */,
+				C70192D921EA07480062B0B5 /* AboutPageViewController.swift */,
 				C70192D721EA07480062B0B5 /* WalkthroughViewController.swift */,
 			);
 			path = Controllers;
@@ -198,6 +201,14 @@
 				C718FB6721EAA5C20025485D /* VimeoVideoExtractor.swift */,
 			);
 			path = VimeoVideoExtractor;
+			sourceTree = "<group>";
+		};
+		C769410621ED1AD7001E193E /* Memory Leaks */ = {
+			isa = PBXGroup;
+			children = (
+				C769410421ED0D70001E193E /* MemeoryLeaksController.swift */,
+			);
+			path = "Memory Leaks";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,11 +290,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C769410521ED0D70001E193E /* MemeoryLeaksController.swift in Sources */,
 				C718FB6921EAA5C20025485D /* VimeoVideoExtractor.swift in Sources */,
 				C70192DB21EA07480062B0B5 /* WalkthroughViewController.swift in Sources */,
 				C701930A21EA81BA0062B0B5 /* LoginButton.swift in Sources */,
 				C718FB6521EAA2B90025485D /* VimeoCell.swift in Sources */,
-				C70192DD21EA07480062B0B5 /* PageViewController.swift in Sources */,
+				C70192DD21EA07480062B0B5 /* AboutPageViewController.swift in Sources */,
 				C718FB6A21EAA5C20025485D /* VimeoVideo.swift in Sources */,
 				C70192DA21EA07480062B0B5 /* LoginViewController.swift in Sources */,
 				C701930B21EA81BA0062B0B5 /* LoginTextField.swift in Sources */,
