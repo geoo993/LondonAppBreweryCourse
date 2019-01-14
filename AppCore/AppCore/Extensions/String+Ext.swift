@@ -1136,4 +1136,13 @@ public extension String {
         let misspelledRange = checker.rangeOfMisspelledWord(in: self, range: range, startingAt: 0, wrap: false, language: Locale.preferredLanguages.first ?? "en")
         return misspelledRange.location == NSNotFound
     }
+ 
+    // https://stackoverflow.com/questions/41974883/how-to-print-out-the-method-name-and-line-number-in-swift
+    public static func printLog(_ message: String, function: String = #function, file: String = #file, line: Int = #line) {
+        
+        #if DEBUG
+        let className = (file as NSString).lastPathComponent
+        print("MESSAGE: \(message); Called from \(className).\(function) in \(file):\(line)\n")
+        #endif
+    }
 }

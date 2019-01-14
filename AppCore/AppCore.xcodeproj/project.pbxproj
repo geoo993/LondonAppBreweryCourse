@@ -76,6 +76,7 @@
 		C7667E45201D39AF00225F09 /* UIViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7667E3B201D39AF00225F09 /* UIViewX.swift */; };
 		C7667E46201D39AF00225F09 /* UIVisualEffectViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7667E3C201D39AF00225F09 /* UIVisualEffectViewX.swift */; };
 		C7667E47201D39AF00225F09 /* UISliderX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7667E3D201D39AF00225F09 /* UISliderX.swift */; };
+		C769410821ED3257001E193E /* NSObject+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C769410721ED3256001E193E /* NSObject+Ext.swift */; };
 		C785AB241FF126E4002360A6 /* Generic+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C785AAFE1FF126E4002360A6 /* Generic+Ext.swift */; };
 		C785AB251FF126E4002360A6 /* UIBezierPath+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C785AAFF1FF126E4002360A6 /* UIBezierPath+Ext.swift */; };
 		C785AB261FF126E4002360A6 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C785AB001FF126E4002360A6 /* UIImageView+Ext.swift */; };
@@ -342,6 +343,7 @@
 		C7667E3B201D39AF00225F09 /* UIViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewX.swift; sourceTree = "<group>"; };
 		C7667E3C201D39AF00225F09 /* UIVisualEffectViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIVisualEffectViewX.swift; sourceTree = "<group>"; };
 		C7667E3D201D39AF00225F09 /* UISliderX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISliderX.swift; sourceTree = "<group>"; };
+		C769410721ED3256001E193E /* NSObject+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Ext.swift"; sourceTree = "<group>"; };
 		C785AAFE1FF126E4002360A6 /* Generic+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Generic+Ext.swift"; sourceTree = "<group>"; };
 		C785AAFF1FF126E4002360A6 /* UIBezierPath+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+Ext.swift"; sourceTree = "<group>"; };
 		C785AB001FF126E4002360A6 /* UIImageView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
@@ -688,6 +690,7 @@
 				C7E8E8E92006A27B0089C856 /* NSAttributedString+Ext.swift */,
 				C72E67FC2013FE7A00EA02E3 /* NSLayoutConstraint+Ext.swift */,
 				C785AB1B1FF126E4002360A6 /* NSMutableAttributedString+Ext.swift */,
+				C769410721ED3256001E193E /* NSObject+Ext.swift */,
 				C70033A221EC02EC000C50F4 /* NSRegularExpression+Ext.swift */,
 				C733FAF32111B35000FEF9EA /* Range+Ext.swift */,
 				C71127F420137A8D00FBC479 /* Sequence+Ext.swift */,
@@ -1305,6 +1308,7 @@
 				C7667E47201D39AF00225F09 /* UISliderX.swift in Sources */,
 				C785AB391FF126E4002360A6 /* UINavigationController+Ext.swift in Sources */,
 				C717449D21DE3D1600FD6B0F /* Date+Ext.swift in Sources */,
+				C769410821ED3257001E193E /* NSObject+Ext.swift in Sources */,
 				C7B43BDE21DFC93D00A362E0 /* Float+Ext.swift in Sources */,
 				C785AB281FF126E4002360A6 /* CGRect+Ext.swift in Sources */,
 				C71744C521DE4F6F00FD6B0F /* ProgressWaveView.swift in Sources */,
