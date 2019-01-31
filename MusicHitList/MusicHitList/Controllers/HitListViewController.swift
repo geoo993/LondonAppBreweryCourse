@@ -149,6 +149,15 @@ class HitListViewController: UIViewController, AVAudioPlayerDelegate {
     }
 }
 
+extension HitListViewController: AVAudioPlayerDelegate {
+    func audioPlayerDidFinishPlaying(_: AVAudioPlayer, successfully success: Bool) {
+       
+    }
+    
+    func audioPlayerDecodeErrorDidOccur(_: AVAudioPlayer, error _: Error?) {
+    }
+}
+
 
 extension HitListViewController : UITableViewDelegate, UITableViewDataSource {
     
