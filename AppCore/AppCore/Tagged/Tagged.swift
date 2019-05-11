@@ -104,7 +104,7 @@ extension Tagged: ExpressibleByUnicodeScalarLiteral where RawValue: ExpressibleB
 //        self.init(rawValue: rawValue)
 //    }
 //}
-extension Tagged: Numeric where RawValue: Numeric {
+extension Tagged: AdditiveArithmetic where RawValue: Numeric {
     public typealias Magnitude = RawValue.Magnitude
 
     public init?<T>(exactly source: T) where T: BinaryInteger {
@@ -145,6 +145,10 @@ extension Tagged: Hashable where RawValue: Hashable {
     public var hashValue: Int {
         return self.rawValue.hashValue
     }
+}
+
+extension Tagged: Numeric where RawValue: Numeric {
+    
 }
 
 extension Tagged: SignedNumeric where RawValue: SignedNumeric {

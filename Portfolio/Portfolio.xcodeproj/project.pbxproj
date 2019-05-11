@@ -38,6 +38,8 @@
 		C7606C5321EC0F7500AAEB48 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7606C5221EC0F7500AAEB48 /* AFNetworking.framework */; };
 		C7606C5421EC0F7500AAEB48 /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C7606C5221EC0F7500AAEB48 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C769410521ED0D70001E193E /* MemeoryLeaksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C769410421ED0D70001E193E /* MemeoryLeaksController.swift */; };
+		C7A02BFD22841C1A00F0D8CF /* PortfolioCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A02BFC22841C1A00F0D8CF /* PortfolioCollectionViewController.swift */; };
+		C7A02BFF22841C9400F0D8CF /* PortfolioCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A02BFE22841C9400F0D8CF /* PortfolioCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -87,6 +89,8 @@
 		C7606C4F21EC0F7500AAEB48 /* VimeoNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VimeoNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7606C5221EC0F7500AAEB48 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C769410421ED0D70001E193E /* MemeoryLeaksController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeoryLeaksController.swift; sourceTree = "<group>"; };
+		C7A02BFC22841C1A00F0D8CF /* PortfolioCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioCollectionViewController.swift; sourceTree = "<group>"; };
+		C7A02BFE22841C9400F0D8CF /* PortfolioCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +166,7 @@
 				C70192D621EA07480062B0B5 /* LoginViewController.swift */,
 				C70192D921EA07480062B0B5 /* AboutPageViewController.swift */,
 				C70192D721EA07480062B0B5 /* WalkthroughViewController.swift */,
+				C7A02BFC22841C1A00F0D8CF /* PortfolioCollectionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 				C701930821EA81BA0062B0B5 /* LoginButton.swift */,
 				C701930921EA81BA0062B0B5 /* LoginTextField.swift */,
 				C718FB6421EAA2B90025485D /* VimeoCell.swift */,
+				C7A02BFE22841C9400F0D8CF /* PortfolioCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -293,12 +299,14 @@
 				C769410521ED0D70001E193E /* MemeoryLeaksController.swift in Sources */,
 				C718FB6921EAA5C20025485D /* VimeoVideoExtractor.swift in Sources */,
 				C70192DB21EA07480062B0B5 /* WalkthroughViewController.swift in Sources */,
+				C7A02BFD22841C1A00F0D8CF /* PortfolioCollectionViewController.swift in Sources */,
 				C701930A21EA81BA0062B0B5 /* LoginButton.swift in Sources */,
 				C718FB6521EAA2B90025485D /* VimeoCell.swift in Sources */,
 				C70192DD21EA07480062B0B5 /* AboutPageViewController.swift in Sources */,
 				C718FB6A21EAA5C20025485D /* VimeoVideo.swift in Sources */,
 				C70192DA21EA07480062B0B5 /* LoginViewController.swift in Sources */,
 				C701930B21EA81BA0062B0B5 /* LoginTextField.swift in Sources */,
+				C7A02BFF22841C9400F0D8CF /* PortfolioCollectionViewCell.swift in Sources */,
 				C70192BC21EA06BE0062B0B5 /* AppDelegate.swift in Sources */,
 				C70192DC21EA07480062B0B5 /* HomeViewController.swift in Sources */,
 			);
@@ -447,7 +455,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BM7962EZPA;
+				DEVELOPMENT_TEAM = 4Q93294747;
 				INFOPLIST_FILE = Portfolio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -465,7 +473,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BM7962EZPA;
+				DEVELOPMENT_TEAM = 4Q93294747;
 				INFOPLIST_FILE = Portfolio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

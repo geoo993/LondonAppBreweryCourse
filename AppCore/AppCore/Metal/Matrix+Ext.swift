@@ -112,7 +112,7 @@ public func translate(m: double4x4, v: double3) -> double4x4 {
     result[3] = m * vv
     return result
 }
-
+/*
 /// Builds a rotation 4 * 4 matrix created from an axis vector and an angle.
 public func rotate(m: float4x4, angle: Float, axis: float3) -> float4x4 {
 
@@ -174,7 +174,7 @@ public func rotate(m: double4x4, angle: Double, axis: double3) -> double4x4 {
     Result[3] = m[3]
     return Result
 }
-
+*/
 /// Builds a scale 4 * 4 matrix created from 3 scalars.
 public func scale(m: float4x4, v: float3) -> float4x4 {
     var Result = float4x4(0)

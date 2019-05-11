@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HGS-qO-JvV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HGS-qO-JvV">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -379,9 +379,98 @@
             </objects>
             <point key="canvasLocation" x="-25" y="110"/>
         </scene>
+        <!--Main Collection View Controller-->
+        <scene sceneID="kMS-sc-3fU">
+            <objects>
+                <collectionViewController storyboardIdentifier="PortfolioCollectionViewController" id="dy6-w0-URn" userLabel="Main Collection View Controller" customClass="PortfolioCollectionViewController" customModule="Portfolio" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Dda-07-FWb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pCb-Hr-Oj4">
+                            <size key="itemSize" width="140" height="140"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="10"/>
+                            <inset key="sectionInset" minX="10" minY="40" maxX="10" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PortfolioCell" id="N5K-QC-Vdf" customClass="PortfolioCollectionViewCell" customModule="Portfolio" customModuleProvider="target">
+                                <rect key="frame" x="10" y="40" width="140" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppGameIcon" translatesAutoresizingMaskIntoConstraints="NO" id="v8d-Pm-J8k">
+                                            <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+                                            <color key="backgroundColor" red="0.39747299380000001" green="1" blue="0.37637442129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <real key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                    <real key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                    <color key="value" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMT-CP-Xfz">
+                                            <rect key="frame" x="53.5" y="106" width="33.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="v8d-Pm-J8k" firstAttribute="centerX" secondItem="N5K-QC-Vdf" secondAttribute="centerX" id="4YI-T5-vGq"/>
+                                    <constraint firstItem="v8d-Pm-J8k" firstAttribute="centerY" secondItem="N5K-QC-Vdf" secondAttribute="centerY" id="DYA-8Y-v6S"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="WMT-CP-Xfz" secondAttribute="bottom" constant="5" id="EWP-28-zzs"/>
+                                    <constraint firstItem="v8d-Pm-J8k" firstAttribute="top" secondItem="N5K-QC-Vdf" secondAttribute="top" id="F4B-ul-rs5"/>
+                                    <constraint firstItem="v8d-Pm-J8k" firstAttribute="leading" secondItem="N5K-QC-Vdf" secondAttribute="leading" id="H6S-aW-VkV"/>
+                                    <constraint firstAttribute="bottom" secondItem="v8d-Pm-J8k" secondAttribute="bottom" id="IFb-H9-gVw"/>
+                                    <constraint firstAttribute="trailing" secondItem="v8d-Pm-J8k" secondAttribute="trailing" id="q74-Ll-kgB"/>
+                                    <constraint firstItem="WMT-CP-Xfz" firstAttribute="centerX" secondItem="N5K-QC-Vdf" secondAttribute="centerX" id="zxe-uS-ZPL"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="cellImageView" destination="v8d-Pm-J8k" id="HhE-6P-te6"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="o59-ae-aS2">
+                            <rect key="frame" x="0.0" y="180" width="414" height="10"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="dy6-w0-URn" id="LiS-hI-KCB"/>
+                            <outlet property="delegate" destination="dy6-w0-URn" id="jpM-bR-0Ly"/>
+                        </connections>
+                    </collectionView>
+                    <connections>
+                        <outlet property="mainCollectionView" destination="Dda-07-FWb" id="w7f-u7-nzE"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5B-Du-yaS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-49" y="860"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="background-wave" width="750" height="1624"/>
-        <image name="wave-logo" width="1019" height="1024"/>
+        <image name="AppGameIcon" width="760.5" height="475.5"/>
+        <image name="background-wave" width="375" height="812"/>
+        <image name="wave-logo" width="509.5" height="512"/>
     </resources>
 </document>
